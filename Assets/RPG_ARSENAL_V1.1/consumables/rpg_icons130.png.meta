@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rpg_icons130_0: 699141802792212767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

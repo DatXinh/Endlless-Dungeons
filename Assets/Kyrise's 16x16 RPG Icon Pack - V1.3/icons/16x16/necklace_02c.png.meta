@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      necklace_02c_0: 8204650047715394949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
