@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Top Hat Mimic Idle5_0: -5126459621957281420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

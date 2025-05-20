@@ -497,7 +497,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bat Move-Sheet_0: 5228371028745626242
+      Bat Move-Sheet_1: 3353483107392601308
+      Bat Move-Sheet_10: -3673247469544787281
+      Bat Move-Sheet_11: -3927769201251118403
+      Bat Move-Sheet_12: -8651469888902806113
+      Bat Move-Sheet_13: 6050565376139907138
+      Bat Move-Sheet_14: -1754301476013480545
+      Bat Move-Sheet_2: -4690457163976924723
+      Bat Move-Sheet_3: 2163604480255809756
+      Bat Move-Sheet_4: -6833587348790739247
+      Bat Move-Sheet_5: 3630547600130452141
+      Bat Move-Sheet_6: 7839669659258686744
+      Bat Move-Sheet_7: -7092357005041711705
+      Bat Move-Sheet_8: 2919189976494747377
+      Bat Move-Sheet_9: -831853535776689591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

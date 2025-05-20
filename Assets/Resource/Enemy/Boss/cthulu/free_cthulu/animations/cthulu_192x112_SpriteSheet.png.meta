@@ -1797,7 +1797,74 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cthulu_192x112_SpriteSheet_0: -7234295187575980594
+      cthulu_192x112_SpriteSheet_1: 3055329012086565690
+      cthulu_192x112_SpriteSheet_10: 7528084841691784517
+      cthulu_192x112_SpriteSheet_11: 4241214028328255967
+      cthulu_192x112_SpriteSheet_12: 1172806068620428652
+      cthulu_192x112_SpriteSheet_13: 1893404621671472904
+      cthulu_192x112_SpriteSheet_14: 5521498048819751799
+      cthulu_192x112_SpriteSheet_15: 5310629213146381457
+      cthulu_192x112_SpriteSheet_16: -1302968552288949092
+      cthulu_192x112_SpriteSheet_17: -2524216330171578085
+      cthulu_192x112_SpriteSheet_18: 5681901883211953902
+      cthulu_192x112_SpriteSheet_19: 2211484472971695051
+      cthulu_192x112_SpriteSheet_2: -282151430108225488
+      cthulu_192x112_SpriteSheet_20: 7821603943922824110
+      cthulu_192x112_SpriteSheet_21: -3651495918614750681
+      cthulu_192x112_SpriteSheet_22: -7071227253031353399
+      cthulu_192x112_SpriteSheet_23: -9119204411976379021
+      cthulu_192x112_SpriteSheet_24: -3531736161425134170
+      cthulu_192x112_SpriteSheet_25: -11566732323138254
+      cthulu_192x112_SpriteSheet_26: 2676218746129643097
+      cthulu_192x112_SpriteSheet_27: 1104918514160811174
+      cthulu_192x112_SpriteSheet_28: 873442551276128184
+      cthulu_192x112_SpriteSheet_29: 8862625590422858158
+      cthulu_192x112_SpriteSheet_3: -7989165570766713714
+      cthulu_192x112_SpriteSheet_30: 7507560854653157343
+      cthulu_192x112_SpriteSheet_31: -5321957419163454560
+      cthulu_192x112_SpriteSheet_32: -4672627597402689407
+      cthulu_192x112_SpriteSheet_33: 7632618419068020433
+      cthulu_192x112_SpriteSheet_34: -580486812949994761
+      cthulu_192x112_SpriteSheet_35: -2284183325305846016
+      cthulu_192x112_SpriteSheet_36: 383011918011723878
+      cthulu_192x112_SpriteSheet_37: -4559394025566295164
+      cthulu_192x112_SpriteSheet_38: -4996757432377750526
+      cthulu_192x112_SpriteSheet_39: 2297633160045576860
+      cthulu_192x112_SpriteSheet_4: 4919507829194082570
+      cthulu_192x112_SpriteSheet_40: -1066888131687523853
+      cthulu_192x112_SpriteSheet_41: -7850477433971732992
+      cthulu_192x112_SpriteSheet_42: -1279346452394974927
+      cthulu_192x112_SpriteSheet_43: -2431502617471228255
+      cthulu_192x112_SpriteSheet_44: -5343731068958276724
+      cthulu_192x112_SpriteSheet_45: -5581906161589836166
+      cthulu_192x112_SpriteSheet_46: -3802813519771781509
+      cthulu_192x112_SpriteSheet_47: 1370038132697576524
+      cthulu_192x112_SpriteSheet_48: 7179486724997426172
+      cthulu_192x112_SpriteSheet_49: -1545914599376753398
+      cthulu_192x112_SpriteSheet_5: -3006873691943378498
+      cthulu_192x112_SpriteSheet_50: -6349487990790915964
+      cthulu_192x112_SpriteSheet_51: -7243725507249890531
+      cthulu_192x112_SpriteSheet_52: 2540734718814700232
+      cthulu_192x112_SpriteSheet_53: 2872527637198570047
+      cthulu_192x112_SpriteSheet_54: -5621652232610000478
+      cthulu_192x112_SpriteSheet_55: 7493991772268279587
+      cthulu_192x112_SpriteSheet_56: -818047731285528289
+      cthulu_192x112_SpriteSheet_57: -719670815358326395
+      cthulu_192x112_SpriteSheet_58: 8877502662090541033
+      cthulu_192x112_SpriteSheet_59: 977706827002444511
+      cthulu_192x112_SpriteSheet_6: 6157574547618014817
+      cthulu_192x112_SpriteSheet_60: -6820370011466495742
+      cthulu_192x112_SpriteSheet_61: 3570482153350594727
+      cthulu_192x112_SpriteSheet_62: -488773174028731157
+      cthulu_192x112_SpriteSheet_63: 7922170858519558410
+      cthulu_192x112_SpriteSheet_64: -8602256854950437948
+      cthulu_192x112_SpriteSheet_65: -7335999150746728642
+      cthulu_192x112_SpriteSheet_66: -462148144453704253
+      cthulu_192x112_SpriteSheet_7: 3542001588751930237
+      cthulu_192x112_SpriteSheet_8: 265490905729259871
+      cthulu_192x112_SpriteSheet_9: 1537549656908392719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

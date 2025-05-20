@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Little Mooni-Idle_0: -8261999908356299497
+      Little Mooni-Idle_1: 2009048452387349162
+      Little Mooni-Idle_2: 3676826202470294381
+      Little Mooni-Idle_3: 1745642270530164444
+      Little Mooni-Idle_4: -6277431358671381356
+      Little Mooni-Idle_5: 6200539910793264932
+      Little Mooni-Idle_6: -3292865083607423159
+      Little Mooni-Idle_7: 5472247059988990837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

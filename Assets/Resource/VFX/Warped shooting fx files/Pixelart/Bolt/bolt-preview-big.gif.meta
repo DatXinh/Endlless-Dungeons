@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bolt-preview-big_0: -5466046582074303669
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

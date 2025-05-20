@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Top Hat Mimic Hit1_0: 6690544588864136805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

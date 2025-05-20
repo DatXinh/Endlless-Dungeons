@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fire_skull_fireball_0: 8102719371594975591
+      fire_skull_fireball_1: -4163315617440637534
+      fire_skull_fireball_10: -8109166940895281065
+      fire_skull_fireball_11: -560409846668126109
+      fire_skull_fireball_2: -6339817231724767116
+      fire_skull_fireball_3: 7993744091249937541
+      fire_skull_fireball_4: -3953201116891174520
+      fire_skull_fireball_5: -919010903306900702
+      fire_skull_fireball_6: 1333523025939138434
+      fire_skull_fireball_7: -3920576511765994870
+      fire_skull_fireball_8: -172698334335436807
+      fire_skull_fireball_9: 7905953984757650183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

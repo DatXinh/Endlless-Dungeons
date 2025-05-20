@@ -872,7 +872,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gif_alien_plant_enemy-sheet_0: 7086496811803881521
+      gif_alien_plant_enemy-sheet_1: 5647881821094448610
+      gif_alien_plant_enemy-sheet_10: 2644159071308487892
+      gif_alien_plant_enemy-sheet_11: -4220022065818554999
+      gif_alien_plant_enemy-sheet_12: 8562687320999933009
+      gif_alien_plant_enemy-sheet_13: -646229073893873904
+      gif_alien_plant_enemy-sheet_14: -6514358276491637220
+      gif_alien_plant_enemy-sheet_15: -76859005647639990
+      gif_alien_plant_enemy-sheet_16: 2340763590516653483
+      gif_alien_plant_enemy-sheet_17: 2633276817258605319
+      gif_alien_plant_enemy-sheet_18: 7556295186522518968
+      gif_alien_plant_enemy-sheet_19: -4023674501139089745
+      gif_alien_plant_enemy-sheet_2: 8871719502811394597
+      gif_alien_plant_enemy-sheet_20: -9131522949024403457
+      gif_alien_plant_enemy-sheet_21: 4393556275880652284
+      gif_alien_plant_enemy-sheet_22: -1593102242295411885
+      gif_alien_plant_enemy-sheet_23: -2747816502291590538
+      gif_alien_plant_enemy-sheet_24: -6168831161815954514
+      gif_alien_plant_enemy-sheet_25: -677595206988920913
+      gif_alien_plant_enemy-sheet_26: 225394023257933673
+      gif_alien_plant_enemy-sheet_27: 7266404313146311255
+      gif_alien_plant_enemy-sheet_28: 382614764371761729
+      gif_alien_plant_enemy-sheet_29: 2994254129310862628
+      gif_alien_plant_enemy-sheet_3: 2184003656838713113
+      gif_alien_plant_enemy-sheet_4: 3874434199611436429
+      gif_alien_plant_enemy-sheet_5: -5642993320169447505
+      gif_alien_plant_enemy-sheet_6: -4883983070097090433
+      gif_alien_plant_enemy-sheet_7: 5304347437974752611
+      gif_alien_plant_enemy-sheet_8: -3259703636021845367
+      gif_alien_plant_enemy-sheet_9: -1253990092818192193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

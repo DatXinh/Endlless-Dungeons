@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      crossed-preview-big_0: 5190941986289527668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

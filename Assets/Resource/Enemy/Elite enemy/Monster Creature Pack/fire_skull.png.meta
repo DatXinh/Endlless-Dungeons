@@ -1122,7 +1122,47 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fire_skull_0: -4776374972668364119
+      fire_skull_1: -8519034686194793663
+      fire_skull_10: 3417991491136913110
+      fire_skull_11: 5381762269682499957
+      fire_skull_12: -3852195657099683147
+      fire_skull_13: -3191995367983831410
+      fire_skull_14: 4967151222230835263
+      fire_skull_15: -2497140920517333983
+      fire_skull_16: -7873597928982961548
+      fire_skull_17: 1021043366929697857
+      fire_skull_18: -4895437600658919903
+      fire_skull_19: -8520149508047330703
+      fire_skull_2: 1359185710395031200
+      fire_skull_20: -3078218426132284399
+      fire_skull_21: 8711750074640355491
+      fire_skull_22: -2788430759032460686
+      fire_skull_23: -8622830101662416492
+      fire_skull_24: -5228147839150117051
+      fire_skull_25: 8084584640349632590
+      fire_skull_26: -3982097877631576620
+      fire_skull_27: -2844833183998093823
+      fire_skull_28: 7056840817289947572
+      fire_skull_29: 917035158650440877
+      fire_skull_3: 2532886794426244202
+      fire_skull_30: 7798018468625305896
+      fire_skull_31: 2317963653937049060
+      fire_skull_32: 294272758611087621
+      fire_skull_33: 8880104822422414779
+      fire_skull_34: -6528729931994085520
+      fire_skull_35: 1396181600630201622
+      fire_skull_36: 3907071350551119171
+      fire_skull_37: 3550612416506894661
+      fire_skull_38: 4578317534406194129
+      fire_skull_39: 193691177858517526
+      fire_skull_4: -6418295848231770248
+      fire_skull_5: 3566224557023312151
+      fire_skull_6: 7362280421014680296
+      fire_skull_7: 9178627387543633080
+      fire_skull_8: 3681566800110627849
+      fire_skull_9: -7635542648430117555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
