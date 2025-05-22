@@ -17,7 +17,7 @@ public class CheckCollider : MonoBehaviour
     {
         if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
         {
-            Debug.Log("Collided with: " + other.tag);
+            //Debug.Log("Collided with: " + other.tag);
         }
     }
 }

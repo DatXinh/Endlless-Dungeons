@@ -3,7 +3,7 @@
 public class monsterAI : MonoBehaviour
 {
     public float moveSpeed;
-    public float detectDistance ;
+    public float detectDistance;
     public float checkInterval = 0.2f;
     public float rotateInterval = 2f; // Thời gian đổi hướng khi không phát hiện player
 
@@ -29,17 +29,8 @@ public class monsterAI : MonoBehaviour
             {
                 playerTransform = player.transform;
             }
-            else
-            {
-                Debug.LogWarning("Player not found in the scene. Make sure the player GameObject is tagged as 'Player'.");
-            }
         }
-
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        if (spriteRenderer == null)
-        {
-            Debug.LogWarning("SpriteRenderer not found on " + gameObject.name);
-        }
     }
 
     void Update()
@@ -69,9 +60,9 @@ public class monsterAI : MonoBehaviour
                 spriteRenderer.flipX = lastDirectionToPlayer.x > 0;
             }
         }
-        else if (!canMove || !isMovable)
+        else if (!canMove && isMovable)
         {
-            // Nếu không phát hiện player hoặc không được phép di chuyển thì quay trái/phải mỗi rotateInterval giây
+            // Nếu không phát hiện player và vẫn được phép di chuyển thì quay trái/phải mỗi rotateInterval giây
             rotateTimer -= Time.deltaTime;
             if (rotateTimer <= 0f)
             {
@@ -81,5 +72,6 @@ public class monsterAI : MonoBehaviour
             // Lật sprite theo hướng idleFacing
             spriteRenderer.flipX = idleFacing > 0;
         }
+        // Nếu isMovable == false thì không quay trái/phải, giữ nguyên hướng hiện tại
     }
 }
