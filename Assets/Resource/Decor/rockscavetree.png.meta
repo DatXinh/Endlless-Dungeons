@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rockscavetree_0: 6270830805491617177
+      rockscavetree_1: 4670368781075645247
+      rockscavetree_2: -7515873084127646277
+      rockscavetree_3: -8092655663668248147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
