@@ -497,7 +497,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Swordtember_Day_01_Swing_0: 8079324629582818912
+      Swordtember_Day_01_Swing_1: -4409614633003715928
+      Swordtember_Day_01_Swing_10: -5777022333505066173
+      Swordtember_Day_01_Swing_11: -1169363007498763888
+      Swordtember_Day_01_Swing_12: 4864500167195395253
+      Swordtember_Day_01_Swing_13: 5792712093627871531
+      Swordtember_Day_01_Swing_14: 8227760340374447961
+      Swordtember_Day_01_Swing_2: 7711725000494628135
+      Swordtember_Day_01_Swing_3: 8706990263184284163
+      Swordtember_Day_01_Swing_4: 1596595277346878412
+      Swordtember_Day_01_Swing_5: -500195304597275008
+      Swordtember_Day_01_Swing_6: 7091071244045820713
+      Swordtember_Day_01_Swing_7: 3459052388749403358
+      Swordtember_Day_01_Swing_8: 7337507828537608618
+      Swordtember_Day_01_Swing_9: 5697446305389856215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_tiles_free_2.0_0: 1365158451628519494
+      Medieval_tiles_free_2.0_1: -1481518998489034922
+      Medieval_tiles_free_2.0_2: 2929994746610031987
+      Medieval_tiles_free_2.0_3: 7721785637877954499
+      Medieval_tiles_free_2.0_4: -8548304031737922576
+      Medieval_tiles_free_2.0_5: -4341608210030780117
+      Medieval_tiles_free_2.0_6: 207732141703244941
+      Medieval_tiles_free_2.0_7: 3259225473629802399
+      Medieval_tiles_free_2.0_8: 1377508733612324320
+      Medieval_tiles_free_2.0_9: -2633100133041577601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

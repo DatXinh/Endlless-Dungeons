@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Swordtember_Day_03_Icon_0: 2214930238485102082
+      Swordtember_Day_03_Icon_1: -8702813171327516125
+      Swordtember_Day_03_Icon_2: 3857786685333692209
+      Swordtember_Day_03_Icon_3: -278935208797442238
+      Swordtember_Day_03_Icon_4: -7687460474575443730
+      Swordtember_Day_03_Icon_5: 7427808159432138123
+      Swordtember_Day_03_Icon_6: 5344277736738828375
+      Swordtember_Day_03_Icon_7: 6539374226458096158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

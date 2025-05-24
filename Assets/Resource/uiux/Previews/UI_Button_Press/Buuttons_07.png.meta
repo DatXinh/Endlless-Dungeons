@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Buuttons_07_0: 3531441749897987258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
