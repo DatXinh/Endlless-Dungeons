@@ -9,9 +9,9 @@ public class TestPlayerMove : MonoBehaviour
     public Transform spriteTransform;
     public Transform weaponParent;
 
-    public float enemyDetectRadius ; // Bán kính kiểm tra enemy gần
-    public LayerMask enemyLayer;         // Layer của enemy, set trong Inspector
-    public bool isEnemyNearby;           // True nếu có enemy ở gần
+    public float enemyDetectRadius;
+    public LayerMask enemyLayer;
+    public bool isEnemyNearby;
 
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -19,6 +19,10 @@ public class TestPlayerMove : MonoBehaviour
     private Animator animator;
 
     private TestWeaponAtk testWeaponAtk;
+    public TestWeaponLockEnemy testWeaponLockEnemy;
+
+    private bool isUsingMagicWeapon = false;
+    private Transform weaponTransform;
 
     private void Awake()
     {
@@ -34,6 +38,22 @@ public class TestPlayerMove : MonoBehaviour
         {
             animator = spriteTransform.GetComponent<Animator>();
         }
+
+        // Kiểm tra weapon hiện tại có phải là gậy phép hoặc sách phép
+        if (weaponParent != null && weaponParent.childCount > 0)
+        {
+            weaponTransform = weaponParent.GetChild(0); // Giả sử luôn có 1 vũ khí
+            WeaponData weaponData = weaponTransform.GetComponent<WeaponData>();
+
+            if (weaponData != null &&
+                (weaponData.weaponType == WeaponType.MagicStaff || weaponData.weaponType == WeaponType.SpellBook))
+            {
+                isUsingMagicWeapon = true;
+            }
+        }
+
+        if (testWeaponLockEnemy == null)
+            testWeaponLockEnemy = GetComponentInChildren<TestWeaponLockEnemy>();
     }
 
     private void OnEnable()
@@ -76,32 +96,61 @@ public class TestPlayerMove : MonoBehaviour
     {
         rb.linearVelocity = moveInput * moveSpeed;
 
-        // Kiểm tra có enemy ở gần không
-        Collider2D enemy = Physics2D.OverlapCircle(transform.position, enemyDetectRadius, enemyLayer);
-        isEnemyNearby = enemy != null;
+        // Tìm enemy gần nhất trong bán kính
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, enemyDetectRadius, enemyLayer);
+        Transform nearestEnemy = null;
+        float minDist = float.MaxValue;
+        foreach (var hit in hits)
+        {
+            float dist = (hit.transform.position - transform.position).sqrMagnitude;
+            if (dist < minDist)
+            {
+                minDist = dist;
+                nearestEnemy = hit.transform;
+            }
+        }
+        isEnemyNearby = nearestEnemy != null;
+
+        // Truyền enemy gần nhất cho TestWeaponLockEnemy (nếu có)
+        if (testWeaponLockEnemy != null)
+            testWeaponLockEnemy.nearestEnemy = nearestEnemy;
 
         if (spriteTransform == null)
             return;
 
-        if (isEnemyNearby && enemy != null)
+        float dir = 0f;
+        if (isEnemyNearby && nearestEnemy != null)
         {
-            // Quay mặt về phía enemy gần nhất
-            float dir = enemy.transform.position.x - transform.position.x;
-            if (dir != 0)
-            {
-                bool facingRight = dir > 0;
-                transform.localScale = new Vector3(facingRight ? 1 : -1, 1, 1);
-            }
+            dir = nearestEnemy.position.x - transform.position.x;
         }
         else if (moveInput.x != 0)
         {
-            // Quay mặt theo hướng di chuyển
-            bool facingRight = moveInput.x > 0;
+            dir = moveInput.x;
+        }
+
+        if (dir != 0)
+        {
+            bool facingRight = dir > 0;
             transform.localScale = new Vector3(facingRight ? 1 : -1, 1, 1);
+
+            if (isUsingMagicWeapon && weaponTransform != null)
+            {
+                Vector3 scale = weaponTransform.localScale;
+                if (facingRight)
+                {
+                    scale.x = Mathf.Abs(scale.x);
+                    scale.y = Mathf.Abs(scale.y);
+                }
+                else
+                {
+                    scale.x = -Mathf.Abs(scale.x);
+                    scale.y = -Mathf.Abs(scale.y);
+                }
+                weaponTransform.localScale = scale;
+            }
         }
     }
 
-    // Vẽ bán kính kiểm tra enemy trong Scene view
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 6641714536417241939}
   - component: {fileID: 6596894065060426959}
   - component: {fileID: 8376304519029016947}
+  - component: {fileID: 3223067694595319805}
   m_Layer: 0
   m_Name: Murasama_(Sheathed)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8457529965048149881
 Transform:
   m_ObjectHideFlags: 0
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2181701773518514791}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.76604444, w: 0.64278764}
-  m_LocalPosition: {x: -0.47, y: -0.51, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5537549, w: 0.83267975}
+  m_LocalPosition: {x: 0.52833116, y: 0.1232225, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -67.25}
 --- !u!212 &5959416135680469829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,3 +161,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1886a343c00fceb428122b4bba72897a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3223067694595319805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181701773518514791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fa63ed227014e41bfa2706dcd49cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: '#001'
+  weaponName: True Muramasa
+  weaponDescription: 
+  weaponDamage: 0
+  weaponProjectile: {fileID: 0}
+  weaponType: 1

@@ -280,6 +280,11 @@ MonoBehaviour:
   moveSpeed: 15
   spriteTransform: {fileID: 6290904597988363978}
   weaponParent: {fileID: 5920221004527382975}
+  enemyDetectRadius: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  isEnemyNearby: 0
 --- !u!1001 &4784604941923988806
 PrefabInstance:
   m_ObjectHideFlags: 0

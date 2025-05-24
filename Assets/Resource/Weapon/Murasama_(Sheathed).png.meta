@@ -116,12 +116,12 @@ TextureImporter:
       name: Murasama_(Sheathed)_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 0
-        width: 56
-        height: 128
-      alignment: 9
-      pivot: {x: 0.6874933, y: 0.7858563}
+        x: 37
+        y: 1
+        width: 54
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
