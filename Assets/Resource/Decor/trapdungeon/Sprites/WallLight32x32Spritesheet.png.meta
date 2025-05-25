@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WallLight32x32Spritesheet_0: 4489536783756124486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

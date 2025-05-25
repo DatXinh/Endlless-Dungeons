@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TrapmoorTileset_v03_0: -4179219452939261169
+      TrapmoorTileset_v03_1: -275558427725527436
+      TrapmoorTileset_v03_2: -7651367880095877460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
