@@ -2,28 +2,69 @@
 
 public class TestWeaponLockEnemy : MonoBehaviour
 {
-    // Enemy gần nhất sẽ được truyền từ TestPlayerMove
     [HideInInspector]
     public Transform nearestEnemy;
 
-    public float searchRadius = 10f;      // Bán kính tìm enemy (không còn dùng để tìm enemy ở đây)
-    public LayerMask enemyLayer;          // Layer của enemy, set trong Inspector
+    public bool isLockingTarget { get; private set; }
+    public TestPlayerMove playerMove;
+
+    private bool lastFacingRight = true;
+    private float lastAngle = float.MinValue;
+
+    void Awake()
+    {
+        if (playerMove == null)
+            playerMove = GetComponentInParent<TestPlayerMove>();
+        lastFacingRight = playerMove != null ? playerMove.isFacingRight : true;
+    }
 
     void Update()
     {
+        if (playerMove == null)
+            return;
+
+        bool isFacingRight = playerMove.isFacingRight;
+
+        // Chỉ thực hiện code khi isFacingRight thay đổi hoặc khi không có nearestEnemy
+        bool needUpdateScaleOrRotation = isFacingRight != lastFacingRight || nearestEnemy == null;
+
+        if (needUpdateScaleOrRotation)
+        {
+            // Nếu không có enemy: scale.x = 1, scale.y = 1, rotation.z = 40 hoặc -40
+            if (nearestEnemy == null)
+            {
+                isLockingTarget = false;
+                Vector3 scale = transform.localScale;
+                scale.x = 1;
+                scale.y = 1;
+                transform.localScale = scale;
+
+                float angle = isFacingRight ? 40f : -40f;
+                transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+            else
+            {
+                // Nếu có enemy, chỉ cập nhật scale khi hướng đổi
+                Vector3 scale = transform.localScale;
+                scale.x = isFacingRight ? 1 : -1;
+                scale.y = isFacingRight ? 1 : -1;
+                transform.localScale = scale;
+            }
+            lastFacingRight = isFacingRight;
+        }
+
+        // Nếu có enemy gần nhất thì xoay về hướng enemy đó (chỉ khi góc thay đổi đáng kể)
         if (nearestEnemy != null)
         {
+            isLockingTarget = true;
             Vector3 direction = nearestEnemy.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            // Clamp góc quay Z trong [-90, 90]
-            angle = Mathf.Clamp(angle,-360,360);
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            if (!Mathf.Approximately(angle, lastAngle))
+            {
+                transform.rotation = Quaternion.Euler(0, 0, angle);
+                lastAngle = angle;
+            }
         }
-    }
-    // Vẽ bán kính tìm enemy trong Scene view
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, searchRadius);
     }
 }
