@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      trapmoor_placement_sample_0: 3802701847401513400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
