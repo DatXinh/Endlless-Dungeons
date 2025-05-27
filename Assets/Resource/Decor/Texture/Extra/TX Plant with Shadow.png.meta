@@ -109,7 +109,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -123,7 +123,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -188,10 +188,10 @@ TextureImporter:
       name: TX Plant with Shadow_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 358
-        width: 115
-        height: 141
+        x: 24
+        y: 359
+        width: 113
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: TX Plant with Shadow_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 343
-        width: 99
-        height: 153
+        x: 161
+        y: 344
+        width: 97
+        height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,10 +232,10 @@ TextureImporter:
       name: TX Plant with Shadow_2
       rect:
         serializedVersion: 2
-        x: 294
-        y: 360
-        width: 85
-        height: 122
+        x: 295
+        y: 361
+        width: 83
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: TX Plant with Shadow_3
       rect:
         serializedVersion: 2
-        x: 37
-        y: 292
-        width: 25
-        height: 23
+        x: 38
+        y: 293
+        width: 23
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,10 +276,10 @@ TextureImporter:
       name: TX Plant with Shadow_4
       rect:
         serializedVersion: 2
-        x: 97
-        y: 289
-        width: 31
-        height: 29
+        x: 98
+        y: 290
+        width: 29
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +298,10 @@ TextureImporter:
       name: TX Plant with Shadow_5
       rect:
         serializedVersion: 2
-        x: 155
-        y: 288
-        width: 43
-        height: 35
+        x: 156
+        y: 289
+        width: 41
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +320,10 @@ TextureImporter:
       name: TX Plant with Shadow_6
       rect:
         serializedVersion: 2
-        x: 215
-        y: 282
-        width: 52
-        height: 46
+        x: 216
+        y: 283
+        width: 50
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,10 +342,10 @@ TextureImporter:
       name: TX Plant with Shadow_7
       rect:
         serializedVersion: 2
-        x: 281
-        y: 278
-        width: 43
-        height: 49
+        x: 282
+        y: 279
+        width: 41
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +364,10 @@ TextureImporter:
       name: TX Plant with Shadow_8
       rect:
         serializedVersion: 2
-        x: 345
-        y: 284
-        width: 45
-        height: 39
+        x: 346
+        y: 285
+        width: 43
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +386,10 @@ TextureImporter:
       name: TX Plant with Shadow_9
       rect:
         serializedVersion: 2
-        x: 7
-        y: 108
-        width: 19
-        height: 11
+        x: 8
+        y: 109
+        width: 17
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,10 +408,10 @@ TextureImporter:
       name: TX Plant with Shadow_10
       rect:
         serializedVersion: 2
-        x: 40
-        y: 107
-        width: 18
-        height: 12
+        x: 41
+        y: 108
+        width: 16
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,10 +430,10 @@ TextureImporter:
       name: TX Plant with Shadow_11
       rect:
         serializedVersion: 2
-        x: 72
-        y: 107
-        width: 17
-        height: 12
+        x: 73
+        y: 108
+        width: 15
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,10 +452,10 @@ TextureImporter:
       name: TX Plant with Shadow_12
       rect:
         serializedVersion: 2
-        x: 101
-        y: 106
-        width: 17
-        height: 13
+        x: 102
+        y: 107
+        width: 15
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,10 +474,10 @@ TextureImporter:
       name: TX Plant with Shadow_13
       rect:
         serializedVersion: 2
-        x: 8
-        y: 75
-        width: 14
-        height: 12
+        x: 9
+        y: 76
+        width: 12
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,10 +496,10 @@ TextureImporter:
       name: TX Plant with Shadow_14
       rect:
         serializedVersion: 2
-        x: 42
-        y: 75
-        width: 15
-        height: 11
+        x: 43
+        y: 76
+        width: 13
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -518,10 +518,10 @@ TextureImporter:
       name: TX Plant with Shadow_15
       rect:
         serializedVersion: 2
-        x: 73
-        y: 75
-        width: 15
-        height: 11
+        x: 74
+        y: 76
+        width: 13
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +540,10 @@ TextureImporter:
       name: TX Plant with Shadow_16
       rect:
         serializedVersion: 2
-        x: 103
-        y: 76
-        width: 16
-        height: 9
+        x: 104
+        y: 77
+        width: 14
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +562,10 @@ TextureImporter:
       name: TX Plant with Shadow_17
       rect:
         serializedVersion: 2
-        x: 8
-        y: 44
-        width: 14
-        height: 10
+        x: 9
+        y: 45
+        width: 12
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,10 +584,10 @@ TextureImporter:
       name: TX Plant with Shadow_18
       rect:
         serializedVersion: 2
-        x: 40
-        y: 43
-        width: 14
-        height: 12
+        x: 41
+        y: 44
+        width: 12
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,10 +606,10 @@ TextureImporter:
       name: TX Plant with Shadow_19
       rect:
         serializedVersion: 2
-        x: 70
-        y: 42
-        width: 16
-        height: 12
+        x: 71
+        y: 43
+        width: 14
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,10 +628,10 @@ TextureImporter:
       name: TX Plant with Shadow_20
       rect:
         serializedVersion: 2
-        x: 105
-        y: 43
-        width: 14
-        height: 11
+        x: 106
+        y: 44
+        width: 12
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,10 +650,10 @@ TextureImporter:
       name: TX Plant with Shadow_21
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 12
-        height: 12
+        x: 11
+        y: 11
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -672,10 +672,10 @@ TextureImporter:
       name: TX Plant with Shadow_22
       rect:
         serializedVersion: 2
-        x: 43
-        y: 9
-        width: 12
-        height: 13
+        x: 44
+        y: 10
+        width: 10
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -694,10 +694,10 @@ TextureImporter:
       name: TX Plant with Shadow_23
       rect:
         serializedVersion: 2
-        x: 75
-        y: 10
-        width: 10
-        height: 10
+        x: 76
+        y: 11
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -716,10 +716,10 @@ TextureImporter:
       name: TX Plant with Shadow_24
       rect:
         serializedVersion: 2
-        x: 109
-        y: 11
-        width: 8
-        height: 7
+        x: 110
+        y: 12
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -738,7 +738,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4a1f1967b01ba894ebacff3630c75268
     internalID: 0
     vertices: []
     indices: 
