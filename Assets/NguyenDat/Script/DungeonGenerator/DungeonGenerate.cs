@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class RandomRomGeneratev1 : MonoBehaviour
+public class DungeonGenerate : MonoBehaviour
 {
     public Tilemap groundTilemap;
     public Tilemap wallTilemap;
@@ -20,8 +20,19 @@ public class RandomRomGeneratev1 : MonoBehaviour
     private List<RectInt> rooms = new();
     public MonsterSpawner monsterSpawner;
 
+    [Header("Room Spacing")]
+    [SerializeField] private int roomSpacing = 2; // Khoảng cách tối thiểu giữa các phòng (tính bằng tile)
+
+    [Header("Room Decoration")]
+    public List<GameObject> decoPrefabs; // Danh sách prefab deco để trang trí
+    [SerializeField] private int minDecoPerRoom = 1;
+    [SerializeField] private int maxDecoPerRoom = 3;
+
+    private Transform decoParent; // Để quản lý các deco trong Hierarchy
+
     void Start()
     {
+        decoParent = new GameObject("DecoParent").transform;
         GenerateRooms();
         DrawMap();
     }
@@ -31,9 +42,14 @@ public class RandomRomGeneratev1 : MonoBehaviour
         map.Clear();
         rooms.Clear();
 
+        if (decoParent != null)
+            Destroy(decoParent.gameObject);
+        decoParent = new GameObject("DecoParent").transform;
+
         RectInt startRoom = new RectInt(-5, -5, 10, 10);
         rooms.Add(startRoom);
         CarveRoom(startRoom);
+        SpawnRoomDeco(startRoom);
 
         int roomCount = Random.Range(minRoomCount, maxRoomCount + 1);
 
@@ -59,6 +75,7 @@ public class RandomRomGeneratev1 : MonoBehaviour
 
             rooms.Add(newRoom);
             CarveRoom(newRoom);
+            SpawnRoomDeco(newRoom);
         }
 
         List<(float dist, int a, int b)> connections = new();
@@ -100,7 +117,7 @@ public class RandomRomGeneratev1 : MonoBehaviour
         }
 
         FillWalls();
-        monsterSpawner.SpawnAllMonsters(rooms,groundTilemap);
+        monsterSpawner.SpawnAllMonsters(rooms, groundTilemap);
     }
 
     void CarveRoom(RectInt room)
@@ -111,12 +128,12 @@ public class RandomRomGeneratev1 : MonoBehaviour
         }
     }
 
-    // Thêm khoảng đệm 1 tile xung quanh để tránh phòng quá sát nhau
+    // Thêm khoảng đệm roomSpacing tile xung quanh để tránh phòng quá sát nhau
     bool RoomOverlaps(RectInt newRoom)
     {
         RectInt paddedNewRoom = new RectInt(
-            newRoom.xMin - 1, newRoom.yMin - 1,
-            newRoom.width + 2, newRoom.height + 2
+            newRoom.xMin - roomSpacing, newRoom.yMin - roomSpacing,
+            newRoom.width + 2 * roomSpacing, newRoom.height + 2 * roomSpacing
         );
 
         foreach (var room in rooms)
@@ -195,6 +212,44 @@ public class RandomRomGeneratev1 : MonoBehaviour
                 groundTilemap.SetTile((Vector3Int)pair.Key, groundTile);
             else if (pair.Value == 1)
                 wallTilemap.SetTile((Vector3Int)pair.Key, wallTile);
+        }
+    }
+
+    // Spawn random deco prefabs inside the given room
+    void SpawnRoomDeco(RectInt room)
+    {
+        if (decoPrefabs == null || decoPrefabs.Count == 0) return;
+
+        int decoCount = Random.Range(minDecoPerRoom, maxDecoPerRoom + 1);
+        HashSet<Vector2Int> usedPositions = new HashSet<Vector2Int>();
+
+        for (int i = 0; i < decoCount; i++)
+        {
+            // Chọn prefab ngẫu nhiên
+            GameObject prefab = decoPrefabs[Random.Range(0, decoPrefabs.Count)];
+
+            // Tìm vị trí hợp lệ trong phòng (không trùng lặp, không sát tường)
+            int tries = 0;
+            Vector2Int decoPos = Vector2Int.zero;
+            bool found = false;
+            while (tries < 20 && !found)
+            {
+                int x = Random.Range(room.xMin + 1, room.xMax - 1);
+                int y = Random.Range(room.yMin + 1, room.yMax - 1);
+                decoPos = new Vector2Int(x, y);
+                if (!usedPositions.Contains(decoPos))
+                {
+                    usedPositions.Add(decoPos);
+                    found = true;
+                }
+                tries++;
+            }
+            if (!found) continue;
+
+            // Đặt deco ở vị trí trung tâm tile
+            Vector3 worldPos = new Vector3(decoPos.x + 0.5f, decoPos.y + 0.5f, 0f);
+            GameObject decoObj = Instantiate(prefab, worldPos, Quaternion.identity, decoParent);
+            decoObj.name = prefab.name;
         }
     }
 }
