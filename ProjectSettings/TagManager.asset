@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Boss
+  - Room
+  - Check
   layers:
   - Default
   - TransparentFX

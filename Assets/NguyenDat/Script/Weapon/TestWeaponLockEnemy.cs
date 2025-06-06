@@ -4,6 +4,8 @@ public class TestWeaponLockEnemy : MonoBehaviour
 {
     [HideInInspector]
     public Transform nearestEnemy;
+    [HideInInspector]
+    public LaunchProjectile launchProjectile;
 
     public bool isLockingTarget { get; private set; }
     public TestPlayerMove playerMove;
@@ -13,8 +15,8 @@ public class TestWeaponLockEnemy : MonoBehaviour
 
     void Awake()
     {
-        if (playerMove == null)
-            playerMove = GetComponentInParent<TestPlayerMove>();
+        playerMove = GetComponentInParent<TestPlayerMove>();
+        launchProjectile = GetComponent<LaunchProjectile>();
         lastFacingRight = playerMove != null ? playerMove.isFacingRight : true;
     }
 
@@ -38,7 +40,6 @@ public class TestWeaponLockEnemy : MonoBehaviour
                 scale.x = 1;
                 scale.y = 1;
                 transform.localScale = scale;
-
                 float angle = isFacingRight ? 40f : -40f;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
             }
@@ -57,14 +58,19 @@ public class TestWeaponLockEnemy : MonoBehaviour
         if (nearestEnemy != null)
         {
             isLockingTarget = true;
+            launchProjectile.nearestEnemy = nearestEnemy;
             Vector3 direction = nearestEnemy.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
             if (!Mathf.Approximately(angle, lastAngle))
             {
                 transform.rotation = Quaternion.Euler(0, 0, angle);
                 lastAngle = angle;
             }
+
+        }
+        else
+        {
+            launchProjectile.nearestEnemy = null;
         }
     }
 }

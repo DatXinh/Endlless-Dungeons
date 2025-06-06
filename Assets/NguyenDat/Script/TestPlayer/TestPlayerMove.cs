@@ -19,26 +19,26 @@ public class TestPlayerMove : MonoBehaviour
     private Animator animator;
     public bool isFacingRight = true;
 
-    private TestWeaponAtk testWeaponAtk;
     public TestWeaponLockEnemy testWeaponLockEnemy;
+
+    [Header("Projectile Launch")]
+    public LaunchProjectile launchProjectile; // Assign in inspector or via GetComponent
+    public GameObject projectileSpawnPoint;   // Empty GameObject as spawn point
 
     private void Awake()
     {
         inputActions = new InputSystem_Actions();
         rb = GetComponent<Rigidbody2D>();
-        testWeaponAtk = GetComponentInChildren<TestWeaponAtk>();
         testWeaponLockEnemy = GetComponentInChildren<TestWeaponLockEnemy>();
-
-        if (spriteTransform == null)
+        animator = GetComponent<Animator>();
+        if (testWeaponLockEnemy != null)
         {
-            Debug.LogError("spriteTransform is not assigned in the inspector.");
+            testWeaponLockEnemy.playerMove = this;
         }
-        else
+        if (launchProjectile != null)
         {
-            animator = spriteTransform.GetComponent<Animator>();
-        }
 
-        
+        }
     }
 
     private void OnEnable()
@@ -46,18 +46,12 @@ public class TestPlayerMove : MonoBehaviour
         inputActions.Player.Enable();
         inputActions.Player.Move.performed += OnMove;
         inputActions.Player.Move.canceled += OnMove;
-
-        inputActions.Player.Attack.performed += OnAttackPerformed;
-        inputActions.Player.Attack.canceled += OnAttackCanceled;
     }
 
     private void OnDisable()
     {
         inputActions.Player.Move.performed -= OnMove;
         inputActions.Player.Move.canceled -= OnMove;
-
-        inputActions.Player.Attack.performed -= OnAttackPerformed;
-        inputActions.Player.Attack.canceled -= OnAttackCanceled;
 
         inputActions.Player.Disable();
     }
@@ -66,17 +60,6 @@ public class TestPlayerMove : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
-
-    private void OnAttackPerformed(InputAction.CallbackContext context)
-    {
-        testWeaponAtk.Attack();
-    }
-
-    private void OnAttackCanceled(InputAction.CallbackContext context)
-    {
-        testWeaponAtk.Attack();
-    }
-
     private void FixedUpdate()
     {
         rb.linearVelocity = moveInput * moveSpeed;
@@ -94,9 +77,19 @@ public class TestPlayerMove : MonoBehaviour
             }
         }
         isEnemyNearby = nearestEnemy != null;
-        // Truyền enemy gần nhất cho TestWeaponLockEnemy (nếu có)
+
+        // Truyền enemy gần nhất cho TestWeaponLockEnemy (nếu có) chỉ khi isEnemyNearby = true
         if (testWeaponLockEnemy != null)
-            testWeaponLockEnemy.nearestEnemy = nearestEnemy;
+        {
+            if (isEnemyNearby)
+            {
+                testWeaponLockEnemy.nearestEnemy = nearestEnemy;
+            }
+            else
+            {
+                testWeaponLockEnemy.nearestEnemy = null;
+            }
+        }
 
         if (spriteTransform == null)
             return;
@@ -117,7 +110,6 @@ public class TestPlayerMove : MonoBehaviour
             transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
         }
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
