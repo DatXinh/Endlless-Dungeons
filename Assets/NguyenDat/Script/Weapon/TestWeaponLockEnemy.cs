@@ -10,6 +10,9 @@ public class TestWeaponLockEnemy : MonoBehaviour
     public bool isLockingTarget { get; private set; }
     public TestPlayerMove playerMove;
 
+    [Header("Laser Weapon")]
+    public LaserWeapon laserWeapon; // Assign in inspector or via GetComponent
+
     private bool lastFacingRight = true;
     private float lastAngle = float.MinValue;
 
@@ -18,6 +21,14 @@ public class TestWeaponLockEnemy : MonoBehaviour
         playerMove = GetComponentInParent<TestPlayerMove>();
         launchProjectile = GetComponent<LaunchProjectile>();
         lastFacingRight = playerMove != null ? playerMove.isFacingRight : true;
+        if (launchProjectile == null)
+        {
+
+        }
+
+        // Optional: auto-assign LaserWeapon if not set in inspector
+        if (laserWeapon == null)
+            laserWeapon = GetComponent<LaserWeapon>();
     }
 
     void Update()
@@ -58,7 +69,14 @@ public class TestWeaponLockEnemy : MonoBehaviour
         if (nearestEnemy != null)
         {
             isLockingTarget = true;
-            launchProjectile.nearestEnemy = nearestEnemy;
+            if (launchProjectile != null)
+            {
+                launchProjectile.nearestEnemy = nearestEnemy;
+            }
+            if(laserWeapon != null)
+            {
+                laserWeapon.nearestEnemy = nearestEnemy;
+            }
             Vector3 direction = nearestEnemy.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             if (!Mathf.Approximately(angle, lastAngle))
@@ -70,7 +88,14 @@ public class TestWeaponLockEnemy : MonoBehaviour
         }
         else
         {
-            launchProjectile.nearestEnemy = null;
+            if (launchProjectile != null)
+            {
+                launchProjectile.nearestEnemy = null;
+            }
+            if (laserWeapon != null)
+            {
+                laserWeapon.nearestEnemy = null;
+            }
         }
     }
 }
