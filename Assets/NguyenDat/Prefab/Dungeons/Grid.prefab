@@ -76,13 +76,9 @@ MonoBehaviour:
   - {fileID: 3360449336889990010, guid: feaeff6573e321d47b1b6361d636a649, type: 3}
   - {fileID: 9153791257803111669, guid: ade80205208849f4b81c351bfa2b00ee, type: 3}
   - {fileID: 7576993832214102085, guid: 7b3bd3cf63787b242b2e630d5c6e9c56, type: 3}
-  - {fileID: 4910521190490844586, guid: 50e690814bee45f469b5fc429650d50f, type: 3}
-  - {fileID: 3006221015232939605, guid: 04f2fec4563ef3548b76c144f0dcba2e, type: 3}
-  - {fileID: 540416679388096611, guid: 8ee4e2b7227eb98478bd760adda2f8a2, type: 3}
-  - {fileID: 2556368473288227253, guid: ff31187ccc9e77c4d9ef9ea5811d1c8f, type: 3}
-  - {fileID: 6238191515796545444, guid: db3baf3bc0a08df45b61dab505f46fa1, type: 3}
   - {fileID: 6308974878921888494, guid: 7501587ceef06f84c93bffa26ffd95c6, type: 3}
   - {fileID: 3494051588933983443, guid: 493d6af167e5c7948bfdddbea8c31d90, type: 3}
+  - {fileID: 4756173597173087334, guid: 19007f66887d4074fbf76db479abe292, type: 3}
   minDecoPerRoom: 1
   maxDecoPerRoom: 3
 --- !u!114 &455017040245435748

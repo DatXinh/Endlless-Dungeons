@@ -5,10 +5,12 @@ using UnityEngine.Tilemaps;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    public GameObject normalSlimePrefab;
-    public GameObject rareSlimePrefab;
+    [Header("Enemy Prefabs")]
+    public List<GameObject> normalEnemyPrefabs = new List<GameObject>();
+    public List<GameObject> eliteEnemyPrefabs = new List<GameObject>();
 
-    public float rareSlimeChance = 0.1f; // 10% tỉ lệ
+    [Range(0f, 1f)]
+    public float eliteEnemyChance = 0.1f; // 10% tỉ lệ sinh elite enemy
 
     public int minMonsterCount;
     public int maxMonsterCount;
@@ -17,14 +19,9 @@ public class MonsterSpawner : MonoBehaviour
 
     public void SpawnAllMonsters(List<RectInt> rooms, Tilemap tilemap)
     {
-        int specialRoomIndex = Random.Range(1, rooms.Count); // Tránh phòng 0
-        RectInt specialRoom = rooms[specialRoomIndex];
-
-        // Sinh các quái thường trong các phòng còn lại
+        // Sinh quái ở tất cả các phòng trừ phòng đầu tiên (index 0)
         for (int i = 1; i < rooms.Count; i++)
         {
-            if (i == specialRoomIndex) continue; // bỏ qua phòng đặc biệt
-
             RectInt room = rooms[i];
             int monsterCount = Random.Range(minMonsterCount, maxMonsterCount);
 
@@ -36,10 +33,25 @@ public class MonsterSpawner : MonoBehaviour
                 );
 
                 Vector3 world = tilemap.CellToWorld((Vector3Int)pos) + new Vector3(0.5f, 0.5f, 0);
-                GameObject monsterPrefab = Random.Range(0f, 1f) < rareSlimeChance ? rareSlimePrefab : normalSlimePrefab;
-                Instantiate(monsterPrefab, world, Quaternion.identity, enemyParent);
+                GameObject monsterPrefab = null;
+
+                // 10% tỉ lệ sinh elite enemy, 90% sinh normal enemy
+                if (Random.Range(0f, 1f) < eliteEnemyChance && eliteEnemyPrefabs.Count > 0)
+                {
+                    int idx = Random.Range(0, eliteEnemyPrefabs.Count);
+                    monsterPrefab = eliteEnemyPrefabs[idx];
+                }
+                else if (normalEnemyPrefabs.Count > 0)
+                {
+                    int idx = Random.Range(0, normalEnemyPrefabs.Count);
+                    monsterPrefab = normalEnemyPrefabs[idx];
+                }
+
+                if (monsterPrefab != null)
+                {
+                    Instantiate(monsterPrefab, world, Quaternion.identity, enemyParent);
+                }
             }
         }
     }
-
 }
