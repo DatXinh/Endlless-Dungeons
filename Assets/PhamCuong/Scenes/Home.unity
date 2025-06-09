@@ -1197,7 +1197,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3420,7 +3420,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.055721223, y: -0.07800877}
+  m_Offset: {x: -0.112082005, y: -0.47253346}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3430,7 +3430,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.3848414, y: 0.84398246}
+  m_Size: {x: 4.0611696, y: 0.9003434}
   m_EdgeRadius: 0
 --- !u!4 &228624166
 Transform:
@@ -4944,7 +4944,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0398674, y: 0}
+  m_Offset: {x: -0.025776863, y: -0.21135217}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4954,7 +4954,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.3123856, y: 1}
+  m_Size: {x: 3.8478107, y: 0.91545784}
   m_EdgeRadius: 0
 --- !u!4 &701973245
 Transform:
