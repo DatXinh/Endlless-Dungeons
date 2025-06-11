@@ -56,7 +56,7 @@ public class DungeonGenerate : MonoBehaviour
         // mapRange nhỏ hơn nữa, map sẽ rất compact
         // Công thức: mapRange = (maxRoomCount * (maxRoomSize + roomSpacing)) / 4
         int maxRoomSize = Mathf.Max(roomSizeMinMax.x, roomSizeMinMax.y);
-        mapRange = Mathf.CeilToInt((maxRoomCount * (maxRoomSize + roomSpacing)) / 4f);
+        mapRange = Mathf.CeilToInt((maxRoomCount * (maxRoomSize + roomSpacing)) / 6f);
     }
 
     void GenerateRooms()
