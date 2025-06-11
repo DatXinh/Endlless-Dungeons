@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: ed27335dae6e20741a22f5622c7a85f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7086496811803881521
+    second: gif_alien_plant_enemy-sheet_0
+  - first:
+      213: 5647881821094448610
+    second: gif_alien_plant_enemy-sheet_1
+  - first:
+      213: 8871719502811394597
+    second: gif_alien_plant_enemy-sheet_2
+  - first:
+      213: 2184003656838713113
+    second: gif_alien_plant_enemy-sheet_3
+  - first:
+      213: 3874434199611436429
+    second: gif_alien_plant_enemy-sheet_4
+  - first:
+      213: -5642993320169447505
+    second: gif_alien_plant_enemy-sheet_5
+  - first:
+      213: -4883983070097090433
+    second: gif_alien_plant_enemy-sheet_6
+  - first:
+      213: 5304347437974752611
+    second: gif_alien_plant_enemy-sheet_7
+  - first:
+      213: -3259703636021845367
+    second: gif_alien_plant_enemy-sheet_8
+  - first:
+      213: -1253990092818192193
+    second: gif_alien_plant_enemy-sheet_9
+  - first:
+      213: 2644159071308487892
+    second: gif_alien_plant_enemy-sheet_10
+  - first:
+      213: -4220022065818554999
+    second: gif_alien_plant_enemy-sheet_11
+  - first:
+      213: 8562687320999933009
+    second: gif_alien_plant_enemy-sheet_12
+  - first:
+      213: -646229073893873904
+    second: gif_alien_plant_enemy-sheet_13
+  - first:
+      213: -6514358276491637220
+    second: gif_alien_plant_enemy-sheet_14
+  - first:
+      213: -76859005647639990
+    second: gif_alien_plant_enemy-sheet_15
+  - first:
+      213: 2340763590516653483
+    second: gif_alien_plant_enemy-sheet_16
+  - first:
+      213: 2633276817258605319
+    second: gif_alien_plant_enemy-sheet_17
+  - first:
+      213: 7556295186522518968
+    second: gif_alien_plant_enemy-sheet_18
+  - first:
+      213: -4023674501139089745
+    second: gif_alien_plant_enemy-sheet_19
+  - first:
+      213: -9131522949024403457
+    second: gif_alien_plant_enemy-sheet_20
+  - first:
+      213: 4393556275880652284
+    second: gif_alien_plant_enemy-sheet_21
+  - first:
+      213: -1593102242295411885
+    second: gif_alien_plant_enemy-sheet_22
+  - first:
+      213: -2747816502291590538
+    second: gif_alien_plant_enemy-sheet_23
+  - first:
+      213: -6168831161815954514
+    second: gif_alien_plant_enemy-sheet_24
+  - first:
+      213: -677595206988920913
+    second: gif_alien_plant_enemy-sheet_25
+  - first:
+      213: 225394023257933673
+    second: gif_alien_plant_enemy-sheet_26
+  - first:
+      213: 7266404313146311255
+    second: gif_alien_plant_enemy-sheet_27
+  - first:
+      213: 382614764371761729
+    second: gif_alien_plant_enemy-sheet_28
+  - first:
+      213: 2994254129310862628
+    second: gif_alien_plant_enemy-sheet_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1303281fd4b485260800000000000000
+      internalID: 7086496811803881521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed88bfa79e416e40800000000000000
+      internalID: 5647881821094448610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5227af722edae1b70800000000000000
+      internalID: 8871719502811394597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f860a21c32f4e10800000000000000
+      internalID: 2184003656838713113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 63
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8de67d7061c4c530800000000000000
+      internalID: 3874434199611436429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fafd561297f00b1b0800000000000000
+      internalID: -5642993320169447505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7857d1364b983cb0800000000000000
+      internalID: -4883983070097090433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d0db524e3dc9940800000000000000
+      internalID: 5304347437974752611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9826edd40d433c2d0800000000000000
+      internalID: -3259703636021845367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb866bd87aee89ee0800000000000000
+      internalID: -1253990092818192193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc18fe7aa0f1b420800000000000000
+      internalID: 2644159071308487892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d239e2a487f65c0800000000000000
+      internalID: -4220022065818554999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15431fa50c6c4d670800000000000000
+      internalID: 8562687320999933009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017a607c4122807f0800000000000000
+      internalID: -646229073893873904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e071e79a95895a0800000000000000
+      internalID: -6514358276491637220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a259e3421feeef0800000000000000
+      internalID: -76859005647639990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: badb9eb65101c7020800000000000000
+      internalID: 2340763590516653483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b68f740574b8420800000000000000
+      internalID: 2633276817258605319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b53baaef6a5dd860800000000000000
+      internalID: 7556295186522518968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6becb0c590928c0800000000000000
+      internalID: -4023674501139089745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fffa21d3240564180800000000000000
+      internalID: -9131522949024403457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfded84a72c09fc30800000000000000
+      internalID: 4393556275880652284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b8a1583f924e9e0800000000000000
+      internalID: -1593102242295411885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67214f0237bcdd9d0800000000000000
+      internalID: -2747816502291590538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab89900eb8e36aa0800000000000000
+      internalID: -6168831161815954514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa70be1dfb2b896f0800000000000000
+      internalID: -677595206988920913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96709c28ba2c02300800000000000000
+      internalID: 225394023257933673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 0
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752c377493477d460800000000000000
+      internalID: 7266404313146311255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 63
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ad23cd9125f4500800000000000000
+      internalID: 382614764371761729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gif_alien_plant_enemy-sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 0
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d02d0344abd8920800000000000000
+      internalID: 2994254129310862628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gif_alien_plant_enemy-sheet_0: 7086496811803881521
+      gif_alien_plant_enemy-sheet_1: 5647881821094448610
+      gif_alien_plant_enemy-sheet_10: 2644159071308487892
+      gif_alien_plant_enemy-sheet_11: -4220022065818554999
+      gif_alien_plant_enemy-sheet_12: 8562687320999933009
+      gif_alien_plant_enemy-sheet_13: -646229073893873904
+      gif_alien_plant_enemy-sheet_14: -6514358276491637220
+      gif_alien_plant_enemy-sheet_15: -76859005647639990
+      gif_alien_plant_enemy-sheet_16: 2340763590516653483
+      gif_alien_plant_enemy-sheet_17: 2633276817258605319
+      gif_alien_plant_enemy-sheet_18: 7556295186522518968
+      gif_alien_plant_enemy-sheet_19: -4023674501139089745
+      gif_alien_plant_enemy-sheet_2: 8871719502811394597
+      gif_alien_plant_enemy-sheet_20: -9131522949024403457
+      gif_alien_plant_enemy-sheet_21: 4393556275880652284
+      gif_alien_plant_enemy-sheet_22: -1593102242295411885
+      gif_alien_plant_enemy-sheet_23: -2747816502291590538
+      gif_alien_plant_enemy-sheet_24: -6168831161815954514
+      gif_alien_plant_enemy-sheet_25: -677595206988920913
+      gif_alien_plant_enemy-sheet_26: 225394023257933673
+      gif_alien_plant_enemy-sheet_27: 7266404313146311255
+      gif_alien_plant_enemy-sheet_28: 382614764371761729
+      gif_alien_plant_enemy-sheet_29: 2994254129310862628
+      gif_alien_plant_enemy-sheet_3: 2184003656838713113
+      gif_alien_plant_enemy-sheet_4: 3874434199611436429
+      gif_alien_plant_enemy-sheet_5: -5642993320169447505
+      gif_alien_plant_enemy-sheet_6: -4883983070097090433
+      gif_alien_plant_enemy-sheet_7: 5304347437974752611
+      gif_alien_plant_enemy-sheet_8: -3259703636021845367
+      gif_alien_plant_enemy-sheet_9: -1253990092818192193
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

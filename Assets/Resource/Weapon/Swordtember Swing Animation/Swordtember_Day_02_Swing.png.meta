@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 995d08f5a843c02458eec9805f56b494
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7629268658315823909
+    second: Swordtember_Day_02_Swing_0
+  - first:
+      213: -5324298976808126631
+    second: Swordtember_Day_02_Swing_1
+  - first:
+      213: -5636426702472393672
+    second: Swordtember_Day_02_Swing_2
+  - first:
+      213: -985768628498936901
+    second: Swordtember_Day_02_Swing_3
+  - first:
+      213: 6469160517344900882
+    second: Swordtember_Day_02_Swing_4
+  - first:
+      213: 1455723833064918212
+    second: Swordtember_Day_02_Swing_5
+  - first:
+      213: 4222771554808605200
+    second: Swordtember_Day_02_Swing_6
+  - first:
+      213: 1691071287788471297
+    second: Swordtember_Day_02_Swing_7
+  - first:
+      213: 3602549944196765566
+    second: Swordtember_Day_02_Swing_8
+  - first:
+      213: 6955691533643553960
+    second: Swordtember_Day_02_Swing_9
+  - first:
+      213: 8540511787952721902
+    second: Swordtember_Day_02_Swing_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 44
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4701da3946f1690800000000000000
+      internalID: -7629268658315823909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 13
+        width: 44
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95730693a4a4c16b0800000000000000
+      internalID: -5324298976808126631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 13
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c4b94f6c367c1b0800000000000000
+      internalID: -5636426702472393672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 17
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbc89bb7a8d152f0800000000000000
+      internalID: -985768628498936901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_4
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 17
+        width: 52
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2173357273317c950800000000000000
+      internalID: 6469160517344900882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_5
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 17
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc87e80d15c33410800000000000000
+      internalID: 1455723833064918212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_6
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 17
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01aadfb1b5c4a9a30800000000000000
+      internalID: 4222771554808605200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_7
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 17
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1048e766064e77710800000000000000
+      internalID: 1691071287788471297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_8
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 21
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77937d4614def130800000000000000
+      internalID: 3602549944196765566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_9
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 17
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac1406d894978060800000000000000
+      internalID: 6955691533643553960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordtember_Day_02_Swing_10
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 17
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef45f8b83ef58670800000000000000
+      internalID: 8540511787952721902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Swordtember_Day_02_Swing_0: -7629268658315823909
+      Swordtember_Day_02_Swing_1: -5324298976808126631
+      Swordtember_Day_02_Swing_10: 8540511787952721902
+      Swordtember_Day_02_Swing_2: -5636426702472393672
+      Swordtember_Day_02_Swing_3: -985768628498936901
+      Swordtember_Day_02_Swing_4: 6469160517344900882
+      Swordtember_Day_02_Swing_5: 1455723833064918212
+      Swordtember_Day_02_Swing_6: 4222771554808605200
+      Swordtember_Day_02_Swing_7: 1691071287788471297
+      Swordtember_Day_02_Swing_8: 3602549944196765566
+      Swordtember_Day_02_Swing_9: 6955691533643553960
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
