@@ -597,7 +597,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fire 7 preview_0: -3993280922604155471
+      fire 7 preview_1: -2950623360836635997
+      fire 7 preview_10: 4203847873965788861
+      fire 7 preview_11: 8410179555810623909
+      fire 7 preview_12: -7690513270452577241
+      fire 7 preview_13: -7966873241490121819
+      fire 7 preview_14: -8132709477120608897
+      fire 7 preview_15: -1298478114764309796
+      fire 7 preview_16: -7332682256077513614
+      fire 7 preview_17: -3168079498022851306
+      fire 7 preview_18: 8442144253301958480
+      fire 7 preview_2: -7772252215380555713
+      fire 7 preview_3: -7679841756661780684
+      fire 7 preview_4: 128739358534813039
+      fire 7 preview_5: -3193192129820369600
+      fire 7 preview_6: -2013709294499098995
+      fire 7 preview_7: 8160025102267947223
+      fire 7 preview_8: -3624820747939732251
+      fire 7 preview_9: 4990541370344956687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
