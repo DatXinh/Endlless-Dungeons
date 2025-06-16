@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Old_Guardian_spit_effect_0: 5234194349113135434
+      Old_Guardian_spit_effect_1: 6933124521469889615
+      Old_Guardian_spit_effect_2: -6584241117518396147
+      Old_Guardian_spit_effect_3: 1416323573537488070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
