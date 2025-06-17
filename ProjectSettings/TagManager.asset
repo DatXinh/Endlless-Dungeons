@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EndlessDungeon
   - Dungeon
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX
