@@ -6,31 +6,31 @@ public class EnemyWeapon : MonoBehaviour
     public float baseDamage = 10f;
     public float bonusDamage = 5f;
     public float critRate = 0.2f;
+    public float damageCooldown = 2f; 
 
-    private HashSet<GameObject> damagedPlayers = new HashSet<GameObject>();
+    private Dictionary<GameObject, float> lastDamageTime = new Dictionary<GameObject, float>();
 
-    // Gọi cái này mỗi khi enemy bắt đầu đòn đánh mới
-    public void AttackStart()
+    void OnTriggerStay2D(Collider2D other)
     {
-        ResetDamage();
-    }
-
-    private void ResetDamage()
-    {
-        damagedPlayers.Clear();
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && !damagedPlayers.Contains(other.gameObject))
+        if (other.CompareTag("Player"))
         {
-            PlayerHealth player = other.GetComponent<PlayerHealth>();
-            if (player != null)
+            float currentTime = Time.time;
+
+            if (!lastDamageTime.ContainsKey(other.gameObject))
+                lastDamageTime[other.gameObject] = -999f;
+
+            if (currentTime - lastDamageTime[other.gameObject] >= damageCooldown)
             {
-                bool isCrit = Random.value < critRate;
-                DamageInfo damage = new DamageInfo(baseDamage, bonusDamage, isCrit);
-                player.TakeDamage(damage);
-                damagedPlayers.Add(other.gameObject); // nhớ đã đánh rồi
+                PlayerHealth player = other.GetComponent<PlayerHealth>();
+                if (player != null)
+                {
+                    bool isCrit = Random.value < critRate;
+                    DamageInfo damage = new DamageInfo(baseDamage, bonusDamage, isCrit);
+
+                    player.TakeDamage(damage);
+
+                    lastDamageTime[other.gameObject] = currentTime; 
+                }
             }
         }
     }

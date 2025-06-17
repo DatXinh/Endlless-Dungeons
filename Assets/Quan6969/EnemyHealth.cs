@@ -14,7 +14,9 @@ public class EnemyHealth : MonoBehaviour
     {
         float amount = damage.GetTotalDamage();
         currentHP -= amount;
-        Debug.Log($"{gameObject.name} bị đánh {amount} dame. HP còn: {currentHP}");
+        currentHP = Mathf.Clamp(currentHP, 0, maxHP);
+
+        Debug.Log($"{gameObject.name} bị nhận {amount} dame. HP còn lại: {currentHP}");
 
         if (currentHP <= 0)
         {
@@ -25,6 +27,6 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log($"{gameObject.name} đã chết.");
-        Destroy(gameObject);
+        Destroy(gameObject); 
     }
 }
