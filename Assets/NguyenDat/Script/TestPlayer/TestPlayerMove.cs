@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,8 +11,9 @@ public class TestPlayerMove : MonoBehaviour
     public Transform weaponParent;
 
     public float enemyDetectRadius;
-    public LayerMask enemyLayer;
     public bool isEnemyNearby;
+
+    public static readonly List<Transform> allEnemies = new List<Transform>(); // Danh sách enemy toàn cục
 
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -39,6 +41,21 @@ public class TestPlayerMove : MonoBehaviour
         {
 
         }
+
+        // Tìm toàn bộ các Enemy và Boss khi Awake
+        allEnemies.Clear();
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var enemy in enemies)
+        {
+            if (enemy != null)
+                allEnemies.Add(enemy.transform);
+        }
+        GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss");
+        foreach (var boss in bosses)
+        {
+            if (boss != null && !allEnemies.Contains(boss.transform))
+                allEnemies.Add(boss.transform);
+        }
     }
 
     private void OnEnable()
@@ -63,17 +80,18 @@ public class TestPlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = moveInput * moveSpeed;
-        // Tìm enemy gần nhất trong bán kính
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, enemyDetectRadius, enemyLayer);
+
+        // Tìm enemy gần nhất trong bán kính bằng danh sách đã lưu (tối ưu, không FindGameObjectsWithTag)
         Transform nearestEnemy = null;
         float minDist = float.MaxValue;
-        foreach (var hit in hits)
+        foreach (var enemy in allEnemies)
         {
-            float dist = (hit.transform.position - transform.position).sqrMagnitude;
-            if (dist < minDist)
+            if (enemy == null) continue;
+            float dist = (enemy.position - transform.position).sqrMagnitude;
+            if (dist < enemyDetectRadius * enemyDetectRadius && dist < minDist)
             {
                 minDist = dist;
-                nearestEnemy = hit.transform;
+                nearestEnemy = enemy;
             }
         }
         isEnemyNearby = nearestEnemy != null;
@@ -97,10 +115,12 @@ public class TestPlayerMove : MonoBehaviour
         float dir = 0f;
         if (isEnemyNearby && nearestEnemy != null)
         {
+            // Luôn quay về phía enemy gần nhất, bỏ qua hướng di chuyển
             dir = nearestEnemy.position.x - transform.position.x;
         }
         else if (moveInput.x != 0)
         {
+            // Chỉ quay theo hướng di chuyển nếu không có enemy trong tầm
             dir = moveInput.x;
         }
 

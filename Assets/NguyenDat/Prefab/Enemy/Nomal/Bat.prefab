@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1196915536961034912}
   - component: {fileID: 5793670535039660575}
   - component: {fileID: 4045263673272796190}
+  - component: {fileID: 1202480115920074712}
   - component: {fileID: 2756070236283725525}
   m_Layer: 3
   m_Name: Bat
@@ -186,6 +187,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1202480115920074712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220867173273594807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0783612db28a24486f775f414b3c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyID: 
+  enemyName: 
+  enemyDescription: 
+  enemyHP: 0
+  enemySpeed: 0
+  enemyProjectile: {fileID: 0}
+  enemyDamage: 0
+  rangeType: 0
 --- !u!114 &2756070236283725525
 MonoBehaviour:
   m_ObjectHideFlags: 0

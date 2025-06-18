@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3568453029224047019}
   - component: {fileID: 5290301786127633063}
   - component: {fileID: 6940558750796216689}
+  - component: {fileID: 6762748054222650134}
   - component: {fileID: 6733045373853346211}
   m_Layer: 3
   m_Name: CrowW
@@ -206,6 +207,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.93821526, y: 1.693078}
   m_EdgeRadius: 0
+--- !u!114 &6762748054222650134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571989167598489800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0783612db28a24486f775f414b3c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyID: 
+  enemyName: 
+  enemyDescription: 
+  enemyHP: 0
+  enemySpeed: 0
+  enemyProjectile: {fileID: 0}
+  enemyDamage: 0
+  rangeType: 0
 --- !u!114 &6733045373853346211
 MonoBehaviour:
   m_ObjectHideFlags: 0
