@@ -2,140 +2,159 @@
 
 public class DemonAI : MonoBehaviour
 {
-    public float moveSpeed = 3f; // Tốc độ di chuyển của Demon
-    private Transform playerTransform;
+    [Header("Movement Settings")]
+    public float speed; // Tốc độ di chuyển của Demon
+    [Header("Cone Settings")]
+    public float coneAngle = 60f;
+    public float coneLength = 5f;
+    public Vector2 coneDirection = Vector2.left;
 
-    public Transform flipTransform; // Gán transform cần lật trong Inspector
-    public bool isFacingLeft = true; // Biến thể hiện hướng quay hiện tại (true: trái, false: phải)
+    [Header("Detection")]
+    public LayerMask detectionMask;
+    public bool canAttack;
 
-    public Animator animator; // Gán Animator trong Inspector
+    [Header("References")]
+    public Transform flipTransform; // để biết hướng quay
+    public Animator animator;
 
-    // Các biến cho vùng tấn công hình nón
-    public Transform attackOrigin; // Gán điểm gốc tấn công trong Inspector
-    public float attackRange = 3f; // Bán kính vùng tấn công
-    public float attackAngle = 60f; // Góc hình nón tấn công (độ)
+    private Rigidbody2D rb;
+    private GameObject targetPlayer;
+   
 
-    private bool isAttacking = false;
-
-    void Start()
+    void Awake()
     {
-        // Tìm GameObject có tag "Player"
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            playerTransform = player.transform;
-        }
+        rb = GetComponent<Rigidbody2D>();
+        if (animator == null)
+            animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (playerTransform != null)
+        canAttack = CheckPlayerInCone();
+
+        // Nếu phát hiện player → dừng lại và tấn công
+        if (canAttack)
         {
-            // Kiểm tra player có trong vùng tấn công hình nón không
-            bool playerInCone = false;
-            Vector3 origin = attackOrigin != null ? attackOrigin.position : transform.position;
-            Vector3 toPlayer = playerTransform.position - origin;
-            float distanceToPlayer = toPlayer.magnitude;
-
-            if (distanceToPlayer <= attackRange)
+            if (animator != null)
             {
-                Vector3 forward = (flipTransform != null ? flipTransform.right : transform.right) * (isFacingLeft ? -1 : 1);
-                float angleToPlayer = Vector3.Angle(forward, toPlayer);
-                if (angleToPlayer <= attackAngle * 0.5f)
-                {
-                    playerInCone = true;
-                }
-            }
-
-            if (playerInCone)
-            {
-                isAttacking = true;
-                if (animator != null)
-                {
-                    animator.SetBool("IsMoving", false);
-                    animator.SetBool("IsAttacking", true);
-                }
-                // Không di chuyển khi tấn công
-                return;
-            }
-            else
-            {
-                isAttacking = false;
-                if (animator != null)
-                {
-                    animator.SetBool("IsMoving", true);
-                    animator.SetBool("IsAttacking", false);
-                }
-            }
-
-            // Di chuyển về phía người chơi nếu không tấn công
-            Vector3 direction = (playerTransform.position - transform.position).normalized;
-            Vector3 nextPosition = Vector3.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
-            float moveDelta = Vector3.Distance(transform.position, nextPosition);
-            transform.position = nextPosition;
-
-            // Lật ảnh dựa vào hướng di chuyển và cập nhật hướng quay
-            if (flipTransform != null && Mathf.Abs(direction.x) > 0.01f)
-            {
-                Vector3 scale = flipTransform.localScale;
-                if (direction.x < 0)
-                {
-                    scale.x = Mathf.Abs(scale.x);
-                    isFacingLeft = true;
-                }
-                else
-                {
-                    scale.x = -Mathf.Abs(scale.x);
-                    isFacingLeft = false;
-                }
-                flipTransform.localScale = scale;
+                animator.SetBool("IsAttacking", true);
+                animator.SetBool("IsMoving", false);
             }
         }
         else
         {
-            // Nếu không có player, đảm bảo animation dừng lại
             if (animator != null)
-            {
-                animator.SetBool("IsMoving", false);
                 animator.SetBool("IsAttacking", false);
+
+            // Luôn xác định player gần nhất
+            FindNearestPlayer();
+
+            // Tiếp tục đuổi theo player nếu có
+            if (targetPlayer != null)
+            {
+                Vector2 direction = (targetPlayer.transform.position - transform.position).normalized;
+                Vector2 oldPosition = rb.position;
+                Vector2 newPosition = oldPosition + direction * Time.deltaTime * speed; // speed = 3
+                rb.MovePosition(newPosition);
+
+                // Set IsMoving = true nếu thực sự có di chuyển
+                if (animator != null)
+                {
+                    bool isMoving = (newPosition - oldPosition).sqrMagnitude > 0.0001f;
+                    animator.SetTrigger("IsMoving");
+                }
+
+                // Lật hướng nhìn
+                if (flipTransform != null)
+                {
+                    Vector3 scale = flipTransform.localScale;
+                    scale.x = direction.x < 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+                    flipTransform.localScale = scale;
+                }
+
+                // Cập nhật hướng coneDirection theo hướng lật
+                coneDirection = (flipTransform.localScale.x > 0) ? Vector2.left : Vector2.right;
             }
         }
     }
 
-    // Vẽ hình nón vùng tấn công bằng Gizmos
+    // Hàm tìm player gần nhất
+    void FindNearestPlayer()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        float minDist = float.MaxValue;
+        GameObject nearest = null;
+        foreach (GameObject player in players)
+        {
+            float dist = (player.transform.position - transform.position).sqrMagnitude;
+            if (dist < minDist)
+            {
+                minDist = dist;
+                nearest = player;
+            }
+        }
+        targetPlayer = nearest;
+    }
+
+    bool CheckPlayerInCone()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject player in players)
+        {
+            Vector2 toPlayer = (Vector2)(player.transform.position - transform.position);
+            float distance = toPlayer.magnitude;
+            if (distance > coneLength)
+                continue;
+
+            // Kiểm tra góc
+            Vector2 dirNormalized = toPlayer.normalized;
+            Vector2 coneDirWorld = transform.TransformDirection(coneDirection.normalized);
+            float angle = Vector2.Angle(coneDirWorld, dirNormalized);
+            if (angle <= coneAngle * 0.5f)
+            {
+                // Raycast kiểm tra có trúng player không
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, dirNormalized, coneLength, detectionMask);
+                if (hit && hit.collider != null && hit.collider.gameObject == player)
+                {
+                    targetPlayer = player;
+                    return true;
+                }
+            }
+        }
+
+        targetPlayer = null;
+        return false;
+    }
+
     void OnDrawGizmosSelected()
     {
-        if (attackOrigin == null)
-            return;
+        Gizmos.color = Color.yellow;
+        Vector3 origin = transform.position;
+        Vector3 coneDirWorld = transform.TransformDirection(coneDirection.normalized);
 
-        Gizmos.color = Color.red; // Đổi sang màu đỏ tươi
-        Vector3 origin = attackOrigin.position;
+        float halfAngle = coneAngle * 0.5f;
+        Quaternion leftRot = Quaternion.AngleAxis(-halfAngle, Vector3.forward);
+        Quaternion rightRot = Quaternion.AngleAxis(halfAngle, Vector3.forward);
+        Vector3 leftDir = leftRot * coneDirWorld;
+        Vector3 rightDir = rightRot * coneDirWorld;
 
-        // Hướng về phía đang nhìn
-        Vector3 forward = (flipTransform != null ? flipTransform.right : transform.right) * (isFacingLeft ? -1 : 1);
+        Gizmos.DrawLine(origin, origin + coneDirWorld * coneLength);
+        Gizmos.DrawLine(origin, origin + leftDir * coneLength);
+        Gizmos.DrawLine(origin, origin + rightDir * coneLength);
 
-        // Mở rộng tầm thêm 2 đơn vị khi vẽ Gizmos
-        float gizmoRange = attackRange + 3f;
-
+        // Cung hình nón
         int segments = 30;
-        float halfAngle = attackAngle * 0.5f;
-        Quaternion leftRayRotation = Quaternion.AngleAxis(-halfAngle, Vector3.forward);
-        Quaternion rightRayRotation = Quaternion.AngleAxis(halfAngle, Vector3.forward);
-        Vector3 leftRay = leftRayRotation * forward;
-        Vector3 rightRay = rightRayRotation * forward;
-
-        Vector3 prevPoint = origin + leftRay.normalized * gizmoRange;
+        Vector3 prevPoint = origin + leftDir * coneLength;
         for (int i = 1; i <= segments; i++)
         {
-            float lerp = (float)i / segments;
-            float angle = Mathf.Lerp(-halfAngle, halfAngle, lerp);
+            float t = (float)i / segments;
+            float angle = -halfAngle + coneAngle * t;
             Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward);
-            Vector3 dir = rot * forward;
-            Vector3 point = origin + dir.normalized * gizmoRange;
+            Vector3 point = origin + (rot * coneDirWorld) * coneLength;
             Gizmos.DrawLine(prevPoint, point);
-            Gizmos.DrawLine(origin, point);
             prevPoint = point;
         }
     }
+    public GameObject TargetPlayer => targetPlayer;
 }
