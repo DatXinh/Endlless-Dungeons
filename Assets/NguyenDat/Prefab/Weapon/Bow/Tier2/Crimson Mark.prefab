@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 718467270833118050}
   nearestEnemy: {fileID: 0}
+  firePoint: {fileID: 718467270833118050}
   launchForce: 20
 --- !u!1 &7100128621914845798
 GameObject:
@@ -211,7 +211,7 @@ MonoBehaviour:
     kh\xF4ng tho\xE1t kh\u1ECFi m\u0169i t\xEAn t\u1EED th\u1EA7n t\u1EEB c\xE2y
     cung n\xE0y."
   weaponDamage: 0
-  weaponProjectile: {fileID: 7345697511986541768, guid: b041d6e1f5c21c448b4aa64768f8e8ef, type: 3}
+  weaponProjectile: {fileID: 2339974612953374467, guid: da6925a8a0db08d489e047e8d985ef82, type: 3}
   weaponType: 3
 --- !u!114 &5995825795410839314
 MonoBehaviour:

@@ -84,7 +84,7 @@ MonoBehaviour:
     r\xF2ng, c\xE2y cung n\xE0y l\xE0 l\u1EF1a ch\u1ECDn c\u1EE7a nh\u1EEFng s\xE1t
     th\u1EE7 ho\xE0ng gia."
   weaponDamage: 0
-  weaponProjectile: {fileID: 7345697511986541768, guid: b041d6e1f5c21c448b4aa64768f8e8ef, type: 3}
+  weaponProjectile: {fileID: 3926250647381810394, guid: 06c79960cbf5bf544ba94fe783a900b2, type: 3}
   weaponType: 3
 --- !u!114 &7001766348079925076
 MonoBehaviour:
@@ -226,6 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 3103110778455099302}
   nearestEnemy: {fileID: 0}
+  firePoint: {fileID: 3103110778455099302}
   launchForce: 20

@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 3274421240930077933}
   nearestEnemy: {fileID: 0}
+  firePoint: {fileID: 3274421240930077933}
   launchForce: 20
 --- !u!1 &7514586837790412939
 GameObject:
@@ -211,7 +211,7 @@ MonoBehaviour:
     gi\u1EDBi kh\xE1c, c\xE2y cung n\xE0y mang theo quy\u1EC1n n\u0103ng k\u1EF3
     b\xED."
   weaponDamage: 0
-  weaponProjectile: {fileID: 7345697511986541768, guid: b041d6e1f5c21c448b4aa64768f8e8ef, type: 3}
+  weaponProjectile: {fileID: 3151462054325104733, guid: 102f0572377598141a9176402258f610, type: 3}
   weaponType: 3
 --- !u!114 &4944549842683344763
 MonoBehaviour:
