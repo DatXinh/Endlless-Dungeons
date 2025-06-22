@@ -2496,7 +2496,7 @@ TextureImporter:
         width: 27
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2505,6 +2505,28 @@ TextureImporter:
       bones: []
       spriteID: 0695f0c9ed4881542b1fbf80032ffca5
       internalID: -3693930848204076720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32_PixelWeapons_Free_96
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 355
+        width: 26
+        height: 26
+      alignment: 9
+      pivot: {x: 0.71102846, y: 0.70985997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2394f152818ae40b7b9b4bf79860dd
+      internalID: 1307955181
       vertices: []
       indices: 
       edges: []
@@ -2619,6 +2641,7 @@ TextureImporter:
       32x32_PixelWeapons_Free_93: -4270342437081465858
       32x32_PixelWeapons_Free_94: 5999282911430063552
       32x32_PixelWeapons_Free_95: -6350641817422699995
+      32x32_PixelWeapons_Free_96: 1307955181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

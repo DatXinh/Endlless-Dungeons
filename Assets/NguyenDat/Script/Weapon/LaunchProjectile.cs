@@ -2,53 +2,73 @@
 
 public class LaunchProjectile : MonoBehaviour
 {
-    [HideInInspector]
-    public GameObject projectilePrefab;
-
-    private WeaponData weaponData;
+    [HideInInspector] public GameObject projectilePrefab;
+    [HideInInspector] public Transform nearestEnemy;
 
     public Transform firePoint;
-    [HideInInspector]
-    public Transform nearestEnemy;
-
     public float launchForce = 10f;
 
+    private WeaponData weaponData;
     private int projectileDame;
 
     private void Awake()
     {
-        weaponData = GetComponent<WeaponData>();
+        weaponData = GetComponentInParent<WeaponData>();
         projectilePrefab = weaponData.weaponProjectile;
         projectileDame = weaponData.weaponDamage;
+
+        if (projectilePrefab == null)
+            Debug.LogError("Projectile prefab is not assigned in WeaponData.");
     }
-    public void Launch()
+    public void LaunchSingle()
     {
-        // Kiểm tra đủ điều kiện trước khi bắn
         if (projectilePrefab == null || firePoint == null || nearestEnemy == null)
             return;
 
-        // Tính hướng từ điểm bắn đến kẻ địch
+        Vector2 direction = (nearestEnemy.position - firePoint.position).normalized;
+        SpawnProjectile(firePoint.position, direction);
+    }
+
+    public void LaunchDoubleSpread(float spreadAngle = 15f)
+    {
+        if (projectilePrefab == null || firePoint == null || nearestEnemy == null)
+            return;
+
         Vector2 direction = (nearestEnemy.position - firePoint.position).normalized;
 
-        // Tạo projectile
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        Vector2 dirLeft = Quaternion.Euler(0, 0, -spreadAngle) * direction;
+        Vector2 dirRight = Quaternion.Euler(0, 0, spreadAngle) * direction;
+
+        SpawnProjectile(firePoint.position, dirLeft);
+        SpawnProjectile(firePoint.position, dirRight);
+    }
+
+    public void LaunchTripleCone(float spreadAngle = 15f)
+    {
+        if (projectilePrefab == null || firePoint == null || nearestEnemy == null)
+            return;
+
+        Vector2 direction = (nearestEnemy.position - firePoint.position).normalized;
+
+        SpawnProjectile(firePoint.position, direction);
+        SpawnProjectile(firePoint.position, Quaternion.Euler(0, 0, -spreadAngle) * direction);
+        SpawnProjectile(firePoint.position, Quaternion.Euler(0, 0, spreadAngle) * direction);
+    }
+    private GameObject SpawnProjectile(Vector2 position, Vector2 direction)
+    {
+        GameObject projectile = Instantiate(projectilePrefab, position, Quaternion.identity);
 
         // Xoay đầu đạn theo hướng bay
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        // Thêm lực cho projectile
+        // Thêm lực
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = direction * launchForce; // Updated to use linearVelocity
+            rb.linearVelocity = direction * launchForce;
         }
 
-        //// Gửi sát thương nếu projectile có script tương ứng
-        //Projectile projectileScript = projectile.GetComponent<Projectile>();
-        //if (projectileScript != null)
-        //{
-        //    projectileScript.SetDamage(projectileDame);
-        //}
+        return projectile;
     }
 }

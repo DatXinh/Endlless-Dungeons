@@ -22,11 +22,6 @@ public class TestPlayerMove : MonoBehaviour
     public bool isFacingRight = true;
 
     public TestWeaponLockEnemy testWeaponLockEnemy;
-
-    [Header("Projectile Launch")]
-    public LaunchProjectile launchProjectile; // Assign in inspector or via GetComponent
-    public GameObject projectileSpawnPoint;   // Empty GameObject as spawn point
-
     private void Awake()
     {
         inputActions = new InputSystem_Actions();
@@ -36,10 +31,6 @@ public class TestPlayerMove : MonoBehaviour
         if (testWeaponLockEnemy != null)
         {
             testWeaponLockEnemy.playerMove = this;
-        }
-        if (launchProjectile != null)
-        {
-
         }
 
         // Tìm toàn bộ các Enemy và Boss khi Awake

@@ -19,13 +19,8 @@ public class TestWeaponLockEnemy : MonoBehaviour
     void Awake()
     {
         playerMove = GetComponentInParent<TestPlayerMove>();
-        launchProjectile = GetComponent<LaunchProjectile>();
+        launchProjectile = GetComponentInChildren<LaunchProjectile>();
         lastFacingRight = playerMove != null ? playerMove.isFacingRight : true;
-        if (launchProjectile == null)
-        {
-
-        }
-
         // Optional: auto-assign LaserWeapon if not set in inspector
         if (laserWeapon == null)
             laserWeapon = GetComponent<LaserWeapon>();
