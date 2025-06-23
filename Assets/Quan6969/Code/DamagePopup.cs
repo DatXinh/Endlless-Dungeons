@@ -52,7 +52,7 @@ public class DamagePopup : MonoBehaviour
         }
         else
         {
-            damageText.color = Color.white;
+            damageText.color = Color.yellow;
             damageText.fontSize = 30;
         }
 
