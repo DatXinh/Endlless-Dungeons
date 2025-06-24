@@ -4,20 +4,17 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Enemy
-  - Boss
-  - Room
-  - Check
-  - Wall
+  - EndlessDungeon
+  - Dungeon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - 
   - Water
   - UI
-  - Player
-  - Wall
+  - player
+  - wall2
   - 
   - 
   - 
