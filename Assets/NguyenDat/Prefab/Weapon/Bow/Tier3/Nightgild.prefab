@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3245713089110860687}
   - component: {fileID: 2300255390256018668}
-  - component: {fileID: 7001766348079925076}
   m_Layer: 0
   m_Name: Nightgild
   m_TagString: Untagged
@@ -86,22 +85,6 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 3926250647381810394, guid: 06c79960cbf5bf544ba94fe783a900b2, type: 3}
   weaponType: 3
---- !u!114 &7001766348079925076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6754454126528601475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4623f527c8814f41968d4cca9560606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
-  launchProjectile: {fileID: 0}
-  playerMove: {fileID: 0}
-  laserWeapon: {fileID: 0}
 --- !u!1 &8625753311347067553
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  nearestEnemy: {fileID: 0}
   firePoint: {fileID: 3103110778455099302}
+  weaponTransform: {fileID: 3245713089110860687}
   launchForce: 20

@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  nearestEnemy: {fileID: 0}
   firePoint: {fileID: 6123003094599536342}
+  weaponTransform: {fileID: 2245647109435705381}
   launchForce: 20
 --- !u!1 &6033830091480513566
 GameObject:
@@ -137,7 +137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2245647109435705381}
   - component: {fileID: 6342100457662795537}
-  - component: {fileID: 7102279564484127925}
   m_Layer: 0
   m_Name: Royal Dusk
   m_TagString: Untagged
@@ -182,22 +181,6 @@ MonoBehaviour:
   weaponDamage: 5
   weaponProjectile: {fileID: 4999439687539254567, guid: 99f3e17b71eaa1749b7845d90615d69a, type: 3}
   weaponType: 3
---- !u!114 &7102279564484127925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033830091480513566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4623f527c8814f41968d4cca9560606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
-  launchProjectile: {fileID: 0}
-  playerMove: {fileID: 0}
-  laserWeapon: {fileID: 0}
 --- !u!1 &9133355638636719074
 GameObject:
   m_ObjectHideFlags: 0

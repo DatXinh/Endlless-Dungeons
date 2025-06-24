@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  nearestEnemy: {fileID: 0}
   firePoint: {fileID: 8491606423508685415}
+  weaponTransform: {fileID: 3833933610825796824}
   launchForce: 10
 --- !u!1 &4799141085204607449
 GameObject:
@@ -137,7 +137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3833933610825796824}
   - component: {fileID: 6407626027688907665}
-  - component: {fileID: 4766129260827664607}
   m_Layer: 0
   m_Name: Emerald Fang
   m_TagString: Untagged
@@ -181,22 +180,6 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 8582971395896999993, guid: 87c336cc2ff917e4baffc4519110c616, type: 3}
   weaponType: 3
---- !u!114 &4766129260827664607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4799141085204607449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4623f527c8814f41968d4cca9560606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
-  launchProjectile: {fileID: 0}
-  playerMove: {fileID: 0}
-  laserWeapon: {fileID: 0}
 --- !u!1 &6383376720889322552
 GameObject:
   m_ObjectHideFlags: 0

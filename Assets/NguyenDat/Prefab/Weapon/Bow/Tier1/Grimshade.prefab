@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  nearestEnemy: {fileID: 0}
   firePoint: {fileID: 5543939623179801746}
+  weaponTransform: {fileID: 4628236961025214260}
   launchForce: 20
 --- !u!1 &549182639306279501
 GameObject:
@@ -168,7 +168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4628236961025214260}
   - component: {fileID: 9068964151984211365}
-  - component: {fileID: 5840672420905244141}
   m_Layer: 0
   m_Name: Grimshade
   m_TagString: Untagged
@@ -212,19 +211,3 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 8288704198009424880, guid: 5452c57e99b54d74e9d6bbafa9be255c, type: 3}
   weaponType: 3
---- !u!114 &5840672420905244141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3168598535749152838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4623f527c8814f41968d4cca9560606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
-  launchProjectile: {fileID: 0}
-  playerMove: {fileID: 0}
-  laserWeapon: {fileID: 0}

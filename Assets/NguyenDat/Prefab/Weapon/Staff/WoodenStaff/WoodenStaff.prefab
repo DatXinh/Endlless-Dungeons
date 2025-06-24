@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 3587917113662584345}
   - component: {fileID: 5127397353744159522}
   - component: {fileID: 9064522513435234669}
-  - component: {fileID: 7020892301595166197}
   - component: {fileID: 3979772347133402214}
   m_Layer: 0
   m_Name: WoodenStaff
@@ -163,21 +162,6 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 3285054734939882046, guid: 59b561f13dfa7cf42b3866a55383ec3e, type: 3}
   weaponType: 4
---- !u!114 &7020892301595166197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9196884388127578162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4623f527c8814f41968d4cca9560606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
-  launchProjectile: {fileID: 0}
-  playerMove: {fileID: 0}
 --- !u!114 &3979772347133402214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,5 +176,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 5199771111005897618}
-  nearestEnemy: {fileID: 0}
   launchForce: 10

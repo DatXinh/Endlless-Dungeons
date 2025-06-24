@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  nearestEnemy: {fileID: 0}
   firePoint: {fileID: 1340249511533350720}
+  weaponTransform: {fileID: 2210742973232086796}
   launchForce: 20
 --- !u!1 &5539300964042157357
 GameObject:
@@ -168,7 +168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2210742973232086796}
   - component: {fileID: 6464994532375123737}
-  - component: {fileID: 6797739667626434799}
   m_Layer: 0
   m_Name: Dawnsreach
   m_TagString: Untagged
@@ -213,19 +212,3 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 2720985773018310271, guid: 42990a4f561204e41bdba6c9ccfdae5e, type: 3}
   weaponType: 3
---- !u!114 &6797739667626434799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539300964042157357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4623f527c8814f41968d4cca9560606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
-  launchProjectile: {fileID: 0}
-  playerMove: {fileID: 0}
-  laserWeapon: {fileID: 0}
