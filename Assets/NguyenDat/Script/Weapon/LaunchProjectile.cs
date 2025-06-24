@@ -11,6 +11,8 @@ public class LaunchProjectile : MonoBehaviour
     private WeaponData weaponData;
     private int projectileDame;
 
+    public AudioSource audioSource;
+
     private void Awake()
     {
         weaponData = GetComponentInParent<WeaponData>();
@@ -26,6 +28,10 @@ public class LaunchProjectile : MonoBehaviour
 
         Vector2 direction = weaponTransform.right.normalized;
         SpawnProjectile(firePoint.position, direction);
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 
     public void LaunchDoubleSpread(float spreadAngle = 15f)
@@ -40,6 +46,10 @@ public class LaunchProjectile : MonoBehaviour
 
         SpawnProjectile(firePoint.position, dirLeft);
         SpawnProjectile(firePoint.position, dirRight);
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 
     public void LaunchTripleCone(float spreadAngle = 15f)
@@ -52,6 +62,10 @@ public class LaunchProjectile : MonoBehaviour
         SpawnProjectile(firePoint.position, baseDir);
         SpawnProjectile(firePoint.position, Quaternion.Euler(0, 0, -spreadAngle) * baseDir);
         SpawnProjectile(firePoint.position, Quaternion.Euler(0, 0, spreadAngle) * baseDir);
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 
     private GameObject SpawnProjectile(Vector2 position, Vector2 direction)
