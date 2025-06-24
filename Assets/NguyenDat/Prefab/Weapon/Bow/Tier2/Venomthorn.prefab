@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4304900895204079890}
   - component: {fileID: 6544596310668379776}
   - component: {fileID: 404865628031351830}
+  - component: {fileID: -6099772440166960802}
   m_Layer: 0
   m_Name: Venomthorn
   m_TagString: Untagged
@@ -151,7 +152,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -194,3 +195,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6099772440166960802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582971395896999993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

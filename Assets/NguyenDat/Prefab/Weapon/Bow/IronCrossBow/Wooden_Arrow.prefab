@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6367636919277666365}
   - component: {fileID: 4061556485677944256}
   - component: {fileID: 3262261198543411010}
+  - component: {fileID: -7647347261902173611}
   m_Layer: 0
   m_Name: Wooden_Arrow
   m_TagString: Untagged
@@ -162,3 +163,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-7647347261902173611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345697511986541768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

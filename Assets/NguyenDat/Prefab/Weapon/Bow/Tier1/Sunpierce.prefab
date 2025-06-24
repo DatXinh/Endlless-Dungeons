@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5663788341351766478}
   - component: {fileID: 4297640212860421653}
   - component: {fileID: 8781446311072940270}
+  - component: {fileID: 7903764996053933008}
   m_Layer: 0
   m_Name: Sunpierce
   m_TagString: Untagged
@@ -64,7 +65,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -107,6 +108,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7903764996053933008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720985773018310271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8316164092188450724
 GameObject:
   m_ObjectHideFlags: 0
