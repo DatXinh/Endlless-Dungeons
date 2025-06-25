@@ -62,6 +62,14 @@ public class JoystickAttackAndAim : MonoBehaviour, IDragHandler, IPointerDownHan
         aimDirection = Vector2.zero;
         joystickHandle.anchoredPosition = Vector2.zero;
 
+        if (weaponTransform != null)
+            weaponTransform.rotation = Quaternion.identity;
+
+        if (weaponTransform != null)
+        {
+            weaponTransform.localScale = Vector3.one;
+        }
+
         if (weaponAtk != null)
             weaponAtk.AttackEnd();
     }
