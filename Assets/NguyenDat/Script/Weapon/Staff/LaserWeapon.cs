@@ -5,10 +5,9 @@ public class LaserWeapon : MonoBehaviour
     [Header("References")]
     public LineRenderer lineRenderer;
     public Transform startPoint;
-    public Transform nearestEnemy;
 
     [Header("Laser Settings")]
-    public float maxLaserLength = 1000f;
+    public float maxLaserLength = 25f;
     public float damage = 10f;
     public LayerMask hitMask;
 
@@ -21,24 +20,13 @@ public class LaserWeapon : MonoBehaviour
             UpdateLaser();
         }
     }
-
-    /// <summary>
-    /// Gọi để bắt đầu bắn laser. Sẽ bỏ qua nếu đã đang bắn.
-    /// </summary>
     public void StartFiring()
     {
-        if(nearestEnemy != null)
-        {
-            if (isFiring) return;
-            isFiring = true;
-            lineRenderer.enabled = true;
-            UpdateLaser();
-        }
+        if (isFiring) return;
+        isFiring = true;
+        lineRenderer.enabled = true;
+        UpdateLaser();
     }
-
-    /// <summary>
-    /// Gọi để dừng bắn laser. Sẽ bỏ qua nếu đã tắt.
-    /// </summary>
     public void StopFiring()
     {
         if (!isFiring) return;

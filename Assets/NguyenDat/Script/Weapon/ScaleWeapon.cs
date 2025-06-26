@@ -4,10 +4,12 @@ public class ScaleWeapon : MonoBehaviour
 {
     private TestPlayerMove testPlayerMove;
     public JoystickAttackAndAim joystickAttackAndAim;
+    public WeaponData weaponData;
 
     private void Awake()
     {
         testPlayerMove = GetComponentInParent<TestPlayerMove>();
+        weaponData = GetComponentInChildren<WeaponData>();
     }
 
     private void Update()
@@ -18,8 +20,22 @@ public class ScaleWeapon : MonoBehaviour
         if (joystickAttackAndAim.IsHolding)
         {
             Vector3 scale = transform.localScale;
-            scale.x = testPlayerMove.isFacingRight ? 1 : -1;
-            transform.localScale = scale;
+            if (weaponData.weaponType == WeaponType.Sword || weaponData.weaponType == WeaponType.MagicStaff)
+            {
+                scale.x = testPlayerMove.isFacingRight ? 1 : -1;
+                scale.y = testPlayerMove.isFacingRight ? 1 : -1;
+                transform.localScale = scale;
+            }
+            else if (weaponData.weaponType == WeaponType.Bow)
+            {
+                scale.x = testPlayerMove.isFacingRight ? 1 : -1;
+                transform.localScale = scale;
+            }
+            else
+            {
+                return;
+            }
+            
         }
     }
 }

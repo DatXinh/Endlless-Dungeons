@@ -23,12 +23,4 @@ public class TestWeaponAtk : MonoBehaviour
         }
         animator.SetTrigger("Atk");
     }
-    public void AttackEnd()
-    {
-        if (animator == null)
-        {
-            return;
-        }
-        animator.SetTrigger("Atk");
-    }
 }

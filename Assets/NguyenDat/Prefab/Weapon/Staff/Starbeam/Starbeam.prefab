@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 889400151096107681}
   - component: {fileID: 6095548947867158632}
   - component: {fileID: 6462653797733856078}
-  - component: {fileID: 4819256219385137960}
   - component: {fileID: 4343209921574348454}
   m_Layer: 0
   m_Name: Starbeam
@@ -249,21 +248,6 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 4
---- !u!114 &4819256219385137960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017520202438690922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4623f527c8814f41968d4cca9560606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearestEnemy: {fileID: 0}
-  launchProjectile: {fileID: 0}
-  playerMove: {fileID: 0}
 --- !u!114 &4343209921574348454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 6095548947867158632}
   startPoint: {fileID: 1606634468391162016}
-  maxLaserLength: 1000
+  maxLaserLength: 25
   damage: 10
   hitMask:
     serializedVersion: 2
