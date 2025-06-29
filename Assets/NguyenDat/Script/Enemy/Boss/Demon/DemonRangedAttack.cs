@@ -50,21 +50,25 @@ public class DemonRangedAttack : MonoBehaviour
 
         float roll = Random.value;
 
-        if (roll < 0.40f)
+        if (roll < 0.30f)
         {
             FireBullet(firePoint.position, direction, bulletPrefab, bulletSpeed); // Đạn đơn
         }
-        else if (roll < 0.65f)
+        else if (roll < 0.55f)
         {
             FireSpread(direction); // Đạn 3 hướng
         }
-        else if (roll < 0.80f)
+        else if (roll < 0.75f)
         {
             FireRain(rainBulletCount, rainSpreadWidth); // Mưa đạn
         }
-        else
+        else if (roll < 0.90f)
         {
             FireRadial(radialBulletCount); // Vòng tròn
+        }
+        else
+        {
+            FireChargedShot(direction); // Đạn đặc biệt mới
         }
     }
 
@@ -76,7 +80,7 @@ public class DemonRangedAttack : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = direction * speed; // Updated to use linearVelocity
+            rb.linearVelocity = direction * speed;
         }
     }
 
@@ -102,20 +106,34 @@ public class DemonRangedAttack : MonoBehaviour
         }
     }
 
+    // Cải tiến: Mỗi viên đạn mưa cách nhau 1-2 đơn vị, đều nhau
     void FireRain(int count, float spreadWidth)
     {
         if (demonAI == null || demonAI.TargetPlayer == null)
             return;
 
         Vector2 playerPos = demonAI.TargetPlayer.transform.position;
-        float spawnY = playerPos.y + 6f; // Chiều cao sinh đạn (có thể cho vào [Header] nếu muốn điều chỉnh ngoài Inspector)
+        float spawnY = playerPos.y + 6f;
+
+        // Tính toán khoảng cách đều nhau trong khoảng spreadWidth
+        float minSpacing = 1f;
+        float maxSpacing = 2f;
+        float totalWidth = Mathf.Clamp((count - 1) * minSpacing, 0, spreadWidth * 2);
+        float actualSpacing = Mathf.Min(maxSpacing, Mathf.Max(minSpacing, totalWidth / (count - 1)));
+        float startX = playerPos.x - (actualSpacing * (count - 1)) / 2f;
 
         for (int i = 0; i < count; i++)
         {
-            float offsetX = Random.Range(-spreadWidth, spreadWidth);
-            Vector2 spawnPos = new Vector2(playerPos.x + offsetX, spawnY);
+            float spawnX = startX + i * actualSpacing;
+            Vector2 spawnPos = new Vector2(spawnX, spawnY);
             FireBullet(spawnPos, Vector2.down, bulletPrefab, bulletSpeed * 0.8f);
         }
     }
 
+    // Thêm phương thức tấn công mới: Đạn đặc biệt (charged shot)
+    void FireChargedShot(Vector2 direction)
+    {
+        if (chargedBulletPrefab == null) return;
+        FireBullet(firePoint.position, direction, chargedBulletPrefab, bulletSpeed * 1.5f);
+    }
 }
