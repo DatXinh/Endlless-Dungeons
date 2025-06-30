@@ -203,7 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Dawn Light
-  weaponDescription: 
+  weaponDescription: "Ch\u1EB3ng r\u1EA1ng ng\u1EDDi nh\u01B0 \xE1nh b\xECnh minh
+    nh\u01B0ng v\u1EABn \u0111\u1EE7 \u0111\u1EC3 xua tan b\xF3ng t\u1ED1i."
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1

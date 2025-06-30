@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Bonk
-  weaponDescription: 
+  weaponDescription: "Nh\u01B0 c\xE1i t\xEAn c\u1EE7a n\xF3 . Bonk."
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1

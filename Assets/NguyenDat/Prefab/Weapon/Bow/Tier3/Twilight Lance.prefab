@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 6991665026675823445}
   - component: {fileID: 1639298856630507314}
   - component: {fileID: 6701283655671869262}
-  - component: {fileID: 1931964781105474123}
   - component: {fileID: 7872638270469921318}
   m_Layer: 0
   m_Name: Twilight Lance
@@ -196,20 +195,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1931964781105474123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4999439687539254567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsPlayer: 0
-  IsEnemy: 0
 --- !u!114 &7872638270469921318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +209,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayer: 1
   IsEnemy: 0
+  canPierce: 1

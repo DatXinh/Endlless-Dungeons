@@ -158,7 +158,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 8203762884774936976}
   weaponTransform: {fileID: 3083181334303399685}
-  launchForce: 10
+  launchForce: 25
   audioSource: {fileID: 0}
 --- !u!68 &2093129472788301209
 EdgeCollider2D:

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4533505298913466858}
   - component: {fileID: 833345893849322459}
   - component: {fileID: 4348385956552486452}
-  - component: {fileID: 7862506563908027554}
   - component: {fileID: 5581578964162004984}
   m_Layer: 0
   m_Name: Voidshard
@@ -109,20 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7862506563908027554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3151462054325104733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsPlayer: 0
-  IsEnemy: 0
 --- !u!114 &5581578964162004984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayer: 1
   IsEnemy: 0
+  canPierce: 1
 --- !u!1 &3897308803619230548
 GameObject:
   m_ObjectHideFlags: 0

@@ -173,7 +173,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 1508952468525852741}
   weaponTransform: {fileID: 4969164413139272065}
-  launchForce: 10
+  launchForce: 9
   audioSource: {fileID: 0}
 --- !u!1 &4848108581353277089
 GameObject:

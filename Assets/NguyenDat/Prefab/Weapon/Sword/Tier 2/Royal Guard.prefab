@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Royal Guard
-  weaponDescription: 
+  weaponDescription: "Th\u1EE9 ho\xE0n h\u1EA3o kh\xF4ng h\u1EC1 t\u1ED3n t\u1EA1i
+    . Ch\u1EAFc v\u1EADy."
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1

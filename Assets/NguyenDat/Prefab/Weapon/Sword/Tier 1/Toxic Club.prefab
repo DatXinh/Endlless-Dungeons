@@ -170,6 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5071636110311873280}
+  - component: {fileID: 3836255448987917938}
   m_Layer: 0
   m_Name: Toxic Club
   m_TagString: Untagged
@@ -193,3 +194,22 @@ Transform:
   - {fileID: 7771052875729957834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3836255448987917938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530292883726630243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fa63ed227014e41bfa2706dcd49cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: 
+  weaponName: Toxic Club
+  weaponDescription: "M\u1ED9t c\xE2y ch\xF9y \u0111\u01B0\u1EE3c t\u1EA9m \u0111\u1ED9c
+    . \u0110\u01A1n gi\u1EA3n v\xE0 hi\u1EC7u qu\u1EA3."
+  weaponDamage: 0
+  weaponProjectile: {fileID: 0}
+  weaponType: 1

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6289332505743515937}
+  - component: {fileID: 5928757811910511910}
   m_Layer: 0
   m_Name: Mid Night
   m_TagString: Untagged
@@ -32,6 +33,25 @@ Transform:
   - {fileID: 1133305013497206744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5928757811910511910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198528725285002237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fa63ed227014e41bfa2706dcd49cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: 
+  weaponName: Mid Night
+  weaponDescription: "\u0110en nh\u01B0 \u0111\xEAm t\u1ED1i hay m\xE1u c\u1EE7a
+    k\u1EBB th\xF9."
+  weaponDamage: 0
+  weaponProjectile: {fileID: 0}
+  weaponType: 1
 --- !u!1 &8993955156583259076
 GameObject:
   m_ObjectHideFlags: 0

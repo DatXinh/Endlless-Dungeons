@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Butcher
-  weaponDescription: 
+  weaponDescription: "M\u1ED5 s\u1EBB t\xE0n nh\u1EABn hay c\xE1i ch\u1EBFt nhanh
+    g\u1ECDn ? T\xF9y ng\u01B0\u1EDDi."
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
