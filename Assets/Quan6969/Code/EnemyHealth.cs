@@ -4,6 +4,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float maxHP = 50f;
     private float currentHP;
+    public bool isInvulnerable = false;
 
     void Start()
     {
