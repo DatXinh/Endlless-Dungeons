@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
+  IsEnemy: 0
 --- !u!114 &4947423654928803357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +222,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 1
+  IsEnemy: 0

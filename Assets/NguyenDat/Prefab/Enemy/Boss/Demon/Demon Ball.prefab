@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3826801581558271807}
   - component: {fileID: 2824004170280418875}
   - component: {fileID: 5513972605875759238}
+  - component: {fileID: 4442653432218958067}
   m_Layer: 0
   m_Name: Demon Ball
   m_TagString: Untagged
@@ -152,3 +153,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4442653432218958067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972998922872500638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayer: 0
+  IsEnemy: 1

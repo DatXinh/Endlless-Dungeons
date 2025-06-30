@@ -74,9 +74,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5
-    functionName: LaunchTripleCone
+    functionName: LaunchRandomSpread
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
-    intParameter: 0
+    floatParameter: 0
+    intParameter: 24
     messageOptions: 0

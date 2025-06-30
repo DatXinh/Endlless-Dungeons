@@ -2,21 +2,23 @@
 
 public class AutoDestroy : MonoBehaviour
 {
+    [Header("Projectile Identity")]
+    public bool IsPlayer = false;
+    public bool IsEnemy = false;
     // Tự hủy khi chạm vào Wall, Enemy hoặc Boss
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Wall") || collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+        else if (IsPlayer && (collision.CompareTag("Enemy") || collision.CompareTag("Boss")))
+        {
+            Destroy(gameObject);
+        }
+        else if (IsEnemy && collision.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
     }
-
-    // Nếu dùng va chạm vật lý thay vì trigger, có thể dùng hàm này:
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("Boss"))
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
 }
