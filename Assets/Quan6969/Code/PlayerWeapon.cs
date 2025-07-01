@@ -12,7 +12,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")|| other.CompareTag("Boss"))
         {
             float currentTime = Time.time;
 

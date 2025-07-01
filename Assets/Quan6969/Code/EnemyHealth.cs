@@ -3,7 +3,7 @@
 public class EnemyHealth : MonoBehaviour
 {
     public float maxHP = 50f;
-    private float currentHP;
+    public float currentHP;
     public bool isInvulnerable = false;
 
     void Start()
@@ -29,5 +29,9 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} đã chết.");
         Destroy(gameObject); 
+    }
+    public float GetHealthPercent()
+    {
+        return (currentHP / maxHP) * 100f;
     }
 }

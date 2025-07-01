@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5cbb4a781c6d4274589ddb64b82bca75
+guid: 0ed0668eda9dabc4f85f878d961304b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8294647502106916959
-    second: Murasama_(Sheathed)_0
+      213: 3856284405194435764
+    second: Ice_Bomb_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Murasama_(Sheathed)_0
+      name: Ice_Bomb_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 128
-        height: 126
+        y: 0
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a706d33b0e73ec80800000000000000
-      internalID: -8294647502106916959
+      spriteID: 4bc2e7c2c36448530800000000000000
+      internalID: 3856284405194435764
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a6753a6d42830e146b19912ef84806eb
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Murasama_(Sheathed)_0: -8294647502106916959
+      Ice_Bomb_0: 3856284405194435764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

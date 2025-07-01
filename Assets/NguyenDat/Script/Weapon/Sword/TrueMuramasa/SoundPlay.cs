@@ -1,14 +1,8 @@
 using UnityEngine;
 
-public class CheckCollider : MonoBehaviour
+public class SoundPlay: MonoBehaviour
 {
-    private WeaponSoundController soundController;
-
-    private void Awake()
-    {
-        // Ensure the WeaponSoundController is attached to the same GameObject
-        soundController = GetComponent<WeaponSoundController>();
-    }
+    public WeaponSoundController soundController;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
