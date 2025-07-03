@@ -6,6 +6,11 @@ TagManager:
   tags:
   - EndlessDungeon
   - Dungeon
+  - Boss
+  - Enemy
+  - Room
+  - Wall
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -13,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - player
-  - wall2
-  - 
+  - Player
+  - Enemy
+  - Wall
   - 
   - 
   - 
