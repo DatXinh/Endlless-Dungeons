@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9170121367882646864}
   - component: {fileID: 7549000410854011813}
+  - component: {fileID: -1907742943680308188}
   m_Layer: 0
   m_Name: Glass Pain
   m_TagString: Untagged
@@ -53,6 +54,18 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
+--- !u!114 &-1907742943680308188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579230444333726614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8292908805432043625
 GameObject:
   m_ObjectHideFlags: 0

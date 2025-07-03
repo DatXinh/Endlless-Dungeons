@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5948340974274623558}
   - component: {fileID: 826605085383989166}
+  - component: {fileID: -5748668727625144462}
   m_Layer: 0
   m_Name: Piercer
   m_TagString: Untagged
@@ -51,6 +52,18 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
+--- !u!114 &-5748668727625144462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740544398467360445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2838557787675152870
 GameObject:
   m_ObjectHideFlags: 0

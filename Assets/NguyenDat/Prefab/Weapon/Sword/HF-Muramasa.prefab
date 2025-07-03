@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 6762146350866560592}
   - component: {fileID: 8830886841787933650}
   - component: {fileID: 5522993339405108636}
+  - component: {fileID: 8877066392242729789}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -635,3 +636,15 @@ MonoBehaviour:
   bonusDamage: 5
   critRate: 0.98
   damageCooldown: 1.5
+--- !u!114 &8877066392242729789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345851941391436064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

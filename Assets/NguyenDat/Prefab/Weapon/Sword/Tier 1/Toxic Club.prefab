@@ -171,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5071636110311873280}
   - component: {fileID: 3836255448987917938}
+  - component: {fileID: 7760043270630137240}
   m_Layer: 0
   m_Name: Toxic Club
   m_TagString: Untagged
@@ -213,3 +214,15 @@ MonoBehaviour:
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
+--- !u!114 &7760043270630137240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530292883726630243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

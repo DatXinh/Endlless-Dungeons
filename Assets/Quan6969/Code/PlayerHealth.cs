@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHP = 100f;
-    private float currentHP;
+    public float currentHP;
 
     [Header("Thanh máu")]
     public Image healthBarFill; // Kéo Image vào đây

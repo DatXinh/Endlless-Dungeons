@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5810043448041673790}
   - component: {fileID: 7396307498450811527}
   - component: {fileID: 6742070444236994353}
+  - component: {fileID: 6354299792003179458}
   m_Layer: 0
   m_Name: Ice Bomb
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,5 +167,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 1.75
-  bulletPrefab: {fileID: 1129415452072985522, guid: 515fad1cebde3bb4483bb0a6321f686d, type: 3}
+  bulletPrefab: {fileID: 8259940307784442884, guid: 630608ea2730d8c40a285986c03882f0, type: 3}
   bulletSpeed: 10
+--- !u!114 &6354299792003179458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359254430188989679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22117b29bf4fc614f97c5c7f72b93f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destroyable: 1

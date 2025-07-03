@@ -156,7 +156,7 @@ MonoBehaviour:
   moveSpeedPhase5: 6
   dashSpeed: 12
   dashSpeedPhase6: 20
-  iceBulletPrefab: {fileID: 1129415452072985522, guid: 515fad1cebde3bb4483bb0a6321f686d, type: 3}
+  iceBulletPrefab: {fileID: 8259940307784442884, guid: 630608ea2730d8c40a285986c03882f0, type: 3}
   crystalShardPrefab: {fileID: 1129415452072985522, guid: 515fad1cebde3bb4483bb0a6321f686d, type: 3}
   iceBombPrefab: {fileID: 359254430188989679, guid: 0d4bb12d6791aff4abc8b4159aa15f6b, type: 3}
   bulletSpeed: 10
