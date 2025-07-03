@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6080846361308661789}
   - component: {fileID: 8914734853616872001}
   - component: {fileID: 247880460002850706}
+  - component: {fileID: 1436118001446244559}
+  - component: {fileID: 8117422956155750440}
   m_Layer: 0
   m_Name: Slime Ball_0
   m_TagString: Untagged
@@ -165,3 +167,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b689169ac552341857bd9e4f4a97af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1436118001446244559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706263220497451186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22117b29bf4fc614f97c5c7f72b93f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destroyable: 1
+--- !u!114 &8117422956155750440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706263220497451186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayer: 0
+  IsEnemy: 1
+  canPierce: 1
+  lifeTime: 5
