@@ -233,3 +233,4 @@ MonoBehaviour:
   IsPlayer: 1
   IsEnemy: 0
   canPierce: 1
+  lifeTime: 3

@@ -113,6 +113,7 @@ MonoBehaviour:
   IsPlayer: 1
   IsEnemy: 0
   canPierce: 0
+  lifeTime: 3
 --- !u!1 &3848212744593908827
 GameObject:
   m_ObjectHideFlags: 0

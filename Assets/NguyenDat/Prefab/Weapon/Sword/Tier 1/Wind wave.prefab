@@ -50,6 +50,7 @@ MonoBehaviour:
   IsPlayer: 1
   IsEnemy: 0
   canPierce: 1
+  lifeTime: 3
 --- !u!61 &6822263585469685292
 BoxCollider2D:
   m_ObjectHideFlags: 0

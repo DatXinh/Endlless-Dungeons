@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2823308060712484249}
   - component: {fileID: 4173675411215198113}
   - component: {fileID: 3531973430460337107}
+  - component: {fileID: -4240103161297611195}
   m_Layer: 0
   m_Name: Fire ball
   m_TagString: Untagged
@@ -113,6 +114,20 @@ MonoBehaviour:
   IsPlayer: 1
   IsEnemy: 0
   canPierce: 0
+  lifeTime: 3
+--- !u!114 &-4240103161297611195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356007746013892179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 7216000513381312700, guid: 8bc3cb6a2a3995c4a90ae7c25c273eec, type: 3}
 --- !u!1 &5315768280202592032
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 5675175844415017797, guid: 1622607f1d2310743a4734f99c2b9539, type: 3}
+  m_Sprite: {fileID: 1565550271083794617, guid: 0c165b4d4a26abd42800523d2286948e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

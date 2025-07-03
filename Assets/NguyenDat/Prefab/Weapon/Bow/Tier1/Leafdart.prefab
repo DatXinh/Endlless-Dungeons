@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayer: 1
   IsEnemy: 0
+  canPierce: 0
+  lifeTime: 3
 --- !u!1 &7594336165444313051
 GameObject:
   m_ObjectHideFlags: 0
