@@ -109,7 +109,7 @@ public class FrozenSoul : MonoBehaviour
     {
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 12);
+            ShootCircle(iceBulletPrefab, 18);
             yield return new WaitForSeconds(2f);
         }
     }
@@ -120,7 +120,7 @@ public class FrozenSoul : MonoBehaviour
             crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 16);
+            ShootCircle(iceBulletPrefab, 20);
             yield return new WaitForSeconds(1.5f);
         }
     }
@@ -131,14 +131,14 @@ public class FrozenSoul : MonoBehaviour
             crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 13);
+            ShootCircle(iceBulletPrefab, 22);
             yield return new WaitForSeconds(1.2f);
 
             Vector3 spawnPos = player.position + Vector3.up * 8f;
             GameObject bomb = Instantiate(iceBombPrefab, spawnPos, Quaternion.identity);
             bomb.GetComponent<Rigidbody2D>().linearVelocity = Vector2.down * 5f;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.25f);
         }
     }
 
@@ -159,13 +159,13 @@ public class FrozenSoul : MonoBehaviour
                 transform.position += direction * dashSpeed * Time.deltaTime;
 
                 if (elapsed == 0f)
-                    ShootCircle(iceBulletPrefab, 14);
+                    ShootCircle(iceBulletPrefab, 24);
 
                 elapsed += Time.deltaTime;
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.75f);
         }
     }
 
@@ -177,14 +177,14 @@ public class FrozenSoul : MonoBehaviour
 
         while (true)
         {
-            ShootCircle(iceBulletPrefab,15);
+            ShootCircle(iceBulletPrefab,24);
 
             // Rơi ice bomb tăng độ loạn
             Vector3 spawnPos = player.position + Vector3.up * 7f + (Vector3)Random.insideUnitCircle * 2f;
             GameObject bomb = Instantiate(iceBombPrefab, spawnPos, Quaternion.identity);
             bomb.GetComponent<Rigidbody2D>().linearVelocity = Vector2.down * 6f;
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -196,7 +196,7 @@ public class FrozenSoul : MonoBehaviour
         {
             Vector3 direction = (player.position - transform.position).normalized;
 
-            float dashTime = 1.2f;
+            float dashTime = 1f;
             float elapsed = 0f;
 
             while (elapsed < dashTime)
@@ -204,13 +204,13 @@ public class FrozenSoul : MonoBehaviour
                 transform.position += direction * dashSpeedPhase6 * Time.deltaTime;
 
                 if (elapsed == 0f)
-                    ShootCircle(iceBulletPrefab, 16);
+                    ShootCircle(iceBulletPrefab, 24);
 
                 elapsed += Time.deltaTime;
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.75f);
         }
     }
 
