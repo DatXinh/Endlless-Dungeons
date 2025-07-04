@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4752888583506365958}
   - component: {fileID: 7965370160531767923}
   - component: {fileID: 455017040245435748}
+  - component: {fileID: 1413169465051425519}
   m_Layer: 0
   m_Name: NomalGrid
   m_TagString: Untagged
@@ -112,6 +113,18 @@ MonoBehaviour:
   maxMonsterCount: 5
   groundTilemap: {fileID: 3492663833303569959}
   enemyParent: {fileID: 3229131340919828191}
+--- !u!114 &1413169465051425519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993602093434917044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d989327364ccdb4aaa4e6544be23384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1504358294887634550
 GameObject:
   m_ObjectHideFlags: 0
