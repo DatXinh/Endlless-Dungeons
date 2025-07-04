@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3035202583964122744, guid: e471f98c0ee93214891704b3da37a46c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8451479648598925902, guid: e471f98c0ee93214891704b3da37a46c, type: 3}
       propertyPath: monsterPrefabs.Array.size
       value: 3
