@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5871749292706585159}
   - component: {fileID: 3940518007005518912}
   - component: {fileID: 5941943424303387003}
+  - component: {fileID: -794270794147562569}
   m_Layer: 0
   m_Name: VoidBarieExplosion
   m_TagString: Untagged
@@ -189,3 +190,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 1.5
+--- !u!114 &-794270794147562569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167336790067339163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5

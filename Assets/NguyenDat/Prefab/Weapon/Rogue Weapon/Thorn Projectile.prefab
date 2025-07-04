@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 5360506186398471400}
   - component: {fileID: 2739168447838151738}
   - component: {fileID: 2443969671069257334}
+  - component: {fileID: -2088381109951656842}
   m_Layer: 0
   m_Name: Thorn Projectile
   m_TagString: Untagged
@@ -207,3 +208,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
+  IsEnemy: 0
+  canPierce: 0
+  lifeTime: 1
+--- !u!114 &-2088381109951656842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4881574000866233497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5

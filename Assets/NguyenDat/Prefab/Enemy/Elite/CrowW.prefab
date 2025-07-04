@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2317585550935535898}
   - component: {fileID: 3568453029224047019}
   - component: {fileID: 5290301786127633063}
-  - component: {fileID: 6940558750796216689}
   - component: {fileID: 6762748054222650134}
   - component: {fileID: 6733045373853346211}
-  m_Layer: 3
+  - component: {fileID: -8938753678735395745}
+  m_Layer: 7
   m_Name: CrowW
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -6286954360436444883, guid: 7d160999cc835ff47a837b8e60242ab0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06357908, y: -0.01121974}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -159,53 +159,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
---- !u!61 &6940558750796216689
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571989167598489800}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.058066368, y: 0.037328333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.375, y: 1.875}
-    newSize: {x: 1.375, y: 1.875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.93821526, y: 1.693078}
+  m_Size: {x: 0.8806696, y: 1.7483335}
   m_EdgeRadius: 0
 --- !u!114 &6762748054222650134
 MonoBehaviour:
@@ -239,11 +193,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f7e9033b76c3c49bb129b31f99d15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 9
   detectDistance: 10
   checkInterval: 0.2
   rotateInterval: 2
   isMovable: 1
+--- !u!114 &-8938753678735395745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571989167598489800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 50
+  currentHP: 0
+  isInvulnerable: 0
 --- !u!1 &5416122745596519061
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3364243065717442042}
   - component: {fileID: 7130035632527493728}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Atkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

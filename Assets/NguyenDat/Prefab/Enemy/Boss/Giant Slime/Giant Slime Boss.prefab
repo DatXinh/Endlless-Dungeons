@@ -9,8 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8977686465606182435}
+  - component: {fileID: 2180836809615151728}
+  - component: {fileID: 3129125366148263857}
   - component: {fileID: 9069419111446926389}
-  m_Layer: 3
+  - component: {fileID: -527025965698629815}
+  m_Layer: 7
   m_Name: Giant Slime Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -26,74 +29,20 @@ Transform:
   m_GameObject: {fileID: 598781697160387885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.674871, y: -1.7904086, z: -0.07120172}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 985940711890638002}
-  - {fileID: 6048815130106885638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9069419111446926389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598781697160387885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931c44647c961014eb0c5f118c505382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 6
-  spriteRenderer: {fileID: 2738116055573907782}
-  slimePrefab: {fileID: 8558169933533535754, guid: 5a6d3250016335e46ad967a288120a67, type: 3}
-  slimeCount: 10
-  spawnRadius: 5
-  slimeBallPrefab: {fileID: 2706263220497451186, guid: a56e269651cdb964fb264c42951c9ead, type: 3}
-  slimeBallRadius: 4
-  slimeBallSpeed: 10
-  sequentialDelay: 0.1
---- !u!1 &4095602504782717273
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6048815130106885638}
-  - component: {fileID: 1935172047884794450}
-  m_Layer: 3
-  m_Name: Collider
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6048815130106885638
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4095602504782717273}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8977686465606182435}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1935172047884794450
+--- !u!58 &2180836809615151728
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4095602504782717273}
+  m_GameObject: {fileID: 598781697160387885}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -121,13 +70,76 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.073224306, y: 0.0915308}
-  m_Radius: 2.7699704
+  m_Offset: {x: 0.043643236, y: 0}
+  m_Radius: 3.0094993
+--- !u!50 &3129125366148263857
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598781697160387885}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &9069419111446926389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598781697160387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931c44647c961014eb0c5f118c505382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  spriteRenderer: {fileID: 2738116055573907782}
+  slimePrefab: {fileID: 8558169933533535754, guid: 5a6d3250016335e46ad967a288120a67, type: 3}
+  slimeCount: 10
+  spawnRadius: 5
+  slimeBallPrefab: {fileID: 2706263220497451186, guid: a56e269651cdb964fb264c42951c9ead, type: 3}
+  slimeBallRadius: 4
+  slimeBallSpeed: 10
+  sequentialDelay: 0.1
+--- !u!114 &-527025965698629815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598781697160387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 50
+  currentHP: 0
+  isInvulnerable: 0
 --- !u!1 &4400776022015764867
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8558169933533535754, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-  m_PrefabInstance: {fileID: 130326352929335857}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -135,7 +147,7 @@ GameObject:
   - component: {fileID: 2738116055573907782}
   - component: {fileID: 2664801225064207829}
   - component: {fileID: 4854392730538628545}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Giant Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -145,8 +157,8 @@ GameObject:
 --- !u!4 &985940711890638002
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-  m_PrefabInstance: {fileID: 130326352929335857}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4400776022015764867}
   serializedVersion: 2
@@ -160,8 +172,8 @@ Transform:
 --- !u!212 &2738116055573907782
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1688196522836848802, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-  m_PrefabInstance: {fileID: 130326352929335857}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4400776022015764867}
   m_Enabled: 1
@@ -216,8 +228,8 @@ SpriteRenderer:
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2983383017131691898, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-  m_PrefabInstance: {fileID: 130326352929335857}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4400776022015764867}
   m_Enabled: 1
@@ -237,8 +249,8 @@ Animator:
 --- !u!114 &4854392730538628545
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2926809573111222490, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-  m_PrefabInstance: {fileID: 130326352929335857}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4400776022015764867}
   m_Enabled: 1
@@ -246,65 +258,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2dc2044654b5240ba8bec772c690af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!1001 &130326352929335857
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8977686465606182435}
-    m_Modifications:
-    - target: {fileID: 2983383017131691898, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: daf50beac8bc2a644879adc32848bacf, type: 2}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858595210491832946, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8558169933533535754, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
-      propertyPath: m_Name
-      value: Giant Slime
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3966f74b6bed6a84a895079f4e1467ad, type: 3}
+  speed: 0.5
