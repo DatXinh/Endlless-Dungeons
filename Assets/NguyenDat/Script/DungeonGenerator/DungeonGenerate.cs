@@ -28,10 +28,16 @@ public class DungeonGenerate : MonoBehaviour
     [SerializeField] private int minDecoPerRoom = 1;
     [SerializeField] private int maxDecoPerRoom = 3;
 
+    [Header("Room Trap")]
+    public List<GameObject> trapPrefabs;
+    [SerializeField] private int minTrapPerRoom = 0;
+    [SerializeField] private int maxTrapPerRoom = 2;
+
     [Header("Portal")]
     public GameObject portalPrefab;
 
-    private Transform decoParent;
+    public Transform decoParent;
+    public Transform trapParent;
 
     void Awake()
     {
@@ -40,7 +46,6 @@ public class DungeonGenerate : MonoBehaviour
 
     void Start()
     {
-        decoParent = new GameObject("DecoParent").transform;
         GenerateRooms();
         DrawMap();
     }
@@ -68,10 +73,15 @@ public class DungeonGenerate : MonoBehaviour
             Destroy(decoParent.gameObject);
         decoParent = new GameObject("DecoParent").transform;
 
-        RectInt startRoom = new RectInt(-5, -5, 10, 10);
+        if (trapParent != null)
+            Destroy(trapParent.gameObject);
+        trapParent = new GameObject("TrapParent").transform;
+
+        RectInt startRoom = new RectInt(-10, -10, 20, 20);
         rooms.Add(startRoom);
         CarveRoom(startRoom);
         SpawnRoomDeco(startRoom);
+        SpawnRoomTrap(startRoom);
 
         int roomCount = Random.Range(minRoomCount, maxRoomCount + 1);
 
@@ -186,22 +196,18 @@ public class DungeonGenerate : MonoBehaviour
         }
     }
 
-    // Hành lang rộng 3x3
+    // Hành lang rộng 5x5
     void CarveCorridorTile(Vector2Int pos, Vector2Int direction)
     {
         map[pos] = 0;
 
-        // Nếu đi ngang thì mở rộng theo chiều dọc
-        if (direction.x != 0)
+        // Carve a 5x5 area centered at pos
+        for (int dx = -2; dx <= 2; dx++)
         {
-            map[pos + Vector2Int.up] = 0;
-            map[pos + Vector2Int.down] = 0;
-        }
-        // Nếu đi dọc thì mở rộng theo chiều ngang
-        else if (direction.y != 0)
-        {
-            map[pos + Vector2Int.left] = 0;
-            map[pos + Vector2Int.right] = 0;
+            for (int dy = -2; dy <= 2; dy++)
+            {
+                map[pos + new Vector2Int(dx, dy)] = 0;
+            }
         }
     }
 
@@ -275,6 +281,44 @@ public class DungeonGenerate : MonoBehaviour
             Vector3 worldPos = new Vector3(decoPos.x + 0.5f, decoPos.y + 0.5f, 0f);
             GameObject decoObj = Instantiate(prefab, worldPos, Quaternion.identity, decoParent);
             decoObj.name = prefab.name;
+        }
+    }
+
+    // Spawn random trap prefabs inside the given room
+    void SpawnRoomTrap(RectInt room)
+    {
+        if (trapPrefabs == null || trapPrefabs.Count == 0) return;
+
+        int trapCount = Random.Range(minTrapPerRoom, maxTrapPerRoom + 1);
+        HashSet<Vector2Int> usedPositions = new HashSet<Vector2Int>();
+
+        for (int i = 0; i < trapCount; i++)
+        {
+            // Chọn prefab ngẫu nhiên
+            GameObject prefab = trapPrefabs[Random.Range(0, trapPrefabs.Count)];
+
+            // Tìm vị trí hợp lệ trong phòng (không trùng lặp, không sát tường)
+            int tries = 0;
+            Vector2Int trapPos = Vector2Int.zero;
+            bool found = false;
+            while (tries < 20 && !found)
+            {
+                int x = Random.Range(room.xMin + 1, room.xMax - 1);
+                int y = Random.Range(room.yMin + 1, room.yMax - 1);
+                trapPos = new Vector2Int(x, y);
+                if (!usedPositions.Contains(trapPos))
+                {
+                    usedPositions.Add(trapPos);
+                    found = true;
+                }
+                tries++;
+            }
+            if (!found) continue;
+
+            // Đặt trap ở vị trí trung tâm tile
+            Vector3 worldPos = new Vector3(trapPos.x + 0.5f, trapPos.y + 0.5f, 0f);
+            GameObject trapObj = Instantiate(prefab, worldPos, Quaternion.identity, trapParent);
+            trapObj.name = prefab.name;
         }
     }
 

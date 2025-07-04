@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 811077309911978052}
   - component: {fileID: 7407698012709133340}
   - component: {fileID: 6929901471619393438}
-  m_Layer: 3
+  - component: {fileID: -5328931493181216059}
+  m_Layer: 7
   m_Name: Brain Mole
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8476652840971015511, guid: 6da731dfcd652c34d83d80684f16431a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -245,6 +246,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   canAttack: 0
+--- !u!114 &-5328931493181216059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377900764625738663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 50
+  currentHP: 0
+  isInvulnerable: 0
 --- !u!1 &8946566840064408211
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7089504748901484676}
   - component: {fileID: 7430602791356937420}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: AtkPos
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 4382500685259553081}
   - component: {fileID: 2334213307039847864}
   - component: {fileID: -4745468768040445027}
+  - component: {fileID: -965387948343140227}
   m_Layer: 0
   m_Name: Bloodsting
   m_TagString: Untagged
@@ -211,3 +212,19 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
+--- !u!114 &-965387948343140227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339974612953374467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5

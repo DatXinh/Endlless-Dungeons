@@ -4,7 +4,7 @@ public class CheckPlayerEntervsSpawnBoss : MonoBehaviour
 {
     [Header("References")]
     public GameObject objectToEnableOnEnter;      // GameObject sẽ được bật khi Player chạm vào
-    public GameObject monsterPrefab;              // Prefab quái vật sẽ spawn
+    public GameObject[] monsterPrefabs;           // Danh sách prefab quái vật sẽ spawn
     public Transform spawnPosition;               // Vị trí spawn quái vật
     public GameObject objectToEnableOnMonsterDeath; // GameObject sẽ được bật khi quái vật chết
 
@@ -32,10 +32,12 @@ public class CheckPlayerEntervsSpawnBoss : MonoBehaviour
             if (myCollider != null)
                 myCollider.enabled = false;
 
-            // Spawn quái vật
-            if (monsterPrefab != null && spawnPosition != null)
+            // Spawn quái vật ngẫu nhiên
+            if (monsterPrefabs != null && monsterPrefabs.Length > 0 && spawnPosition != null)
             {
-                spawnedMonster = Instantiate(monsterPrefab, spawnPosition.position, spawnPosition.rotation);
+                int randomIndex = Random.Range(0, monsterPrefabs.Length);
+                GameObject selectedPrefab = monsterPrefabs[randomIndex];
+                spawnedMonster = Instantiate(selectedPrefab, spawnPosition.position, spawnPosition.rotation);
                 // Đăng ký sự kiện chết của quái vật
                 MonsterDeathHandler deathHandler = spawnedMonster.AddComponent<MonsterDeathHandler>();
                 deathHandler.onDeathCallback = OnMonsterDeath;

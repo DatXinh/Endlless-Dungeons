@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1257250392197747274}
   - component: {fileID: 918838539897821808}
   - component: {fileID: -7743472800753960722}
+  - component: {fileID: 3260495898208026873}
   m_Layer: 0
   m_Name: Leafdart
   m_TagString: Untagged
@@ -124,6 +125,22 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
+--- !u!114 &3260495898208026873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933236340958661589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &7594336165444313051
 GameObject:
   m_ObjectHideFlags: 0

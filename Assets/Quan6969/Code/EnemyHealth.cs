@@ -6,9 +6,16 @@ public class EnemyHealth : MonoBehaviour
     public float currentHP;
     public bool isInvulnerable = false;
 
+    private SpawnAtDestroy spawnAtDestroy;
+
     void Start()
     {
         currentHP = maxHP;
+        spawnAtDestroy = GetComponent<SpawnAtDestroy>();
+        if (spawnAtDestroy == null)
+        {
+            return;
+        }
     }
 
     public void TakeDamage(DamageInfo damage)
@@ -27,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log($"{gameObject.name} đã chết.");
+        spawnAtDestroy?.TriggerDestroy();
         Destroy(gameObject); 
     }
     public float GetHealthPercent()

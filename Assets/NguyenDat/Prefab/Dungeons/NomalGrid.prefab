@@ -34,8 +34,9 @@ Transform:
   m_Children:
   - {fileID: 8733488805844580483}
   - {fileID: 1084357027247802070}
-  - {fileID: 7458278192787257870}
   - {fileID: 3229131340919828191}
+  - {fileID: 7858190165641444592}
+  - {fileID: 7458278192787257870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &4752888583506365958
@@ -68,7 +69,7 @@ MonoBehaviour:
   wallTile: {fileID: 11400000, guid: 509059415fe1b4544b34214589498caa, type: 2}
   minRoomCount: 10
   maxRoomCount: 15
-  roomSizeMinMax: {x: 10, y: 20}
+  roomSizeMinMax: {x: 25, y: 30}
   mapRange: 50
   roomSpacing: 2
   monsterSpawner: {fileID: 455017040245435748}
@@ -77,11 +78,18 @@ MonoBehaviour:
   - {fileID: 9153791257803111669, guid: ade80205208849f4b81c351bfa2b00ee, type: 3}
   - {fileID: 7576993832214102085, guid: 7b3bd3cf63787b242b2e630d5c6e9c56, type: 3}
   - {fileID: 6308974878921888494, guid: 7501587ceef06f84c93bffa26ffd95c6, type: 3}
-  - {fileID: 3494051588933983443, guid: 493d6af167e5c7948bfdddbea8c31d90, type: 3}
-  - {fileID: 4756173597173087334, guid: 19007f66887d4074fbf76db479abe292, type: 3}
-  minDecoPerRoom: 1
-  maxDecoPerRoom: 3
+  - {fileID: 5670163665283357265, guid: 4592c5399b5784742915ad24f30a0f3b, type: 3}
+  - {fileID: 5670163665283357265, guid: 4592c5399b5784742915ad24f30a0f3b, type: 3}
+  - {fileID: 5670163665283357265, guid: 4592c5399b5784742915ad24f30a0f3b, type: 3}
+  minDecoPerRoom: 3
+  maxDecoPerRoom: 5
+  trapPrefabs:
+  - {fileID: 7286052999795039852, guid: c3e12e56618b6034e9b36a49e49a8e40, type: 3}
+  minTrapPerRoom: 3
+  maxTrapPerRoom: 7
   portalPrefab: {fileID: 7122153849931878849, guid: 55793048b3580a14182160e26dd09e4d, type: 3}
+  decoParent: {fileID: 7858190165641444592}
+  trapParent: {fileID: 7458278192787257870}
 --- !u!114 &455017040245435748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +112,37 @@ MonoBehaviour:
   maxMonsterCount: 5
   groundTilemap: {fileID: 3492663833303569959}
   enemyParent: {fileID: 3229131340919828191}
+--- !u!1 &1504358294887634550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7858190165641444592}
+  m_Layer: 0
+  m_Name: Deco
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7858190165641444592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504358294887634550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7247066262560369173}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2257597080376926593
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,9 +434,9 @@ GameObject:
   - component: {fileID: 4816833295439376971}
   - component: {fileID: 6815161609481101488}
   - component: {fileID: 1086169239964211837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

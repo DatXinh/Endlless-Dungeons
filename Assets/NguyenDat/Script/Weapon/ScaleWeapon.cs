@@ -20,6 +20,7 @@ public class ScaleWeapon : MonoBehaviour
         if (joystickAttackAndAim.IsHolding)
         {
             Vector3 scale = transform.localScale;
+            if (weaponData == null) return;
             if (weaponData.weaponType == WeaponType.Sword || weaponData.weaponType == WeaponType.MagicStaff)
             {
                 scale.x = testPlayerMove.isFacingRight ? 1 : -1;

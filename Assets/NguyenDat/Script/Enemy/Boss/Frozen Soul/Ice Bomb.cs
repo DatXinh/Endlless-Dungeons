@@ -50,8 +50,4 @@ public class IceBomb : MonoBehaviour
             angle += angleStep;
         }
     }
-    private void OnDestroy()
-    {
-        Explode();
-    }
 }

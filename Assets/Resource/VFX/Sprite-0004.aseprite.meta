@@ -125,7 +125,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Sprite-0004
     originalName: 
-    pivot: {x: 0.49586776, y: -0.024793386}
+    pivot: {x: 0.48797926, y: 0.49321994}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

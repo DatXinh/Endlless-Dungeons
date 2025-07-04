@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 873177928233381474}
   - component: {fileID: 7536567888429136050}
   - component: {fileID: -5225767932813740574}
+  - component: {fileID: -6961035216822235816}
   m_Layer: 0
   m_Name: VoidBarie
   m_TagString: Untagged
@@ -183,3 +184,19 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
+--- !u!114 &-6961035216822235816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286575111412870413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
