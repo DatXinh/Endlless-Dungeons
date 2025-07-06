@@ -210,4 +210,4 @@ MonoBehaviour:
   weaponDescription: 
   weaponDamage: 0
   weaponProjectile: {fileID: 4881574000866233497, guid: 9eb4a6ed8b39e4a438a3f94aa0bb0aa7, type: 3}
-  weaponType: 1
+  weaponType: 6

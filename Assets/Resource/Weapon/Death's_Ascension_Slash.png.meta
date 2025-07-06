@@ -1,0 +1,595 @@
+fileFormatVersion: 2
+guid: 02528bf7dc6457248b6c02e1dc7cb52c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4106312905736323359
+    second: Death's_Ascension_Slash_0
+  - first:
+      213: 2550778013318720822
+    second: Death's_Ascension_Slash_1
+  - first:
+      213: 5200359324754438293
+    second: Death's_Ascension_Slash_2
+  - first:
+      213: -4449786922134964278
+    second: Death's_Ascension_Slash_3
+  - first:
+      213: -8773632235991539229
+    second: Death's_Ascension_Slash_4
+  - first:
+      213: -4950421427395534671
+    second: Death's_Ascension_Slash_5
+  - first:
+      213: -6148522529504884828
+    second: Death's_Ascension_Slash_6
+  - first:
+      213: 2672146944105636684
+    second: Death's_Ascension_Slash_7
+  - first:
+      213: 6695829819152740247
+    second: Death's_Ascension_Slash_8
+  - first:
+      213: -3850820909725316797
+    second: Death's_Ascension_Slash_9
+  - first:
+      213: -2172508802106480379
+    second: Death's_Ascension_Slash_10
+  - first:
+      213: -411212111766406391
+    second: Death's_Ascension_Slash_11
+  - first:
+      213: -328834385553174128
+    second: Death's_Ascension_Slash_12
+  - first:
+      213: -2600984956751933212
+    second: Death's_Ascension_Slash_13
+  - first:
+      213: -2966062474226135778
+    second: Death's_Ascension_Slash_14
+  - first:
+      213: -9100194014003465022
+    second: Death's_Ascension_Slash_15
+  - first:
+      213: 7986541556231369102
+    second: Death's_Ascension_Slash_16
+  - first:
+      213: 7505482836935815254
+    second: Death's_Ascension_Slash_17
+  - first:
+      213: 2115639575954677961
+    second: Death's_Ascension_Slash_18
+  - first:
+      213: 4697789179202377371
+    second: Death's_Ascension_Slash_19
+  - first:
+      213: -4325567272962669351
+    second: Death's_Ascension_Slash_20
+  - first:
+      213: 6902120484713872356
+    second: Death's_Ascension_Slash_21
+  - first:
+      213: -7956001895013176853
+    second: Death's_Ascension_Slash_22
+  - first:
+      213: -3936316629873394029
+    second: Death's_Ascension_Slash_23
+  - first:
+      213: 3718807894788242656
+    second: Death's_Ascension_Slash_24
+  - first:
+      213: 3982629229541460888
+    second: Death's_Ascension_Slash_25
+  - first:
+      213: 7511819747987447626
+    second: Death's_Ascension_Slash_26
+  - first:
+      213: 3029044107358335271
+    second: Death's_Ascension_Slash_27
+  - first:
+      213: 2763366063670298749
+    second: Death's_Ascension_Slash_28
+  - first:
+      213: -4050690316578269858
+    second: Death's_Ascension_Slash_29
+  - first:
+      213: 5543184426933879890
+    second: Death's_Ascension_Slash_30
+  - first:
+      213: -1681842508617921662
+    second: Death's_Ascension_Slash_31
+  - first:
+      213: -5321125032287080609
+    second: Death's_Ascension_Slash_32
+  - first:
+      213: -4843352180676183554
+    second: Death's_Ascension_Slash_33
+  - first:
+      213: -7163812668548035111
+    second: Death's_Ascension_Slash_34
+  - first:
+      213: -5422472133184648930
+    second: Death's_Ascension_Slash_35
+  - first:
+      213: -263497998961564943
+    second: Death's_Ascension_Slash_36
+  - first:
+      213: 1740832967059555074
+    second: Death's_Ascension_Slash_37
+  - first:
+      213: 3276342940987453305
+    second: Death's_Ascension_Slash_38
+  - first:
+      213: 521901964931696422
+    second: Death's_Ascension_Slash_39
+  - first:
+      213: -6391146996958460703
+    second: Death's_Ascension_Slash_40
+  - first:
+      213: 8589780066721786942
+    second: Death's_Ascension_Slash_41
+  - first:
+      213: 3705230396271255529
+    second: Death's_Ascension_Slash_42
+  - first:
+      213: -6743496253748263067
+    second: Death's_Ascension_Slash_43
+  - first:
+      213: 6192004427418194005
+    second: Death's_Ascension_Slash_44
+  - first:
+      213: -356327376288471269
+    second: Death's_Ascension_Slash_45
+  - first:
+      213: -2697939179902765835
+    second: Death's_Ascension_Slash_46
+  - first:
+      213: 8228526709914503693
+    second: Death's_Ascension_Slash_47
+  - first:
+      213: -262911682482505272
+    second: Death's_Ascension_Slash_48
+  - first:
+      213: -8287392850029020439
+    second: Death's_Ascension_Slash_49
+  - first:
+      213: 7049206151055234631
+    second: Death's_Ascension_Slash_50
+  - first:
+      213: -4024866354107661304
+    second: Death's_Ascension_Slash_51
+  - first:
+      213: 801591145831045093
+    second: Death's_Ascension_Slash_52
+  - first:
+      213: -1234372696503839759
+    second: Death's_Ascension_Slash_53
+  - first:
+      213: -846136386616319983
+    second: Death's_Ascension_Slash_54
+  - first:
+      213: -1471782280086113531
+    second: Death's_Ascension_Slash_55
+  - first:
+      213: -4087572797705643178
+    second: Death's_Ascension_Slash_56
+  - first:
+      213: -3385764086873393805
+    second: Death's_Ascension_Slash_57
+  - first:
+      213: 8332853691054409116
+    second: Death's_Ascension_Slash_58
+  - first:
+      213: -4586623119583916611
+    second: Death's_Ascension_Slash_59
+  - first:
+      213: -1304806051928976036
+    second: Death's_Ascension_Slash_60
+  - first:
+      213: 1081053875797540568
+    second: Death's_Ascension_Slash_61
+  - first:
+      213: 7184345774469763249
+    second: Death's_Ascension_Slash_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eefbfc1b227307c0800000000000000
+      internalID: -4106312905736323359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d2db8a61f266320800000000000000
+      internalID: 2550778013318720822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_2
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598e060d0436b2840800000000000000
+      internalID: 5200359324754438293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_3
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac777fbce5e2f32c0800000000000000
+      internalID: -4449786922134964278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_4
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1eecf47fbcd3680800000000000000
+      internalID: -8773632235991539229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_5
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b06b93b0f19c4bb0800000000000000
+      internalID: -4950421427395534671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_6
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7006fe55f0caaa0800000000000000
+      internalID: -6148522529504884828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_7
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43ef0fec7f551520800000000000000
+      internalID: 2672146944105636684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_8
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f21179ebd5cec50800000000000000
+      internalID: 6695829819152740247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_9
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3490d2ef8c22f8ac0800000000000000
+      internalID: -3850820909725316797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_10
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509a80341c2b9d1e0800000000000000
+      internalID: -2172508802106480379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death's_Ascension_Slash_11
+      rect:
+        serializedVersion: 2
+        x: 2618
+        y: 0
+        width: 238
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b33d653c41b4af0800000000000000
+      internalID: -411212111766406391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 283d4a583f8d0f843af76d44feb14439
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Death's_Ascension_Slash_0: -4106312905736323359
+      Death's_Ascension_Slash_1: 2550778013318720822
+      Death's_Ascension_Slash_10: -2172508802106480379
+      Death's_Ascension_Slash_11: -411212111766406391
+      Death's_Ascension_Slash_2: 5200359324754438293
+      Death's_Ascension_Slash_3: -4449786922134964278
+      Death's_Ascension_Slash_4: -8773632235991539229
+      Death's_Ascension_Slash_5: -4950421427395534671
+      Death's_Ascension_Slash_6: -6148522529504884828
+      Death's_Ascension_Slash_7: 2672146944105636684
+      Death's_Ascension_Slash_8: 6695829819152740247
+      Death's_Ascension_Slash_9: -3850820909725316797
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -150,11 +150,11 @@ MonoBehaviour:
   phase4Threshold: 50
   phase5Threshold: 33
   phase6Threshold: 16
-  moveSpeedPhase1: 3
+  moveSpeedPhase1: 5
   moveSpeedPhase2: 5
-  moveSpeedPhase3: 4
-  moveSpeedPhase5: 6
-  dashSpeed: 12
+  moveSpeedPhase3: 6
+  moveSpeedPhase5: 7
+  dashSpeed: 15
   dashSpeedPhase6: 20
   iceBulletPrefab: {fileID: 8259940307784442884, guid: 630608ea2730d8c40a285986c03882f0, type: 3}
   crystalShardPrefab: {fileID: 1129415452072985522, guid: 515fad1cebde3bb4483bb0a6321f686d, type: 3}

@@ -4,20 +4,25 @@ using System.Collections.Generic;
 
 public class SlimeBossAI : MonoBehaviour
 {
+    // === Public Inspector Fields ===
     public float moveSpeed; // Tốc độ di chuyển của boss
-    private Transform playerTransform;
 
     public SpriteRenderer spriteRenderer; // Gán SpriteRenderer trong Inspector
 
-    public GameObject slimePrefab; // Prefab slime con, gán trong Inspector
+    public GameObject slimePrefab;// Prefab slime con, gán trong Inspector
+    public GameObject rainbowSlimePrefab; // Prefab Rainbow Slime, gán trong Inspector
     public int slimeCount; // Số lượng slime con triệu hồi
     public float spawnRadius; // Bán kính xuất hiện slime con quanh boss
+    public int maxSlimeCount = 21; // Giới hạn số lượng slime con
+    public Transform slimeParent;
 
     public GameObject slimeBallPrefab; // Prefab quả cầu slime, gán trong Inspector
     public float slimeBallRadius; // Bán kính sinh ra quả cầu slime quanh boss
     public float slimeBallSpeed; // Tốc độ phóng quả cầu slime
     public float sequentialDelay; // Độ trễ giữa các lần phóng liên tiếp
 
+    // === Private Fields ===
+    private Transform playerTransform;
     private List<GameObject> spawnedSlimeBalls = new List<GameObject>();
 
     void Start()
@@ -52,7 +57,7 @@ public class SlimeBossAI : MonoBehaviour
         }
     }
 
-        // Vòng lặp hành động: cứ 3 giây chọn 1 hành động
+    // Vòng lặp hành động: cứ 3 giây chọn 1 hành động
     private IEnumerator BossActionLoop()
     {
         while (true)
@@ -79,17 +84,29 @@ public class SlimeBossAI : MonoBehaviour
     private IEnumerator SummonSlimes()
     {
         yield return new WaitForSeconds(3f);
-        if (slimePrefab != null)
+
+        if (slimePrefab != null && slimeParent != null)
         {
-            for (int i = 0; i < slimeCount; i++)
+            int currentSlimeCount = slimeParent.childCount;
+
+            int spawnAmount = Mathf.Min(slimeCount, maxSlimeCount - currentSlimeCount);
+
+            for (int i = 0; i < spawnAmount; i++)
             {
-                // Tạo vị trí ngẫu nhiên quanh boss
                 Vector2 offset = Random.insideUnitCircle.normalized * spawnRadius;
                 Vector3 spawnPos = transform.position + new Vector3(offset.x, offset.y, 0);
-                Instantiate(slimePrefab, spawnPos, Quaternion.identity);
+
+                // 10% cơ hội sinh rainbow slime
+                GameObject prefabToSpawn = (Random.value <= 0.1f && rainbowSlimePrefab != null)
+                    ? rainbowSlimePrefab
+                    : slimePrefab;
+
+                GameObject slime = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+                slime.transform.SetParent(slimeParent);
             }
         }
     }
+
 
     // Phương thức tấn công sinh ra 12 quả cầu slime
     public void Attack()
