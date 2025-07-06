@@ -245,7 +245,7 @@ MonoBehaviour:
   weaponID: 
   weaponName: Starbeam
   weaponDescription: 
-  weaponDamage: 0
+  weaponDamage: 50
   weaponProjectile: {fileID: 0}
   weaponType: 4
 --- !u!114 &4343209921574348454
@@ -260,10 +260,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589a686978a80d843bcc73e45a7a5595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
   lineRenderer: {fileID: 6095548947867158632}
   startPoint: {fileID: 1606634468391162016}
   maxLaserLength: 25
-  damage: 10
+  damage: 0
   hitMask:
     serializedVersion: 2
     m_Bits: 128

@@ -165,68 +165,6 @@ Transform:
   - {fileID: 2015051630}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &518636147 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-  m_PrefabInstance: {fileID: 675889022}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &675889022
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1219220521}
-    m_Modifications:
-    - target: {fileID: 3045790389127171731, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_Name
-      value: Devil may Cry
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620610344899695054, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
 --- !u!1001 &712232623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,11 +222,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3e12e56618b6034e9b36a49e49a8e40, type: 3}
---- !u!4 &1219220521 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5920221004527382975, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
-  m_PrefabInstance: {fileID: 4254449663040499433}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2015051629
 GameObject:
   m_ObjectHideFlags: 0
@@ -33900,10 +33833,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 836455752696054274, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5920221004527382975, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 518636147}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
 --- !u!1660057539 &9223372036854775807
