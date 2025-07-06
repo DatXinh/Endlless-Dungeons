@@ -9,12 +9,21 @@ public class AudioSettingsManager : MonoBehaviour
 
     private void Start()
     {
-        // Load saved values or default to 1.0f
-        masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        PlayerPrefs.DeleteAll();
 
-        // Set listeners
+        float masterVol = PlayerPrefs.GetFloat("MasterVolume", 100f);
+        float musicVol = PlayerPrefs.GetFloat("MusicVolume", 100f);
+        float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 100f);
+
+        masterSlider.value = masterVol;
+        musicSlider.value = musicVol;
+        sfxSlider.value = sfxVol;
+
+        // Áp dụng giá trị ngay lúc khởi chạy
+        SetMasterVolume(masterVol);
+        SetMusicVolume(musicVol);
+        SetSFXVolume(sfxVol);
+
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
@@ -22,20 +31,22 @@ public class AudioSettingsManager : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
-        AudioListener.volume = value; // toàn bộ âm thanh
+        AudioListener.volume = value / 100f; // Scale đúng
         PlayerPrefs.SetFloat("MasterVolume", value);
     }
 
     public void SetMusicVolume(float value)
     {
-        // Giả sử có AudioMixer hoặc nhạc nền riêng
-        AudioManager.Instance.SetMusicVolume(value);
+        float scaledVolume = value / 100f;
+        AudioManager.Instance.SetMusicVolume(scaledVolume);
         PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
     public void SetSFXVolume(float value)
     {
-        AudioManager.Instance.SetSFXVolume(value);
+        float scaledVolume = value / 100f;
+        AudioManager.Instance.SetSFXVolume(scaledVolume);
         PlayerPrefs.SetFloat("SFXVolume", value);
     }
+
 }
