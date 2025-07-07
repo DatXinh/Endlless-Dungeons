@@ -23,7 +23,9 @@ public class ScaleWeapon : MonoBehaviour
             if (weaponData == null) return;
             if (weaponData.weaponType == WeaponType.Sword ||
                 weaponData.weaponType == WeaponType.MagicStaff ||
-                weaponData.weaponType == WeaponType.Rogue)
+                weaponData.weaponType == WeaponType.Rogue ||
+                weaponData.weaponType == WeaponType.Spear||
+                weaponData.weaponType == WeaponType.SpellBook)
             {
                 scale.x = testPlayerMove.isFacingRight ? 1 : -1;
                 scale.y = testPlayerMove.isFacingRight ? 1 : -1;
