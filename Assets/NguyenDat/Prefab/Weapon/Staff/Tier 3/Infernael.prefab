@@ -207,7 +207,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Infernael
-  weaponDescription: 
+  weaponDescription: "\u201CKh\xF4ng ch\xE1y. N\xF3 thi\xEAu. Nh\u1EEFng ng\u01B0\u1EDDi
+    d\xF9ng n\xF3 qu\xE1 l\xE2u c\xF3 xu h\u01B0\u1EDBng nh\xECn th\u1EA5y nh\u1EEFng
+    khu\xF4n m\u1EB7t trong l\u1EEDa \u2013 v\xE0 c\xF3 k\u1EBB n\xF3i h\u1ECD nghe
+    \u0111\u01B0\u1EE3c t\xEAn m\xECnh.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 4651401253455389267, guid: 33067dc6983d89446beae8b5100a6ed8, type: 3}
   weaponType: 4

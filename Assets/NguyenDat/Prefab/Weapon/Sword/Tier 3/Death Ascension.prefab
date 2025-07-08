@@ -200,6 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4527471006614993230}
+  - component: {fileID: 9124384350110757680}
   m_Layer: 0
   m_Name: Death Ascension
   m_TagString: Untagged
@@ -224,6 +225,26 @@ Transform:
   - {fileID: 3916456392698033657}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9124384350110757680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752464525617690650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fa63ed227014e41bfa2706dcd49cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: 
+  weaponName: Death Ascension
+  weaponDescription: "\u201CCh\xE9m c\xE0ng nhi\u1EC1u, ng\u01B0\u1EDDi c\u1EA7m
+    c\xE0ng nh\u1EB9. M\u1ED9t ng\xE0y kia, h\u1ECD s\u1EBD kh\xF4ng c\xF2n ch\u1EA1m
+    \u0111\u1EA5t \u2013 v\xE0 s\u1EBD kh\xF4ng tr\u1EDF l\u1EA1i n\u1EEFa.\u201D"
+  weaponDamage: 0
+  weaponProjectile: {fileID: 0}
+  weaponType: 1
 --- !u!1001 &6997881728004434086
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -49,7 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Crytalline
-  weaponDescription: 
+  weaponDescription: "\u201CTinh th\u1EC3 sinh ra khi m\u1ED9t c\xE1nh c\u1ED5ng
+    \u0111\xF3ng s\u1EADp gi\u1EEFa th\u1EDDi gian. N\xE9m ra, n\xF3 \u0111\u1EC3
+    l\u1EA1i \xE2m vang t\u1EEB ph\xEDa b\xEAn kia.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 9074270698322098874, guid: 5eb5178fd00c8b94b94cb49b4bc9acce, type: 3}
   weaponType: 6

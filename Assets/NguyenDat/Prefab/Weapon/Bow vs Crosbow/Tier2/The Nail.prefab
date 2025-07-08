@@ -177,7 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Nail
-  weaponDescription: 
+  weaponDescription: "\u201CN\xF3 kh\xF4ng ph\u1EA3i cung. Ch\u1EC9 l\xE0 m\u1ED9t
+    c\xE1i \u0111inh. Nh\u01B0ng n\xF3 t\u1EEBng \u0111\xF3ng ch\u1EB7t m\u1ED9t
+    c\xE1nh c\u1EEDa\u2026 gi\u1EDD \u0111\xE3 h\xE9.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 9071749962805705470, guid: 37be62a6735f7d24d9d12c7396560100, type: 3}
   weaponType: 3

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class SlimeBossAI : MonoBehaviour
 {
-    // === Public Inspector Fields ===
     public float moveSpeed; // Tốc độ di chuyển của boss
 
     public SpriteRenderer spriteRenderer; // Gán SpriteRenderer trong Inspector
@@ -21,7 +20,6 @@ public class SlimeBossAI : MonoBehaviour
     public float slimeBallSpeed; // Tốc độ phóng quả cầu slime
     public float sequentialDelay; // Độ trễ giữa các lần phóng liên tiếp
 
-    // === Private Fields ===
     private Transform playerTransform;
     private List<GameObject> spawnedSlimeBalls = new List<GameObject>();
 
@@ -42,6 +40,7 @@ public class SlimeBossAI : MonoBehaviour
     {
         if (playerTransform != null)
         {
+
             // Di chuyển về phía người chơi
             Vector3 direction = (playerTransform.position - transform.position).normalized;
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);

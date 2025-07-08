@@ -177,7 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Blue Luna
-  weaponDescription: 
+  weaponDescription: "\u201CTrong \u0111\xEAm th\u1EE9 b\u1EA3y, m\u1EB7t tr\u0103ng
+    xanh treo tr\xEAn \u0111\u1EC9nh Th\xE1p \u0110\xE1y V\u1EF1c. K\u1EBB b\u1EAFn
+    cung n\xE0y \u0111\xE3 k\xE9o d\xE2y l\u1EA7n cu\u1ED1i, v\xE0 c\xE1nh c\u1ED5ng
+    b\u1EAFt \u0111\u1EA7u r\u1EA1n n\u1EE9t.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 2966624998984056035, guid: 01e571ea41c7fbe42bfd62d2254a1bd4, type: 3}
   weaponType: 3

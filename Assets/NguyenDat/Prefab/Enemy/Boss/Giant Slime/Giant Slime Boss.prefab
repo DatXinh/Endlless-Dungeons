@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3129125366148263857}
   - component: {fileID: 9069419111446926389}
   - component: {fileID: -527025965698629815}
+  - component: {fileID: 4628317475123421946}
   m_Layer: 7
   m_Name: Giant Slime Boss
   m_TagString: Boss
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598781697160387885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 931c44647c961014eb0c5f118c505382, type: 3}
   m_Name: 
@@ -167,9 +168,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
+  maxHP: 500
   currentHP: 0
   isInvulnerable: 0
+--- !u!114 &4628317475123421946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598781697160387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edb9a781b4167946ab46a8ef362753e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 0}
+  animator: {fileID: 0}
+  parameterName: IsDead
+  scriptsToDisable:
+  - {fileID: 9069419111446926389}
 --- !u!1 &4400776022015764867
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +200,7 @@ GameObject:
   - component: {fileID: 2738116055573907782}
   - component: {fileID: 2664801225064207829}
   - component: {fileID: 4854392730538628545}
+  - component: {fileID: 8290998797538628556}
   m_Layer: 7
   m_Name: Giant Slime
   m_TagString: Enemy
@@ -294,3 +313,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+--- !u!114 &8290998797538628556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400776022015764867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

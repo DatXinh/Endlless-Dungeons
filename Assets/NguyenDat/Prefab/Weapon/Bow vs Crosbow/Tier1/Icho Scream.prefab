@@ -208,7 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Icho Scream
-  weaponDescription: 
+  weaponDescription: "\u201CKhi nh\u1EF1a c\xE2y b\u1EAFt \u0111\u1EA7u g\xE0o kh\xF3c,
+    r\u1EEBng th\xF4i th\xEC th\u1EA7m. V\xE0 m\u1ED9t cung th\u1EE7 \u0111\xE3 l\u1EAFng
+    nghe qu\xE1 nhi\u1EC1u.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 8182878348636510951, guid: 68c372e73fa41644a89fa2f14918a723, type: 3}
   weaponType: 1

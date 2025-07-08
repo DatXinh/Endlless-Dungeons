@@ -208,7 +208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Reality Riper
-  weaponDescription: 
+  weaponDescription: "\u201CL\u01B0\u1EE1i c\u1EE7a n\xF3 kh\xF4ng c\u1EAFt th\u1ECBt.
+    N\xF3 r\u1EA1ch s\u1EF1 th\u1EADt ra kh\u1ECFi b\u1EC1 m\u1EB7t. V\xE0 th\u01B0\u1EDDng
+    th\xEC, b\xEAn d\u01B0\u1EDBi s\u1EF1 th\u1EADt kh\xF4ng ph\u1EA3i l\xE0 \u0111i\u1EC1u
+    ta mu\u1ED1n th\u1EA5y.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 4152099353252337049, guid: f280f74faf022b74fbda6a5d72a05f12, type: 3}
   weaponType: 6

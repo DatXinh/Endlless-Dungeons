@@ -79,8 +79,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Swallow
-  weaponDescription: "Th\u1EE9 s\u1EBD nu\u1ED1t ch\u1EEDng k\u1EBB th\xF9 c\u1EE7a
-    ng\u01B0\u1EDDi . Nh\u01B0ng h\xE3y c\u1EA7n th\u1EADn khi cho n\xF3 \u0103n."
+  weaponDescription: "\u201CM\u1ED7i \u0111\xF2n \u0111\xE1nh kh\xF4ng ch\u1EC9 nu\u1ED1t
+    th\u1ECBt \u2013 m\xE0 nu\u1ED1t lu\xF4n \xFD ch\xED. Nh\u1EEFng k\u1EBB s\u1ED1ng
+    s\xF3t sau l\u01B0\u1EE1i ki\u1EBFm n\xE0y th\u01B0\u1EDDng kh\xF4ng c\xF2n l\xE0
+    ch\xEDnh m\xECnh.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 2794643368496543928, guid: 7030eac9a30551842bdba381a13eed1f, type: 3}
   weaponType: 1
@@ -97,6 +99,7 @@ GameObject:
   - component: {fileID: 3149032422975225918}
   - component: {fileID: 6936816965904806455}
   - component: {fileID: 2580022845669114092}
+  - component: {fileID: 5282954871909327927}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -261,3 +264,19 @@ MonoBehaviour:
   weaponTransform: {fileID: 3384015060028946586}
   launchForce: 15
   audioSource: {fileID: 0}
+--- !u!114 &5282954871909327927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549055341282243997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5

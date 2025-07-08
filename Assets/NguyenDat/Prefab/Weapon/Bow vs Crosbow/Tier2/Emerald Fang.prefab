@@ -177,8 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Emerald Fang
-  weaponDescription: "S\u1EAFc xanh th\u1EABm nh\u01B0 n\u1ECDc \u0111\u1ED9c r\u1EEBng
-    r\u1EADm, nh\u1EAFm \u0111\xE2u l\xE0 t\u1EED vong t\u1EDBi \u0111\xF3."
+  weaponDescription: "\u201C\u0110\xFAc t\u1EEB nanh c\u1EE7a con r\u1EAFn canh gi\u1EEF
+    t\u1EA7ng phong \u1EA5n th\u1EE9 ba. Khi cung gi\u01B0\u01A1ng, c\u01A1n \u0111\xF3i
+    c\u1ED5 x\u01B0a l\u1EA1i c\u1EF1a m\xECnh.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 8582971395896999993, guid: 87c336cc2ff917e4baffc4519110c616, type: 3}
   weaponType: 3

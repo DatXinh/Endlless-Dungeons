@@ -208,7 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Dark Potion
-  weaponDescription: 
+  weaponDescription: "\u201CCh\u1EA5t \u0111\u1ED9c ch\u1EE9a trong m\u1ED7i m\u0169i
+    t\xEAn. D\xF9ng khi b\u1EA1n kh\xF4ng c\u1EA7n s\u1ED1ng s\xF3t, ch\u1EC9 c\u1EA7n
+    k\u1EBB th\xF9 ch\u1EBFt tr\u01B0\u1EDBc.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 6834534519335637225, guid: 973fd922793f12d489edaba4b702708f, type: 3}
   weaponType: 3

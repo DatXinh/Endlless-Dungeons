@@ -18,12 +18,14 @@ public class DemonAI : MonoBehaviour
     public Animator animator;
 
     private Rigidbody2D rb;
-    private GameObject targetPlayer;
-   
+    public GameObject targetPlayer;
+    private EnemyHealth EnemyHealth;
+
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        EnemyHealth = GetComponent<EnemyHealth>();
         if (animator == null)
             animator = GetComponent<Animator>();
     }
@@ -77,7 +79,6 @@ public class DemonAI : MonoBehaviour
             }
         }
     }
-
     // Hàm tìm player gần nhất
     void FindNearestPlayer()
     {

@@ -177,9 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Royal Dusk
-  weaponDescription: "V\u1EBB \u0111\u1EB9p v\u01B0\u01A1ng gi\u1EA3 ho\xE0ng h\xF4n
-    \u1EA9n gi\u1EA5u s\u1EE9c m\u1EA1nh \u0111\u1EE7 l\xE0m run s\u1EE3 c\u1EA3
-    k\u1EBB quy\u1EC1n uy."
+  weaponDescription: "\u201CKhi v\u01B0\u01A1ng qu\u1ED1c cu\u1ED1i c\xF9ng s\u1EE5p
+    \u0111\u1ED5, chi\u1EBFc cung c\u1EE7a ho\xE0ng gia bi\u1EBFn m\u1EA5t c\xF9ng
+    ho\xE0ng h\xF4n. Gi\u1EDD n\xF3 tr\u1EDF l\u1EA1i\u2026 v\xE0 kh\xF4ng ai c\xF2n
+    x\u1EE9ng \u0111\xE1ng.\u201D"
   weaponDamage: 5
   weaponProjectile: {fileID: 4999439687539254567, guid: 99f3e17b71eaa1749b7845d90615d69a, type: 3}
   weaponType: 3

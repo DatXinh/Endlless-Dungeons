@@ -208,7 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Seraphim
-  weaponDescription: 
+  weaponDescription: "\u201CV\u0169 kh\xED c\xF3 c\xE1nh \u2013 nh\u01B0 thi\xEAn
+    th\u1EA7n sa ng\xE3. N\xF3 kh\xF4ng \u0111\u01B0\u1EE3c n\xE9m, n\xF3 t\u1EF1
+    ch\u1ECDn l\xFAc r\u1EDDi tay b\u1EA1n.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 7093288200147166899, guid: 411a24ae630e56c4885cce7df41f0331, type: 3}
   weaponType: 6

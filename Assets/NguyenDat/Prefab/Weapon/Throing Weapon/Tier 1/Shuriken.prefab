@@ -177,7 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Shuriken
-  weaponDescription: 
+  weaponDescription: "\u201CPhi ti\xEAu t\u1EA7m g\u1EA7n, d\u1EC5 d\xF9ng \u2013
+    nh\u01B0ng m\u1ED9t s\u1ED1 c\xE1i v\u1EABn c\xF2n d\xEDnh m\xE1u kh\xF4ng \u0111\xF4ng.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 180705723681212795, guid: b52292364419cbe49b5828d2192f5a60, type: 3}
   weaponType: 6

@@ -244,7 +244,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Starbeam
-  weaponDescription: 
+  weaponDescription: "\u201CTia s\xE1ng t\u1EEB v\xEC sao \u0111\xE3 ch\u1EBFt. Khi
+    gi\u01A1 cao g\u1EADy, v\u1EC7t s\xE1ng \u1EA5y nh\u1EAFc b\u1EA1n r\u1EB1ng
+    \xE1nh s\xE1ng \u0111\u1EB9p nh\u1EA5t th\u01B0\u1EDDng l\xE0 \xE1nh s\xE1ng
+    \u0111\u1EBFn qu\xE1 mu\u1ED9n.\u201D"
   weaponDamage: 50
   weaponProjectile: {fileID: 0}
   weaponType: 4

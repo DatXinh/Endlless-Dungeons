@@ -80,7 +80,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Air Forge
-  weaponDescription: 
+  weaponDescription: "\u201CKh\xF4ng ai r\xE8n \u0111\u01B0\u1EE3c gi\xF3. Nh\u01B0ng
+    \u1EDF bi\xEAn gi\u1EDBi gi\u1EEFa th\u1EBF gi\u1EDBi n\xE0y v\xE0 c\xF5i m\u1ED9ng,
+    c\xF3 ng\u01B0\u1EDDi \u0111\xE3 th\u1EED. Cu\u1ED1n s\xE1ch l\xE0 b\u1EA3n th\u1EA3o
+    c\u1EE7a h\u1EAFn, \u0111\u01B0\u1EE3c vi\u1EBFt b\u1EB1ng lu\u1ED3ng kh\xED
+    th\u1EDF cu\u1ED1i c\xF9ng.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 968465884585047571, guid: 7f2aabf82d58d1446a818b32e6443915, type: 3}
   weaponType: 5

@@ -48,7 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Voidweaver
-  weaponDescription: 
+  weaponDescription: "\u201CT\u1EEBng \u0111\u01B0\u1EE3c d\xF9ng \u0111\u1EC3 kh\xE2u
+    nh\u1EEFng v\u1EBFt n\u1EE9t trong b\u1EE9c m\xE0n th\u1EF1c t\u1EA1i. Gi\u1EDD
+    \u0111\xE2y, n\xF3 \u0111an l\u1EA1i ch\xEDnh nh\u1EEFng g\xEC kh\xF4ng n\xEAn
+    t\u1ED3n t\u1EA1i \u2013 v\xE0 m\u1ED7i l\u1EA7n d\xF9ng, b\u1EA1n th\xEAm m\u1ED9t
+    m\u0169i ch\u1EC9 v\xE0o kho\u1EA3ng kh\xF4ng.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 1286575111412870413, guid: b06dcd520bad6704ebe13a21cc2bca60, type: 3}
   weaponType: 4

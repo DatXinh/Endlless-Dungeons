@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 654663041849370607}
   - component: {fileID: 7406369983713152654}
   - component: {fileID: 6179058574938146049}
+  - component: {fileID: 55735562834403656}
+  - component: {fileID: 2078602065360037911}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -159,6 +161,34 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &55735562834403656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102745065661226313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2078602065360037911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102745065661226313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &8693814924541357856
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +199,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1783437029860381514}
   - component: {fileID: 6477567246735260388}
-  - component: {fileID: 9185834840584397259}
   m_Layer: 0
   m_Name: Bonk
   m_TagString: Untagged
@@ -207,19 +236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Bonk
-  weaponDescription: "Nh\u01B0 c\xE1i t\xEAn c\u1EE7a n\xF3 . Bonk."
+  weaponDescription: "\u201CV\u0169 kh\xED th\xF4 b\u1EA1o v\xE0 \u0111\u01A1n gi\u1EA3n.
+    \u0110\u1EADp \u0111\u1EE7 m\u1EA1nh, s\u1EF1 th\u1EADt c\u0169ng c\xF3 th\u1EC3
+    b\u1ECB b\xF3p m\xE9o.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
---- !u!114 &9185834840584397259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8693814924541357856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

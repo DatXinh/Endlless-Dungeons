@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6552978059544351916}
   - component: {fileID: 2026604198457772516}
   - component: {fileID: 2998961781274081010}
-  - component: {fileID: 3468392414867890255}
   - component: {fileID: 4541483948763578722}
+  - component: {fileID: 3468392414867890255}
+  - component: {fileID: 3792246171993779541}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -112,23 +113,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3468392414867890255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697836326245118297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f81ca530da3ba45bc000c470f64586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 4719091997109958263}
-  weaponTransform: {fileID: 4100712508893673066}
-  launchForce: 20
-  audioSource: {fileID: 0}
 --- !u!68 &4541483948763578722
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -177,6 +161,39 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &3468392414867890255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697836326245118297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f81ca530da3ba45bc000c470f64586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 4719091997109958263}
+  weaponTransform: {fileID: 4100712508893673066}
+  launchForce: 20
+  audioSource: {fileID: 0}
+--- !u!114 &3792246171993779541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697836326245118297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &3997363000707474565
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,8 +242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Blood Drinker
-  weaponDescription: "D\xF9ng m\xE1u k\u1EBB th\xF9 \u0111\u1EC3 khi\u1EBFn k\u1EBB
-    th\xF9 \u0111\u1ED5 m\xE1u."
+  weaponDescription: "\u201CKh\xF4ng c\u1EA7n ph\xE9p thu\u1EADt. Ch\u1EC9 c\u1EA7n
+    m\xE1u. N\xF3 u\u1ED1ng cho \u0111\u1EBFn khi ng\u01B0\u1EDDi c\u1EA7m kh\xF4ng
+    c\xF2n g\xEC \u0111\u1EC3 cho \u2013 v\xE0 r\u1ED3i v\u1EABn ch\u01B0a \u0111\u1EE7.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 6570116248294472694, guid: bdae8e308f5f97342855aa5e406a508c, type: 3}
   weaponType: 1

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3068973029750385318}
   - component: {fileID: 8396652287587328916}
   - component: {fileID: 4317917008442494181}
+  - component: {fileID: 1905103887288833735}
   m_Layer: 0
   m_Name: Swallow Orb
   m_TagString: Untagged
@@ -192,3 +193,19 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 3
+--- !u!114 &1905103887288833735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794643368496543928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5

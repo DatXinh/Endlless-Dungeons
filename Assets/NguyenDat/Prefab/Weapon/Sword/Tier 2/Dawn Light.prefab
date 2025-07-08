@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4431478017408310333}
   - component: {fileID: 8804440945279119919}
   - component: {fileID: 1069208800476332206}
+  - component: {fileID: 2373488834960908301}
+  - component: {fileID: 2461375715582566452}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -156,6 +158,34 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2373488834960908301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247366625806513787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2461375715582566452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247366625806513787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &3961267123052720717
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +196,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6754838545712404961}
   - component: {fileID: 6542941947552254300}
-  - component: {fileID: 475427387117930015}
   m_Layer: 0
   m_Name: Dawn Light
   m_TagString: Untagged
@@ -204,20 +233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Dawn Light
-  weaponDescription: "Ch\u1EB3ng r\u1EA1ng ng\u1EDDi nh\u01B0 \xE1nh b\xECnh minh
-    nh\u01B0ng v\u1EABn \u0111\u1EE7 \u0111\u1EC3 xua tan b\xF3ng t\u1ED1i."
+  weaponDescription: "\u201CL\u01B0\u1EE1i g\u01B0\u01A1m r\u1EF1c l\xEAn khi ch\u1EA1m
+    m\xE1u. Ng\u01B0\u1EDDi r\xE8n n\xF3 t\u1EEBng tin r\u1EB1ng b\xECnh minh c\xF3
+    th\u1EC3 gi\u1EBFt ch\u1EBFt \xE1c m\u1ED9ng \u2013 nh\u01B0ng r\u1ED3i ch\xEDnh
+    b\xECnh minh kh\xF4ng bao gi\u1EDD \u0111\u1EBFn n\u1EEFa.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
---- !u!114 &475427387117930015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3961267123052720717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

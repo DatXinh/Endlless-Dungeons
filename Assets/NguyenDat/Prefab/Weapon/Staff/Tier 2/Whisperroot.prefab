@@ -207,7 +207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Whisperroot
-  weaponDescription: 
+  weaponDescription: "\u201CN\xF3 m\u1ECDc \u1EDF l\u1ED1i v\xE0o t\u1EA7ng s\xE2u
+    nh\u1EA5t. Khi c\u1EAFm xu\u1ED1ng \u0111\u1EA5t, b\u1EA1n c\xF3 th\u1EC3 nghe
+    th\u1EA5y gi\u1ECDng n\xF3i... nh\u01B0ng kh\xF4ng ph\u1EA3i c\u1EE7a m\xECnh.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 1436766671170324726, guid: 90b7ffba9bac249499e71060b4a9029d, type: 3}
   weaponType: 4

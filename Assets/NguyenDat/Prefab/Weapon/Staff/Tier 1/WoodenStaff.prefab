@@ -158,7 +158,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: '#002'
   weaponName: Wooden Staff
-  weaponDescription: 
+  weaponDescription: "\u201CM\u1ED9t g\u1EADy ph\xE9p \u0111\u01A1n s\u01A1, th\u01B0\u1EDDng
+    \u0111\u01B0\u1EE3c c\xE1c ph\xE1p s\u01B0 t\u1EADp s\u1EF1 s\u1EED d\u1EE5ng.
+    Nh\u01B0ng ngay c\u1EA3 m\u1EA3nh g\u1ED7 v\xF4 danh c\u0169ng t\u1EEBng \u0111\u01B0\u1EE3c
+    tr\u1ED3ng t\u1EEB v\xF9ng \u0111\u1EA5t kh\xF4ng c\xF2n hi\u1EC7n di\u1EC7n
+    tr\xEAn b\u1EA3n \u0111\u1ED3.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 3285054734939882046, guid: 59b561f13dfa7cf42b3866a55383ec3e, type: 3}
   weaponType: 4

@@ -49,7 +49,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Curse of Vine
-  weaponDescription: 
+  weaponDescription: "\u201CT\u1EEBng l\xE0 bi\u1EC3u t\u01B0\u1EE3ng c\u1EE7a r\u1EEBng
+    linh thi\xEAng, gi\u1EDD n\xF3 tr\xF3i bu\u1ED9c linh h\u1ED3n ng\u01B0\u1EDDi
+    b\u1EAFn v\xE0o r\u1EC5 c\xE2y \u0111\xE3 ch\u1EBFt. M\u1ED7i m\u0169i t\xEAn
+    m\u1ECDc th\xEAm gai, v\xE0 m\u1ED7i ph\xE1t b\u1EAFn l\xE0 m\u1ED9t l\u1EDDi
+    r\u1EE7a nguy\u1EC1n.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 1847409342686161705, guid: 7be962534e419284b8b280e08f8833db, type: 3}
   weaponType: 3

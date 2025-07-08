@@ -208,7 +208,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Sand Storm
-  weaponDescription: 
+  weaponDescription: "\u201CC\u01A1n b\xE3o \u0111\u1EA7u ti\xEAn kh\xF4ng ph\u1EA3i
+    \u0111\u1EBFn t\u1EEB sa m\u1EA1c, m\xE0 t\u1EEB m\u1ED9t chi\u1EC1u kh\xF4ng
+    gian n\u01A1i c\xE1t bi\u1EBFt n\xF3i. Khi ni\u1EC7m ph\xE9p n\xE0y, b\u1EA1n
+    kh\xF4ng g\u1ECDi b\xE3o \u2013 b\u1EA1n g\u1ECDi s\u1EF1 ch\xFA \xFD c\u1EE7a
+    n\xF3.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 3537355288724318913, guid: e9d8c7ea9bf5e4d4ab32609abac23858, type: 3}
   weaponType: 5

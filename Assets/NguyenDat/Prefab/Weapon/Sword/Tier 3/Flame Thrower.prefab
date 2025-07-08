@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7569892880207234808}
   - component: {fileID: 7370249451434178980}
   - component: {fileID: 3351306605471833524}
+  - component: {fileID: 5628631315741258396}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -178,6 +179,22 @@ MonoBehaviour:
   weaponTransform: {fileID: 3181440463003366089}
   launchForce: 20
   audioSource: {fileID: 0}
+--- !u!114 &5628631315741258396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436211728909668258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &3308519065308260815
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +236,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3181440463003366089}
   - component: {fileID: 1948226361445953240}
-  - component: {fileID: 7104083723500115392}
   m_Layer: 0
   m_Name: Flame Thrower
   m_TagString: Untagged
@@ -258,23 +274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Flame Thrower
-  weaponDescription: "Ki\u1EBFm kh\xED d\u1EF1c ch\xE1y ch\u1EB3ng bao gi\u1EDD t\u1EAFt."
+  weaponDescription: "\u201CK\u1EBFt h\u1EE3p gi\u1EEFa ma thu\u1EADt v\xE0 c\u01A1
+    kh\xED c\u1ED5. L\u1EEDa phun ra theo \xFD ch\xED, kh\xF4ng theo logic.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 8176644171792882619, guid: 98e87c5115084404ca38fc2e0cd7f25b, type: 3}
   weaponType: 1
---- !u!114 &7104083723500115392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6678569435755268935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5

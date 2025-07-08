@@ -80,7 +80,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Forbidden Icon of Sun
-  weaponDescription: 
+  weaponDescription: "\u201CM\u1ED9t d\u1ECB v\u1EADt b\u1ECB nguy\u1EC1n \u2013
+    kh\xF4ng h\u1EB3n l\xE0 s\xE1ch. Bi\u1EC3u t\u01B0\u1EE3ng m\u1EB7t tr\u1EDDi
+    trong n\xF3 \u0111\u01B0\u1EE3c m\xF4 t\u1EA3 nh\u01B0 m\u1ED9t sinh v\u1EADt
+    s\u1ED1ng, t\u1EEBng \u0111\u01B0\u1EE3c th\u1EDD ph\u1EE5ng trong th\u1EDDi
+    k\u1EF3 kh\xF4ng c\xF3 ban \u0111\xEAm.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 8132626562079457863, guid: 951d67877d1a1d54991c5fc0e1b03d03, type: 3}
   weaponType: 5

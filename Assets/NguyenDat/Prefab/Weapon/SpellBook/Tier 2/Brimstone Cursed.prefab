@@ -49,7 +49,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Brimstone Cursed
-  weaponDescription: 
+  weaponDescription: "\u201CB\u1ECB vi\u1EBFt b\u1EDFi m\u1ED9t d\u1ECB gi\xE1o \u0111\u1ED3
+    b\u1ECB thi\xEAu s\u1ED1ng. M\u1ED7i l\u1EA7n ph\xE9p \u0111\u01B0\u1EE3c ni\u1EC7m,
+    m\u1ED9t ti\u1EBFng g\xE0o t\u1EEB \u0111\u1ED1ng tro \u0111\u01B0\u1EE3c v\u1ECDng
+    l\u1EA1i \u2013 kh\xF4ng ph\u1EA3i t\u1EEB h\u1EAFn, m\xE0 t\u1EEB th\u1EE9 \u0111\xE3
+    nghe h\u1EAFn l\u1EA7n \u0111\u1EA7u.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 317676924817297914, guid: d9c348e711284774594bbf91319f819b, type: 3}
   weaponType: 5
