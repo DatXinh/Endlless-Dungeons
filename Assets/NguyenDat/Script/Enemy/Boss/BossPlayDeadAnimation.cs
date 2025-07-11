@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonPlayDeadAnimation : MonoBehaviour
+public class BossPlayDeadAnimation : MonoBehaviour
 {
     [Header("Health")]
     public EnemyHealth enemyHealth;

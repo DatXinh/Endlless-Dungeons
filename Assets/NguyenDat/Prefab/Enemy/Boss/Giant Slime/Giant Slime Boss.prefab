@@ -99,7 +99,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598781697160387885}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 931c44647c961014eb0c5f118c505382, type: 3}
   m_Name: 
@@ -180,11 +180,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 598781697160387885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5edb9a781b4167946ab46a8ef362753e, type: 3}
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 0}
-  animator: {fileID: 0}
+  enemyHealth: {fileID: -527025965698629815}
+  animator: {fileID: 2664801225064207829}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 9069419111446926389}
@@ -325,3 +325,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnBoss: {fileID: 0}

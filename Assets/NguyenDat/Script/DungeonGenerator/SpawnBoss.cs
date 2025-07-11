@@ -1,22 +1,22 @@
 ﻿using UnityEngine;
 
-public class CheckPlayerEntervsSpawnBoss : MonoBehaviour
+public class SpawnBoss : MonoBehaviour
 {
     [Header("References")]
-    public GameObject objectToEnableOnEnter;      // GameObject sẽ được bật khi Player chạm vào
+    public GameObject Gate;      // GameObject sẽ được bật khi Player chạm vào
     public GameObject[] monsterPrefabs;           // Danh sách prefab quái vật sẽ spawn
     public Transform spawnPosition;               // Vị trí spawn quái vật
-    public GameObject objectToEnableOnMonsterDeath; // GameObject sẽ được bật khi quái vật chết
+    public GameObject Portal; // GameObject sẽ được bật khi quái vật chết
 
     private Collider2D myCollider;
     private GameObject spawnedMonster;
     private bool hasTriggered = false;
+    public Transform BossParent;
 
     void Awake()
     {
         myCollider = GetComponent<Collider2D>();
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (hasTriggered) return;
@@ -25,8 +25,8 @@ public class CheckPlayerEntervsSpawnBoss : MonoBehaviour
             hasTriggered = true;
 
             // Enable đối tượng chỉ định
-            if (objectToEnableOnEnter != null)
-                objectToEnableOnEnter.SetActive(true);
+            if (Gate != null)
+                Gate.SetActive(true);
 
             // Tắt collider của chính nó
             if (myCollider != null)
@@ -38,31 +38,18 @@ public class CheckPlayerEntervsSpawnBoss : MonoBehaviour
                 int randomIndex = Random.Range(0, monsterPrefabs.Length);
                 GameObject selectedPrefab = monsterPrefabs[randomIndex];
                 spawnedMonster = Instantiate(selectedPrefab, spawnPosition.position, spawnPosition.rotation);
-                // Đăng ký sự kiện chết của quái vật
-                MonsterDeathHandler deathHandler = spawnedMonster.AddComponent<MonsterDeathHandler>();
-                deathHandler.onDeathCallback = OnMonsterDeath;
+                if (BossParent != null)
+                {
+                    spawnedMonster.transform.SetParent(BossParent);
+                }
             }
         }
     }
-
-    // Hàm callback khi quái vật chết
-    private void OnMonsterDeath()
+    public void enablePortal()
     {
-        if (objectToEnableOnMonsterDeath != null)
-            objectToEnableOnMonsterDeath.SetActive(true);
-    }
-}
-
-// Script phụ để bắt sự kiện chết của quái vật
-public class MonsterDeathHandler : MonoBehaviour
-{
-    public System.Action onDeathCallback;
-
-    // Gọi hàm này khi quái vật chết (ví dụ từ script máu của quái vật)
-    public void Die()
-    {
-        if (onDeathCallback != null)
-            onDeathCallback.Invoke();
-        Destroy(this); // Xoá component này sau khi gọi callback
+        if (Portal != null)
+        {
+            Portal.SetActive(true);
+        }
     }
 }

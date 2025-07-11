@@ -70,7 +70,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   canAttack: 0
   flipTransform: {fileID: 7468138437737676561}
   animator: {fileID: 1785503035357836787}
+  targetPlayer: {fileID: 0}
 --- !u!114 &6721623303700363402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,11 +182,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2135502161286100499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5edb9a781b4167946ab46a8ef362753e, type: 3}
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 0}
-  animator: {fileID: 0}
+  enemyHealth: {fileID: 3515097051186982381}
+  animator: {fileID: 1785503035357836787}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 8691485493006638612}
@@ -395,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnBoss: {fileID: 0}
 --- !u!1 &7912805837845805264
 GameObject:
   m_ObjectHideFlags: 0
