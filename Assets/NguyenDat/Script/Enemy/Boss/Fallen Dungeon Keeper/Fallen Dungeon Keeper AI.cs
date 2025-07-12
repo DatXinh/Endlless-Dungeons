@@ -9,29 +9,20 @@ public class FallenDungeonKeeperAI : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed = 8f;
-    public float moveRadius = 10f;
-    private Vector2 moveTarget;
 
     [Header("Bullet Prefabs")]
     public GameObject cursedSkullPrefab;
     public GameObject brimstonePrefab;
     public GameObject miniBrimstonePrefab;
+    public GameObject brimstoneArrowPrefab;
 
     [Header("Prediction")]
     public float projectileSpeed = 6f; // Tốc độ đạn để tính dự đoán
 
-    [Header("Orbiting")]
-    public float orbitRadius;
-    public float orbitSpeed;
-    private float orbitAngle = 0f;
-
-    private bool isApproachingPlayer = true;
-    public float approachSpeed;
-    public float approachStopDistance = 10f;
+    private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-
+    private CapsuleCollider2D capsuleCollider;
     private Coroutine attackRoutine;
-    private Rigidbody2D playerRb;
 
     void Start()
     {
@@ -41,49 +32,25 @@ public class FallenDungeonKeeperAI : MonoBehaviour
             if (playerObj != null)
             {
                 player = playerObj.transform;
-                playerRb = playerObj.GetComponent<Rigidbody2D>();
             }
         }
 
+        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        StartCoroutine(PhaseManager());
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        StartCoroutine(IntroAttack(10f, true)); // Đòn mở đầu khi vào trận
     }
 
     void Update()
     {
         if (player != null)
         {
-            if (isApproachingPlayer)
-            {
-                ApproachPlayer();
-            }
-            else
-            {
-                OrbitAroundPlayer();
-            }
-
             FlipTowardsPlayer();
-        }
-    }
-
-    void ApproachPlayer()
-    {
-        float dist = Vector2.Distance(transform.position, player.position);
-        if (dist > approachStopDistance)
-        {
-            Vector2 dir = (player.position - transform.position).normalized;
-            transform.position += (Vector3)(dir * approachSpeed * Time.deltaTime);
-        }
-        else
-        {
-            isApproachingPlayer = false;
-            orbitAngle = Random.Range(0f, 360f); // bắt đầu bay vòng
         }
     }
     void FlipTowardsPlayer()
     {
         if (spriteRenderer == null || player == null) return;
-
         Vector2 dir = player.position - transform.position;
         if (dir.x != 0)
         {
@@ -92,45 +59,58 @@ public class FallenDungeonKeeperAI : MonoBehaviour
             transform.localScale = scale;
         }
     }
-
-    void OrbitAroundPlayer()
+    // Tấn công mở đầu, có thể tái sử dụng khi chuyển phase
+    IEnumerator IntroAttack(float duration, bool startPhaseManagerAfter = false)
     {
-        orbitAngle += orbitSpeed * Time.deltaTime;
-        if (orbitAngle > 360f) orbitAngle -= 360f;
+        if (capsuleCollider != null)
+            capsuleCollider.enabled = false;
 
-        Vector2 center = player.position;
-        float x = center.x + Mathf.Cos(orbitAngle) * orbitRadius;
-        float y = center.y + Mathf.Sin(orbitAngle) * orbitRadius;
-        transform.position = Vector2.Lerp(transform.position, new Vector2(x, y), Time.deltaTime * moveSpeed);
+        float interval = 0.3f;
+        int count = Mathf.FloorToInt(duration / interval);
+
+        yield return StartCoroutine(BrimstoneRain(count, interval));
+
+        if (capsuleCollider != null)
+            capsuleCollider.enabled = true;
+
+        if (startPhaseManagerAfter)
+        {
+            StartCoroutine(PhaseManager());
+        }
     }
-
+    //Quản lý các phase của boss
+    // Quản lý phase
     IEnumerator PhaseManager()
     {
         attackRoutine = StartCoroutine(PhaseOne());
         yield return new WaitUntil(() => enemyHealth.GetHealthPercent() <= 70f);
 
         StopCoroutine(attackRoutine);
+        yield return StartCoroutine(IntroAttack(12.5f)); // Đòn intro trước Phase 2
         attackRoutine = StartCoroutine(PhaseTwo());
         yield return new WaitUntil(() => enemyHealth.GetHealthPercent() <= 35f);
 
         StopCoroutine(attackRoutine);
+        yield return StartCoroutine(IntroAttack(15f)); // Đòn intro trước Phase 3
         attackRoutine = StartCoroutine(PhaseThree());
         yield return new WaitUntil(() => enemyHealth.GetHealthPercent() <= 0);
 
         StopCoroutine(attackRoutine);
     }
 
-    //Chia phase
 
     IEnumerator PhaseOne()
     {
         while (true)
         {
-            ShootSpread(miniBrimstonePrefab, 5, 20f, 6f);
-            yield return new WaitForSeconds(0.5f);
+            int random = Random.Range(0, 2); // 0 hoặc 1
 
-            StartCoroutine(BrimstoneRain(10, 0.1f));
-            yield return new WaitForSeconds(1f);
+            if (random == 0)
+                yield return StartCoroutine(ArrowAndClockAttack());
+            else
+                yield return StartCoroutine(BulletSpreadAttack());
+
+            yield return new WaitForSeconds(2.5f);
         }
     }
 
@@ -138,14 +118,15 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     {
         while (true)
         {
-            ShootStraight(brimstonePrefab, 3, 0.3f);
-            yield return new WaitForSeconds(1.2f);
+            int random = Random.Range(0, 3);
 
-            ShootSpiral(cursedSkullPrefab, 12, 120f);
-            yield return new WaitForSeconds(1.5f);
-
-            ShootRing(miniBrimstonePrefab, 8);
-            yield return new WaitForSeconds(1f);
+            if (random == 0)
+                yield return StartCoroutine(ArrowAndClockAttack());
+            else if (random == 1)
+                yield return StartCoroutine(BulletSpreadAttack());
+            else
+                yield return StartCoroutine(DashAndFireAttack());
+            yield return new WaitForSeconds(2f);
         }
     }
 
@@ -153,76 +134,16 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     {
         while (true)
         {
-            ShootSpiral(cursedSkullPrefab, 18, 100f);
-            yield return new WaitForSeconds(1f);
-
-            StartCoroutine(BrimstoneRain(20, 0.08f));
-
-            ShootRing(miniBrimstonePrefab, 10);
-            yield return new WaitForSeconds(0.8f);
-
-            ShootSpread(brimstonePrefab, 5, 25f, 7f);
-            yield return new WaitForSeconds(1f);
-        }
-    }
-
-    // Cách bắn đạn
-
-    void Shoot(GameObject prefab, Vector2 dir, float speed = 6f)
-    {
-        if (prefab == null) return;
-        GameObject proj = Instantiate(prefab, transform.position, Quaternion.identity);
-        Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
-        if (rb != null)
-            rb.linearVelocity = dir.normalized * speed;
-    }
-
-    void ShootStraight(GameObject prefab, int count, float delay)
-    {
-        StartCoroutine(StraightShot(prefab, count, delay));
-    }
-
-    IEnumerator StraightShot(GameObject prefab, int count, float delay)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            Vector2 dir = PredictPlayerDirection();
-            Shoot(prefab, dir, projectileSpeed);
-            yield return new WaitForSeconds(delay);
-        }
-    }
-
-    void ShootRing(GameObject prefab, int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            float angle = i * 360f / count;
-            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-            Shoot(prefab, dir, projectileSpeed);
-        }
-    }
-
-    void ShootSpread(GameObject prefab, int count, float spreadAngle, float speed)
-    {
-        Vector2 baseDir = PredictPlayerDirection();
-        float baseAngle = Mathf.Atan2(baseDir.y, baseDir.x) * Mathf.Rad2Deg;
-
-        for (int i = 0; i < count; i++)
-        {
-            float angle = baseAngle + ((i - count / 2f) * (spreadAngle / count));
-            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-            Shoot(prefab, dir, speed);
-        }
-    }
-
-    void ShootSpiral(GameObject prefab, int count, float rotationSpeed)
-    {
-        float offset = Time.time * rotationSpeed;
-        for (int i = 0; i < count; i++)
-        {
-            float angle = i * 360f / count + offset;
-            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-            Shoot(prefab, dir, projectileSpeed);
+            int random = Random.Range(0, 4);
+            if (random == 0)
+                yield return StartCoroutine(ArrowAndClockAttack());
+            else if (random == 1)
+                yield return StartCoroutine(BulletSpreadAttack());
+            else if (random == 2)
+                yield return StartCoroutine(DashAndFireAttack());
+            else
+                yield return StartCoroutine(SpiralShotAttack());
+            yield return new WaitForSeconds(1.5f);
         }
     }
 
@@ -230,34 +151,264 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     {
         if (player == null) yield break;
 
+        float baseSpeed = 7f;
+        float maxSpeed = 17f;
+
         for (int i = 0; i < count; i++)
         {
-            // Random trong vùng xung quanh người chơi
             float range = 25f;
             float x = Random.Range(player.position.x - range, player.position.x + range);
-            Vector2 spawnPos = new Vector2(x, player.position.y + 20f); // Rơi từ trên đầu player
+            Vector2 spawnPos = new Vector2(x, player.position.y + 20f);
 
             GameObject b = Instantiate(brimstonePrefab, spawnPos, Quaternion.identity);
             Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
             if (rb != null)
-                rb.linearVelocity = Vector2.down * 5f;
+            {
+                // Tính tỉ lệ tăng dần: từ 0 → 1
+                float t = (float)i / (count - 1);
+                float speed = Mathf.Lerp(baseSpeed, maxSpeed, t);
+
+                rb.linearVelocity = Vector2.down * speed;
+            }
 
             yield return new WaitForSeconds(interval);
         }
     }
-
-    //Dự đoán hướng di chuyển của người chơi
-
-    Vector2 PredictPlayerDirection()
+    IEnumerator BulletSpreadAttack()
     {
-        if (player == null) return Vector2.right;
+        if (player == null) yield break;
 
-        Vector2 toPlayer = player.position - transform.position;
-        Vector2 playerVelocity = playerRb != null ? playerRb.linearVelocity : Vector2.zero;
+        // Dash về phía player trước khi bắn
+        yield return StartCoroutine(DashToRandomNearPlayer());
 
-        float timeToHit = toPlayer.magnitude / projectileSpeed;
-        Vector2 predictedPos = (Vector2)player.position + playerVelocity * timeToHit;
+        // thông số lượng sóng, góc, thời gian delay giữa các góc
+        int waves = 3;
+        float angleStep = 10f;
+        float totalAngle = 90f;
+        float sweepDelay = 0.05f;
 
-        return predictedPos - (Vector2)transform.position;
+        // Tính góc chính giữa dựa trên hướng về phía player
+        Vector2 dirToPlayer = (player.position - transform.position).normalized;
+        float baseAngle = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
+
+        float startAngle = baseAngle - totalAngle / 2f;
+        float endAngle = baseAngle + totalAngle / 2f;
+
+        // Random chiều bắt đầu: true = trái → phải, false = phải → trái
+        bool leftToRight = Random.value > 0.5f;
+
+        for (int wave = 0; wave < waves; wave++)
+        {
+            if (leftToRight)
+            {
+                for (float angle = startAngle; angle <= endAngle; angle += angleStep)
+                {
+                    FireBulletAtAngle(angle);
+                    yield return new WaitForSeconds(sweepDelay);
+                }
+            }
+            else
+            {
+                for (float angle = endAngle; angle >= startAngle; angle -= angleStep)
+                {
+                    FireBulletAtAngle(angle);
+                    yield return new WaitForSeconds(sweepDelay);
+                }
+            }
+
+            // Đổi chiều sau mỗi wave
+            leftToRight = !leftToRight;
+        }
     }
+
+    IEnumerator AccelerateBullet(Rigidbody2D rb, Vector2 direction, float initialSpeed, float finalSpeed, float duration)
+    {
+        float timer = 0f;
+        while (timer < duration && rb != null)
+        {
+            float t = timer / duration;
+            float currentSpeed = Mathf.Lerp(initialSpeed, finalSpeed, t);
+            rb.linearVelocity = direction * currentSpeed;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        // Giữ tốc độ cuối cùng
+        if (rb != null)
+            rb.linearVelocity = direction * finalSpeed;
+    }
+    void FireBulletAtAngle(float angle)
+    {
+        float rad = angle * Mathf.Deg2Rad;
+        Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
+
+        GameObject bullet = Instantiate(miniBrimstonePrefab, transform.position, Quaternion.identity);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            StartCoroutine(AccelerateBullet(rb, dir, projectileSpeed, projectileSpeed * 2f, 1f));
+        }
+    }
+    IEnumerator DashToRandomNearPlayer()
+    {
+        if (player == null || rb == null) yield break;
+
+        Vector2 targetPos = (Vector2)player.position + Random.insideUnitCircle.normalized * Random.Range(6f, 10f);
+        float dashSpeed = 60f;
+        float arriveDistance = 0.5f;
+        float timeout = 0.5f;
+
+        // Tính hướng và áp dụng velocity
+        Vector2 direction = (targetPos - rb.position).normalized;
+        rb.linearVelocity = direction * dashSpeed;
+
+        float timer = 0f;
+        while (Vector2.Distance(rb.position, targetPos) > arriveDistance && timer < timeout)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ngừng lại
+        rb.linearVelocity = Vector2.zero;
+
+        // Tạm dừng trước khi tấn công
+        yield return new WaitForSeconds(0.2f);
+    }
+
+    IEnumerator ArrowAndClockAttack()
+    {
+        if (player == null) yield break;
+
+        float duration = 5f;
+        float interval = 1f;
+        int repeat = Mathf.FloorToInt(duration / interval);
+
+        for (int i = 0; i < repeat; i++)
+        {
+            // Bắn mũi tên Brimstone Bullet
+            FireArrowFormation();
+
+            // Bắn đồng hồ Mini Brimstone Bullet
+            FireClockwiseBullets(12);
+
+            yield return new WaitForSeconds(interval);
+        }
+    }
+    void FireArrowFormation()
+    {
+        if (player == null || brimstoneArrowPrefab == null) return;
+
+        Vector2 direction = (player.position - transform.position).normalized;
+        GameObject arrowGroup = Instantiate(brimstoneArrowPrefab, rb.position, Quaternion.identity);
+
+        // Gán vận tốc cho từng viên đạn con trong prefab
+        Rigidbody2D[] bullets = arrowGroup.GetComponentsInChildren<Rigidbody2D>();
+        foreach (Rigidbody2D bulletRb in bullets)
+        {
+            bulletRb.linearVelocity = direction * projectileSpeed * 1.5f;
+        }
+    }
+    void FireClockwiseBullets(int count)
+    {
+        float angleStep = 360f / count;
+        Vector2 origin = transform.position;
+
+        for (int i = 0; i < count; i++)
+        {
+            float angle = -i * angleStep; // theo chiều kim đồng hồ
+            float rad = angle * Mathf.Deg2Rad;
+            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+            SpawnBullet(miniBrimstonePrefab, origin, dir);
+        }
+    }
+    void SpawnBullet(GameObject prefab, Vector2 position, Vector2 direction)
+    {
+        GameObject bullet = Instantiate(prefab, position, Quaternion.identity);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = direction.normalized * projectileSpeed;
+        }
+    }
+
+    IEnumerator DashAndFireAttack()
+    {
+        if (player == null || rb == null) yield break;
+
+        int dashCount = 3;
+        float dashDuration = 0.75f;
+        float fireInterval = 0.1f;
+        float dashRangeMin = 10f;
+        float dashRangeMax = 15f;
+
+        for (int d = 0; d < dashCount; d++)
+        {
+            Vector2 start = rb.position;
+            Vector2 target = (Vector2)player.position + Random.insideUnitCircle.normalized * Random.Range(dashRangeMin, dashRangeMax);
+
+            float elapsed = 0f;
+            float fireTimer = 0f;
+
+            while (elapsed < dashDuration)
+            {
+                elapsed += Time.deltaTime;
+                fireTimer += Time.deltaTime;
+
+                // Di chuyển boss theo lerp từ start → target
+                Vector2 newPos = Vector2.Lerp(start, target, elapsed / dashDuration);
+                rb.MovePosition(newPos);
+
+                // Bắn đạn mỗi 0.1 giây trong lúc đang dash
+                if (fireTimer >= fireInterval)
+                {
+                    fireTimer = 0f;
+                    Vector2 dir = ((Vector2)player.position - rb.position).normalized;
+                    SpawnBullet(miniBrimstonePrefab, rb.position, dir);
+                }
+
+                yield return null;
+            }
+
+            // Dừng ngắn giữa mỗi dash nếu muốn, hoặc bỏ qua để liền mạch
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        // Dừng hẳn sau 3 lần dash
+        rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(0.3f);
+    }
+    IEnumerator SpiralShotAttack()
+    {
+        float duration = 5f;
+        float fireInterval = 0.1f;
+        int bulletsPerShot = 3;
+        float currentRotation = 0f; // xoay xoắn tăng dần
+
+        float timer = 0f;
+        while (timer < duration)
+        {
+            timer += fireInterval;
+
+            for (int i = 0; i < bulletsPerShot; i++)
+            {
+                // Góc bắn từng viên trong 1 lần
+                float angle = currentRotation + (360f / bulletsPerShot) * i;
+                float rad = angle * Mathf.Deg2Rad;
+                Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
+
+                SpawnBullet(cursedSkullPrefab, rb.position, dir);
+            }
+
+            // Tăng góc xoay cho vòng sau → tạo xoắn ốc
+            currentRotation += 10f;
+
+            yield return new WaitForSeconds(fireInterval);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+    }
+
+
 }

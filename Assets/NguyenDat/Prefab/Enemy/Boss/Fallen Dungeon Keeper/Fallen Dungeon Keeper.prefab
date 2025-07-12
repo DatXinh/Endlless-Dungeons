@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8351492997274029557}
   - component: {fileID: 3420477818279676382}
   - component: {fileID: 5464100686519341170}
+  - component: {fileID: 1556942359404822310}
   m_Layer: 7
   m_Name: Fallen Dungeon Keeper
   m_TagString: Boss
@@ -130,15 +131,28 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyHealth: {fileID: 3420477818279676382}
   moveSpeed: 10
-  moveRadius: 10
   cursedSkullPrefab: {fileID: 3794576502109421181, guid: 9f7b07788694b5040a1ac70ea057916f, type: 3}
   brimstonePrefab: {fileID: 1004638968246304387, guid: 94040454849bde240a598f92f873c418, type: 3}
   miniBrimstonePrefab: {fileID: 3532160501981435551, guid: db17c17355b51734fbb8ea70293a911d, type: 3}
+  brimstoneArrowPrefab: {fileID: 6839943353058557494, guid: 518010328e36bd649bd5ab9f1992c515, type: 3}
   projectileSpeed: 10
-  orbitRadius: 15
-  orbitSpeed: 1
-  approachSpeed: 8
-  approachStopDistance: 15
+--- !u!114 &1556942359404822310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002112644532160807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 3420477818279676382}
+  animator: {fileID: 5204750563409903640}
+  parameterName: 
+  scriptsToDisable:
+  - {fileID: 5464100686519341170}
 --- !u!1 &8185888092490760124
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +231,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -8389919636839358137, guid: 9cc540c9ea9a94c4e98c28cd9133c21c, type: 3}
+  m_Sprite: {fileID: 6862962718303971672, guid: 6b1efa67d892f974c89d76f0c0157af4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,7 +252,7 @@ Animator:
   m_GameObject: {fileID: 8185888092490760124}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1b360420c5dee94083c7d39730b6a19, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
