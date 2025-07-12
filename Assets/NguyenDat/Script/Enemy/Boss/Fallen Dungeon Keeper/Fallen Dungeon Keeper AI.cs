@@ -44,8 +44,9 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        StartCoroutine(IntroAttack(10f, true)); // Đòn mở đầu khi vào trận
+        StartCoroutine(IntroAttack(20f, true)); // Đòn mở đầu khi vào trận
         laugh.Play();
+        Phase1.Play();
     }
 
     void Update()
@@ -108,8 +109,6 @@ public class FallenDungeonKeeperAI : MonoBehaviour
 
     IEnumerator PhaseOne()
     {
-        if (Phase1 != null)
-            Phase1.Play();
         while (true)
         {
             int random = Random.Range(0, 2); // 0 hoặc 1
