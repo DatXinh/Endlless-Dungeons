@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9170121367882646864}
   - component: {fileID: 7549000410854011813}
-  - component: {fileID: -1907742943680308188}
   m_Layer: 0
   m_Name: Glass Pain
   m_TagString: Untagged
@@ -48,24 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Glass Pain
-  weaponDescription: "S\u1EAFc b\xE9n nh\u01B0 l\u1EDDi ng\u01B0\u1EDDi y\xEAu c\u0169
-    c\u1EE7a b\u1EA1n. D\u1EC5 v\u1EE1 nh\u01B0 t\u1EA5m l\xF2ng b\u1EA1n d\xE0nh
-    cho c\xF4 \u1EA5y."
+  weaponDescription: "\u201CR\xE8n t\u1EEB th\u1EE7y tinh k\u1EBFt tinh sau m\u1ED9t
+    v\u1EE5 n\u1ED5 c\u1EA5m thu\u1EADt. D\u1EC5 g\xE3y, nh\u01B0ng m\u1ED7i v\u1EBFt
+    n\u1EE9t \u0111\u1EC1u mang theo ti\u1EBFng g\xE0o kh\xF4ng thu\u1ED9c v\u1EC1
+    th\u1EBF gi\u1EDBi n\xE0y.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
---- !u!114 &-1907742943680308188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7579230444333726614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8292908805432043625
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +66,8 @@ GameObject:
   - component: {fileID: 2280235183998699884}
   - component: {fileID: 1303220320255898138}
   - component: {fileID: 5462984937972357028}
+  - component: {fileID: 5501123666940801139}
+  - component: {fileID: 6573839973009854625}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -227,3 +217,31 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5501123666940801139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292908805432043625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6573839973009854625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292908805432043625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5

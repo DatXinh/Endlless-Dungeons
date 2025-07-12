@@ -138,6 +138,29 @@ public class LaunchProjectile : MonoBehaviour
         PlayAudio();
     }
 
+    public void LaunchTripleInterval()
+    {
+        LaunchTriple_Interval();
+    }
+    private void LaunchTriple_Interval(float sideOffset = 0.5f, float backOffset = 0.5f)
+    {
+        if (!IsValid()) return;
+
+        Vector2 baseDir = weaponTransform.right.normalized;
+        Vector2 perpDir = weaponTransform.up.normalized;
+
+        // 1. Mũi tên chính giữa
+        SpawnProjectile(firePoint.position, baseDir);
+
+        // 2. Hai mũi tên hai bên, lùi về sau
+        Vector2 offsetLeft = (Vector2)firePoint.position - baseDir * backOffset - perpDir * sideOffset;
+        Vector2 offsetRight = (Vector2)firePoint.position - baseDir * backOffset + perpDir * sideOffset;
+
+        SpawnProjectile(offsetLeft, baseDir);
+        SpawnProjectile(offsetRight, baseDir);
+
+        PlayAudio();
+    }
     private GameObject SpawnProjectile(Vector2 position, Vector2 direction)
     {
         GameObject projectile = Instantiate(projectilePrefab, position, Quaternion.Euler(0f, 0f, GetAngle(direction)));

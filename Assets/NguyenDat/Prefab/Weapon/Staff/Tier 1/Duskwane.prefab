@@ -207,9 +207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Duskwane
-  weaponDescription: "M\u1ED9t c\xE2y tr\u01B0\u1EE3ng \u0111\u01B0\u1EE3c \u0111\u1EBDo
-    t\u1EEB \u0111\xE1 ch\u1EA1ng v\u1EA1ng, ph\xE1t ra lu\u1ED3ng ma ph\xE1p \xE2m
-    u h\xFAt l\u1EA5y \xE1nh s\xE1ng xung quanh."
+  weaponDescription: "\u201CN\xF3 kh\xF4ng ph\xE1t s\xE1ng trong b\xF3ng t\u1ED1i.
+    N\xF3 ch\u1EC9 l\xE0m m\u1ECDi th\u1EE9 xung quanh qu\xEAn \u0111i \xE1nh s\xE1ng
+    t\u1EEBng t\u1ED3n t\u1EA1i.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 2632702078711203918, guid: 2d8aaa0942a19f346a264671d1468965, type: 3}
   weaponType: 4

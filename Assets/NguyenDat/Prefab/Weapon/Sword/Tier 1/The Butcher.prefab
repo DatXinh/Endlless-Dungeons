@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3222971404420909834}
   - component: {fileID: 1188282212119669482}
-  - component: {fileID: 7471599858080818}
   m_Layer: 0
   m_Name: The Butcher
   m_TagString: Untagged
@@ -48,23 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Butcher
-  weaponDescription: "M\u1ED5 s\u1EBB t\xE0n nh\u1EABn hay c\xE1i ch\u1EBFt nhanh
-    g\u1ECDn ? T\xF9y ng\u01B0\u1EDDi."
+  weaponDescription: "\u201CThu\u1ED9c v\u1EC1 m\u1ED9t trong nh\u1EEFng k\u1EBB
+    canh g\xE1c t\u1EA7ng phong \u1EA5n th\u1EE9 hai, k\u1EBB \u0111\xE3 ph\u1EA3n
+    b\u1ED9i th\u1EC7 \u01B0\u1EDBc. X\xE1c th\u1ECBt h\u1EAFn ch\u01B0a ph\xE2n
+    h\u1EE7y, v\u1EABn tr\xF4i tr\xEAn b\u1EC3 m\xE1u trong h\u1EA7m s\xE2u.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
---- !u!114 &7471599858080818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212099245396722084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3769822753446218761
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +66,8 @@ GameObject:
   - component: {fileID: 6439202768590144363}
   - component: {fileID: 4246729930466461133}
   - component: {fileID: 2179662518419551092}
+  - component: {fileID: 8546585806668212103}
+  - component: {fileID: 5905580381469875967}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -221,3 +212,31 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8546585806668212103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769822753446218761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5905580381469875967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769822753446218761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5

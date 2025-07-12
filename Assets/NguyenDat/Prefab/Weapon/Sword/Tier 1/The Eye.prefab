@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8621748530974621465}
   - component: {fileID: 8111620177405883953}
   - component: {fileID: 4078600506926869936}
+  - component: {fileID: 4809820505726210809}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -175,6 +176,22 @@ MonoBehaviour:
   weaponTransform: {fileID: 4969164413139272065}
   launchForce: 9
   audioSource: {fileID: 0}
+--- !u!114 &4809820505726210809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141457372017821660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &4848108581353277089
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,8 +240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Eye
-  weaponDescription: "Thanh ki\u1EBFm v\u1EDBi con m\u1EAFt k\xEC l\u1EA1 c\xF3 th\u1EC3
-    nh\xECn th\u1EA5y nh\u1EEFng th\u1EE9 kh\xF4ng n\xEAn th\u1EA5y."
+  weaponDescription: "\u201CM\u1ED7i l\u1EA7n r\xFAt ra kh\u1ECFi v\u1ECF, m\u1EAFt
+    tr\xEAn chu\xF4i ki\u1EBFm m\u1EDF ra \u2013 kh\xF4ng ph\u1EA3i \u0111\u1EC3
+    nh\xECn, m\xE0 \u0111\u1EC3 ghi nh\u1EDB.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 3365232881022817200, guid: 61eebb0bc083687489b1cdb347743314, type: 3}
   weaponType: 1

@@ -5,9 +5,30 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-1.unity
+    guid: a297650ecf12c0b4e8e2f1fc878d2c46
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-2.unity
+    guid: 70a5133fdbc45334890d41da365cb332
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-3.unity
+    guid: 1694dcabcf2b93544b4566d7802a044b
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-4.unity
+    guid: 3721515d73fa47a4abc8c895260af34b
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-5.unity
+    guid: 3fd3814b3b7d1014c98aeaf5a39a7016
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-Boss.unity
+    guid: 36c5868b4296768489d7f3e43a0efa85
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-Shop.unity
+    guid: c66cd3d5107e9714a84d7ff6e548a49e
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: dec091bff1bf79d40b6291fd17c00eeb, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: b421a8b815c1b744bac5e80fde6e96f3, type: 2}

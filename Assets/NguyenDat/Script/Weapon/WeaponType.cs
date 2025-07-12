@@ -7,5 +7,6 @@ public enum WeaponType
     Spear,
     Bow,
     MagicStaff,
-    SpellBook
+    SpellBook,
+    Rogue
 }

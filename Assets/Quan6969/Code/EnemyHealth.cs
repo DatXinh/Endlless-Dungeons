@@ -35,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         spawnAtDestroy?.TriggerDestroy();
-        Destroy(gameObject); 
+        //Destroy(gameObject);
     }
     public float GetHealthPercent()
     {

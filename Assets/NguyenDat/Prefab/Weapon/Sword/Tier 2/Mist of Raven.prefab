@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5501361259185265576}
   - component: {fileID: 2454454437611371668}
   - component: {fileID: 1004638112336388871}
+  - component: {fileID: 8555558413204471511}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -211,6 +212,22 @@ MonoBehaviour:
   weaponTransform: {fileID: 3485119318708504241}
   launchForce: 10
   audioSource: {fileID: 0}
+--- !u!114 &8555558413204471511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088245998803503867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &8090951571037113607
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,9 +276,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Mist of Raven
-  weaponDescription: "Thanh ki\u1EBFm b\u1ECB s\u01B0\u01A1ng m\xF9 t\u1EEB lo\u1EA1i
-    qu\u1EA1 s\u01B0\u01A1ng \u0111en \xE1m v\xEC l\xED do ch\u1EB3ng ai d\xE1m nh\u1EAFc
-    t\u1EDBi."
+  weaponDescription: "\u201CR\xE8n trong l\xF2 l\u1EEDa ch\u01B0a t\u1EEBng t\u1EAFt
+    t\u1EEB h\xE0ng ng\xE0n n\u0103m tr\u01B0\u1EDBc. M\u1ED7i l\u1EA7n vung, ng\u1ECDn
+    l\u1EEDa trong l\xF2ng \u0111\u1EA5t \u0111\xE1p l\u1EA1i nh\u01B0 th\u1EC3 \u0111\u01B0\u1EE3c
+    tri\u1EC7u h\u1ED3i.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 6879983362614959756, guid: 2fb4f95d5de3d5347aef770125fd333d, type: 3}
   weaponType: 1

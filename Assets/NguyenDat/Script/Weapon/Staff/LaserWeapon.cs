@@ -2,16 +2,24 @@
 
 public class LaserWeapon : MonoBehaviour
 {
+    [Header("Weapon data")]
+    public WeaponData weaponData;
     [Header("References")]
     public LineRenderer lineRenderer;
     public Transform startPoint;
 
     [Header("Laser Settings")]
     public float maxLaserLength = 25f;
-    public float damage = 10f;
+    public float damage;
     public LayerMask hitMask;
 
     private bool isFiring = false;
+
+    private void Awake()
+    {
+        weaponData = GetComponent<WeaponData>();
+        damage = weaponData.weaponDamage;
+    }
 
     void Update()
     {
@@ -52,12 +60,17 @@ public class LaserWeapon : MonoBehaviour
                 if (hit.collider.CompareTag("Wall"))
                 {
                     endPos = hit.point;
-                    break; // dừng tia nếu trúng tường
                 }
-                //else if (hit.collider.CompareTag("Enemy"))
-                //{
-                //    hit.collider.GetComponent<EnemyHealth>()?.TakeDamage(damage);
-                //}
+                else if (hit.collider.CompareTag("Enemy"))
+                {
+                    DamageInfo damageInfo = new DamageInfo(damage, 0, false);
+                    EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
+                    if (enemyHealth != null)
+                    {
+                        enemyHealth.TakeDamage(damageInfo);
+                    }
+
+                }
             }
         }
 

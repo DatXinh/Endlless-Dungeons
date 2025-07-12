@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4752888583506365958}
   - component: {fileID: 7965370160531767923}
   - component: {fileID: 455017040245435748}
+  - component: {fileID: 1413169465051425519}
   m_Layer: 0
   m_Name: NomalGrid
   m_TagString: Untagged
@@ -107,11 +108,25 @@ MonoBehaviour:
   - {fileID: 6377900764625738663, guid: 75a85d190062bb84482a8abd5ac7dbe0, type: 3}
   eliteEnemyPrefabs:
   - {fileID: 571989167598489800, guid: f548b4fa49c30c84fa23f3563f804909, type: 3}
+  - {fileID: 8558169933533535754, guid: f50c55c88fdb86b42a643e264c39894b, type: 3}
   eliteEnemyChance: 0.1
-  minMonsterCount: 3
-  maxMonsterCount: 5
+  minMonsterCount: 6
+  maxMonsterCount: 10
   groundTilemap: {fileID: 3492663833303569959}
   enemyParent: {fileID: 3229131340919828191}
+--- !u!114 &1413169465051425519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993602093434917044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d989327364ccdb4aaa4e6544be23384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: 
 --- !u!1 &1504358294887634550
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6354299792003179458}
   m_Layer: 0
   m_Name: Ice Bomb
-  m_TagString: EnemyProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,4 +181,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22117b29bf4fc614f97c5c7f72b93f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Destroyable: 1
+  Destroyable: 0

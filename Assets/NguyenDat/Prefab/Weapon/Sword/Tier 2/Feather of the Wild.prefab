@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Feather of the Wild
-  weaponDescription: "M\u1ED9t c\u1ECDng l\xF4ng t\u1EEB lo\xE0i chim kh\u1ED5ng
-    l\u1ED3 ch\u1EB3ng ai thu\u1EA7n h\u1ECFa n\u1ED5i . Gi\u1EDD \u0111\u01B0\u01A1c
-    d\xF9ng nh\u01B0 v\u0169 kh\xED . K\xEC l\u1EA1."
+  weaponDescription: "\u201CKh\xF4ng ph\u1EA3i kim lo\u1EA1i. L\xE0 l\xF4ng c\u1EE7a
+    con chim cu\u1ED1i c\xF9ng t\u1EEBng bay qua khe n\u1EE9t gi\u1EEFa hai c\xF5i
+    \u2013 r\u1ED3i ch\xE1y r\u1EE5i trong l\u1EA7n quay v\u1EC1.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 2668570120682506747, guid: f730b988b5f8a074eb7b71cffa9b06f5, type: 3}
   weaponType: 1
@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 1010511656379654786}
   - component: {fileID: 2573788182460066255}
   - component: {fileID: 1796630666318096703}
+  - component: {fileID: 2062387881198538514}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -234,6 +235,22 @@ MonoBehaviour:
   weaponTransform: {fileID: 7207548869481135325}
   launchForce: 30
   audioSource: {fileID: 0}
+--- !u!114 &2062387881198538514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743835442001847265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &7973679834958839963
 GameObject:
   m_ObjectHideFlags: 0

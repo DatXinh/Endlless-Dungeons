@@ -80,13 +80,13 @@ public class FrozenSoul : MonoBehaviour
         }
 
         if (currentPhase == 1)
-            MoveTowardsPlayer(moveSpeedPhase1);
+            MoveTowardsPlayer(moveSpeedPhase1,10f);
         else if (currentPhase == 2)
-            MoveTowardsPlayer(moveSpeedPhase2);
+            MoveTowardsPlayer(moveSpeedPhase2,7f);
         else if (currentPhase == 3)
-            MoveTowardsPlayer(moveSpeedPhase3);
+            MoveTowardsPlayer(moveSpeedPhase3,6f);
         else if (currentPhase == 5)
-            MoveTowardsPlayer(moveSpeedPhase5);
+            MoveTowardsPlayer(moveSpeedPhase5,6f);
 
         if (currentPhase >= 2)
             RotateCrystalShards();
@@ -98,12 +98,31 @@ public class FrozenSoul : MonoBehaviour
         attackRoutine = StartCoroutine(newRoutine);
     }
 
-    void MoveTowardsPlayer(float speed)
+    void MoveTowardsPlayer(float speed , float distance)
     {
         if (player == null) return;
-        Vector2 dir = (player.position - transform.position).normalized;
-        transform.position += (Vector3)dir * speed * Time.deltaTime;
+
+        // Tính vector từ player đến boss
+        Vector2 toBoss = transform.position - player.position;
+
+        // Nếu boss đang quá gần hoặc quá xa, điều chỉnh độ dài để giữ khoảng cách cố định
+        float desiredDistance = distance;
+        float currentDistance = toBoss.magnitude;
+        if (Mathf.Abs(currentDistance - desiredDistance) > 0.1f)
+        {
+            // Kéo boss về/ra xa để duy trì khoảng cách
+            Vector2 desiredPos = (Vector2)player.position + toBoss.normalized * desiredDistance;
+            Vector2 moveDir = (desiredPos - (Vector2)transform.position).normalized;
+            transform.position += (Vector3)(moveDir * speed * Time.deltaTime);
+            return;
+        }
+
+        // Tính hướng xoay quanh player theo ngược chiều kim đồng hồ
+        Vector2 tangent = new Vector2(toBoss.y, -toBoss.x).normalized;
+
+        transform.position += (Vector3)(tangent * speed * Time.deltaTime);
     }
+
 
     IEnumerator Phase1Routine()
     {
@@ -251,7 +270,7 @@ public class FrozenSoul : MonoBehaviour
 
         int shardCount = 12;
         shardOrbits = new Transform[shardCount];
-        float radius = 5f;
+        float radius = 4f;
 
         for (int i = 0; i < shardCount; i++)
         {

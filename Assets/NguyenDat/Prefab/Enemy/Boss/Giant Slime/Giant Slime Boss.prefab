@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &287113311642073501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6235393401044714820}
+  m_Layer: 7
+  m_Name: SlimeParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6235393401044714820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287113311642073501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8977686465606182435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598781697160387885
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +44,7 @@ GameObject:
   - component: {fileID: 3129125366148263857}
   - component: {fileID: 9069419111446926389}
   - component: {fileID: -527025965698629815}
+  - component: {fileID: 4628317475123421946}
   m_Layer: 7
   m_Name: Giant Slime Boss
   m_TagString: Boss
@@ -34,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 985940711890638002}
+  - {fileID: 6235393401044714820}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2180836809615151728
@@ -66,7 +99,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -111,13 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931c44647c961014eb0c5f118c505382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 3
   spriteRenderer: {fileID: 2738116055573907782}
   slimePrefab: {fileID: 8558169933533535754, guid: 5a6d3250016335e46ad967a288120a67, type: 3}
-  slimeCount: 10
+  rainbowSlimePrefab: {fileID: 8558169933533535754, guid: f50c55c88fdb86b42a643e264c39894b, type: 3}
+  slimeCount: 6
   spawnRadius: 5
+  maxSlimeCount: 21
+  slimeParent: {fileID: 6235393401044714820}
   slimeBallPrefab: {fileID: 2706263220497451186, guid: a56e269651cdb964fb264c42951c9ead, type: 3}
-  slimeBallRadius: 4
+  slimeBallRadius: 5
   slimeBallSpeed: 10
   sequentialDelay: 0.1
 --- !u!114 &-527025965698629815
@@ -132,9 +168,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 500
   currentHP: 0
   isInvulnerable: 0
+--- !u!114 &4628317475123421946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598781697160387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: -527025965698629815}
+  animator: {fileID: 2664801225064207829}
+  parameterName: IsDead
+  scriptsToDisable:
+  - {fileID: 9069419111446926389}
 --- !u!1 &4400776022015764867
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +200,7 @@ GameObject:
   - component: {fileID: 2738116055573907782}
   - component: {fileID: 2664801225064207829}
   - component: {fileID: 4854392730538628545}
+  - component: {fileID: 8290998797538628556}
   m_Layer: 7
   m_Name: Giant Slime
   m_TagString: Enemy
@@ -258,4 +312,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2dc2044654b5240ba8bec772c690af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.1
+--- !u!114 &8290998797538628556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400776022015764867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnBoss: {fileID: 0}

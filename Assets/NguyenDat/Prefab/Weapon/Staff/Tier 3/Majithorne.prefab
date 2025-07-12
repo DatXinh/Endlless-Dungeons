@@ -79,7 +79,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Majithorne
-  weaponDescription: 
+  weaponDescription: "\u201CD\xF2ng ma thu\u1EADt trong n\xF3 kh\xF4ng \u0111\u1EBFn
+    t\u1EEB th\u1EBF gi\u1EDBi n\xE0y, m\xE0 t\u1EEB m\u1ED9t t\u1EA7ng l\u1EC7ch
+    \u2013 n\u01A1i th\u1EDDi gian co b\xF3p nh\u01B0 c\u01A1 th\u1EC3 s\u1ED1ng.
+    Ai ni\u1EC7m ph\xE9p b\u1EB1ng Majithorne \u0111\u1EC1u nghe th\u1EA5y ti\u1EBFng
+    \u0111\u1EADp tim kh\xF4ng thu\u1ED9c v\u1EC1 m\xECnh.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 8396900927200602047, guid: c10716536f5f7044194a10dd505d3a89, type: 3}
   weaponType: 4

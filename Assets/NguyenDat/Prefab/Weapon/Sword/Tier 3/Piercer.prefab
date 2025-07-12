@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5948340974274623558}
   - component: {fileID: 826605085383989166}
-  - component: {fileID: -5748668727625144462}
   m_Layer: 0
   m_Name: Piercer
   m_TagString: Untagged
@@ -48,22 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Piercer
-  weaponDescription: "Ch\u1ECDt . Ch\u1ECDt . Ch\u1ECDt."
+  weaponDescription: "Ch\u1ECDc xuy\xEAn m\u1ECDi th\u1EE9 \u2013 kh\xF4ng ph\u1EA3i
+    v\xEC s\u1EAFc b\xE9n, m\xE0 v\xEC n\xF3 t\u1EEBng \u0111\xE2m th\u1EE7ng m\u1ED9t
+    c\xE1nh c\u1ED5ng. Gi\u1EDD n\xF3 kh\xF4ng ph\xE2n bi\u1EC7t \u0111\xE2u l\xE0
+    v\u1EADt ch\u1EA5t, \u0111\xE2u l\xE0 \xFD ni\u1EC7m.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
---- !u!114 &-5748668727625144462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740544398467360445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2838557787675152870
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +66,8 @@ GameObject:
   - component: {fileID: 6773824385839782820}
   - component: {fileID: 2183813628050201939}
   - component: {fileID: 8532366567956147645}
+  - component: {fileID: 557685175071713157}
+  - component: {fileID: 8177481383515308791}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -220,3 +212,31 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &557685175071713157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838557787675152870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
+--- !u!114 &8177481383515308791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838557787675152870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

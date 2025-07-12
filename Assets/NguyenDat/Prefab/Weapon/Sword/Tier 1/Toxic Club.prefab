@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5671355925881348117}
   - component: {fileID: 3827131569060749736}
   - component: {fileID: 8787158630470247252}
+  - component: {fileID: 738135088971223133}
+  - component: {fileID: 1357141151756544004}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -161,6 +163,34 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &738135088971223133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112742557056630196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1357141151756544004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112742557056630196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  bonusDamage: 5
+  critRate: 0.2
+  damageCooldown: 1.5
 --- !u!1 &4530292883726630243
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +201,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5071636110311873280}
   - component: {fileID: 3836255448987917938}
-  - component: {fileID: 7760043270630137240}
   m_Layer: 0
   m_Name: Toxic Club
   m_TagString: Untagged
@@ -209,20 +238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Toxic Club
-  weaponDescription: "M\u1ED9t c\xE2y ch\xF9y \u0111\u01B0\u1EE3c t\u1EA9m \u0111\u1ED9c
-    . \u0110\u01A1n gi\u1EA3n v\xE0 hi\u1EC7u qu\u1EA3."
+  weaponDescription: "\u201CD\xEDnh b\u1EA9n t\u1EEB ch\u1EA5t l\u1ECFng ch\u1EA3y
+    ra t\u1EEB t\u1EA7ng \u0111\xE1y. Kh\xF4ng ai d\xE1m t\u1EA9y r\u1EEDa v\xEC
+    s\u1EE3... n\xF3 t\u1EC9nh d\u1EADy.\u201D"
   weaponDamage: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
---- !u!114 &7760043270630137240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4530292883726630243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
