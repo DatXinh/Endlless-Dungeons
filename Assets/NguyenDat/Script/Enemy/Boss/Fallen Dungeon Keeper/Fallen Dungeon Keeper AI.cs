@@ -19,6 +19,12 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     [Header("Prediction")]
     public float projectileSpeed = 6f; // Tốc độ đạn để tính dự đoán
 
+    [Header("Sound")]
+    public AudioSource laugh;
+    public AudioSource Phase1;
+    public AudioSource Phase2;
+    public AudioSource Phase3;
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private CapsuleCollider2D capsuleCollider;
@@ -39,6 +45,7 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         StartCoroutine(IntroAttack(10f, true)); // Đòn mở đầu khi vào trận
+        laugh.Play();
     }
 
     void Update()
@@ -101,6 +108,8 @@ public class FallenDungeonKeeperAI : MonoBehaviour
 
     IEnumerator PhaseOne()
     {
+        if (Phase1 != null)
+            Phase1.Play();
         while (true)
         {
             int random = Random.Range(0, 2); // 0 hoặc 1
@@ -116,6 +125,11 @@ public class FallenDungeonKeeperAI : MonoBehaviour
 
     IEnumerator PhaseTwo()
     {
+        if (Phase2 != null)
+        {
+            Phase1.Stop();
+            Phase2.Play();
+        }
         while (true)
         {
             int random = Random.Range(0, 3);
@@ -132,6 +146,11 @@ public class FallenDungeonKeeperAI : MonoBehaviour
 
     IEnumerator PhaseThree()
     {
+        if (Phase3 != null)
+        {
+            Phase2.Stop();
+            Phase3.Play();
+        }
         while (true)
         {
             int random = Random.Range(0, 4);
@@ -381,6 +400,7 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     }
     IEnumerator SpiralShotAttack()
     {
+        laugh.Play();
         float duration = 5f;
         float fireInterval = 0.1f;
         int bulletsPerShot = 3;
