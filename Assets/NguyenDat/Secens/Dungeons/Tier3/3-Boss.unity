@@ -289,11 +289,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!4 &951399075 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
-  m_PrefabInstance: {fileID: 1632233991}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1371233876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5920221004527382975, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
@@ -362,10 +357,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5920221004527382975, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 951399075}
+      addedObject: {fileID: 1862509574}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
---- !u!1001 &1632233991
+--- !u!1001 &1716692368
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -373,55 +368,60 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1371233876}
     m_Modifications:
-    - target: {fileID: 5519456457138781898, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
-      propertyPath: m_Name
-      value: Dagger of Cursed
-      objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9154920825294357842, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+    - target: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594781134254194807, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
+      propertyPath: m_Name
+      value: Forbidden Icon of Sun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
+--- !u!4 &1862509574 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2095892708475740596, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
+  m_PrefabInstance: {fileID: 1716692368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1934355525
 PrefabInstance:
   m_ObjectHideFlags: 0
