@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6174134407260620298}
   - component: {fileID: 5608248280318720826}
   - component: {fileID: 4823305783100879951}
+  - component: {fileID: -9006806381620085017}
   m_Layer: 0
   m_Name: Cinder Arrow
   m_TagString: Untagged
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211124146570987532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 
@@ -141,6 +142,20 @@ MonoBehaviour:
   bonusDamage: 5
   critRate: 0.2
   damageCooldown: 1.5
+--- !u!114 &-9006806381620085017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211124146570987532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1 &7884994313371650161
 GameObject:
   m_ObjectHideFlags: 0

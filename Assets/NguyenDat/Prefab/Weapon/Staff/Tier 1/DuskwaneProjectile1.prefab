@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9015479677149430860}
   - component: {fileID: 5120151850820873009}
   - component: {fileID: -4026176010986471864}
+  - component: {fileID: 5077862613133743754}
   m_Layer: 0
   m_Name: DuskwaneProjectile1
   m_TagString: Untagged
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2632702078711203918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 
@@ -196,3 +197,17 @@ MonoBehaviour:
   bonusDamage: 5
   critRate: 0.2
   damageCooldown: 1.5
+--- !u!114 &5077862613133743754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632702078711203918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0

@@ -3,7 +3,22 @@ using UnityEngine;
 public class SpawnAtDestroy : MonoBehaviour
 {
     public GameObject spawnPrefab;
+    public PWeaponDame weaponDame;
+
+    public int weaponDamage;
+    public int weaponCriticalChange;
+
     private bool shouldSpawn = false;
+
+    private void Awake()
+    {
+        weaponDame = GetComponent<PWeaponDame>();
+        if (weaponDame != null)
+        {
+            weaponDamage = weaponDame.weaponDamage;
+            weaponCriticalChange = weaponDame.weaponCriticalChange;
+        }
+    }
 
     public void TriggerDestroy()
     {
@@ -17,7 +32,13 @@ public class SpawnAtDestroy : MonoBehaviour
 
         if (shouldSpawn && spawnPrefab != null)
         {
-            Instantiate(spawnPrefab, transform.position, transform.rotation);
+            GameObject spawnedObject = Instantiate(spawnPrefab, transform.position, Quaternion.identity);
+            PWeaponDame pWeaponDame = spawnedObject.GetComponent<PWeaponDame>();
+            if (pWeaponDame != null)
+            {
+                pWeaponDame.weaponDamage = weaponDamage;
+                pWeaponDame.weaponCriticalChange = weaponCriticalChange;
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6906761712654296993}
   - component: {fileID: 7253991090130146443}
   - component: {fileID: -7361919122064714963}
+  - component: {fileID: 7103998020019984277}
   m_Layer: 0
   m_Name: TwilightExplosion
   m_TagString: Untagged
@@ -174,7 +175,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9147986639488481567}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 
@@ -183,3 +184,17 @@ MonoBehaviour:
   bonusDamage: 5
   critRate: 0.2
   damageCooldown: 1.5
+--- !u!114 &7103998020019984277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147986639488481567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0

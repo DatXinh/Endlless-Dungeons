@@ -10,13 +10,15 @@ public class LaunchProjectile : MonoBehaviour
     public AudioSource audioSource;
 
     private WeaponData weaponData;
-    private int projectileDamage;
+    public int WeaponDamage;
+    public int WeaponCritalChange;
 
     private void Awake()
     {
         weaponData = GetComponentInParent<WeaponData>();
         projectilePrefab = weaponData.weaponProjectile;
-        projectileDamage = weaponData.weaponDamage;
+        WeaponDamage = weaponData.weaponDamage;
+        WeaponCritalChange = weaponData.weaponCriticalChange;
     }
 
     public void LaunchSingle()
@@ -166,11 +168,16 @@ public class LaunchProjectile : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, position, Quaternion.Euler(0f, 0f, GetAngle(direction)));
 
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        PWeaponDame pWeaponDame = projectile.GetComponent<PWeaponDame>();
         if (rb != null)
         {
             rb.linearVelocity = direction * launchForce;
         }
-
+        if (pWeaponDame != null)
+        {
+            pWeaponDame.weaponDamage = WeaponDamage;
+            pWeaponDame.weaponCriticalChange = WeaponCritalChange;
+        }
         return projectile;
     }
 

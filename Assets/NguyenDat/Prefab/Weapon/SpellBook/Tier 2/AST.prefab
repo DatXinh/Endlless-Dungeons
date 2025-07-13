@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7404996376150610201}
   - component: {fileID: 6249620905208596633}
   - component: {fileID: 850096275807069622}
+  - component: {fileID: 5457301576294390359}
   m_Layer: 0
   m_Name: AST
   m_TagString: Untagged
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6759631485304373339}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 
@@ -131,6 +132,20 @@ MonoBehaviour:
   bonusDamage: 5
   critRate: 0.2
   damageCooldown: 1.5
+--- !u!114 &5457301576294390359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759631485304373339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1001 &5964053801076073331
 PrefabInstance:
   m_ObjectHideFlags: 0

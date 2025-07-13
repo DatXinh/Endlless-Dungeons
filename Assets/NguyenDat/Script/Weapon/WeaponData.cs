@@ -6,6 +6,7 @@ public class WeaponData : MonoBehaviour
     public string weaponName;
     public string weaponDescription;
     public int weaponDamage;
+    public int weaponCriticalChange;
     public GameObject weaponProjectile;
     public WeaponType weaponType;
 }

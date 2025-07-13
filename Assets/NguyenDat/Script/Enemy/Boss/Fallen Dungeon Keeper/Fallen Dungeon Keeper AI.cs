@@ -184,6 +184,11 @@ public class FallenDungeonKeeperAI : MonoBehaviour
             Vector2 spawnPos = new Vector2(x, player.position.y + 13f);
 
             GameObject b = Instantiate(brimstonePrefab, spawnPos, Quaternion.identity);
+            EnemyDame enemyDame = b.GetComponent<EnemyDame>();
+            if (enemyDame != null)
+            {
+                enemyDame.damage = 10; // Set damage for brimstone
+            }
             Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
@@ -269,6 +274,11 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
 
         GameObject bullet = Instantiate(miniBrimstonePrefab, transform.position, Quaternion.identity);
+        EnemyDame enemyDame = bullet.GetComponent<EnemyDame>();
+        if (enemyDame != null)
+        {
+            enemyDame.damage = 5; // Set damage for mini brimstone
+        }
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
@@ -321,6 +331,11 @@ public class FallenDungeonKeeperAI : MonoBehaviour
 
         Vector2 direction = (player.position - transform.position).normalized;
         GameObject arrowGroup = Instantiate(brimstoneArrowPrefab, rb.position, Quaternion.identity);
+        EnemyDame enemyDame = arrowGroup.GetComponent<EnemyDame>();
+        if (enemyDame != null)
+        {
+            enemyDame.damage = 5; // Set damage for brimstone arrow
+        }
 
         Rigidbody2D[] bullets = arrowGroup.GetComponentsInChildren<Rigidbody2D>();
         foreach (Rigidbody2D bulletRb in bullets)
@@ -346,6 +361,11 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     void SpawnBullet(GameObject prefab, Vector2 position, Vector2 direction)
     {
         GameObject bullet = Instantiate(prefab, position, Quaternion.identity);
+        EnemyDame enemyDame = bullet.GetComponent<EnemyDame>();
+        if (enemyDame != null)
+        {
+            enemyDame.damage = 5; // Set damage for mini brimstone
+        }
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.linearVelocity = direction.normalized * projectileSpeed;

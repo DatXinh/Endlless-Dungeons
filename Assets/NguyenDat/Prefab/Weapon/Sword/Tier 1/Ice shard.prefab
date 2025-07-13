@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2003700212246228975}
   - component: {fileID: 7036312395771225901}
   - component: {fileID: 7037788137832961035}
-  - component: {fileID: 6200529715394860879}
   - component: {fileID: 1816674054590094796}
-  - component: {fileID: 7182990594570573510}
+  - component: {fileID: 8468746882949428970}
+  - component: {fileID: 6200529715394860879}
   - component: {fileID: 2977007416922747299}
   m_Layer: 0
   m_Name: Ice shard
@@ -166,22 +166,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6200529715394860879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7762073486339418003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsPlayer: 1
-  IsEnemy: 0
-  canPierce: 0
-  lifeTime: 3
 --- !u!95 &1816674054590094796
 Animator:
   serializedVersion: 7
@@ -204,7 +188,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7182990594570573510
+--- !u!114 &8468746882949428970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,10 +197,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7762073486339418003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f340f0902edf44f9f8b65ac2de0d34, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2977007416922747299
+  weaponDamage: 0
+  weaponCriticalChange: 0
+--- !u!114 &6200529715394860879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,6 +210,22 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7762073486339418003}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayer: 1
+  IsEnemy: 0
+  canPierce: 0
+  lifeTime: 3
+--- !u!114 &2977007416922747299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762073486339418003}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 

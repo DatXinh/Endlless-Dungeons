@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6404686429510386620}
   - component: {fileID: 8066892790419905118}
   - component: {fileID: 7398133505632201459}
+  - component: {fileID: 1073109636540051878}
   - component: {fileID: 142770952260706983}
   m_Layer: 0
   m_Name: Sprite
@@ -142,6 +143,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1073109636540051878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740633572135848698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &142770952260706983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +174,8 @@ MonoBehaviour:
   weaponTransform: {fileID: 1189332758447046354}
   launchForce: 20
   audioSource: {fileID: 705574063138922376}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
 --- !u!1 &4764669637312665593
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +230,7 @@ MonoBehaviour:
     s\u1ED1 h\u1ECDc gi\u1EA3 cho r\u1EB1ng n\xF3 l\xE0 tinh ch\u1EA5t c\u1EE7a n\u1ED7i
     s\u1EE3.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
   weaponProjectile: {fileID: 6587683697731803141, guid: e5b2eaafa23a5a84d953ef208f8ada34, type: 3}
   weaponType: 6
 --- !u!1001 &3224652621709359992

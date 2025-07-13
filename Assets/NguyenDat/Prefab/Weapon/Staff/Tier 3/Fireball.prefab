@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4018766126371137260}
   - component: {fileID: 5573892630999733074}
   - component: {fileID: 8432293825449627844}
-  - component: {fileID: 5039297712302053373}
+  - component: {fileID: 7875002639236380737}
   - component: {fileID: 3664537993643497548}
+  - component: {fileID: 5039297712302053373}
   - component: {fileID: -1744512259697050972}
   m_Layer: 0
   m_Name: Fireball
@@ -100,6 +101,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7875002639236380737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651401253455389267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
+--- !u!114 &3664537993643497548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651401253455389267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 9197083007328217499, guid: 6f773b4249093fe4bbd39fe496bb24d7, type: 3}
+  weaponDame: {fileID: 0}
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &5039297712302053373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,19 +147,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
---- !u!114 &3664537993643497548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4651401253455389267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 9197083007328217499, guid: 6f773b4249093fe4bbd39fe496bb24d7, type: 3}
 --- !u!114 &-1744512259697050972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +154,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4651401253455389267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 

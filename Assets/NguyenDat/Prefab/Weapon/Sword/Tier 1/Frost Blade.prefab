@@ -42,8 +42,9 @@ GameObject:
   - component: {fileID: 5894494849815361303}
   - component: {fileID: 152545049386057348}
   - component: {fileID: 3607374053354392399}
-  - component: {fileID: 6035233360428147297}
   - component: {fileID: 2093129472788301209}
+  - component: {fileID: 5727602680193549682}
+  - component: {fileID: 6035233360428147297}
   - component: {fileID: 2105154314244044086}
   m_Layer: 0
   m_Name: Sprite
@@ -144,23 +145,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6035233360428147297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4761640096248098240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f81ca530da3ba45bc000c470f64586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 8203762884774936976}
-  weaponTransform: {fileID: 3083181334303399685}
-  launchForce: 25
-  audioSource: {fileID: 0}
 --- !u!68 &2093129472788301209
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -208,7 +192,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &2105154314244044086
+--- !u!114 &5727602680193549682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,6 +200,39 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4761640096248098240}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
+--- !u!114 &6035233360428147297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761640096248098240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f81ca530da3ba45bc000c470f64586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 8203762884774936976}
+  weaponTransform: {fileID: 3083181334303399685}
+  launchForce: 25
+  audioSource: {fileID: 0}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+--- !u!114 &2105154314244044086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4761640096248098240}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 
@@ -276,5 +293,6 @@ MonoBehaviour:
     m\xE0 v\xEC th\u1EE9 \u0111\xE3 b\u1ECB ni\xEAm phong trong n\xF3 t\u1EEB t\u1EA7ng
     h\u1EA7m b\u1EAFc \u2013 m\u1ED9t th\u1EF1c th\u1EC3 kh\xF4ng c\xF3 nhi\u1EC7t.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
   weaponProjectile: {fileID: 7762073486339418003, guid: 083bc78c813a4eb4ba008db11f87357d, type: 3}
   weaponType: 1

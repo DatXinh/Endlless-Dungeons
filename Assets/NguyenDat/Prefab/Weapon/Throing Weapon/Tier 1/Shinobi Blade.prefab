@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5179640855795307792}
   - component: {fileID: 2229603669417313983}
   - component: {fileID: 4040153218672229621}
+  - component: {fileID: 3040095804062106567}
   - component: {fileID: 5357259370925939657}
   m_Layer: 0
   m_Name: Sprite
@@ -111,6 +112,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3040095804062106567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281947713321955617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &5357259370925939657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +143,8 @@ MonoBehaviour:
   weaponTransform: {fileID: 849493893452938402}
   launchForce: 20
   audioSource: {fileID: 4387654998522451960}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
 --- !u!1 &4109048262369536542
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +230,7 @@ MonoBehaviour:
     \u2013 v\xEC l\u01B0\u1EE1i dao n\xE0y x\xF3a s\u1EA1ch danh t\xEDnh c\u1EE7a
     ng\u01B0\u1EDDi s\u1EED d\u1EE5ng.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
   weaponProjectile: {fileID: 3309172911900527485, guid: d225429bc69f3dc44b851eeb42009320, type: 3}
   weaponType: 6
 --- !u!1001 &1868680893959156488

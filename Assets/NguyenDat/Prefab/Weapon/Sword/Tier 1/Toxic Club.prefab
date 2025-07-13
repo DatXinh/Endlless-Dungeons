@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5671355925881348117}
   - component: {fileID: 3827131569060749736}
   - component: {fileID: 8787158630470247252}
+  - component: {fileID: 5007876228338277454}
   - component: {fileID: 738135088971223133}
   - component: {fileID: 1357141151756544004}
   m_Layer: 0
@@ -163,6 +164,20 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5007876228338277454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112742557056630196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &738135088971223133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4112742557056630196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
   m_Name: 
@@ -242,5 +257,6 @@ MonoBehaviour:
     ra t\u1EEB t\u1EA7ng \u0111\xE1y. Kh\xF4ng ai d\xE1m t\u1EA9y r\u1EEDa v\xEC
     s\u1EE3... n\xF3 t\u1EC9nh d\u1EADy.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
