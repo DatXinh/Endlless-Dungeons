@@ -398,9 +398,10 @@ GameObject:
   - component: {fileID: 3856021167722425894}
   - component: {fileID: 5443831137422116635}
   - component: {fileID: 8351492997274029557}
-  - component: {fileID: 3420477818279676382}
+  - component: {fileID: 1061589434021113312}
   - component: {fileID: 5464100686519341170}
   - component: {fileID: 1556942359404822310}
+  - component: {fileID: 3420477818279676382}
   m_Layer: 7
   m_Name: Fallen Dungeon Keeper
   m_TagString: Boss
@@ -426,6 +427,7 @@ Transform:
   - {fileID: 1280978790852012815}
   - {fileID: 3777338103384546499}
   - {fileID: 8200212934918411941}
+  - {fileID: 2462496376800111640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &5443831137422116635
@@ -492,7 +494,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3420477818279676382
+--- !u!114 &1061589434021113312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,12 +503,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5002112644532160807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
+  maxHP: 2500000
   currentHP: 0
-  isInvulnerable: 0
+  InvincibilityTime: 0.01
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 4641558532612895045}
+  maxHeal: {fileID: 8067867410542104509}
+  currentHeal: {fileID: 132102424258711864}
 --- !u!114 &5464100686519341170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyHealth: {fileID: 3420477818279676382}
+  enemyHealth: {fileID: 1061589434021113312}
   moveSpeed: 10
   cursedSkullPrefab: {fileID: 3794576502109421181, guid: 9f7b07788694b5040a1ac70ea057916f, type: 3}
   brimstonePrefab: {fileID: 1004638968246304387, guid: 94040454849bde240a598f92f873c418, type: 3}
@@ -543,11 +549,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 3420477818279676382}
+  enemyHealth: {fileID: 0}
   animator: {fileID: 5204750563409903640}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 5464100686519341170}
+--- !u!114 &3420477818279676382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002112644532160807}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1000
+  currentHP: 0
+  isInvulnerable: 0
 --- !u!1 &8185888092490760124
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,3 +822,106 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &3700258315656594899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3856021167722425894}
+    m_Modifications:
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -790
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.32151398
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372324650358059052, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_Name
+      value: BossHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642469959450039531, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678600749887621742, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+--- !u!114 &132102424258711864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3642469959450039531, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+  m_PrefabInstance: {fileID: 3700258315656594899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2462496376800111640 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1258050472288119243, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+  m_PrefabInstance: {fileID: 3700258315656594899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4641558532612895045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8301213498209645718, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+  m_PrefabInstance: {fileID: 3700258315656594899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8067867410542104509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6678600749887621742, guid: c906dd5f69356054797e9b3d7bb3ef23, type: 3}
+  m_PrefabInstance: {fileID: 3700258315656594899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

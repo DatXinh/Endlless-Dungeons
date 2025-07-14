@@ -7,6 +7,7 @@ public class WeaponData : MonoBehaviour
     public string weaponDescription;
     public int weaponDamage;
     public int weaponCriticalChange;
+    public int weaponManaCost;
     public GameObject weaponProjectile;
     public WeaponType weaponType;
 }

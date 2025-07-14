@@ -312,7 +312,7 @@ MonoBehaviour:
     c\xF4ng ngh\u1EC7 huy ho\xE0ng b\u1ECB x\xF3a kh\u1ECFi l\u1ECBch s\u1EED. V\u1EBFt
     c\u1EAFt c\u1EE7a n\xF3 kh\xF4ng l\xE0m ch\u1EA3y m\xE1u \u2013 m\xE0 l\xE0m
     th\u1EF1c t\u1EA1i l\u1EC7ch \u0111i trong t\xEDch t\u1EAFc.\u201D"
-  weaponDamage: 100
+  weaponDamage: 2222
   weaponCriticalChange: 75
   weaponProjectile: {fileID: 0}
   weaponType: 1
@@ -648,3 +648,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0

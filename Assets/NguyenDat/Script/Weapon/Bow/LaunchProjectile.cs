@@ -12,19 +12,24 @@ public class LaunchProjectile : MonoBehaviour
     private WeaponData weaponData;
     public int WeaponDamage;
     public int WeaponCritalChange;
+    public int WeaponManaCost;
+
+    public PLayerMP pLayerMP;
 
     private void Awake()
     {
         weaponData = GetComponentInParent<WeaponData>();
+        pLayerMP = GetComponentInParent<PLayerMP>();
         projectilePrefab = weaponData.weaponProjectile;
         WeaponDamage = weaponData.weaponDamage;
         WeaponCritalChange = weaponData.weaponCriticalChange;
+        WeaponManaCost = weaponData.weaponManaCost;
     }
 
     public void LaunchSingle()
     {
         if (!IsValid()) return;
-
+        pLayerMP.UseMP(WeaponManaCost);
         Vector2 direction = weaponTransform.right.normalized;
         SpawnProjectile(firePoint.position, direction);
         PlayAudio();
@@ -33,7 +38,7 @@ public class LaunchProjectile : MonoBehaviour
     public void LaunchDoubleSpread(float spreadAngle = 15f)
     {
         if (!IsValid()) return;
-
+        pLayerMP.UseMP(WeaponManaCost);
         Vector2 baseDir = weaponTransform.right.normalized;
         Vector2[] directions = {
             RotateDirection(baseDir, -spreadAngle),
@@ -51,7 +56,7 @@ public class LaunchProjectile : MonoBehaviour
     public void LaunchTripleCone(float spreadAngle = 15f)
     {
         if (!IsValid()) return;
-
+        pLayerMP.UseMP(WeaponManaCost);
         Vector2 baseDir = weaponTransform.right.normalized;
         Vector2[] directions = {
             baseDir,
@@ -69,7 +74,7 @@ public class LaunchProjectile : MonoBehaviour
     public void LaunchFiveSpread(float totalSpread = 30f)
     {
         if (!IsValid()) return;
-
+        pLayerMP.UseMP(WeaponManaCost);
         Vector2 baseDir = weaponTransform.right.normalized;
         float startAngle = -totalSpread / 2;
         float angleStep = totalSpread / 4f;
@@ -87,7 +92,7 @@ public class LaunchProjectile : MonoBehaviour
     public void LaunchCircularBurst(int bulletCount = 12)
     {
         if (!IsValid()) return;
-
+        pLayerMP.UseMP(WeaponManaCost);
         float angleStep = 360f / bulletCount;
 
         for (int i = 0; i < bulletCount; i++)
@@ -101,6 +106,7 @@ public class LaunchProjectile : MonoBehaviour
     }
     public void LaunchFanShot()
     {
+        pLayerMP.UseMP(WeaponManaCost);
         LaunchFanShot_Internal(5, 45f);
     }
     private void LaunchFanShot_Internal(int bulletCount = 7, float totalSpread = 45f)
@@ -122,6 +128,7 @@ public class LaunchProjectile : MonoBehaviour
     }
     public void LaunchRandomSpread()
     {
+        pLayerMP.UseMP(WeaponManaCost);
         LaunchRandomSpread_Internal(5, 45f);
     }
     private void LaunchRandomSpread_Internal(int bulletCount = 6, float maxSpread = 20f)
@@ -142,6 +149,7 @@ public class LaunchProjectile : MonoBehaviour
 
     public void LaunchTripleInterval()
     {
+        pLayerMP.UseMP(WeaponManaCost);
         LaunchTriple_Interval();
     }
     private void LaunchTriple_Interval(float sideOffset = 0.5f, float backOffset = 0.5f)
@@ -166,7 +174,6 @@ public class LaunchProjectile : MonoBehaviour
     private GameObject SpawnProjectile(Vector2 position, Vector2 direction)
     {
         GameObject projectile = Instantiate(projectilePrefab, position, Quaternion.Euler(0f, 0f, GetAngle(direction)));
-
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         PWeaponDame pWeaponDame = projectile.GetComponent<PWeaponDame>();
         if (rb != null)
@@ -190,7 +197,14 @@ public class LaunchProjectile : MonoBehaviour
 
     private bool IsValid()
     {
-        return projectilePrefab != null && firePoint != null && weaponTransform != null;
+        if (projectilePrefab == null || firePoint == null || weaponTransform == null)
+            return false;
+
+        // Kiểm tra đủ mana để bắn (truy cập trực tiếp currentMP)
+        if (pLayerMP != null && WeaponManaCost > pLayerMP.currentMP)
+            return false;
+
+        return true;
     }
 
     private void PlayAudio()

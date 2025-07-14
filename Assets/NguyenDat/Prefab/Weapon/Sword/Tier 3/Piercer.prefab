@@ -51,8 +51,9 @@ MonoBehaviour:
     v\xEC s\u1EAFc b\xE9n, m\xE0 v\xEC n\xF3 t\u1EEBng \u0111\xE2m th\u1EE7ng m\u1ED9t
     c\xE1nh c\u1ED5ng. Gi\u1EDD n\xF3 kh\xF4ng ph\xE2n bi\u1EC7t \u0111\xE2u l\xE0
     v\u1EADt ch\u1EA5t, \u0111\xE2u l\xE0 \xFD ni\u1EC7m.\u201D"
-  weaponDamage: 0
-  weaponCriticalChange: 0
+  weaponDamage: 666
+  weaponCriticalChange: 66
+  weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
 --- !u!1 &2838557787675152870

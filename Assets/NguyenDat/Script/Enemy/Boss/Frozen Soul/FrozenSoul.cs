@@ -4,7 +4,7 @@ using UnityEngine;
 public class FrozenSoul : MonoBehaviour
 {
     public Transform player;
-    public EnemyHealth health;
+    public EnemyHP health;
 
     [Header("Phase Thresholds")]
     public float phase2Threshold = 83f;

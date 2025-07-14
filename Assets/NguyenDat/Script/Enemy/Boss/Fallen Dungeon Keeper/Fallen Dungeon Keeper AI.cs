@@ -5,7 +5,7 @@ public class FallenDungeonKeeperAI : MonoBehaviour
 {
     [Header("General")]
     public Transform player;
-    public EnemyHealth enemyHealth;
+    public EnemyHP enemyHealth;
 
     [Header("Movement")]
     public float moveSpeed = 8f;

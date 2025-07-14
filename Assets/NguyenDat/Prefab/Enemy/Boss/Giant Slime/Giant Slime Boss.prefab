@@ -43,8 +43,9 @@ GameObject:
   - component: {fileID: 2180836809615151728}
   - component: {fileID: 3129125366148263857}
   - component: {fileID: 9069419111446926389}
-  - component: {fileID: -527025965698629815}
   - component: {fileID: 4628317475123421946}
+  - component: {fileID: 2005180801651665024}
+  - component: {fileID: -527025965698629815}
   m_Layer: 7
   m_Name: Giant Slime Boss
   m_TagString: Boss
@@ -156,21 +157,6 @@ MonoBehaviour:
   slimeBallRadius: 5
   slimeBallSpeed: 10
   sequentialDelay: 0.1
---- !u!114 &-527025965698629815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598781697160387885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 500
-  currentHP: 0
-  isInvulnerable: 0
 --- !u!114 &4628317475123421946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,11 +169,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: -527025965698629815}
+  enemyHealth: {fileID: 2005180801651665024}
   animator: {fileID: 2664801225064207829}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 9069419111446926389}
+--- !u!114 &2005180801651665024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598781697160387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  InvincibilityTime: 0.01
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+--- !u!114 &-527025965698629815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598781697160387885}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 500
+  currentHP: 0
+  isInvulnerable: 0
 --- !u!1 &4400776022015764867
 GameObject:
   m_ObjectHideFlags: 0
