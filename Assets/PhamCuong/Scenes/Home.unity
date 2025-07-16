@@ -4508,7 +4508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348751481}
   m_Layer: 0
-  m_Name: Music
+  m_Name: MusicMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53382,6 +53382,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4258260032810132959, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_Size.x
+      value: 0.61100686
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258260032810132959, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3406928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258260032810132959, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03680092
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258260032810132959, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.049630642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303321973336387061, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -4675004818633988644, guid: 2f93be3ffd5536141bfa93e26b1cdfa2, type: 2}
     - target: {fileID: 6776555899939453949, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_Name
       value: TestPlayer
