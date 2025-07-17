@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,10 +27,7 @@ public class PlayerHP : MonoBehaviour
         {
             maxHeal.text = maxHP.ToString(); // Set the maximum health text
         }
-        if (currentHeal != null)
-        {
-            currentHeal.text = currentHP.ToString(); // Set the current health text
-        }
+        UpdateHealthUI(); // Update the health UI at the start
     }
     // Method to take damage
     public void TakeDamage(int damage)
@@ -39,14 +37,7 @@ public class PlayerHP : MonoBehaviour
             if (!isInvincible)
             {
                 currentHP -= damage; // Reduce current health by damage amount
-                if (healthBar != null)
-                {
-                    healthBar.fillAmount = (float)currentHP / maxHP; // Update health bar
-                }
-                if (currentHeal != null)
-                {
-                    currentHeal.text = currentHP.ToString(); // Update current health text
-                }
+                UpdateHealthUI(); // Update the health UI
                 if (currentHP < 0) // Ensure current health does not go below zero
                 {
                     currentHP = 0;
@@ -61,14 +52,13 @@ public class PlayerHP : MonoBehaviour
                         floatingDamage.SetDamageValue(damage, Color.red); // Set the damage value and color
                     }
                 }
-                Debug.Log("Player took damage: " + damage + ", Current HP: " + currentHP);
                 StartCoroutine(InvincibilityCoroutine());
             }
         }
     }
 
     // Coroutine để xử lý bất tử
-    private System.Collections.IEnumerator InvincibilityCoroutine()
+    private IEnumerator InvincibilityCoroutine()
     {
         isInvincible = true;
         yield return new WaitForSeconds(InvincibilityTime);
@@ -81,14 +71,7 @@ public class PlayerHP : MonoBehaviour
         if (currentHP > 0)
         {
             currentHP += amount;
-            if (healthBar != null)
-            {
-                healthBar.fillAmount = (float)currentHP / maxHP; // Update health bar
-            }
-            if (currentHeal != null)
-            {
-                currentHeal.text = currentHP.ToString(); // Update current health text
-            }
+            UpdateHealthUI();
             // Display damage popup
             if (damagePopupPrefab != null)
             {
@@ -105,4 +88,44 @@ public class PlayerHP : MonoBehaviour
             }
         }
     }
+    private void UpdateHealthUI()
+    {
+        float healthPercent = (float)currentHP / maxHP;
+
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = healthPercent;
+
+            Color healthColor;
+
+            if (healthPercent > 0.8f)
+            {
+                healthColor = new Color(0f, 1f, 0f); // Xanh lá
+            }
+            else if (healthPercent > 0.6f)
+            {
+                healthColor = new Color(0.5f, 1f, 0f); // Vàng xanh
+            }
+            else if (healthPercent > 0.4f)
+            {
+                healthColor = new Color(1f, 1f, 0f); // Vàng
+            }
+            else if (healthPercent > 0.2f)
+            {
+                healthColor = new Color(1f, 0.5f, 0f); // Cam
+            }
+            else
+            {
+                healthColor = new Color(1f, 0f, 0f); // Đỏ
+            }
+
+            healthBar.color = healthColor;
+        }
+
+        if (currentHeal != null)
+        {
+            currentHeal.text = currentHP.ToString();
+        }
+    }
+
 }

@@ -9,6 +9,7 @@ public class EnemyHP : MonoBehaviour
     public float maxHP = 100; // Maximum health points
     public float currentHP; // Current health points
     public float InvincibilityTime = 0.17f; // Invincibility time in seconds after taking damage
+    public int damageReductionRate = 0; // Tỉ lệ miễn thương (0-100)
     public GameObject damagePopupPrefab;
     public Image healthBar; // Reference to the health bar UI element
     public TMP_Text maxHeal; // Reference to the maximum health text UI element
@@ -39,7 +40,12 @@ public class EnemyHP : MonoBehaviour
         {
             if (!isInvincible)
             {
-                currentHP -= damage;
+                // Giảm sát thương theo tỉ lệ miễn thương
+                int reduction = Mathf.Clamp(damageReductionRate, 0, 100);
+                float reducedDamage = damage * (1f - reduction / 100f);
+                int finalDamage = Mathf.RoundToInt(reducedDamage);
+
+                currentHP -= finalDamage;
                 if (currentHP < 0)
                 {
                     currentHP = 0;
@@ -55,12 +61,17 @@ public class EnemyHP : MonoBehaviour
                 // Display damage popup
                 if (damagePopupPrefab != null)
                 {
-                    GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
+                    // Tạo vị trí ngẫu nhiên gần Enemy (bán kính 0.5 đơn vị)
+                    Vector3 randomOffset = UnityEngine.Random.insideUnitSphere * 1f;
+                    randomOffset.z = 0; // Đảm bảo popup nằm trên mặt phẳng 2D
+                    Vector3 spawnPosition = transform.position + randomOffset;
+
+                    GameObject damagePopup = Instantiate(damagePopupPrefab, spawnPosition, Quaternion.identity);
                     FloatingDamage floatingDamage = damagePopup.GetComponent<FloatingDamage>();
                     if (floatingDamage != null)
                     {
                         Color damageColor = isCritical ? new Color(1f, 0.5f, 0f) : Color.yellow; // Cam hoặc vàng
-                        floatingDamage.SetDamageValue(damage, damageColor);
+                        floatingDamage.SetDamageValue(finalDamage, damageColor);
                     }
                 }
                 StartCoroutine(InvincibilityCoroutine());

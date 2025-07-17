@@ -55,7 +55,7 @@ public class PLayerMP : MonoBehaviour
     // Method to recover mana
     public void RecoverMP(int amount)
     {
-        if (currentMP > 0)
+        if (currentMP >= 0)
         {
             currentMP += amount;
             if (manaBar != null)

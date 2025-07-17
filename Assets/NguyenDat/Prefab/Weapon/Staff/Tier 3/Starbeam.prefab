@@ -248,7 +248,9 @@ MonoBehaviour:
     gi\u01A1 cao g\u1EADy, v\u1EC7t s\xE1ng \u1EA5y nh\u1EAFc b\u1EA1n r\u1EB1ng
     \xE1nh s\xE1ng \u0111\u1EB9p nh\u1EA5t th\u01B0\u1EDDng l\xE0 \xE1nh s\xE1ng
     \u0111\u1EBFn qu\xE1 mu\u1ED9n.\u201D"
-  weaponDamage: 50
+  weaponDamage: 9999
+  weaponCriticalChange: 79
+  weaponManaCost: 6
   weaponProjectile: {fileID: 0}
   weaponType: 4
 --- !u!114 &4343209921574348454
@@ -268,6 +270,8 @@ MonoBehaviour:
   startPoint: {fileID: 1606634468391162016}
   maxLaserLength: 25
   damage: 0
+  manaCost: 0
+  CriticalChange: 0
   hitMask:
     serializedVersion: 2
     m_Bits: 128

@@ -8,17 +8,26 @@ public class LaserWeapon : MonoBehaviour
     public LineRenderer lineRenderer;
     public Transform startPoint;
 
+    private PLayerMP playerMP;
+
     [Header("Laser Settings")]
     public float maxLaserLength = 25f;
-    public float damage;
+    public int damage;
+    public int manaCost;
+    public int CriticalChange;
     public LayerMask hitMask;
 
     private bool isFiring = false;
+    private Coroutine manaDrainCoroutine;
 
     private void Awake()
     {
         weaponData = GetComponent<WeaponData>();
+        playerMP = GetComponentInParent<PLayerMP>();
         damage = weaponData.weaponDamage;
+        manaCost = weaponData.weaponManaCost;
+        CriticalChange = weaponData.weaponCriticalChange;
+        manaCost = weaponData.weaponManaCost;
     }
 
     void Update()
@@ -34,6 +43,7 @@ public class LaserWeapon : MonoBehaviour
         isFiring = true;
         lineRenderer.enabled = true;
         UpdateLaser();
+        manaDrainCoroutine = StartCoroutine(DrainManaRoutine());
     }
     public void StopFiring()
     {
@@ -41,10 +51,20 @@ public class LaserWeapon : MonoBehaviour
 
         isFiring = false;
         lineRenderer.enabled = false;
+        if (manaDrainCoroutine != null)
+        {
+            StopCoroutine(manaDrainCoroutine);
+            manaDrainCoroutine = null;
+        }
     }
 
     private void UpdateLaser()
     {
+        if(manaCost > playerMP.currentMP)
+        {
+            StopFiring();
+            return;
+        }
         if (startPoint == null) return;
 
         Vector3 origin = startPoint.position;
@@ -61,20 +81,42 @@ public class LaserWeapon : MonoBehaviour
                 {
                     endPos = hit.point;
                 }
-                else if (hit.collider.CompareTag("Enemy"))
+                else if (hit.collider.CompareTag("Enemy")|| hit.collider.CompareTag("Boss"))
                 {
-                    DamageInfo damageInfo = new DamageInfo(damage, 0, false);
-                    EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
-                    if (enemyHealth != null)
-                    {
-                        enemyHealth.TakeDamage(damageInfo);
-                    }
+                    EnemyHP enemyHP = hit.collider.GetComponent<EnemyHP>();
+                    int baseDamage = damage;
+                    int critRate = CriticalChange;
 
+                    bool isCritical = Random.Range(0, 100) < critRate;
+                    int finalDamage = baseDamage;
+
+                    if (isCritical)
+                    {
+                        float critMultiplier = Random.Range(1.5f, 3.0f);
+                        finalDamage = Mathf.RoundToInt(baseDamage * critMultiplier);
+                    }
+                    enemyHP.TakeDamage(finalDamage, isCritical);
                 }
             }
         }
-
         lineRenderer.SetPosition(0, origin);
         lineRenderer.SetPosition(1, endPos);
+    }
+
+    // Coroutine trừ mana mỗi 0.25 giây
+    private System.Collections.IEnumerator DrainManaRoutine()
+    {
+        while (isFiring)
+        {
+            if (playerMP.UseMP(manaCost))
+            {
+                yield return new WaitForSeconds(0.25f);
+            }
+            else
+            {
+                StopFiring();
+                yield break;
+            }
+        }
     }
 }

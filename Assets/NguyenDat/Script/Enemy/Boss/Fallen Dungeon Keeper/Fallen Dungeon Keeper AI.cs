@@ -6,15 +6,19 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     [Header("General")]
     public Transform player;
     public EnemyHP enemyHealth;
-
-    [Header("Movement")]
-    public float moveSpeed = 8f;
+    public GameObject TinyMana;
 
     [Header("Bullet Prefabs")]
     public GameObject cursedSkullPrefab;
     public GameObject brimstonePrefab;
     public GameObject miniBrimstonePrefab;
     public GameObject brimstoneArrowPrefab;
+
+    [Header("Attack Settings")]
+    public int brimstoneRainDame = 40;
+    public int miniBrimstoneDame = 20;
+    public int brimstoneArrowDame = 35;
+    public int cursedSkullDame = 50;
 
     [Header("Prediction")]
     public float projectileSpeed = 6f;
@@ -29,10 +33,9 @@ public class FallenDungeonKeeperAI : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private CapsuleCollider2D capsuleCollider;
     private Coroutine attackRoutine;
-
-
     private int lastAttack = -1;
 
+    // --- UNITY LIFECYCLE ---
     void Start()
     {
         if (player == null)
@@ -56,6 +59,7 @@ public class FallenDungeonKeeperAI : MonoBehaviour
             FlipTowardsPlayer();
     }
 
+    // --- UTILITY & HELPER METHODS ---
     void FlipTowardsPlayer()
     {
         if (spriteRenderer == null || player == null) return;
@@ -68,6 +72,92 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         }
     }
 
+    void SpawnBullet(GameObject prefab, Vector2 position, Vector2 direction, int Damage)
+    {
+        GameObject bullet = Instantiate(prefab, position, Quaternion.identity);
+        EnemyDame enemyDame = bullet.GetComponent<EnemyDame>();
+        if (enemyDame != null)
+        {
+            enemyDame.damage = Damage;
+        }
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+            rb.linearVelocity = direction.normalized * projectileSpeed;
+    }
+
+    void FireBulletAtAngle(float angle)
+    {
+        float rad = angle * Mathf.Deg2Rad;
+        Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
+
+        GameObject bullet = Instantiate(miniBrimstonePrefab, transform.position, Quaternion.identity);
+        EnemyDame enemyDame = bullet.GetComponent<EnemyDame>();
+        if (enemyDame != null)
+        {
+            enemyDame.damage = miniBrimstoneDame;
+        }
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            StartCoroutine(AccelerateBullet(rb, dir, projectileSpeed, projectileSpeed * 2f, 1f));
+        }
+    }
+
+    void FireArrowFormation()
+    {
+        if (player == null || brimstoneArrowPrefab == null) return;
+
+        Vector2 direction = (player.position - transform.position).normalized;
+        GameObject arrowGroup = Instantiate(brimstoneArrowPrefab, rb.position, Quaternion.identity);
+        EnemyDame enemyDame = arrowGroup.GetComponent<EnemyDame>();
+        if (enemyDame != null)
+        {
+            enemyDame.damage = brimstoneArrowDame;
+        }
+
+        Rigidbody2D[] bullets = arrowGroup.GetComponentsInChildren<Rigidbody2D>();
+        foreach (Rigidbody2D bulletRb in bullets)
+        {
+            bulletRb.linearVelocity = direction * projectileSpeed * 1.5f;
+        }
+    }
+
+    void FireClockwiseBullets(int count)
+    {
+        float angleStep = 360f / count;
+        Vector2 origin = transform.position;
+
+        for (int i = 0; i < count; i++)
+        {
+            float angle = -i * angleStep;
+            float rad = angle * Mathf.Deg2Rad;
+            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+            SpawnBullet(miniBrimstonePrefab, origin, dir, miniBrimstoneDame);
+        }
+    }
+
+    // --- NEW: SPAWN TINY MANA ---
+    void SpawnTinyManaBurst()
+    {
+        if (TinyMana == null) return;
+        int count = Random.Range(5, 11); // 5 đến 10
+        float minForce = 4f;
+        float maxForce = 7f;
+        for (int i = 0; i < count; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            GameObject mana = Instantiate(TinyMana, transform.position, Quaternion.identity);
+            Rigidbody2D manaRb = mana.GetComponent<Rigidbody2D>();
+            if (manaRb != null)
+            {
+                float force = Random.Range(minForce, maxForce);
+                manaRb.linearVelocity = dir * force;
+            }
+        }
+    }
+
+    // --- ATTACK LOGIC & PHASES ---
     IEnumerator IntroAttack(float duration, bool startPhaseManagerAfter = false)
     {
         if (capsuleCollider != null)
@@ -90,18 +180,21 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         attackRoutine = StartCoroutine(PhaseOne());
         yield return new WaitUntil(() => enemyHealth.GetHealthPercent() <= 70f);
         StopCoroutine(attackRoutine);
+        SpawnTinyManaBurst();
         Phase1.Stop();
         Phase2.Play();
         yield return StartCoroutine(IntroAttack(12.5f));
         attackRoutine = StartCoroutine(PhaseTwo());
         yield return new WaitUntil(() => enemyHealth.GetHealthPercent() <= 35f);
         StopCoroutine(attackRoutine);
+        SpawnTinyManaBurst();
         Phase2.Stop();
         Phase3.Play();
         yield return StartCoroutine(IntroAttack(15f));
         attackRoutine = StartCoroutine(PhaseThree());
         yield return new WaitUntil(() => enemyHealth.GetHealthPercent() <= 0);
         StopCoroutine(attackRoutine);
+        SpawnTinyManaBurst();
     }
 
     IEnumerator PhaseOne()
@@ -170,6 +263,7 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         }
     }
 
+    // --- ATTACK COROUTINES ---
     IEnumerator BrimstoneRain(int count, float interval)
     {
         if (player == null) yield break;
@@ -187,7 +281,7 @@ public class FallenDungeonKeeperAI : MonoBehaviour
             EnemyDame enemyDame = b.GetComponent<EnemyDame>();
             if (enemyDame != null)
             {
-                enemyDame.damage = 10; // Set damage for brimstone
+                enemyDame.damage = brimstoneRainDame;
             }
             Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
             if (rb != null)
@@ -251,64 +345,6 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         }
     }
 
-    IEnumerator AccelerateBullet(Rigidbody2D rb, Vector2 direction, float initialSpeed, float finalSpeed, float duration)
-    {
-        float timer = 0f;
-        while (timer < duration && rb != null)
-        {
-            float t = timer / duration;
-            float currentSpeed = Mathf.Lerp(initialSpeed, finalSpeed, t);
-            rb.linearVelocity = direction * currentSpeed;
-
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        if (rb != null)
-            rb.linearVelocity = direction * finalSpeed;
-    }
-
-    void FireBulletAtAngle(float angle)
-    {
-        float rad = angle * Mathf.Deg2Rad;
-        Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
-
-        GameObject bullet = Instantiate(miniBrimstonePrefab, transform.position, Quaternion.identity);
-        EnemyDame enemyDame = bullet.GetComponent<EnemyDame>();
-        if (enemyDame != null)
-        {
-            enemyDame.damage = 5; // Set damage for mini brimstone
-        }
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            StartCoroutine(AccelerateBullet(rb, dir, projectileSpeed, projectileSpeed * 2f, 1f));
-        }
-    }
-
-    IEnumerator DashToRandomNearPlayer()
-    {
-        if (player == null || rb == null) yield break;
-
-        Vector2 targetPos = (Vector2)player.position + Random.insideUnitCircle.normalized * Random.Range(6f, 10f);
-        float dashSpeed = 60f;
-        float arriveDistance = 0.5f;
-        float timeout = 0.5f;
-
-        Vector2 direction = (targetPos - rb.position).normalized;
-        rb.linearVelocity = direction * dashSpeed;
-
-        float timer = 0f;
-        while (Vector2.Distance(rb.position, targetPos) > arriveDistance && timer < timeout)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        rb.linearVelocity = Vector2.zero;
-        yield return new WaitForSeconds(0.2f);
-    }
-
     IEnumerator ArrowAndClockAttack()
     {
         if (player == null) yield break;
@@ -323,52 +359,6 @@ public class FallenDungeonKeeperAI : MonoBehaviour
             FireClockwiseBullets(Random.Range(12, 18));
             yield return new WaitForSeconds(interval);
         }
-    }
-
-    void FireArrowFormation()
-    {
-        if (player == null || brimstoneArrowPrefab == null) return;
-
-        Vector2 direction = (player.position - transform.position).normalized;
-        GameObject arrowGroup = Instantiate(brimstoneArrowPrefab, rb.position, Quaternion.identity);
-        EnemyDame enemyDame = arrowGroup.GetComponent<EnemyDame>();
-        if (enemyDame != null)
-        {
-            enemyDame.damage = 5; // Set damage for brimstone arrow
-        }
-
-        Rigidbody2D[] bullets = arrowGroup.GetComponentsInChildren<Rigidbody2D>();
-        foreach (Rigidbody2D bulletRb in bullets)
-        {
-            bulletRb.linearVelocity = direction * projectileSpeed * 1.5f;
-        }
-    }
-
-    void FireClockwiseBullets(int count)
-    {
-        float angleStep = 360f / count;
-        Vector2 origin = transform.position;
-
-        for (int i = 0; i < count; i++)
-        {
-            float angle = -i * angleStep;
-            float rad = angle * Mathf.Deg2Rad;
-            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-            SpawnBullet(miniBrimstonePrefab, origin, dir);
-        }
-    }
-
-    void SpawnBullet(GameObject prefab, Vector2 position, Vector2 direction)
-    {
-        GameObject bullet = Instantiate(prefab, position, Quaternion.identity);
-        EnemyDame enemyDame = bullet.GetComponent<EnemyDame>();
-        if (enemyDame != null)
-        {
-            enemyDame.damage = 5; // Set damage for mini brimstone
-        }
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-            rb.linearVelocity = direction.normalized * projectileSpeed;
     }
 
     IEnumerator DashAndFireAttack()
@@ -401,11 +391,11 @@ public class FallenDungeonKeeperAI : MonoBehaviour
                 {
                     fireTimer = 0f;
                     Vector2 dir = ((Vector2)player.position - rb.position).normalized;
-                    SpawnBullet(miniBrimstonePrefab, rb.position, dir);
+                    SpawnBullet(miniBrimstonePrefab, rb.position, dir, miniBrimstoneDame);
 
                     Vector2 perp = Vector2.Perpendicular(dir).normalized;
-                    SpawnBullet(miniBrimstonePrefab, rb.position, perp);
-                    SpawnBullet(miniBrimstonePrefab, rb.position, -perp);
+                    SpawnBullet(miniBrimstonePrefab, rb.position, perp, miniBrimstoneDame);
+                    SpawnBullet(miniBrimstonePrefab, rb.position, -perp, miniBrimstoneDame);
                 }
 
                 yield return null;
@@ -436,7 +426,7 @@ public class FallenDungeonKeeperAI : MonoBehaviour
                 float angle = currentRotation + (360f / bulletsPerShot) * i;
                 float rad = angle * Mathf.Deg2Rad;
                 Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
-                SpawnBullet(cursedSkullPrefab, rb.position, dir);
+                SpawnBullet(cursedSkullPrefab, rb.position, dir, cursedSkullDame);
             }
 
             currentRotation += 5f;
@@ -444,5 +434,46 @@ public class FallenDungeonKeeperAI : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
+    }
+
+    // --- SUPPORT COROUTINES ---
+    IEnumerator DashToRandomNearPlayer()
+    {
+        if (player == null || rb == null) yield break;
+
+        Vector2 targetPos = (Vector2)player.position + Random.insideUnitCircle.normalized * Random.Range(6f, 10f);
+        float dashSpeed = 60f;
+        float arriveDistance = 0.5f;
+        float timeout = 0.5f;
+
+        Vector2 direction = (targetPos - rb.position).normalized;
+        rb.linearVelocity = direction * dashSpeed;
+
+        float timer = 0f;
+        while (Vector2.Distance(rb.position, targetPos) > arriveDistance && timer < timeout)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(0.2f);
+    }
+
+    IEnumerator AccelerateBullet(Rigidbody2D rb, Vector2 direction, float initialSpeed, float finalSpeed, float duration)
+    {
+        float timer = 0f;
+        while (timer < duration && rb != null)
+        {
+            float t = timer / duration;
+            float currentSpeed = Mathf.Lerp(initialSpeed, finalSpeed, t);
+            rb.linearVelocity = direction * currentSpeed;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        if (rb != null)
+            rb.linearVelocity = direction * finalSpeed;
     }
 }
