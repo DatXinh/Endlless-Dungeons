@@ -187,7 +187,6 @@ GameObject:
   - component: {fileID: 2685846563994497501}
   - component: {fileID: 2679441729102882838}
   - component: {fileID: 4401958773112739131}
-  - component: {fileID: 4002986988967293796}
   m_Layer: 7
   m_Name: Fire Worm
   m_TagString: Boss
@@ -336,19 +335,8 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 0
   InvincibilityTime: 0.01
+  damageReductionRate: 0
   damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
---- !u!114 &4002986988967293796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8078228010688953527}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 500
-  currentHP: 0
-  isInvulnerable: 0
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}

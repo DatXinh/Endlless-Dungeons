@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8547261168170539515}
   - component: {fileID: 5304882606350345820}
   - component: {fileID: 3441188677533776180}
-  - component: {fileID: 5740776631917108191}
   m_Layer: 0
   m_Name: FireballExplo
   m_TagString: Untagged
@@ -205,19 +204,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 0.5
---- !u!114 &5740776631917108191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216000513381312700}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5

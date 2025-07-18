@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 567855786160462891}
   - component: {fileID: 4767684219614778327}
   - component: {fileID: 7556758088194340922}
-  - component: {fileID: 1180340781278031948}
   m_Layer: 0
   m_Name: VSprojectile
   m_TagString: Untagged
@@ -140,22 +139,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 5
---- !u!114 &1180340781278031948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3854616868113205400}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!1 &5386789992925227647
 GameObject:
   m_ObjectHideFlags: 0

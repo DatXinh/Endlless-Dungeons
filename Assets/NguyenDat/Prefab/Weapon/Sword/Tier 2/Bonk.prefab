@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6179058574938146049}
   - component: {fileID: 2045675388233875898}
   - component: {fileID: 55735562834403656}
-  - component: {fileID: 2078602065360037911}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -188,22 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96ecd41d4c36da479e212c361ad4e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2078602065360037911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102745065661226313}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!1 &8693814924541357856
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,5 +239,6 @@ MonoBehaviour:
     b\u1ECB b\xF3p m\xE9o.\u201D"
   weaponDamage: 0
   weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1

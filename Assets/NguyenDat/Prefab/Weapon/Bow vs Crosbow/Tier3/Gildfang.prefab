@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 5365890066979626190}
   - component: {fileID: 2386069849994889523}
   - component: {fileID: 5577527548738157261}
-  - component: {fileID: 2418425783020233645}
   - component: {fileID: 9044594364384646172}
   m_Layer: 0
   m_Name: Gildfang
@@ -213,22 +212,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 3
---- !u!114 &2418425783020233645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3926250647381810394}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!114 &9044594364384646172
 MonoBehaviour:
   m_ObjectHideFlags: 0

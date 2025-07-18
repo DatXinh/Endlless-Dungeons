@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 5010434141375290244}
   - component: {fileID: 2561073672208700474}
   - component: {fileID: 9009209172224437996}
-  - component: {fileID: 1548034252550359849}
   - component: {fileID: 1395282123654145733}
   m_Layer: 0
   m_Name: Shadowbolt
@@ -213,22 +212,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
---- !u!114 &1548034252550359849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8288704198009424880}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!114 &1395282123654145733
 MonoBehaviour:
   m_ObjectHideFlags: 0

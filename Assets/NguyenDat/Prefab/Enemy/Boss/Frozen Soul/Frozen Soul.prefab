@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 2657529371934871285}
   - component: {fileID: 985360860740229006}
   - component: {fileID: 1540504200491295434}
-  - component: {fileID: 1315327320620242874}
-  - component: {fileID: 133807254322714929}
   m_Layer: 7
   m_Name: Frozen Soul
   m_TagString: Boss
@@ -163,38 +161,11 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 0
   InvincibilityTime: 0.01
+  damageReductionRate: 0
   damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
---- !u!114 &1315327320620242874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066232126717840010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 1000
-  currentHP: 0
-  isInvulnerable: 0
---- !u!114 &133807254322714929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066232126717840010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae32c72cd7f34134badedbba0da253b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 2
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}
 --- !u!1 &4165394732623854953
 GameObject:
   m_ObjectHideFlags: 0

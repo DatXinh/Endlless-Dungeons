@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8773908396291452306}
   - component: {fileID: 6746591366293858195}
   - component: {fileID: 4337467518616629693}
-  - component: {fileID: 419493973952257613}
   m_Layer: 0
   m_Name: Flamethrower
   m_TagString: Untagged
@@ -218,19 +217,3 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 3
---- !u!114 &419493973952257613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8176644171792882619}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5

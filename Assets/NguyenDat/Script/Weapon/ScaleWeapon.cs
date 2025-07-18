@@ -19,28 +19,35 @@ public class ScaleWeapon : MonoBehaviour
         // Chỉ thay đổi scale khi đang giữ joystick tấn công
         if (joystickAttackAndAim.IsHolding)
         {
-            Vector3 scale = transform.localScale;
-            if (weaponData == null) return;
-            if (weaponData.weaponType == WeaponType.Sword ||
-                weaponData.weaponType == WeaponType.MagicStaff ||
-                weaponData.weaponType == WeaponType.Rogue ||
-                weaponData.weaponType == WeaponType.Spear||
-                weaponData.weaponType == WeaponType.SpellBook)
-            {
-                scale.x = testPlayerMove.isFacingRight ? 1 : -1;
-                scale.y = testPlayerMove.isFacingRight ? 1 : -1;
-                transform.localScale = scale;
-            }
-            else if (weaponData.weaponType == WeaponType.Bow)
-            {
-                scale.x = testPlayerMove.isFacingRight ? 1 : -1;
-                transform.localScale = scale;
-            }
-            else
-            {
-                return;
-            }
-            
+              scaleWeapon();
+        }
+    }
+    public void resetWeapon()
+    {
+        weaponData = GetComponentInChildren<WeaponData>();
+    }
+    void scaleWeapon()
+    {
+        Vector3 scale = transform.localScale;
+        if (weaponData == null) return;
+        if (weaponData.weaponType == WeaponType.Sword ||
+            weaponData.weaponType == WeaponType.MagicStaff ||
+            weaponData.weaponType == WeaponType.Rogue ||
+            weaponData.weaponType == WeaponType.Spear ||
+            weaponData.weaponType == WeaponType.SpellBook)
+        {
+            scale.x = testPlayerMove.isFacingRight ? 1 : -1;
+            scale.y = testPlayerMove.isFacingRight ? 1 : -1;
+            transform.localScale = scale;
+        }
+        else if (weaponData.weaponType == WeaponType.Bow)
+        {
+            scale.x = testPlayerMove.isFacingRight ? 1 : -1;
+            transform.localScale = scale;
+        }
+        else
+        {
+            return;
         }
     }
 }

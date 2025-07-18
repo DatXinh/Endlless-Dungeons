@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 3900620986741304186}
   - component: {fileID: 1343082794581073528}
   - component: {fileID: 3654886612577965268}
-  - component: {fileID: 5602475687505411323}
   - component: {fileID: 4942358309426277694}
   m_Layer: 0
   m_Name: Green Thorn
@@ -213,22 +212,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &5602475687505411323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801802118551529608}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!114 &4942358309426277694
 MonoBehaviour:
   m_ObjectHideFlags: 0

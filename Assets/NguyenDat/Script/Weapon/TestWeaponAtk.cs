@@ -11,10 +11,6 @@ public class TestWeaponAtk : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void Attack()
     {
         if (animator == null)
@@ -22,5 +18,9 @@ public class TestWeaponAtk : MonoBehaviour
             return;
         }
         animator.SetTrigger("Atk");
+    }
+    public void resetWeapon()
+    {
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 }

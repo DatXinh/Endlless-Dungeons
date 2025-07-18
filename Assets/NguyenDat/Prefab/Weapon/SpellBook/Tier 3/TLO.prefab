@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1790182660863145957}
   - component: {fileID: 9165354728167881383}
   - component: {fileID: 8424356624068227664}
-  - component: {fileID: 6234928539003409293}
   - component: {fileID: 8081326905038075734}
   m_Layer: 0
   m_Name: TLO
@@ -116,22 +115,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &6234928539003409293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7778368207161583054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!114 &8081326905038075734
 MonoBehaviour:
   m_ObjectHideFlags: 0

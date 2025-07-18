@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9031563682142627608}
   - component: {fileID: 5643208026322268359}
   - component: {fileID: 4897482915006440258}
-  - component: {fileID: 2956043628487156651}
   - component: {fileID: 1557140092435027047}
   m_Layer: 0
   m_Name: SS
@@ -116,22 +115,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &2956043628487156651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3537355288724318913}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!114 &1557140092435027047
 MonoBehaviour:
   m_ObjectHideFlags: 0

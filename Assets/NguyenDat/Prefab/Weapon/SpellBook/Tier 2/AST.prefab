@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9125833265150996822}
   - component: {fileID: 7404996376150610201}
   - component: {fileID: 6249620905208596633}
-  - component: {fileID: 850096275807069622}
   - component: {fileID: 5457301576294390359}
   m_Layer: 0
   m_Name: AST
@@ -116,22 +115,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &850096275807069622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759631485304373339}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!114 &5457301576294390359
 MonoBehaviour:
   m_ObjectHideFlags: 0

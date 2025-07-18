@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7083944704471998718}
   - component: {fileID: 3849168654883660515}
   - component: {fileID: 7596834531951061698}
-  - component: {fileID: 3181419784288791725}
   - component: {fileID: 1284861924758995337}
   m_Layer: 0
   m_Name: Ice Spike
@@ -181,22 +180,6 @@ MonoBehaviour:
   IsEnemy: 1
   canPierce: 1
   lifeTime: 5
---- !u!114 &3181419784288791725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8259940307784442884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae32c72cd7f34134badedbba0da253b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 2
 --- !u!114 &1284861924758995337
 MonoBehaviour:
   m_ObjectHideFlags: 0

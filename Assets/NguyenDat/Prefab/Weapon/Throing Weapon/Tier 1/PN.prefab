@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 5947175966131423976}
   - component: {fileID: 1387830368559631341}
   - component: {fileID: 120091710512518654}
-  - component: {fileID: 6334277800000222791}
   m_Layer: 0
   m_Name: PN
   m_TagString: Untagged
@@ -227,19 +226,3 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &6334277800000222791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6587683697731803141}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5

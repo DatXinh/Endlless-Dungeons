@@ -2,7 +2,7 @@
 
 public class LaunchProjectile : MonoBehaviour
 {
-    [HideInInspector] public GameObject projectilePrefab;
+    public GameObject projectilePrefab;
 
     public Transform firePoint;
     public Transform weaponTransform;
@@ -25,7 +25,11 @@ public class LaunchProjectile : MonoBehaviour
         WeaponCritalChange = weaponData.weaponCriticalChange;
         WeaponManaCost = weaponData.weaponManaCost;
     }
-
+    public void resetPlayerMP()
+    {
+        pLayerMP = GetComponentInParent<PLayerMP>();
+        projectilePrefab = weaponData.weaponProjectile;
+    }
     public void LaunchSingle()
     {
         if (!IsValid()) return;

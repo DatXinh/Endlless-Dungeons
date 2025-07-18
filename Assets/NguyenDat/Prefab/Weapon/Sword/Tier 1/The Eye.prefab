@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8111620177405883953}
   - component: {fileID: 8098984188719836680}
   - component: {fileID: 4078600506926869936}
-  - component: {fileID: 4809820505726210809}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -193,22 +192,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   WeaponDamage: 0
   WeaponCritalChange: 0
---- !u!114 &4809820505726210809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141457372017821660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &4848108581353277089
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +247,7 @@ MonoBehaviour:
     nh\xECn, m\xE0 \u0111\u1EC3 ghi nh\u1EDB.\u201D"
   weaponDamage: 0
   weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 3365232881022817200, guid: 61eebb0bc083687489b1cdb347743314, type: 3}
   weaponType: 1
 --- !u!1 &6806899957900953651
