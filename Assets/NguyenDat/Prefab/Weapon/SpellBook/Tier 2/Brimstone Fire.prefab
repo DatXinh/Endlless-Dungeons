@@ -41,6 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8847042493479864334}
   - component: {fileID: 5708263237527138200}
+  - component: {fileID: 1254693101099720892}
+  - component: {fileID: 1315017794124315641}
   m_Layer: 0
   m_Name: Brimstone Fire
   m_TagString: Untagged
@@ -80,13 +82,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: BrimStone Fire
+  weaponIcon: {fileID: 3907988609368880826, guid: f66322af20defb24fa820b3b819e613a, type: 3}
   weaponDescription: "\u201CM\u1ED9t b\u1EA3n sao tinh khi\u1EBFt h\u01A1n, nh\u01B0ng
     kh\xF4ng k\xE9m nguy hi\u1EC3m. N\xF3 g\u1ECDi l\u1EEDa t\u1EEB l\xF2ng \u0111\u1EA5t
     s\xE2u \u2013 n\u01A1i \u0111\u01B0\u1EE3c tin l\xE0 ph\u1EA7n th\xE2n d\u01B0\u1EDBi
     c\u1EE7a m\u1ED9t v\u1ECB th\u1EA7n b\u1ECB c\u1EAFt r\u1EDDi.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 8529608062807768191, guid: e127afc7a8b2a3644ab7c347862d399b, type: 3}
   weaponType: 5
+--- !u!58 &1254693101099720892
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475066714284374284}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &1315017794124315641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475066714284374284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &9200325499862376328
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +273,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 8847042493479864334}
   launchForce: 20
   audioSource: {fileID: 7352705228317331487}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1001 &4828133493044704495
 PrefabInstance:
   m_ObjectHideFlags: 0

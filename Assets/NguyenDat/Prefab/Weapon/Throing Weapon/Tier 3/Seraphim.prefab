@@ -131,6 +131,8 @@ MonoBehaviour:
   audioSource: {fileID: 3904623041537605358}
   WeaponDamage: 0
   WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!114 &899152515474077271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +188,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2585543657735899083}
   - component: {fileID: 2134623794861289595}
+  - component: {fileID: 7467702670798511026}
+  - component: {fileID: 7882324150300578093}
   m_Layer: 0
   m_Name: Seraphim
   m_TagString: Untagged
@@ -225,13 +229,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Seraphim
+  weaponIcon: {fileID: 2663973252643509121, guid: c78e25378c2ea4b46a4fb4fc726f37ec, type: 3}
   weaponDescription: "\u201CV\u0169 kh\xED c\xF3 c\xE1nh \u2013 nh\u01B0 thi\xEAn
     th\u1EA7n sa ng\xE3. N\xF3 kh\xF4ng \u0111\u01B0\u1EE3c n\xE9m, n\xF3 t\u1EF1
     ch\u1ECDn l\xFAc r\u1EDDi tay b\u1EA1n.\u201D"
   weaponDamage: 1545
   weaponCriticalChange: 60
+  weaponManaCost: 0
   weaponProjectile: {fileID: 7093288200147166899, guid: 411a24ae630e56c4885cce7df41f0331, type: 3}
   weaponType: 6
+--- !u!114 &7467702670798511026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083945584695108612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &7882324150300578093
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083945584695108612}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1001 &1385690666372962846
 PrefabInstance:
   m_ObjectHideFlags: 0

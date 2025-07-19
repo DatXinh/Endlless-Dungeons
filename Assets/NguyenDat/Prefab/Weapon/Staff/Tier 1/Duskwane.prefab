@@ -128,6 +128,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 7176220151556827470}
   launchForce: 15
   audioSource: {fileID: 0}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &6371109019440034702
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +173,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7176220151556827470}
   - component: {fileID: 6786075345024042769}
+  - component: {fileID: 1786701080878852351}
+  - component: {fileID: 7240094729030480443}
   m_Layer: 0
   m_Name: Duskwane
   m_TagString: Untagged
@@ -207,9 +213,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Duskwane
+  weaponIcon: {fileID: -8582435088932248154, guid: 8dfbef5706e210a43abc2a09fc7714f2, type: 3}
   weaponDescription: "\u201CN\xF3 kh\xF4ng ph\xE1t s\xE1ng trong b\xF3ng t\u1ED1i.
     N\xF3 ch\u1EC9 l\xE0m m\u1ECDi th\u1EE9 xung quanh qu\xEAn \u0111i \xE1nh s\xE1ng
     t\u1EEBng t\u1ED3n t\u1EA1i.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 2632702078711203918, guid: 2d8aaa0942a19f346a264671d1468965, type: 3}
   weaponType: 4
+--- !u!58 &1786701080878852351
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492683806427458373}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &7240094729030480443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492683806427458373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}

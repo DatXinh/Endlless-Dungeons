@@ -225,6 +225,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3208886520546294793}
   - component: {fileID: 2772723648914001015}
+  - component: {fileID: 633718593671355823}
+  - component: {fileID: 5729723448356832531}
   m_Layer: 0
   m_Name: Void Riper
   m_TagString: Untagged
@@ -264,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Void Riper
+  weaponIcon: {fileID: 4835045868282400348, guid: e22609559fb195c4b828953ac1ff59e6, type: 3}
   weaponDescription: "\u201C\u0110\u01B0\u1EE3c r\xE8n trong m\u1ED9t kho\u1EA3nh
     kh\u1EAFc th\u1EF1c t\u1EA1i b\u1ECB x\xE9 to\u1EA1c. Kh\xF4ng ai \u0111\xFAc
     ra n\xF3 \u2013 n\xF3 ch\u1EC9 hi\u1EC7n ra, v\xE0 ng\u01B0\u1EDDi \u0111\u1EA7u
@@ -273,6 +276,59 @@ MonoBehaviour:
   weaponManaCost: 5
   weaponProjectile: {fileID: 4791221879380248428, guid: 8a0609de9affdeb4089339771c84f3fc, type: 3}
   weaponType: 2
+--- !u!114 &633718593671355823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752384395813104827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &5729723448356832531
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752384395813104827}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1001 &4916685961041331237
 PrefabInstance:
   m_ObjectHideFlags: 0

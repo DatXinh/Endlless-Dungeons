@@ -1017,9 +1017,9 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_29
       rect:
         serializedVersion: 2
-        x: 165
+        x: 162
         y: 292
-        width: 25
+        width: 28
         height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1193,7 +1193,7 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_37
       rect:
         serializedVersion: 2
-        x: 163
+        x: 162
         y: 259
         width: 27
         height: 27
@@ -1325,7 +1325,7 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_43
       rect:
         serializedVersion: 2
-        x: 164
+        x: 162
         y: 227
         width: 27
         height: 27
@@ -1479,7 +1479,7 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_51
       rect:
         serializedVersion: 2
-        x: 163
+        x: 161
         y: 194
         width: 28
         height: 28
@@ -1633,10 +1633,10 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_58
       rect:
         serializedVersion: 2
-        x: 163
-        y: 163
+        x: 161
+        y: 161
         width: 28
-        height: 28
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1765,7 +1765,7 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_65
       rect:
         serializedVersion: 2
-        x: 163
+        x: 161
         y: 130
         width: 28
         height: 28
@@ -1919,8 +1919,8 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_72
       rect:
         serializedVersion: 2
-        x: 163
-        y: 97
+        x: 161
+        y: 99
         width: 28
         height: 28
       alignment: 0
@@ -2117,8 +2117,8 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_81
       rect:
         serializedVersion: 2
-        x: 164
-        y: 66
+        x: 162
+        y: 68
         width: 26
         height: 26
       alignment: 0
@@ -2293,7 +2293,7 @@ TextureImporter:
       name: 32x32_PixelWeapons_Free_89
       rect:
         serializedVersion: 2
-        x: 164
+        x: 162
         y: 35
         width: 26
         height: 26
@@ -2474,7 +2474,7 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 9
-      pivot: {x: 0.71102846, y: 0.70985997}
+      pivot: {x: 0.287816, y: 0.19815768}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

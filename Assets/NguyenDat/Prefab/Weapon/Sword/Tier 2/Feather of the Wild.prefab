@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7207548869481135325}
   - component: {fileID: 8853915827797916208}
+  - component: {fileID: 8733071142803810778}
+  - component: {fileID: 3872208704367583868}
   m_Layer: 0
   m_Name: Feather of the Wild
   m_TagString: Untagged
@@ -48,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Feather of the Wild
+  weaponIcon: {fileID: 349688787, guid: 539d0c41b697c8a4387a0d8621b5ee06, type: 3}
   weaponDescription: "\u201CKh\xF4ng ph\u1EA3i kim lo\u1EA1i. L\xE0 l\xF4ng c\u1EE7a
     con chim cu\u1ED1i c\xF9ng t\u1EEBng bay qua khe n\u1EE9t gi\u1EEFa hai c\xF5i
     \u2013 r\u1ED3i ch\xE1y r\u1EE5i trong l\u1EA7n quay v\u1EC1.\u201D"
@@ -56,6 +59,59 @@ MonoBehaviour:
   weaponManaCost: 0
   weaponProjectile: {fileID: 2668570120682506747, guid: f730b988b5f8a074eb7b71cffa9b06f5, type: 3}
   weaponType: 1
+--- !u!114 &8733071142803810778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657570603147385934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &3872208704367583868
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657570603147385934}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &6743835442001847265
 GameObject:
   m_ObjectHideFlags: 0

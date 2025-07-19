@@ -194,6 +194,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6754838545712404961}
   - component: {fileID: 6542941947552254300}
+  - component: {fileID: 8518226736146678466}
+  - component: {fileID: 6993941910882658682}
   m_Layer: 0
   m_Name: Dawn Light
   m_TagString: Untagged
@@ -231,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Dawn Light
+  weaponIcon: {fileID: 6628846429676683371, guid: 539d0c41b697c8a4387a0d8621b5ee06, type: 3}
   weaponDescription: "\u201CL\u01B0\u1EE1i g\u01B0\u01A1m r\u1EF1c l\xEAn khi ch\u1EA1m
     m\xE1u. Ng\u01B0\u1EDDi r\xE8n n\xF3 t\u1EEBng tin r\u1EB1ng b\xECnh minh c\xF3
     th\u1EC3 gi\u1EBFt ch\u1EBFt \xE1c m\u1ED9ng \u2013 nh\u01B0ng r\u1ED3i ch\xEDnh
@@ -240,3 +243,56 @@ MonoBehaviour:
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
+--- !u!58 &8518226736146678466
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3961267123052720717}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &6993941910882658682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3961267123052720717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}

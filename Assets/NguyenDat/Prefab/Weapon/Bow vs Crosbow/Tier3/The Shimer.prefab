@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 272324919107521853}
   - component: {fileID: 683134482561138214}
+  - component: {fileID: 8473414748267274030}
+  - component: {fileID: 4054026088981495079}
   m_Layer: 0
   m_Name: The Shimer
   m_TagString: Untagged
@@ -49,14 +51,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Shimer
+  weaponIcon: {fileID: 2786325586036497823, guid: 6c7036566e4e4d94d8b650efabf1b544, type: 3}
   weaponDescription: "\u201CN\xF3 ch\u1EDBp l\xF3e nh\u01B0 m\u1ED9t \u1EA3o gi\xE1c
     \u2014 nh\u01B0ng v\u1EBFt th\u01B0\u01A1ng l\xE0 th\u1EADt. M\u1ED9t v\u1EADt
     th\u1EC3 ch\u01B0a t\u1EEBng \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn, \u0111\u1EBFn
     t\u1EEB t\u1EA7ng \u0111\xE1y c\u1EE7a g\u01B0\u01A1ng.\u201D"
   weaponDamage: 1250
   weaponCriticalChange: 88
+  weaponManaCost: 0
   weaponProjectile: {fileID: 6127034259862850823, guid: 83b90069ae79e3547be263a3656bdcd5, type: 3}
   weaponType: 3
+--- !u!114 &8473414748267274030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639490275339319330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &4054026088981495079
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639490275339319330}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &2425951163087226373
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +244,8 @@ MonoBehaviour:
   audioSource: {fileID: 2364189361324271510}
   WeaponDamage: 0
   WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &2623167528148421721
 GameObject:
   m_ObjectHideFlags: 0

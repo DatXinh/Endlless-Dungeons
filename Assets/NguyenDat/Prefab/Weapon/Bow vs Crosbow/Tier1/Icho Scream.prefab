@@ -173,6 +173,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4059500411313499996}
   - component: {fileID: 1416635913642440789}
+  - component: {fileID: 7008527603656939217}
+  - component: {fileID: 4818451273838666329}
   m_Layer: 0
   m_Name: Icho Scream
   m_TagString: Untagged
@@ -212,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Icho Scream
+  weaponIcon: {fileID: 811628143628391260, guid: 2d04f415a271cfa488f8a82a70a4001e, type: 3}
   weaponDescription: "\u201CKhi nh\u1EF1a c\xE2y b\u1EAFt \u0111\u1EA7u g\xE0o kh\xF3c,
     r\u1EEBng th\xF4i th\xEC th\u1EA7m. V\xE0 m\u1ED9t cung th\u1EE7 \u0111\xE3 l\u1EAFng
     nghe qu\xE1 nhi\u1EC1u.\u201D"
@@ -220,6 +223,59 @@ MonoBehaviour:
   weaponManaCost: 2
   weaponProjectile: {fileID: 8182878348636510951, guid: 68c372e73fa41644a89fa2f14918a723, type: 3}
   weaponType: 1
+--- !u!58 &7008527603656939217
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3045143725275807971}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &4818451273838666329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3045143725275807971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1001 &4633740042576162119
 PrefabInstance:
   m_ObjectHideFlags: 0

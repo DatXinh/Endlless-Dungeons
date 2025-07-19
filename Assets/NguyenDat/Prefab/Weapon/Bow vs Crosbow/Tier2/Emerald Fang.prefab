@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3621499937452197763}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3833933610825796824}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!212 &8324507666615851634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -128,6 +128,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 3833933610825796824}
   launchForce: 15
   audioSource: {fileID: 7262091980401860150}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &4799141085204607449
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +142,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3833933610825796824}
   - component: {fileID: 6407626027688907665}
+  - component: {fileID: 9195651943674453456}
+  - component: {fileID: 7730012759000746949}
   m_Layer: 0
   m_Name: Emerald Fang
   m_TagString: Untagged
@@ -177,12 +183,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Emerald Fang
+  weaponIcon: {fileID: -226041038483379265, guid: 8dfbef5706e210a43abc2a09fc7714f2, type: 3}
   weaponDescription: "\u201C\u0110\xFAc t\u1EEB nanh c\u1EE7a con r\u1EAFn canh gi\u1EEF
     t\u1EA7ng phong \u1EA5n th\u1EE9 ba. Khi cung gi\u01B0\u01A1ng, c\u01A1n \u0111\xF3i
     c\u1ED5 x\u01B0a l\u1EA1i c\u1EF1a m\xECnh.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 8582971395896999993, guid: 87c336cc2ff917e4baffc4519110c616, type: 3}
   weaponType: 3
+--- !u!114 &9195651943674453456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799141085204607449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &7730012759000746949
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799141085204607449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &6383376720889322552
 GameObject:
   m_ObjectHideFlags: 0

@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Shinobi Blade
+  weaponIcon: {fileID: -6755034161723673551, guid: 2dc4044d68e1c614189b5b589e0d561a, type: 3}
   weaponDescription: "\u201C\u0110\u01B0\u1EE3c truy\u1EC1n l\u1EA1i qua t\xE1m \u0111\u1EDDi,
     nh\u01B0ng kh\xF4ng ai nh\u1EDB t\xEAn ch\u1EE7 nh\xE2n \u0111\u1EA7u ti\xEAn
     \u2013 v\xEC l\u01B0\u1EE1i dao n\xE0y x\xF3a s\u1EA1ch danh t\xEDnh c\u1EE7a

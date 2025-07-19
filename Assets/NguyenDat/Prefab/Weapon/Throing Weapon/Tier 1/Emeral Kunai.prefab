@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Emeral Kunai
+  weaponIcon: {fileID: 8602989898392440617, guid: aee4fdd4b1030c045967a9010891cf2a, type: 3}
   weaponDescription: "\u201CR\xE8n t\u1EEB ng\u1ECDc l\u1EE5c b\u1EA3o t\u1EEBng
     d\xF9ng \u0111\u1EC3 phong \u1EA5n m\u1ED9t nh\xE3n th\u1EA7n. M\u1ED7i l\u1EA7n
     ph\xF3ng ra, ng\u01B0\u1EDDi c\u1EA7m m\u1EA5t \u0111i m\u1ED9t m\xE0u s\u1EAFc
@@ -288,6 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
   weaponName: "V\u0169 kh\xED"
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1001 &3074253980747311517
 PrefabInstance:
   m_ObjectHideFlags: 0

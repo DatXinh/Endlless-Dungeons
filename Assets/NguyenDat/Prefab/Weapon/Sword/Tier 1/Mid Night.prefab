@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6289332505743515937}
   - component: {fileID: 5928757811910511910}
+  - component: {fileID: 2582535672920819313}
+  - component: {fileID: 4768493607278629148}
   m_Layer: 0
   m_Name: Mid Night
   m_TagString: Untagged
@@ -47,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Mid Night
+  weaponIcon: {fileID: 1943108071234135840, guid: 539d0c41b697c8a4387a0d8621b5ee06, type: 3}
   weaponDescription: "\u201CKhi th\u1EDDi gian ng\u1EEBng l\u1EA1i gi\u1EEFa hai
     nh\u1ECBp chu\xF4ng, b\xF3ng \u0111\xEAm tr\u1EDF th\xE0nh v\u1EADt ch\u1EA5t.
     L\u01B0\u1EE1i ki\u1EBFm n\xE0y l\xE0 v\u1EBFt c\u1EAFt c\u1EE7a kho\u1EA3nh
@@ -56,6 +59,59 @@ MonoBehaviour:
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
+--- !u!58 &2582535672920819313
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198528725285002237}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &4768493607278629148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198528725285002237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &8993955156583259076
 GameObject:
   m_ObjectHideFlags: 0

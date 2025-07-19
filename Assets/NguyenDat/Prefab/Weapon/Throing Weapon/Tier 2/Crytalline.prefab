@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2709847893166401682}
   - component: {fileID: 7399758558797843713}
+  - component: {fileID: 997845378686919886}
+  - component: {fileID: 1082077634666757763}
   m_Layer: 0
   m_Name: Crytalline
   m_TagString: Untagged
@@ -49,13 +51,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Crytalline
+  weaponIcon: {fileID: -7220979822336162000, guid: a1458a6e500263944958d9ae45d9b939, type: 3}
   weaponDescription: "\u201CTinh th\u1EC3 sinh ra khi m\u1ED9t c\xE1nh c\u1ED5ng
     \u0111\xF3ng s\u1EADp gi\u1EEFa th\u1EDDi gian. N\xE9m ra, n\xF3 \u0111\u1EC3
     l\u1EA1i \xE2m vang t\u1EEB ph\xEDa b\xEAn kia.\u201D"
   weaponDamage: 0
   weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 9074270698322098874, guid: 5eb5178fd00c8b94b94cb49b4bc9acce, type: 3}
   weaponType: 6
+--- !u!114 &997845378686919886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480327723198667313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &1082077634666757763
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480327723198667313}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &4519017142753052075
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +275,8 @@ MonoBehaviour:
   audioSource: {fileID: 2061584693554051983}
   WeaponDamage: 0
   WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!114 &5598841570495440250
 MonoBehaviour:
   m_ObjectHideFlags: 0

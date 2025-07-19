@@ -176,6 +176,8 @@ MonoBehaviour:
   audioSource: {fileID: 3805567215537495273}
   WeaponDamage: 0
   WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &7022614348286009131
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +188,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7786853831182410076}
   - component: {fileID: 5084202655223982045}
+  - component: {fileID: 894857553645317549}
+  - component: {fileID: 8447550297796508696}
   m_Layer: 0
   m_Name: Visage
   m_TagString: Untagged
@@ -225,13 +229,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Visage
+  weaponIcon: {fileID: -7321757622539984348, guid: 6e71a07185d92a54f88b37943a96bcc8, type: 3}
   weaponDescription: "\u201C\u0110\u01B0\u1EE3c t\u1EA1c theo v\u0169 kh\xED c\u1EE7a
     m\u1ED9t th\u1EE9 ch\u01B0a t\u1EEBng t\u1ED3n t\u1EA1i. Khi ch\u1EA1m v\xE0o,
     b\u1EA1n c\xF3 th\u1EC3 nghe ti\u1EBFng th\u1EE9 \u0111\xF3 th\xEC th\u1EA7m.\u201D"
   weaponDamage: 0
   weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 3854616868113205400, guid: 9c2ac589962ab1348ba2f654e037714f, type: 3}
   weaponType: 6
+--- !u!58 &894857553645317549
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022614348286009131}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &8447550297796508696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022614348286009131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1001 &1286587614923028505
 PrefabInstance:
   m_ObjectHideFlags: 0

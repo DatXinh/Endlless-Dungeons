@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7446614576811133233}
   - component: {fileID: 4713379539242990528}
+  - component: {fileID: 4873427161823234443}
+  - component: {fileID: 705018467544755866}
   m_Layer: 0
   m_Name: Bloodcurrent
   m_TagString: Untagged
@@ -48,12 +50,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Bloodcurrent
+  weaponIcon: {fileID: -579030519115563886, guid: 8dfbef5706e210a43abc2a09fc7714f2, type: 3}
   weaponDescription: "\u201CKh\xF4ng ai bi\u1EBFt ai \u0111\xFAc c\xE2y g\u1EADy
     n\xE0y. Nh\u01B0ng khi ch\u1EA1m tay v\xE0o, m\xE1u b\u1EA1n s\u1EBD l\u1EB7ng
     l\u1EBD \u0111\u1ED5i h\u01B0\u1EDBng.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 7271213257795794288, guid: bdb0cca886626a8449ba870f7a06abd0, type: 3}
   weaponType: 4
+--- !u!114 &4873427161823234443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275917350370115266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &705018467544755866
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275917350370115266}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &1860542765601367348
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,3 +271,7 @@ MonoBehaviour:
   weaponTransform: {fileID: 7446614576811133233}
   launchForce: 15
   audioSource: {fileID: 0}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}

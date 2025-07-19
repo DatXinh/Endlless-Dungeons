@@ -159,6 +159,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 3984492867913599240}
   launchForce: 10
   audioSource: {fileID: 7024308080075359279}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &6753463645275528190
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +173,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3984492867913599240}
   - component: {fileID: 524157027783586679}
+  - component: {fileID: 7828504563867650324}
+  - component: {fileID: 4518921573227739186}
   m_Layer: 0
   m_Name: Sand Storm
   m_TagString: Untagged
@@ -208,14 +214,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Sand Storm
+  weaponIcon: {fileID: 3270941753151878692, guid: 95d4b0d06cc69d44b93837f976c8cf0c, type: 3}
   weaponDescription: "\u201CC\u01A1n b\xE3o \u0111\u1EA7u ti\xEAn kh\xF4ng ph\u1EA3i
     \u0111\u1EBFn t\u1EEB sa m\u1EA1c, m\xE0 t\u1EEB m\u1ED9t chi\u1EC1u kh\xF4ng
     gian n\u01A1i c\xE1t bi\u1EBFt n\xF3i. Khi ni\u1EC7m ph\xE9p n\xE0y, b\u1EA1n
     kh\xF4ng g\u1ECDi b\xE3o \u2013 b\u1EA1n g\u1ECDi s\u1EF1 ch\xFA \xFD c\u1EE7a
     n\xF3.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 3537355288724318913, guid: e9d8c7ea9bf5e4d4ab32609abac23858, type: 3}
   weaponType: 5
+--- !u!114 &7828504563867650324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753463645275528190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &4518921573227739186
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753463645275528190}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1001 &4931913685059182815
 PrefabInstance:
   m_ObjectHideFlags: 0

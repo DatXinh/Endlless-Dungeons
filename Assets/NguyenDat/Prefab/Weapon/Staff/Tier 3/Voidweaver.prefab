@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8314234029308527177}
   - component: {fileID: 5476654851453688108}
+  - component: {fileID: 7906016891987377473}
+  - component: {fileID: 3829247936146921456}
   m_Layer: 0
   m_Name: Voidweaver
   m_TagString: Untagged
@@ -48,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Voidweaver
+  weaponIcon: {fileID: -3392125502220775673, guid: 8dfbef5706e210a43abc2a09fc7714f2, type: 3}
   weaponDescription: "\u201CT\u1EEBng \u0111\u01B0\u1EE3c d\xF9ng \u0111\u1EC3 kh\xE2u
     nh\u1EEFng v\u1EBFt n\u1EE9t trong b\u1EE9c m\xE0n th\u1EF1c t\u1EA1i. Gi\u1EDD
     \u0111\xE2y, n\xF3 \u0111an l\u1EA1i ch\xEDnh nh\u1EEFng g\xEC kh\xF4ng n\xEAn
@@ -58,6 +61,59 @@ MonoBehaviour:
   weaponManaCost: 9
   weaponProjectile: {fileID: 1286575111412870413, guid: b06dcd520bad6704ebe13a21cc2bca60, type: 3}
   weaponType: 4
+--- !u!58 &7906016891987377473
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488743204118899581}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &3829247936146921456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488743204118899581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &4714906922281652403
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,13 +58,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2243449169903871696}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5255556804227200327}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!212 &2351764593458721490
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -159,6 +159,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 5255556804227200327}
   launchForce: 20
   audioSource: {fileID: 4046064102812436066}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &7514586837790412939
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5255556804227200327}
   - component: {fileID: 6761636192991215091}
+  - component: {fileID: 4051109137855942895}
   m_Layer: 0
   m_Name: Endergleam
   m_TagString: Untagged
@@ -208,12 +213,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Endergleam
+  weaponIcon: {fileID: -2318750719684510097, guid: 8dfbef5706e210a43abc2a09fc7714f2, type: 3}
   weaponDescription: "\u201C\xC1nh s\xE1ng kh\xF4ng thu\u1ED9c v\u1EC1 th\u1EBF gi\u1EDBi
     n\xE0y. M\u1ED9t v\u1EC7t l\xF3e ra t\u1EEB khe n\u1EE9t gi\u1EEFa hai c\xF5i
     \u2014 v\xE0 linh h\u1ED3n \u0111\xE3 ch\xE1y.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 3151462054325104733, guid: 102f0572377598141a9176402258f610, type: 3}
   weaponType: 3
+--- !u!58 &4051109137855942895
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514586837790412939}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1001 &2102185398599099026
 PrefabInstance:
   m_ObjectHideFlags: 0
