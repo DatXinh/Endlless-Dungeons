@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponData : MonoBehaviour
 {
     public string weaponID;
     public string weaponName;
+    public Sprite weaponIcon;
     public string weaponDescription;
     public int weaponDamage;
     public int weaponCriticalChange;

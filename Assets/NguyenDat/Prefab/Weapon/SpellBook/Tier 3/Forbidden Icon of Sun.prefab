@@ -41,6 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2095892708475740596}
   - component: {fileID: 8079185893406114383}
+  - component: {fileID: 3684604454835689703}
+  - component: {fileID: 1109802894423065903}
   m_Layer: 0
   m_Name: Forbidden Icon of Sun
   m_TagString: Untagged
@@ -80,14 +82,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Forbidden Icon of Sun
+  weaponIcon: {fileID: 7491481858385477562, guid: 48017f5a4ca219c43a03f22fab9a3e23, type: 3}
   weaponDescription: "\u201CM\u1ED9t d\u1ECB v\u1EADt b\u1ECB nguy\u1EC1n \u2013
     kh\xF4ng h\u1EB3n l\xE0 s\xE1ch. Bi\u1EC3u t\u01B0\u1EE3ng m\u1EB7t tr\u1EDDi
     trong n\xF3 \u0111\u01B0\u1EE3c m\xF4 t\u1EA3 nh\u01B0 m\u1ED9t sinh v\u1EADt
     s\u1ED1ng, t\u1EEBng \u0111\u01B0\u1EE3c th\u1EDD ph\u1EE5ng trong th\u1EDDi
     k\u1EF3 kh\xF4ng c\xF3 ban \u0111\xEAm.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 8132626562079457863, guid: 951d67877d1a1d54991c5fc0e1b03d03, type: 3}
   weaponType: 5
+--- !u!58 &3684604454835689703
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594781134254194807}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &1109802894423065903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594781134254194807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &8012130092846897933
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +274,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 2095892708475740596}
   launchForce: 30
   audioSource: {fileID: 895527434518795281}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1001 &2983488323739676897
 PrefabInstance:
   m_ObjectHideFlags: 0

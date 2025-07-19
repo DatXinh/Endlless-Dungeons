@@ -206,6 +206,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4100712508893673066}
   - component: {fileID: 2233096012431921899}
+  - component: {fileID: 2196906069355707686}
+  - component: {fileID: 6115337219217977202}
   m_Layer: 0
   m_Name: Blood Drinker
   m_TagString: Untagged
@@ -244,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Blood Drinker
+  weaponIcon: {fileID: -1895039505, guid: 539d0c41b697c8a4387a0d8621b5ee06, type: 3}
   weaponDescription: "\u201CKh\xF4ng c\u1EA7n ph\xE9p thu\u1EADt. Ch\u1EC9 c\u1EA7n
     m\xE1u. N\xF3 u\u1ED1ng cho \u0111\u1EBFn khi ng\u01B0\u1EDDi c\u1EA7m kh\xF4ng
     c\xF2n g\xEC \u0111\u1EC3 cho \u2013 v\xE0 r\u1ED3i v\u1EABn ch\u01B0a \u0111\u1EE7.\u201D"
@@ -252,6 +255,59 @@ MonoBehaviour:
   weaponManaCost: 0
   weaponProjectile: {fileID: 6570116248294472694, guid: bdae8e308f5f97342855aa5e406a508c, type: 3}
   weaponType: 1
+--- !u!58 &2196906069355707686
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997363000707474565}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &6115337219217977202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997363000707474565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &5626858536446988755
 GameObject:
   m_ObjectHideFlags: 0

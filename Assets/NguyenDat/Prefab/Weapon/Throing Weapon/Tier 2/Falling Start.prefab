@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4269618614712714165}
   - component: {fileID: 8851248377736874301}
+  - component: {fileID: 9172053368072813428}
+  - component: {fileID: 4277334961365872361}
   m_Layer: 0
   m_Name: Falling Start
   m_TagString: Untagged
@@ -49,13 +51,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Falling Start
+  weaponIcon: {fileID: -7756485833292028758, guid: c210f01e49eb9e946865118867ad8db0, type: 3}
   weaponDescription: "\u201CT\u1EEBng l\xE0 m\u1EA3nh sao b\u0103ng r\u01A1i xu\u1ED1ng
     t\u1EA7ng thung l\u0169ng b\u1ECB phong \u1EA5n. N\xF3 kh\xF4ng ph\xE1t s\xE1ng,
     nh\u01B0ng \u0111\u1EC3 l\u1EA1i b\xF3ng khi bay qua.\u201D"
   weaponDamage: 0
   weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 2929948581281024558, guid: 9db5615bf7848f64fb72b999b60ab8b8, type: 3}
   weaponType: 6
+--- !u!58 &9172053368072813428
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886042402817750338}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &4277334961365872361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886042402817750338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &3311091038522796847
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +275,8 @@ MonoBehaviour:
   audioSource: {fileID: 8210343863967451536}
   WeaponDamage: 0
   WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!114 &6544282585701328678
 MonoBehaviour:
   m_ObjectHideFlags: 0

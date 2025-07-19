@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5874873076193855859}
   - component: {fileID: 3056145359254057542}
+  - component: {fileID: 2429828135443208485}
+  - component: {fileID: 1733715491202029814}
   m_Layer: 0
   m_Name: The Lost One
   m_TagString: Untagged
@@ -49,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Lost One
+  weaponIcon: {fileID: -946176096080941494, guid: ede70a611f4984f40a1296e407bd62f0, type: 3}
   weaponDescription: "\u201CCu\u1ED1n s\xE1ch kh\xF4ng c\xF3 ch\u1EEF, ch\u1EC9 c\xF3
     l\u1EDDi th\xEC th\u1EA7m. N\xF3 kh\xF4ng h\u01B0\u1EDBng d\u1EABn b\u1EA1n ph\xE9p
     thu\u1EADt \u2013 n\xF3 ch\u1ECDn ph\xE9p thu\u1EADt n\xE0o b\u1EA1n s\u1EBD
@@ -59,6 +62,59 @@ MonoBehaviour:
   weaponManaCost: 7
   weaponProjectile: {fileID: 7778368207161583054, guid: 4e51ddb40eb4949458d9505e5c9d7bd6, type: 3}
   weaponType: 5
+--- !u!114 &2429828135443208485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554056249309393891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &1733715491202029814
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554056249309393891}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &4158761658209976902
 GameObject:
   m_ObjectHideFlags: 0

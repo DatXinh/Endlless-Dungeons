@@ -421,7 +421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2db319aabf41448bef572482db25f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponParent: {fileID: 0}
+  weaponParent: {fileID: 5920221004527382975}
+  WeaponIcon: {fileID: 8926817850598607349}
+  testWeaponAtk: {fileID: 0}
+  scaleWeapon: {fileID: 0}
 --- !u!1 &4918942859033818499
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +793,10 @@ PrefabInstance:
       propertyPath: playerRigidbody
       value: 
       objectReference: {fileID: 1430917037516655331}
+    - target: {fileID: 768255460526146854, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8283805042420536888}
     - target: {fileID: 3748459718501273834, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
       propertyPath: m_Camera
       value: 
@@ -975,5 +982,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8926817850598607349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6726883887936422874, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+  m_PrefabInstance: {fileID: 2790222722959149615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

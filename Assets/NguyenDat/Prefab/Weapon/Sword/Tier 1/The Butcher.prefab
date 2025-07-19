@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3222971404420909834}
   - component: {fileID: 1188282212119669482}
+  - component: {fileID: 922576312293090831}
+  - component: {fileID: 7910789864050407988}
   m_Layer: 0
   m_Name: The Butcher
   m_TagString: Untagged
@@ -47,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Butcher
+  weaponIcon: {fileID: -6011825801097382870, guid: a823ad3d4dd074641aa8db1da77ff5f3, type: 3}
   weaponDescription: "\u201CThu\u1ED9c v\u1EC1 m\u1ED9t trong nh\u1EEFng k\u1EBB
     canh g\xE1c t\u1EA7ng phong \u1EA5n th\u1EE9 hai, k\u1EBB \u0111\xE3 ph\u1EA3n
     b\u1ED9i th\u1EC7 \u01B0\u1EDBc. X\xE1c th\u1ECBt h\u1EAFn ch\u01B0a ph\xE2n
@@ -56,6 +59,59 @@ MonoBehaviour:
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
+--- !u!114 &922576312293090831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212099245396722084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &7910789864050407988
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212099245396722084}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &3769822753446218761
 GameObject:
   m_ObjectHideFlags: 0

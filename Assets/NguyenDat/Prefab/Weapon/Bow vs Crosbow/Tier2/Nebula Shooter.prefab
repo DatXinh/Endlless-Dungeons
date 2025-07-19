@@ -128,6 +128,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 2487170847041861439}
   launchForce: 10
   audioSource: {fileID: 3491214608981208714}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &4672187164834774563
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +173,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2487170847041861439}
   - component: {fileID: 8719619378095881769}
+  - component: {fileID: 1311086585113000377}
+  - component: {fileID: 7332509979809388694}
   m_Layer: 0
   m_Name: Nebula Shooter
   m_TagString: Untagged
@@ -208,12 +214,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Nebula Shooter
+  weaponIcon: {fileID: -4919364210940279587, guid: 36a9b5a3ace0cf442abb2fb24c1ca62c, type: 3}
   weaponDescription: "\u201CB\u1EB1ng c\xE1ch n\xE0o \u0111\xF3, d\u1EA3i ng\xE2n
     h\xE0 t\u1EEBng m\u1EDF ra tr\xEAn b\u1EA7u tr\u1EDDi\u2026 r\u1ED3i s\u1EE5p
     xu\u1ED1ng qua m\u0169i t\xEAn n\xE0y.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 429003772421045091, guid: 92ed3c18c92b2f54fa72df5c6744add1, type: 3}
   weaponType: 3
+--- !u!114 &1311086585113000377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426968650807114192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &7332509979809388694
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426968650807114192}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1001 &1547477501517875834
 PrefabInstance:
   m_ObjectHideFlags: 0

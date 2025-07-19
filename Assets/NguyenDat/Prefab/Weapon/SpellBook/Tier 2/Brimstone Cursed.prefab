@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2844803725486328575}
   - component: {fileID: 1768864128224567628}
+  - component: {fileID: 3003519057713495465}
+  - component: {fileID: 7221710988108962733}
   m_Layer: 0
   m_Name: Brimstone Cursed
   m_TagString: Untagged
@@ -49,14 +51,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Brimstone Cursed
+  weaponIcon: {fileID: 1863219962503120506, guid: d6f8821a173d6824496114f0da6392dd, type: 3}
   weaponDescription: "\u201CB\u1ECB vi\u1EBFt b\u1EDFi m\u1ED9t d\u1ECB gi\xE1o \u0111\u1ED3
     b\u1ECB thi\xEAu s\u1ED1ng. M\u1ED7i l\u1EA7n ph\xE9p \u0111\u01B0\u1EE3c ni\u1EC7m,
     m\u1ED9t ti\u1EBFng g\xE0o t\u1EEB \u0111\u1ED1ng tro \u0111\u01B0\u1EE3c v\u1ECDng
     l\u1EA1i \u2013 kh\xF4ng ph\u1EA3i t\u1EEB h\u1EAFn, m\xE0 t\u1EEB th\u1EE9 \u0111\xE3
     nghe h\u1EAFn l\u1EA7n \u0111\u1EA7u.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 317676924817297914, guid: d9c348e711284774594bbf91319f819b, type: 3}
   weaponType: 5
+--- !u!114 &3003519057713495465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020252831269796321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
+--- !u!58 &7221710988108962733
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020252831269796321}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &7843249540766188153
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +274,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 2844803725486328575}
   launchForce: 20
   audioSource: {fileID: 3729610650970642366}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1001 &1641784742334772046
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -145,6 +145,8 @@ MonoBehaviour:
   audioSource: {fileID: 3868623365706830536}
   WeaponDamage: 0
   WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &8922163172804483453
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +157,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6517038105239829834}
   - component: {fileID: 5484746228911433419}
+  - component: {fileID: 391050584904133367}
+  - component: {fileID: 7875592906756434578}
   m_Layer: 0
   m_Name: Shuriken
   m_TagString: Untagged
@@ -194,12 +198,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Shuriken
+  weaponIcon: {fileID: -295513361153716745, guid: 8a27fdc57e307734694859d3458fb83b, type: 3}
   weaponDescription: "\u201CPhi ti\xEAu t\u1EA7m g\u1EA7n, d\u1EC5 d\xF9ng \u2013
     nh\u01B0ng m\u1ED9t s\u1ED1 c\xE1i v\u1EABn c\xF2n d\xEDnh m\xE1u kh\xF4ng \u0111\xF4ng.\u201D"
   weaponDamage: 0
   weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 180705723681212795, guid: b52292364419cbe49b5828d2192f5a60, type: 3}
   weaponType: 6
+--- !u!58 &391050584904133367
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8922163172804483453}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &7875592906756434578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8922163172804483453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &9209555336425788665
 GameObject:
   m_ObjectHideFlags: 0

@@ -199,6 +199,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4527471006614993230}
   - component: {fileID: 9124384350110757680}
+  - component: {fileID: 4203100026693088706}
+  - component: {fileID: 5783130050649646602}
   m_Layer: 0
   m_Name: Death Ascension
   m_TagString: Untagged
@@ -237,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: Death Ascension
+  weaponIcon: {fileID: -5536437837956276884, guid: bd6768720fc07aa4aaceafee9f18f27a, type: 3}
   weaponDescription: "\u201CCh\xE9m c\xE0ng nhi\u1EC1u, ng\u01B0\u1EDDi c\u1EA7m
     c\xE0ng nh\u1EB9. M\u1ED9t ng\xE0y kia, h\u1ECD s\u1EBD kh\xF4ng c\xF2n ch\u1EA1m
     \u0111\u1EA5t \u2013 v\xE0 s\u1EBD kh\xF4ng tr\u1EDF l\u1EA1i n\u1EEFa.\u201D"
@@ -245,6 +248,59 @@ MonoBehaviour:
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1
+--- !u!58 &4203100026693088706
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752464525617690650}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &5783130050649646602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752464525617690650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1001 &6997881728004434086
 PrefabInstance:
   m_ObjectHideFlags: 0

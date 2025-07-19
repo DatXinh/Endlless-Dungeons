@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteractor : MonoBehaviour
 {
     public IInteractable currentInteractable;
-    private GameObject currentWeapon;
-    public Transform weaponParent;    // Gán trong inspector
-    public TestWeaponAtk testWeaponAtk; // Tham chiếu đến TestWeaponAtk
-    public ScaleWeapon scaleWeapon; // Tham chiếu đến ScaleWeapon
+    public Transform weaponParent;
 
-    // ✅ Thêm để lưu lại vị trí vũ khí mới trước khi đổi
-    private Vector3 lastWeaponDroppedPosition;
-    private Quaternion lastWeaponDroppedRotation;
+    public Image WeaponIcon;
+
+    public TestWeaponAtk testWeaponAtk;
+    public ScaleWeapon scaleWeapon;
+
+    private GameObject[] weaponSlots = new GameObject[2]; // 0: chính, 1: phụ
+    private int activeWeaponIndex = 0; // slot hiện tại đang dùng
 
     private void Awake()
     {
@@ -45,40 +47,111 @@ public class PlayerInteractor : MonoBehaviour
     // Gọi từ nút UI
     public void Interact()
     {
-        if (currentInteractable != null)
+        if (currentInteractable is WeaponInteractable weaponInteractable)
         {
-            if (currentInteractable is WeaponInteractable weaponInteractable)
+            GameObject newWeapon = ((MonoBehaviour)weaponInteractable).gameObject;
+
+            // Lưu lại vị trí vũ khí mới trên mặt đất
+            Vector3 droppedPos = newWeapon.transform.position;
+            Quaternion droppedRot = newWeapon.transform.rotation;
+
+            weaponInteractable.weaponParent = weaponParent;
+
+            // Trường hợp: chưa có vũ khí nào
+            if (weaponSlots[0] == null)
             {
-                // Nếu là vũ khí, gán cha cho vũ khí
-                weaponInteractable.weaponParent = this.weaponParent;
+                weaponSlots[0] = newWeapon;
+                activeWeaponIndex = 0;
+                EquipWeapon(0);
+            }
+            // Trường hợp: có 1 vũ khí → gán vào slot phụ
+            else if (weaponSlots[1] == null)
+            {
+                weaponSlots[1] = newWeapon;
+                activeWeaponIndex = 1;
+                EquipWeapon(1);
+            }
+            // Trường hợp: đã có đủ 2 vũ khí → tráo vũ khí đang dùng
+            else
+            {
+                int current = activeWeaponIndex;
+                GameObject droppedWeapon = weaponSlots[current];
 
-                // ✅ Lưu vị trí hiện tại của vũ khí mới
-                GameObject newWeaponGO = ((MonoBehaviour)weaponInteractable).gameObject;
-                lastWeaponDroppedPosition = newWeaponGO.transform.position;
-                lastWeaponDroppedRotation = newWeaponGO.transform.rotation;
+                // Thả vũ khí cũ ra vị trí của vũ khí mới
+                droppedWeapon.transform.SetParent(null);
+                droppedWeapon.transform.position = droppedPos;
+                droppedWeapon.transform.rotation = droppedRot;
+                droppedWeapon.SetActive(true);
 
-                // ✅ Nếu đang cầm vũ khí → đưa nó về chỗ cũ của vũ khí mới
-                if (currentWeapon != null)
+                Collider2D col = droppedWeapon.GetComponent<Collider2D>();
+                if (col != null) col.enabled = true;
+
+                // Gán vũ khí mới vào slot hiện tại
+                weaponSlots[current] = newWeapon;
+                EquipWeapon(current);
+            }
+
+            weaponInteractable.Interact();
+        }
+    }
+
+    public void SwapWeapon()
+    {
+        if (weaponSlots[0] != null && weaponSlots[1] != null)
+        {
+            int newIndex = 1 - activeWeaponIndex;
+            EquipWeapon(newIndex);
+            GameObject newWeapon = weaponSlots[activeWeaponIndex];
+            if (newWeapon != null)
+            {
+                WeaponInteractable weaponInteractable = newWeapon.GetComponent<WeaponInteractable>();
+                if (weaponInteractable != null)
                 {
-                    currentWeapon.transform.SetParent(null);
-                    currentWeapon.transform.position = lastWeaponDroppedPosition;
-                    currentWeapon.transform.rotation = lastWeaponDroppedRotation;
-                    currentWeapon.SetActive(true);
-
-                    Collider2D oldCol = currentWeapon.GetComponent<Collider2D>();
-                    if (oldCol != null)
-                    {
-                        oldCol.enabled = true;
-                    }
+                    weaponInteractable.weaponParent = this.weaponParent; // đảm bảo gán lại
+                    weaponInteractable.updateWeapon(); // hoặc hàm bạn muốn gọi
                 }
-
-                // ✅ Gán vũ khí mới thành vũ khí hiện tại
-                currentWeapon = newWeaponGO;
-                currentWeapon.SetActive(true);
-
-                // Gọi Interact() như cũ
-                weaponInteractable.Interact();
             }
         }
     }
+
+    private void EquipWeapon(int index)
+    {
+        if (weaponSlots[index] == null) return;
+
+        activeWeaponIndex = index;
+
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject weapon = weaponSlots[i];
+            if (weapon == null) continue;
+
+            if (i == index)
+            {
+                weapon.transform.SetParent(weaponParent);
+                weapon.transform.localPosition = Vector3.zero;
+                weapon.transform.localRotation = Quaternion.identity;
+                weapon.SetActive(true);
+
+                Collider2D col = weapon.GetComponent<Collider2D>();
+                if (col != null) col.enabled = false;
+
+                testWeaponAtk.resetWeapon();
+                scaleWeapon.resetWeapon();
+
+                // ✅ Cập nhật hình ảnh UI
+                WeaponInteractable weaponInteractable = weapon.GetComponent<WeaponInteractable>();
+                if (weaponInteractable != null && weaponInteractable.weaponIcon != null && WeaponIcon != null)
+                {
+                    WeaponIcon.sprite = weaponInteractable.weaponIcon;
+                    WeaponIcon.enabled = true;
+                }
+            }
+            else
+            {
+                weapon.transform.SetParent(null);
+                weapon.SetActive(false);
+            }
+        }
+    }
+
 }

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4115801359248601696}
   - component: {fileID: 7738444896659881248}
+  - component: {fileID: 6603090484764071210}
+  - component: {fileID: 1609158236420283311}
   m_Layer: 0
   m_Name: The Spectral
   m_TagString: Untagged
@@ -49,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponID: 
   weaponName: The Spectral
+  weaponIcon: {fileID: -6933850871341525633, guid: 82fc17ef20691b443a78fe7153b09011, type: 3}
   weaponDescription: "\u201CM\u1ED7i m\u0169i t\xEAn \u0111\u1EC1u xuy\xEAn qua th\u1ECBt,
     kh\xF4ng \u0111\u1EC3 l\u1EA1i v\u1EBFt th\u01B0\u01A1ng. Nh\u01B0ng \u0111\xEAm
     \u0111\xF3, ti\u1EBFng th\xEC th\u1EA7m v\u1EABn v\u1ECDng l\u1EA1i t\u1EEB h\u1EA7m
@@ -58,6 +61,59 @@ MonoBehaviour:
   weaponManaCost: 8
   weaponProjectile: {fileID: 3957015035714842839, guid: e3e1ec4191abd6f429dff30d9f132d44, type: 3}
   weaponType: 3
+--- !u!58 &6603090484764071210
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516541159106573912}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &1609158236420283311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516541159106573912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1 &6651919117272967319
 GameObject:
   m_ObjectHideFlags: 0
