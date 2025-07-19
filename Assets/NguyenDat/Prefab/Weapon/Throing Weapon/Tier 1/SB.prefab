@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6410332872150936243}
   - component: {fileID: 7056043067328462954}
   - component: {fileID: 7744145781121224992}
+  - component: {fileID: 5393338315914904263}
   - component: {fileID: 5021929380344842534}
-  - component: {fileID: 3172546460714019203}
   m_Layer: 0
   m_Name: SB
   m_TagString: Untagged
@@ -109,6 +109,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5393338315914904263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309172911900527485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &5021929380344842534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,22 +139,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 5
---- !u!114 &3172546460714019203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3309172911900527485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!1 &3919939867224233753
 GameObject:
   m_ObjectHideFlags: 0

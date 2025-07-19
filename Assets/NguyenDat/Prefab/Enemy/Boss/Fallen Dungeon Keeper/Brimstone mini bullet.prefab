@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4259590784645163122}
   - component: {fileID: 23851710248674234}
   - component: {fileID: 6825084968002554846}
-  - component: {fileID: 8114386004843927802}
   - component: {fileID: 4566318678790199019}
   - component: {fileID: 878702034088904684}
   - component: {fileID: 5070531361598826707}
+  - component: {fileID: 4429675004250788623}
   m_Layer: 0
   m_Name: Brimstone mini bullet
   m_TagString: Untagged
@@ -101,22 +101,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8114386004843927802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3532160501981435551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae32c72cd7f34134badedbba0da253b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 2
 --- !u!114 &4566318678790199019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1e6ba15a82f5b4181b3dcb5a3ec4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4429675004250788623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532160501981435551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1 &6862569338223608601
 GameObject:
   m_ObjectHideFlags: 0

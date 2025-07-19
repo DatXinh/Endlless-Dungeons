@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6544596310668379776}
   - component: {fileID: 404865628031351830}
   - component: {fileID: -6099772440166960802}
-  - component: {fileID: 2502014100035786920}
+  - component: {fileID: -6212332424541400939}
   m_Layer: 0
   m_Name: Venomthorn
   m_TagString: Untagged
@@ -212,7 +212,7 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
---- !u!114 &2502014100035786920
+--- !u!114 &-6212332424541400939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,10 +221,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8582971395896999993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  weaponDamage: 0
+  weaponCriticalChange: 0

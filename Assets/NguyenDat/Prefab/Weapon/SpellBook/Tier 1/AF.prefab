@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4353839094727163430}
   - component: {fileID: 3510246443106862762}
   - component: {fileID: 6373216980907796661}
-  - component: {fileID: 5258521453903907077}
+  - component: {fileID: 2852098957249667605}
   m_Layer: 0
   m_Name: AF
   m_TagString: Untagged
@@ -125,7 +125,7 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &5258521453903907077
+--- !u!114 &2852098957249667605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,13 +134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 968465884585047571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1 &7518957036547258988
 GameObject:
   m_ObjectHideFlags: 0

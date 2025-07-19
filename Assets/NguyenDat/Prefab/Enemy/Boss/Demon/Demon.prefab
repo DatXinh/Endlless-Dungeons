@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2766544545272913983}
   - component: {fileID: 8691485493006638612}
   - component: {fileID: 6721623303700363402}
-  - component: {fileID: 3515097051186982381}
   - component: {fileID: 8838172880549241408}
+  - component: {fileID: 7287485137742321676}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Boss
@@ -158,21 +158,6 @@ MonoBehaviour:
   rainBulletCount: 5
   rainSpreadWidth: 4
   radialBulletCount: 8
---- !u!114 &3515097051186982381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135502161286100499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 50
-  currentHP: 0
-  isInvulnerable: 0
 --- !u!114 &8838172880549241408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,12 +170,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 3515097051186982381}
+  enemyHealth: {fileID: 7287485137742321676}
   animator: {fileID: 1785503035357836787}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 8691485493006638612}
   - {fileID: 6721623303700363402}
+--- !u!114 &7287485137742321676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135502161286100499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  InvincibilityTime: 0.01
+  damageReductionRate: 0
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}
 --- !u!1 &5473724140096220574
 GameObject:
   m_ObjectHideFlags: 0

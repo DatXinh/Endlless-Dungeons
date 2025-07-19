@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5290301786127633063}
   - component: {fileID: 6762748054222650134}
   - component: {fileID: 6733045373853346211}
-  - component: {fileID: -8938753678735395745}
   m_Layer: 7
   m_Name: CrowW
   m_TagString: Enemy
@@ -198,21 +197,6 @@ MonoBehaviour:
   checkInterval: 0.2
   rotateInterval: 2
   isMovable: 1
---- !u!114 &-8938753678735395745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571989167598489800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 50
-  currentHP: 0
-  isInvulnerable: 0
 --- !u!1 &5416122745596519061
 GameObject:
   m_ObjectHideFlags: 0

@@ -81,9 +81,9 @@ public class RainbowSlime : MonoBehaviour
     }
 
     // Tìm tất cả EnemyHealth trong bán kính detectionRadius
-    public List<EnemyHealth> FindEnemiesWithHealthInRange()
+    public List<EnemyHP> FindEnemiesWithHealthInRange()
     {
-        List<EnemyHealth> enemiesInRange = new List<EnemyHealth>();
+        List<EnemyHP> enemiesInRange = new List<EnemyHP>();
         GameObject[] enemies = GetCachedEnemies();
         Vector3 currentPos = transform.position;
 
@@ -93,7 +93,7 @@ public class RainbowSlime : MonoBehaviour
             float dist = Vector3.Distance(currentPos, enemy.transform.position);
             if (dist <= detectionRadius)
             {
-                EnemyHealth health = enemy.GetComponent<EnemyHealth>();
+                EnemyHP health = enemy.GetComponent<EnemyHP>();
                 if (health != null)
                 {
                     enemiesInRange.Add(health);
@@ -106,7 +106,7 @@ public class RainbowSlime : MonoBehaviour
     // Hồi máu cho tất cả EnemyHealth trong bán kính
     private void HealEnemiesInRange()
     {
-        List<EnemyHealth> enemies = FindEnemiesWithHealthInRange();
+        List<EnemyHP> enemies = FindEnemiesWithHealthInRange();
         foreach (var health in enemies)
         {
             health.currentHP += healAmount;

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7073211624848020319}
   - component: {fileID: 4558449725604264225}
   - component: {fileID: 418474292968044519}
-  - component: {fileID: 5943521577889045885}
   - component: {fileID: 8938954000213396004}
   - component: {fileID: 598454367667409121}
+  - component: {fileID: 7662657421829853852}
   m_Layer: 0
   m_Name: Brimstone bullet
   m_TagString: Untagged
@@ -117,22 +117,6 @@ MonoBehaviour:
   IsEnemy: 1
   canPierce: 1
   lifeTime: 10
---- !u!114 &5943521577889045885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004638968246304387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae32c72cd7f34134badedbba0da253b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 2
 --- !u!114 &8938954000213396004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1e6ba15a82f5b4181b3dcb5a3ec4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7662657421829853852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004638968246304387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1 &5863109650041898853
 GameObject:
   m_ObjectHideFlags: 0

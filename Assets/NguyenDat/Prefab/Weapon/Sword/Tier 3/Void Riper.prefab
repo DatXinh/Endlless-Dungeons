@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 2947090897031332880}
   - component: {fileID: 5481639497565269576}
   - component: {fileID: 7350719537173163821}
-  - component: {fileID: 8625872602143464242}
   - component: {fileID: 8030534160544282419}
+  - component: {fileID: 6819298898247680531}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -180,22 +180,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -2.5, y: 2.5}
   m_Radius: 1.5
---- !u!114 &8625872602143464242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977975949735095767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!114 &8030534160544282419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +197,24 @@ MonoBehaviour:
   weaponTransform: {fileID: 3208886520546294793}
   launchForce: 20
   audioSource: {fileID: 7003489339701174485}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
+--- !u!114 &6819298898247680531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977975949735095767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1 &7752384395813104827
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +268,9 @@ MonoBehaviour:
     kh\u1EAFc th\u1EF1c t\u1EA1i b\u1ECB x\xE9 to\u1EA1c. Kh\xF4ng ai \u0111\xFAc
     ra n\xF3 \u2013 n\xF3 ch\u1EC9 hi\u1EC7n ra, v\xE0 ng\u01B0\u1EDDi \u0111\u1EA7u
     ti\xEAn ch\u1EA1m v\xE0o \u0111\xE3 bi\u1EBFn m\u1EA5t.\u201D"
-  weaponDamage: 0
+  weaponDamage: 100
+  weaponCriticalChange: 75
+  weaponManaCost: 5
   weaponProjectile: {fileID: 4791221879380248428, guid: 8a0609de9affdeb4089339771c84f3fc, type: 3}
   weaponType: 2
 --- !u!1001 &4916685961041331237

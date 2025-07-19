@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 883694621135143582}
   - component: {fileID: 6822263585469685292}
   - component: {fileID: 5230463537589156458}
+  - component: {fileID: 5381832019255634660}
   - component: {fileID: 7416548200903000529}
-  - component: {fileID: 5915960208142377507}
   m_Layer: 0
   m_Name: Wind wave
   m_TagString: Untagged
@@ -109,6 +109,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5381832019255634660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644872811829083235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &7416548200903000529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,22 +139,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 3
---- !u!114 &5915960208142377507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644872811829083235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!1 &2511202985353596422
 GameObject:
   m_ObjectHideFlags: 0

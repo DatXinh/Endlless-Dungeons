@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossPlayDeadAnimation : MonoBehaviour
 {
     [Header("Health")]
-    public EnemyHealth enemyHealth;
+    public EnemyHP enemyHealth;
     [Header("Animator")]
     public Animator animator;
     [Header("Parameter Name")]
@@ -14,7 +14,7 @@ public class BossPlayDeadAnimation : MonoBehaviour
     public List<MonoBehaviour> scriptsToDisable = new List<MonoBehaviour>();
     private void Awake()
     {
-        enemyHealth = GetComponent<EnemyHealth>();
+        //enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponentInChildren<Animator>();
     }
     private void Update()

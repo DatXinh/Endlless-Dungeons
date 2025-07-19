@@ -19,13 +19,13 @@ public class DemonAI : MonoBehaviour
 
     private Rigidbody2D rb;
     public GameObject targetPlayer;
-    private EnemyHealth EnemyHealth;
+    private EnemyHP EnemyHealth;
 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        EnemyHealth = GetComponent<EnemyHealth>();
+        EnemyHealth = GetComponent<EnemyHP>();
         if (animator == null)
             animator = GetComponent<Animator>();
     }

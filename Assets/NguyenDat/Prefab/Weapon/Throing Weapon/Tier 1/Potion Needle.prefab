@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6404686429510386620}
   - component: {fileID: 8066892790419905118}
   - component: {fileID: 7398133505632201459}
+  - component: {fileID: 1073109636540051878}
   - component: {fileID: 142770952260706983}
   m_Layer: 0
   m_Name: Sprite
@@ -142,6 +143,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1073109636540051878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740633572135848698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &142770952260706983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +174,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 1189332758447046354}
   launchForce: 20
   audioSource: {fileID: 705574063138922376}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &4764669637312665593
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +188,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1189332758447046354}
   - component: {fileID: 1465758497909134714}
+  - component: {fileID: 3398020155607277250}
+  - component: {fileID: 7075188187934965411}
   m_Layer: 0
   m_Name: Potion Needle
   m_TagString: Untagged
@@ -212,9 +233,63 @@ MonoBehaviour:
     t\u1EA1i trong b\u1EA5t k\u1EF3 t\xE0i li\u1EC7u y d\u01B0\u1EE3c n\xE0o. M\u1ED9t
     s\u1ED1 h\u1ECDc gi\u1EA3 cho r\u1EB1ng n\xF3 l\xE0 tinh ch\u1EA5t c\u1EE7a n\u1ED7i
     s\u1EE3.\u201D"
-  weaponDamage: 0
+  weaponDamage: 100
+  weaponCriticalChange: 55
+  weaponManaCost: 5
   weaponProjectile: {fileID: 6587683697731803141, guid: e5b2eaafa23a5a84d953ef208f8ada34, type: 3}
   weaponType: 6
+--- !u!58 &3398020155607277250
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4764669637312665593}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &7075188187934965411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4764669637312665593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "V\u0169 kh\xED"
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1001 &3224652621709359992
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EnemyHP : MonoBehaviour
+{
+    public float maxHP = 100; // Maximum health points
+    public float currentHP; // Current health points
+    public float InvincibilityTime = 0.17f; // Invincibility time in seconds after taking damage
+    public int damageReductionRate = 0; // Tỉ lệ miễn thương (0-100)
+    public GameObject damagePopupPrefab;
+    public Image healthBar; // Reference to the health bar UI element
+    public TMP_Text maxHeal; // Reference to the maximum health text UI element
+    public TMP_Text currentHeal; // Reference to the current health text UI element
+
+    private bool isInvincible = false; // Invincibility state
+
+    void Start()
+    {
+        currentHP = maxHP; // Initialize current health to maximum health
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = 1f; // Set health bar to full at the start
+        }
+        if (maxHeal != null)
+        {
+            maxHeal.text = maxHP.ToString(); // Set the maximum health text
+        }
+        if (currentHeal != null)
+        {
+            currentHeal.text = currentHP.ToString(); // Set the current health text
+        }
+    }
+    // Method to take damage
+    public void TakeDamage(int damage , bool isCritical)
+    {
+        if (currentHP > 0)
+        {
+            if (!isInvincible)
+            {
+                // Giảm sát thương theo tỉ lệ miễn thương
+                int reduction = Mathf.Clamp(damageReductionRate, 0, 100);
+                float reducedDamage = damage * (1f - reduction / 100f);
+                int finalDamage = Mathf.RoundToInt(reducedDamage);
+
+                currentHP -= finalDamage;
+                if (currentHP < 0)
+                {
+                    currentHP = 0;
+                }
+                if (healthBar != null)
+                {
+                    healthBar.fillAmount = currentHP / maxHP; // Update health bar
+                }
+                if (currentHeal != null)
+                {
+                    currentHeal.text = currentHP.ToString(); // Update current health text
+                }
+                // Display damage popup
+                if (damagePopupPrefab != null)
+                {
+                    // Tạo vị trí ngẫu nhiên gần Enemy (bán kính 0.5 đơn vị)
+                    Vector3 randomOffset = UnityEngine.Random.insideUnitSphere * 1f;
+                    randomOffset.z = 0; // Đảm bảo popup nằm trên mặt phẳng 2D
+                    Vector3 spawnPosition = transform.position + randomOffset;
+
+                    GameObject damagePopup = Instantiate(damagePopupPrefab, spawnPosition, Quaternion.identity);
+                    FloatingDamage floatingDamage = damagePopup.GetComponent<FloatingDamage>();
+                    if (floatingDamage != null)
+                    {
+                        Color damageColor = isCritical ? new Color(1f, 0.5f, 0f) : Color.yellow; // Cam hoặc vàng
+                        floatingDamage.SetDamageValue(finalDamage, damageColor);
+                    }
+                }
+                StartCoroutine(InvincibilityCoroutine());
+            }
+        }
+    }
+    // Method to heal
+    public void Heal(int amount)
+    {
+        if (currentHP > 0)
+        {
+            currentHP += amount;
+            if (healthBar != null)
+            {
+                healthBar.fillAmount = currentHP / maxHP; // Update health bar
+            }
+            if (currentHeal != null)
+            {
+                currentHeal.text = currentHP.ToString(); // Update current health text
+            }
+            if (currentHP > maxHP)
+            {
+                currentHP = maxHP;
+            }
+        }
+    }
+    public float GetHealthPercent()
+    {
+        return (currentHP / maxHP) * 100f;
+    }
+    private IEnumerator InvincibilityCoroutine()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(InvincibilityTime);
+        isInvincible = false;
+    }
+}

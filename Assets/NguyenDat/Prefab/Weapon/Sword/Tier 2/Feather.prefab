@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6211237917017615531}
   - component: {fileID: 8898635794460237790}
   - component: {fileID: 7633152801471242597}
+  - component: {fileID: 445709787029398414}
   - component: {fileID: 6232737895683037481}
-  - component: {fileID: 5648543905902907218}
   m_Layer: 0
   m_Name: Feather
   m_TagString: Untagged
@@ -109,6 +109,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &445709787029398414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668570120682506747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &6232737895683037481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,22 +139,6 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 3
---- !u!114 &5648543905902907218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2668570120682506747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
 --- !u!1 &6951719679497866964
 GameObject:
   m_ObjectHideFlags: 0

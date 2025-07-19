@@ -3,12 +3,12 @@
 public class SpawnToxic : MonoBehaviour
 {
     public GameObject spawnPrefab;
-    private EnemyHealth enemyHealth;
+    private EnemyHP enemyHealth;
     private bool hasSpawned = false;
 
     private void Awake()
     {
-        enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth = GetComponent<EnemyHP>();
     }
 
     private void Update()

@@ -54,7 +54,9 @@ MonoBehaviour:
     thu\u1EADt \u2013 n\xF3 ch\u1ECDn ph\xE9p thu\u1EADt n\xE0o b\u1EA1n s\u1EBD
     h\u1ECDc, v\xE0 t\u1EA1i sao b\u1EA1n l\u1EA1i h\u1ECDc ch\xFAng. Nh\u01B0ng
     kh\xF4ng ph\u1EA3i ti\u1EBFng n\xF3i \u1EA5y lu\xF4n l\xE0 th\u1EADt.\u201D"
-  weaponDamage: 0
+  weaponDamage: 1650
+  weaponCriticalChange: 66
+  weaponManaCost: 7
   weaponProjectile: {fileID: 7778368207161583054, guid: 4e51ddb40eb4949458d9505e5c9d7bd6, type: 3}
   weaponType: 5
 --- !u!1 &4158761658209976902
@@ -216,6 +218,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 5874873076193855859}
   launchForce: 30
   audioSource: {fileID: 348821925536437123}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1001 &2440304585264134003
 PrefabInstance:
   m_ObjectHideFlags: 0

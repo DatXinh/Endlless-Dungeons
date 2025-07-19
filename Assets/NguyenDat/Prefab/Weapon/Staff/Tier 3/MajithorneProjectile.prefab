@@ -121,9 +121,9 @@ GameObject:
   - component: {fileID: 7174252702068997078}
   - component: {fileID: 1278811976191230048}
   - component: {fileID: 7210622398038211137}
-  - component: {fileID: 9177133861494919892}
+  - component: {fileID: 7552000511996136549}
   - component: {fileID: 3518604815482430662}
-  - component: {fileID: 8767456970787260629}
+  - component: {fileID: 9177133861494919892}
   m_Layer: 0
   m_Name: MajithorneProjectile
   m_TagString: Untagged
@@ -210,6 +210,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7552000511996136549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396900927200602047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
+--- !u!114 &3518604815482430662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396900927200602047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 568636985471224796, guid: c1aac75cb13ab3943af5f53df378ab2c, type: 3}
+  weaponDame: {fileID: 0}
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &9177133861494919892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,32 +256,3 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
---- !u!114 &3518604815482430662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8396900927200602047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 568636985471224796, guid: c1aac75cb13ab3943af5f53df378ab2c, type: 3}
---- !u!114 &8767456970787260629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8396900927200602047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5

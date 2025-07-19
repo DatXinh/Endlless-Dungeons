@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - EnemyProjectile
   - Portal
+  - Weapon
   layers:
   - Default
   - TransparentFX

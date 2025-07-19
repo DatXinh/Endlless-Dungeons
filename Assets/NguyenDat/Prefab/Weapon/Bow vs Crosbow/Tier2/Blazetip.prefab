@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3371068298247568639}
   - component: {fileID: 5520873950778820306}
   - component: {fileID: -6016492065113511283}
-  - component: {fileID: -5838403787575536948}
+  - component: {fileID: 9192850939478162759}
   m_Layer: 0
   m_Name: Blazetip
   m_TagString: Untagged
@@ -212,7 +212,7 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 3
---- !u!114 &-5838403787575536948
+--- !u!114 &9192850939478162759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,10 +221,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7018290434223161750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  weaponDamage: 0
+  weaponCriticalChange: 0

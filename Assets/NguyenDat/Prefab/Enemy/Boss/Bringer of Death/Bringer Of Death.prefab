@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8166224314946370763}
   - component: {fileID: 7185624732239713594}
-  - component: {fileID: 2729810232908457186}
+  - component: {fileID: 7848577509629243837}
   m_Layer: 7
   m_Name: Atkpoint
   m_TagString: Untagged
@@ -264,22 +264,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.428446, y: 3.378708}
   m_EdgeRadius: 0
---- !u!114 &2729810232908457186
+--- !u!114 &7848577509629243837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7358801163595854633}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae32c72cd7f34134badedbba0da253b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 2
+  damage: 10
 --- !u!1 &7759023323306964022
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,9 +288,9 @@ GameObject:
   - component: {fileID: 4653330449458931852}
   - component: {fileID: 2962350957353725073}
   - component: {fileID: 9100802031474772535}
-  - component: {fileID: 862290842787963640}
   - component: {fileID: 7745543435384289629}
   - component: {fileID: 3670637107383367812}
+  - component: {fileID: 8674347983989703571}
   m_Layer: 7
   m_Name: Bringer Of Death
   m_TagString: Boss
@@ -383,21 +380,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &862290842787963640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759023323306964022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 50
-  currentHP: 0
-  isInvulnerable: 0
 --- !u!114 &7745543435384289629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +404,6 @@ MonoBehaviour:
   animator: {fileID: 6840336915560201318}
   rb: {fileID: 9100802031474772535}
   targetPlayer: {fileID: 0}
-  EnemyHealth: {fileID: 862290842787963640}
   summonPortal: {fileID: 3757891017230741497}
 --- !u!114 &3670637107383367812
 MonoBehaviour:
@@ -436,8 +417,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 862290842787963640}
+  enemyHealth: {fileID: 8674347983989703571}
   animator: {fileID: 6840336915560201318}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 7745543435384289629}
+--- !u!114 &8674347983989703571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759023323306964022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 15000
+  currentHP: 0
+  InvincibilityTime: 0.1
+  damageReductionRate: 0
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}

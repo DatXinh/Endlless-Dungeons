@@ -19,7 +19,6 @@ public class BoDAI : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public GameObject targetPlayer;
-    public EnemyHealth EnemyHealth;
     public SummonPortal summonPortal;
 
     private float stateTimer = 0f;
@@ -29,7 +28,6 @@ public class BoDAI : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        EnemyHealth = GetComponent<EnemyHealth>();
         FindNearestPlayer();
     }
 

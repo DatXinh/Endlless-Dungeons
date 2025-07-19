@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5179640855795307792}
   - component: {fileID: 2229603669417313983}
   - component: {fileID: 4040153218672229621}
+  - component: {fileID: 3040095804062106567}
   - component: {fileID: 5357259370925939657}
   m_Layer: 0
   m_Name: Sprite
@@ -111,6 +112,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3040095804062106567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281947713321955617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!114 &5357259370925939657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +143,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 849493893452938402}
   launchForce: 20
   audioSource: {fileID: 4387654998522451960}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &4109048262369536542
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +188,8 @@ GameObject:
   m_Component:
   - component: {fileID: 849493893452938402}
   - component: {fileID: 5854359713460470372}
+  - component: {fileID: 3072474601224932654}
+  - component: {fileID: 1237966428975651739}
   m_Layer: 0
   m_Name: Shinobi Blade
   m_TagString: Untagged
@@ -212,9 +233,63 @@ MonoBehaviour:
     nh\u01B0ng kh\xF4ng ai nh\u1EDB t\xEAn ch\u1EE7 nh\xE2n \u0111\u1EA7u ti\xEAn
     \u2013 v\xEC l\u01B0\u1EE1i dao n\xE0y x\xF3a s\u1EA1ch danh t\xEDnh c\u1EE7a
     ng\u01B0\u1EDDi s\u1EED d\u1EE5ng.\u201D"
-  weaponDamage: 0
+  weaponDamage: 15
+  weaponCriticalChange: 16
+  weaponManaCost: 1
   weaponProjectile: {fileID: 3309172911900527485, guid: d225429bc69f3dc44b851eeb42009320, type: 3}
   weaponType: 6
+--- !u!58 &3072474601224932654
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388479602297865714}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &1237966428975651739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388479602297865714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!1001 &1868680893959156488
 PrefabInstance:
   m_ObjectHideFlags: 0

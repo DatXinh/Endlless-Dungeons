@@ -13,7 +13,14 @@ public class SummonPortal : MonoBehaviour
         if (portalPrefab != null && target != null)
         {
             Vector3 spawnPosition = target.position + new Vector3(0f, offsetY, 0f);
-            Instantiate(portalPrefab, spawnPosition, Quaternion.identity);
+            //Instantiate(portalPrefab, spawnPosition, Quaternion.identity);
+            GameObject portal = Instantiate(portalPrefab, spawnPosition, Quaternion.identity);
+            EnemyDame enemyDame = portal.GetComponent<EnemyDame>();
+            if (enemyDame != null)
+            {
+                enemyDame.damage = 10; // Ví dụ: đặt sát thương là 10
+            }
+
         }
     }
 }

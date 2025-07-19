@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2031875768987030905}
   - component: {fileID: 2300091305479343399}
   - component: {fileID: 1681401277147434947}
-  - component: {fileID: 6551885852663357879}
+  - component: {fileID: 3432643933803375927}
   m_Layer: 0
   m_Name: FF
   m_TagString: Untagged
@@ -170,7 +170,7 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &6551885852663357879
+--- !u!114 &3432643933803375927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,10 +179,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7653115163571952343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  weaponDamage: 0
+  weaponCriticalChange: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8013672985921212781}
   - component: {fileID: 4200129928121761870}
   - component: {fileID: 3618428182975126515}
-  - component: {fileID: 3430790727399085424}
+  - component: {fileID: -8989298022893061615}
   m_Layer: 0
   m_Name: Nebula Clound
   m_TagString: Untagged
@@ -115,7 +115,7 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 1
   lifeTime: 5
---- !u!114 &3430790727399085424
+--- !u!114 &-8989298022893061615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,13 +124,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 429003772421045091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1 &5045558486101644933
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,7 +50,9 @@ MonoBehaviour:
   weaponID: 
   weaponName: Crossbow
   weaponDescription: 
-  weaponDamage: 0
+  weaponDamage: 10
+  weaponCriticalChange: 20
+  weaponManaCost: 1
   weaponProjectile: {fileID: 7345697511986541768, guid: b041d6e1f5c21c448b4aa64768f8e8ef, type: 3}
   weaponType: 3
 --- !u!1 &2475554550303003005
@@ -181,6 +183,10 @@ MonoBehaviour:
   weaponTransform: {fileID: 6723553495950087024}
   launchForce: 15
   audioSource: {fileID: 2682653877180587672}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
 --- !u!1 &8925768476900058490
 GameObject:
   m_ObjectHideFlags: 0

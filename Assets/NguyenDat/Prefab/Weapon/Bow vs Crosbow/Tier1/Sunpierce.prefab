@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4297640212860421653}
   - component: {fileID: 8781446311072940270}
   - component: {fileID: 7903764996053933008}
-  - component: {fileID: 8044948107511237542}
+  - component: {fileID: 3785898049484758965}
   m_Layer: 0
   m_Name: Sunpierce
   m_TagString: Untagged
@@ -125,7 +125,7 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 3
---- !u!114 &8044948107511237542
+--- !u!114 &3785898049484758965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,13 +134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2720985773018310271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1 &8316164092188450724
 GameObject:
   m_ObjectHideFlags: 0

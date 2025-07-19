@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7023771163455579871}
   - component: {fileID: 5470275567187320615}
   - component: {fileID: 8067082775465712180}
+  - component: {fileID: 8207707625978766795}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -159,6 +160,24 @@ MonoBehaviour:
   weaponTransform: {fileID: 5856242581536038816}
   launchForce: 20
   audioSource: {fileID: 1126751011166047597}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+  WeaponManaCost: 0
+  pLayerMP: {fileID: 0}
+--- !u!114 &8207707625978766795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152151794228667235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1 &8861256400155268441
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +188,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5856242581536038816}
   - component: {fileID: 1205353612277553770}
+  - component: {fileID: 4163866790680853785}
+  - component: {fileID: 3810701116769219043}
   m_Layer: 0
   m_Name: Emeral Kunai
   m_TagString: Untagged
@@ -213,8 +234,60 @@ MonoBehaviour:
     ph\xF3ng ra, ng\u01B0\u1EDDi c\u1EA7m m\u1EA5t \u0111i m\u1ED9t m\xE0u s\u1EAFc
     trong th\u1ECB gi\xE1c.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
+  weaponManaCost: 0
   weaponProjectile: {fileID: 2402122075746222651, guid: cf95c0e6bcd8b5943892c7c0a5982e8c, type: 3}
   weaponType: 6
+--- !u!58 &4163866790680853785
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861256400155268441}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
+--- !u!114 &3810701116769219043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861256400155268441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponName: "V\u0169 kh\xED"
 --- !u!1001 &3074253980747311517
 PrefabInstance:
   m_ObjectHideFlags: 0

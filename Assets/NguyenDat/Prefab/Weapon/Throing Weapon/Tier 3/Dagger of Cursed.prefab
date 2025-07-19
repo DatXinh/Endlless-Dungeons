@@ -53,6 +53,7 @@ MonoBehaviour:
     th\u1EE9 t\u01B0, h\u1ECD bi\u1EBFn m\u1EA5t \u2013 v\xE0 con dao xu\u1EA5t hi\u1EC7n
     trong tay k\u1EBB kh\xE1c.\u201D"
   weaponDamage: 0
+  weaponCriticalChange: 0
   weaponProjectile: {fileID: 7701513146323523776, guid: 552d4697a2845c343a0ece5a28527911, type: 3}
   weaponType: 6
 --- !u!1 &6773906758591102250
@@ -67,6 +68,8 @@ GameObject:
   - component: {fileID: 5530018404037422880}
   - component: {fileID: 567064027211389544}
   - component: {fileID: 5351238775928185303}
+  - component: {fileID: 7667304014184523420}
+  - component: {fileID: 5860254190678453371}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -183,6 +186,36 @@ MonoBehaviour:
   weaponTransform: {fileID: 9154920825294357842}
   launchForce: 25
   audioSource: {fileID: 4239826967948611067}
+  WeaponDamage: 0
+  WeaponCritalChange: 0
+--- !u!114 &7667304014184523420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773906758591102250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
+--- !u!114 &5860254190678453371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773906758591102250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1 &8664519204016983610
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2796781605282820652}
   - component: {fileID: 124793036324906749}
   - component: {fileID: 6895428435290491304}
-  - component: {fileID: 48123200735152237}
+  - component: {fileID: 2401828831391199370}
   m_Layer: 0
   m_Name: BSC
   m_TagString: Untagged
@@ -115,7 +115,7 @@ MonoBehaviour:
   IsEnemy: 0
   canPierce: 0
   lifeTime: 1
---- !u!114 &48123200735152237
+--- !u!114 &2401828831391199370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,13 +124,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 317676924817297914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69a0177a5ac9a47a5418161ed36435, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  bonusDamage: 5
-  critRate: 0.2
-  damageCooldown: 1.5
+  weaponDamage: 0
+  weaponCriticalChange: 0
 --- !u!1001 &7769397884431060103
 PrefabInstance:
   m_ObjectHideFlags: 0
