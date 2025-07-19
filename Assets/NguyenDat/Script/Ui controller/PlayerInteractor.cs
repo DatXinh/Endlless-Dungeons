@@ -11,6 +11,9 @@ public class PlayerInteractor : MonoBehaviour
     public TestWeaponAtk testWeaponAtk;
     public ScaleWeapon scaleWeapon;
 
+    public PlayerHP playerHP; // Thêm biến để tham chiếu đến PlayerHP
+    public PLayerMP playerMP; // Thêm biến để tham chiếu đến PlayerMP   
+
     private GameObject[] weaponSlots = new GameObject[2]; // 0: chính, 1: phụ
     private int activeWeaponIndex = 0; // slot hiện tại đang dùng
 
@@ -18,6 +21,8 @@ public class PlayerInteractor : MonoBehaviour
     {
         testWeaponAtk = weaponParent.GetComponent<TestWeaponAtk>();
         scaleWeapon = weaponParent.GetComponent<ScaleWeapon>();
+        playerHP = GetComponentInParent<PlayerHP>();
+        playerMP = GetComponentInParent<PLayerMP>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -92,6 +97,23 @@ public class PlayerInteractor : MonoBehaviour
             }
 
             weaponInteractable.Interact();
+        }
+        else if (currentInteractable is HPInteracable hPInteracable)
+        {
+            playerHP.Heal(hPInteracable.healAmount);
+            hPInteracable.Interact(); // Gọi phương thức Interact để tiêu diệt đối tượng sau khi tương tác
+        }
+        else if (currentInteractable is MPInteractable mPInteracable)
+        {
+            playerMP.RecoverMP(mPInteracable.ManaAmount);
+            mPInteracable.Interact(); // Gọi phương thức Interact để tiêu diệt đối tượng sau khi tương tác
+        }else if (currentInteractable is PortalInteractble portalInteractble)
+        {
+            portalInteractble.Interact(); // Gọi phương thức Interact để chuyển cảnh
+        }
+        else
+        {
+            Debug.LogWarning("Không có tương tác hợp lệ.");
         }
     }
 

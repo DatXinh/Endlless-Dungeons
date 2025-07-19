@@ -1,15 +1,18 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ToSecens : MonoBehaviour
 {
     public string sceneName;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void toScene()
     {
-        if (collision.CompareTag("Player") && !string.IsNullOrEmpty(sceneName))
+        if (!string.IsNullOrEmpty(sceneName))
         {
             SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            Debug.LogWarning("Tên scene không được đặt.");
         }
     }
 }

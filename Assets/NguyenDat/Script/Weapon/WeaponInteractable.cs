@@ -48,6 +48,5 @@ public class WeaponInteractable : MonoBehaviour, IInteractable
             launchProjectile.resetPlayerMP();
         }
         transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-        weaponIcon = weaponData.weaponIcon;
     }
 }

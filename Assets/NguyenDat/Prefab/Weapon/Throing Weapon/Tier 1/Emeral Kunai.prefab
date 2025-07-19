@@ -234,9 +234,9 @@ MonoBehaviour:
     d\xF9ng \u0111\u1EC3 phong \u1EA5n m\u1ED9t nh\xE3n th\u1EA7n. M\u1ED7i l\u1EA7n
     ph\xF3ng ra, ng\u01B0\u1EDDi c\u1EA7m m\u1EA5t \u0111i m\u1ED9t m\xE0u s\u1EAFc
     trong th\u1ECB gi\xE1c.\u201D"
-  weaponDamage: 0
-  weaponCriticalChange: 0
-  weaponManaCost: 0
+  weaponDamage: 23
+  weaponCriticalChange: 15
+  weaponManaCost: 5
   weaponProjectile: {fileID: 2402122075746222651, guid: cf95c0e6bcd8b5943892c7c0a5982e8c, type: 3}
   weaponType: 6
 --- !u!58 &4163866790680853785
@@ -289,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
   weaponName: "V\u0169 kh\xED"
+  weaponIcon: {fileID: 0}
   interacCollider: {fileID: 0}
   weaponParent: {fileID: 0}
 --- !u!1001 &3074253980747311517
