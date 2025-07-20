@@ -12,4 +12,5 @@ public class WeaponData : MonoBehaviour
     public int weaponManaCost;
     public GameObject weaponProjectile;
     public WeaponType weaponType;
+    public int weaponLevel;
 }

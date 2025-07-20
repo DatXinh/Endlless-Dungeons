@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class WeaponInteractable : MonoBehaviour, IInteractable
 {
     public WeaponData weaponData; // Dữ liệu vũ khí
+    [Header("Thông tin vũ khí")]
+    public WeaponTooltipDisplay weaponTooltipDisplay; // Hiển thị thông tin vũ khí
     public string weaponName = "Tên vũ khí";
     public Sprite weaponIcon;
     public Collider2D interacCollider;
@@ -15,6 +17,7 @@ public class WeaponInteractable : MonoBehaviour, IInteractable
         weaponName = weaponData.weaponName;
         weaponIcon = weaponData.weaponIcon;
         interacCollider = GetComponent<Collider2D>();
+        weaponTooltipDisplay = GetComponent<WeaponTooltipDisplay>();
     }
     public void Interact()
     {
@@ -48,5 +51,20 @@ public class WeaponInteractable : MonoBehaviour, IInteractable
             launchProjectile.resetPlayerMP();
         }
         transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            weaponTooltipDisplay.ShowTooltip();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            weaponTooltipDisplay.HideTooltip();
+        }
     }
 }
