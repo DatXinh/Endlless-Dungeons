@@ -3,10 +3,12 @@ using UnityEngine.UI;
 
 public class WeaponInteractable : MonoBehaviour, IInteractable
 {
-    public WeaponData weaponData; // Dữ liệu vũ khí
+    public WeaponData weaponData;
+    public bool isSale = false;
     [Header("Thông tin vũ khí")]
     public WeaponTooltipDisplay weaponTooltipDisplay; // Hiển thị thông tin vũ khí
     public string weaponName = "Tên vũ khí";
+    public int weaponPrice;
     public Sprite weaponIcon;
     public Collider2D interacCollider;
     public Transform weaponParent;
@@ -16,6 +18,7 @@ public class WeaponInteractable : MonoBehaviour, IInteractable
         weaponData = GetComponent<WeaponData>();
         weaponName = weaponData.weaponName;
         weaponIcon = weaponData.weaponIcon;
+        weaponPrice = weaponData.WeaponPrice;
         interacCollider = GetComponent<Collider2D>();
         weaponTooltipDisplay = GetComponent<WeaponTooltipDisplay>();
     }

@@ -71,6 +71,10 @@ public class PlayerHP : MonoBehaviour
         if (currentHP > 0)
         {
             currentHP += amount;
+            if (currentHP > maxHP)
+            {
+                currentHP = maxHP;
+            }
             UpdateHealthUI();
             // Display damage popup
             if (damagePopupPrefab != null)
@@ -81,10 +85,6 @@ public class PlayerHP : MonoBehaviour
                 {
                     floatingDamage.SetDamageValue(amount, Color.green);
                 }
-            }
-            if (currentHP > maxHP)
-            {
-                currentHP = maxHP;
             }
         }
     }

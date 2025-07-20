@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 8974744262276552940}
   - component: {fileID: 8283805042420536888}
   m_Layer: 6
-  m_Name: InteractionZone
+  m_Name: PlayerInteraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,8 +423,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponParent: {fileID: 5920221004527382975}
   WeaponIcon: {fileID: 8926817850598607349}
+  Coins: 100
   testWeaponAtk: {fileID: 0}
   scaleWeapon: {fileID: 0}
+  playerHP: {fileID: 0}
+  playerMP: {fileID: 0}
+  CointsText: {fileID: 145450089684810607}
 --- !u!1 &4918942859033818499
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +909,17 @@ PrefabInstance:
 --- !u!114 &134432425131766082 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2838751404056771437, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+  m_PrefabInstance: {fileID: 2790222722959149615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &145450089684810607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2647099388857561408, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
   m_PrefabInstance: {fileID: 2790222722959149615}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

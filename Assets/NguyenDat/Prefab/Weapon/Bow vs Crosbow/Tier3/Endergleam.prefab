@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 5255556804227200327}
   - component: {fileID: 6761636192991215091}
   - component: {fileID: 4051109137855942895}
+  - component: {fileID: 346928842240518079}
   - component: {fileID: -331600497886748218}
   m_Layer: 0
   m_Name: Endergleam
@@ -225,6 +226,7 @@ MonoBehaviour:
   weaponProjectile: {fileID: 3151462054325104733, guid: 102f0572377598141a9176402258f610, type: 3}
   weaponType: 3
   weaponLevel: 3
+  WeaponPrice: 120
 --- !u!58 &4051109137855942895
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -261,6 +263,26 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1
+--- !u!114 &346928842240518079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514586837790412939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cca319f66f1947408c552a381652bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  isSale: 0
+  weaponTooltipDisplay: {fileID: 0}
+  weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponPrice: 0
+  weaponIcon: {fileID: 0}
+  interacCollider: {fileID: 0}
+  weaponParent: {fileID: 0}
 --- !u!114 &-331600497886748218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +301,7 @@ MonoBehaviour:
   weaponDama: {fileID: 2823086711515225540}
   weaponCrit: {fileID: 3148815771740384215}
   weaponMana: {fileID: 5458462782375810372}
+  weaponPrice: {fileID: 440139323372070617}
   weaponLevel: 0
 --- !u!1001 &1999114234529999921
 PrefabInstance:
@@ -377,6 +400,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
+--- !u!114 &440139323372070617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2136385916427799272, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
+  m_PrefabInstance: {fileID: 1999114234529999921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &609514349847187073 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1426279747208569520, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}

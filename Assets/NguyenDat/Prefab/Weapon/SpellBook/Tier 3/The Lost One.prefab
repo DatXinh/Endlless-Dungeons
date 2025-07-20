@@ -65,6 +65,7 @@ MonoBehaviour:
   weaponProjectile: {fileID: 7778368207161583054, guid: 4e51ddb40eb4949458d9505e5c9d7bd6, type: 3}
   weaponType: 5
   weaponLevel: 3
+  WeaponPrice: 125
 --- !u!114 &2429828135443208485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,8 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
+  isSale: 0
   weaponTooltipDisplay: {fileID: 0}
   weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponPrice: 0
   weaponIcon: {fileID: 0}
   interacCollider: {fileID: 0}
   weaponParent: {fileID: 0}
@@ -137,6 +140,7 @@ MonoBehaviour:
   weaponDama: {fileID: 6560504958772487225}
   weaponCrit: {fileID: 6310899510198702634}
   weaponMana: {fileID: 4028008152935722169}
+  weaponPrice: {fileID: 8808397149666205476}
   weaponLevel: 0
 --- !u!1 &4158761658209976902
 GameObject:
@@ -538,3 +542,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1426279747208569520, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
   m_PrefabInstance: {fileID: 7464788013457429964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8808397149666205476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2136385916427799272, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
+  m_PrefabInstance: {fileID: 7464788013457429964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

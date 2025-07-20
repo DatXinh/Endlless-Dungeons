@@ -10,6 +10,7 @@ public class WeaponTooltipDisplay : MonoBehaviour
     public TextMeshProUGUI weaponDama;
     public TextMeshProUGUI weaponCrit;
     public TextMeshProUGUI weaponMana;
+    public TextMeshProUGUI weaponPrice;
     private WeaponData weaponData;
     public int weaponLevel;
 
@@ -39,6 +40,7 @@ public class WeaponTooltipDisplay : MonoBehaviour
         weaponDama.text = weaponData.weaponDamage.ToString() + " Damage";
         weaponCrit.text = weaponData.weaponCriticalChange.ToString() + " % Critical change";
         weaponMana.text = "Mana Cost: " + weaponData.weaponManaCost.ToString();
+        weaponPrice.text = "Price: " + weaponData.WeaponPrice.ToString() + " Gold";
         tooltipPanel.SetActive(true);
     }
 

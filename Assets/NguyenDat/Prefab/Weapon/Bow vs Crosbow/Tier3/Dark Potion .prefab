@@ -226,6 +226,7 @@ MonoBehaviour:
   weaponProjectile: {fileID: 6834534519335637225, guid: 973fd922793f12d489edaba4b702708f, type: 3}
   weaponType: 3
   weaponLevel: 3
+  WeaponPrice: 100
 --- !u!58 &2728545489878553598
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -256,7 +257,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -275,8 +276,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
+  isSale: 0
   weaponTooltipDisplay: {fileID: 0}
   weaponName: "T\xEAn v\u0169 kh\xED"
+  weaponPrice: 0
   weaponIcon: {fileID: 0}
   interacCollider: {fileID: 0}
   weaponParent: {fileID: 0}
@@ -298,6 +301,7 @@ MonoBehaviour:
   weaponDama: {fileID: 6786717003880178966}
   weaponCrit: {fileID: 5958273313119113989}
   weaponMana: {fileID: 3657635082823232918}
+  weaponPrice: {fileID: 9158471308350709259}
   weaponLevel: 0
 --- !u!1001 &4451388961281891126
 PrefabInstance:
@@ -528,3 +532,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1426279747208569520, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
   m_PrefabInstance: {fileID: 7114731444270421219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9158471308350709259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2136385916427799272, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
+  m_PrefabInstance: {fileID: 7114731444270421219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
