@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,10 +37,10 @@ public class WeaponTooltipDisplay : MonoBehaviour
         {
             weaponName.color = Color.red;
         }
-        weaponDama.text = weaponData.weaponDamage.ToString() + " Damage";
-        weaponCrit.text = weaponData.weaponCriticalChange.ToString() + " % Critical change";
-        weaponMana.text = "Mana Cost: " + weaponData.weaponManaCost.ToString();
-        weaponPrice.text = "Price: " + weaponData.WeaponPrice.ToString() + " Gold";
+        weaponDama.text = weaponData.weaponDamage.ToString() + " Sát thương";
+        weaponCrit.text = weaponData.weaponCriticalChange.ToString() + " % tỉ lệ chí mạng";
+        weaponMana.text = "Năng lượng tiêu hao: " + weaponData.weaponManaCost.ToString();
+        weaponPrice.text = "giá: " + weaponData.WeaponPrice.ToString() + " vàng";
         tooltipPanel.SetActive(true);
     }
 

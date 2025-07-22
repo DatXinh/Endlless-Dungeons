@@ -124,17 +124,37 @@ public class PlayerInteractor : MonoBehaviour
         }
         else if (currentInteractable is HPInteracable hPInteracable)
         {
-            playerHP.Heal(hPInteracable.healAmount);
-            hPInteracable.Interact(); // Gọi phương thức Interact để tiêu diệt đối tượng sau khi tương tác
+            if (Coins > 30)
+            {
+                playerHP.Heal(hPInteracable.healAmount);
+                hPInteracable.Interact();
+                Coins -= 30;
+                if (CointsText != null)
+                {
+                    CointsText.text = Coins.ToString();
+                }
+            }
+
         }
         else if (currentInteractable is MPInteractable mPInteracable)
         {
-            playerMP.RecoverMP(mPInteracable.ManaAmount);
-            mPInteracable.Interact(); // Gọi phương thức Interact để tiêu diệt đối tượng sau khi tương tác
-        }else if (currentInteractable is PortalInteractble portalInteractble)
+            if (Coins > 30)
+            {
+                playerMP.RecoverMP(mPInteracable.ManaAmount);
+                mPInteracable.Interact();
+                Coins -= 30;
+                if (CointsText != null)
+                {
+                    CointsText.text = Coins.ToString();
+                }
+            }
+
+        }
+        else if (currentInteractable is PortalInteractble portalInteractble)
         {
             portalInteractble.Interact(); // Gọi phương thức Interact để chuyển cảnh
-        }else if (currentInteractable is ShopInteractable shopInteractable)
+        }
+        else if (currentInteractable is ShopInteractable shopInteractable)
         {
             shopInteractable.Interact(); // Gọi phương thức Interact của cửa hàng
         }
