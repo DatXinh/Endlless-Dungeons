@@ -134,7 +134,7 @@ MonoBehaviour:
   tooltipPanel: {fileID: 7616858153154374308}
   weaponIconImage: {fileID: 4867299479482539227}
   weaponName: {fileID: 7827778358944625468}
-  weaponDama: {fileID: 1621674328410216703}
+  weaponDama: {fileID: 1881960520974921452}
   weaponCrit: {fileID: 1621674328410216703}
   weaponMana: {fileID: 8571429320416437868}
   weaponPrice: {fileID: 4262726414160926193}
@@ -428,6 +428,17 @@ PrefabInstance:
 --- !u!114 &1621674328410216703 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3462301157784668134, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
+  m_PrefabInstance: {fileID: 2778097249458003737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1881960520974921452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4365071770159149557, guid: f22860b3b1206f746bf65f131a3f280d, type: 3}
   m_PrefabInstance: {fileID: 2778097249458003737}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
