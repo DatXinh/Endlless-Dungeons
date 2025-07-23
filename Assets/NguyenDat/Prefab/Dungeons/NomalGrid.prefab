@@ -89,6 +89,7 @@ MonoBehaviour:
   minTrapPerRoom: 3
   maxTrapPerRoom: 7
   portalPrefab: {fileID: 7122153849931878849, guid: 55793048b3580a14182160e26dd09e4d, type: 3}
+  chestPrefab: {fileID: 1046014072255985031, guid: 8f5344b879df2dc4197305020cee4e05, type: 3}
   decoParent: {fileID: 7858190165641444592}
   trapParent: {fileID: 7458278192787257870}
 --- !u!114 &455017040245435748

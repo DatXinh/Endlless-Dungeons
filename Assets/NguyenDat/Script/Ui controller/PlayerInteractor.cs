@@ -150,17 +150,9 @@ public class PlayerInteractor : MonoBehaviour
             }
 
         }
-        else if (currentInteractable is PortalInteractble portalInteractble)
+        else if (currentInteractable != null)
         {
-            portalInteractble.Interact(); // Gọi phương thức Interact để chuyển cảnh
-        }
-        else if (currentInteractable is ShopInteractable shopInteractable)
-        {
-            shopInteractable.Interact(); // Gọi phương thức Interact của cửa hàng
-        }
-        else
-        {
-            Debug.LogWarning("Không có tương tác hợp lệ.");
+            currentInteractable.Interact();
         }
     }
 
@@ -220,6 +212,14 @@ public class PlayerInteractor : MonoBehaviour
                 weapon.transform.SetParent(null);
                 weapon.SetActive(false);
             }
+        }
+    }
+    public void earnCoins(int amount)
+    {
+        Coins += amount;
+        if (CointsText != null)
+        {
+            CointsText.text = Coins.ToString();
         }
     }
 }

@@ -214,4 +214,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5a8e945516a59469d1a64ae3d4178a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaRecoverAmount: 20
+  manaRecoverAmount: 25
