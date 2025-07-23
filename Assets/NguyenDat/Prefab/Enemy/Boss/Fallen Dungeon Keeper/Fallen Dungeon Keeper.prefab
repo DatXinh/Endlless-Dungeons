@@ -921,8 +921,8 @@ MonoBehaviour:
   miniBrimstonePrefab: {fileID: 3532160501981435551, guid: db17c17355b51734fbb8ea70293a911d, type: 3}
   brimstoneArrowPrefab: {fileID: 6839943353058557494, guid: 518010328e36bd649bd5ab9f1992c515, type: 3}
   brimstoneRainDame: 40
-  miniBrimstoneDame: 20
-  brimstoneArrowDame: 35
+  miniBrimstoneDame: 25
+  brimstoneArrowDame: 45
   cursedSkullDame: 50
   projectileSpeed: 10
   laugh: {fileID: 1435357627458867327}

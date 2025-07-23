@@ -16,6 +16,12 @@ public class PlayerHP : MonoBehaviour
 
     private bool isInvincible = false; // Trạng thái bất tử
 
+    public GameObject rightPanel;
+    public GameObject leftPanel;
+    public GameObject deadMesseng;
+    public AudioSource[] allAudioSources;
+    private AudioSource[] pausedAudioSources;
+
     void Start()
     {
         currentHP = maxHP; // Initialize current health to maximum health
@@ -28,6 +34,8 @@ public class PlayerHP : MonoBehaviour
             maxHeal.text = maxHP.ToString(); // Set the maximum health text
         }
         UpdateHealthUI(); // Update the health UI at the start
+        deadMesseng.SetActive(false);
+        allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
     }
     // Method to take damage
     public void TakeDamage(int damage)
@@ -49,11 +57,19 @@ public class PlayerHP : MonoBehaviour
                     FloatingDamage floatingDamage = damagePopup.GetComponent<FloatingDamage>();
                     if (floatingDamage != null)
                     {
-                        floatingDamage.SetDamageValue(damage, Color.red); // Set the damage value and color
+                        floatingDamage.SetDamageValue(damage, Color.red);
                     }
                 }
                 StartCoroutine(InvincibilityCoroutine());
             }
+        }
+        if (currentHP <= 0)
+        {
+            Time.timeScale = 0;
+            deadMesseng.SetActive(true);
+            rightPanel.SetActive(false);
+            leftPanel.SetActive(false);
+            PauseGame();
         }
     }
 
@@ -88,7 +104,7 @@ public class PlayerHP : MonoBehaviour
             }
         }
     }
-    private void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         float healthPercent = (float)currentHP / maxHP;
 
@@ -127,5 +143,31 @@ public class PlayerHP : MonoBehaviour
             currentHeal.text = currentHP.ToString();
         }
     }
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
 
+        // Pause các audio đang chạy
+        AudioSource[] allAudio = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        pausedAudioSources = System.Array.FindAll(allAudio, a => a.isPlaying);
+        foreach (AudioSource audio in pausedAudioSources)
+        {
+            audio.Pause();
+        }
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+
+        // Resume các audio đã bị pause
+        if (pausedAudioSources != null)
+        {
+            foreach (AudioSource audio in pausedAudioSources)
+            {
+                if (audio != null) audio.UnPause();
+            }
+            pausedAudioSources = null;
+        }
+    }
 }
