@@ -6,23 +6,29 @@ public class MiniMapPresist : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
-            Destroy(gameObject); // Tránh tạo trùng khi load lại scene
-            return;
+            if (instance.gameObject != null)
+            {
+                Destroy(gameObject); // Bản cũ vẫn còn
+                return;
+            }
         }
 
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        SceneManager.sceneLoaded += OnSceneLoaded; // đăng ký sự kiện
+        // Tránh đăng ký nhiều lần
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         string currentScene = scene.name;
 
         // Danh sách các scene KHÔNG cần minimap
-        if (currentScene == "Star Game" || currentScene == "Home")
+        if (currentScene == "Star Game" || currentScene == "LoadScene" || currentScene == "1-Boss" || currentScene == "2-Boss" || currentScene == "3-Boss" || currentScene == "1-Shop" || currentScene == "2-Shop" || currentScene == "3-Shop")
         {
             SetMinimapVisible(false);
         }
@@ -34,6 +40,7 @@ public class MiniMapPresist : MonoBehaviour
 
     void SetMinimapVisible(bool visible)
     {
+        if (instance == null) return; // tránh lỗi khi instance chưa được khởi tạo
         // Ẩn hoặc hiện camera minimap
         Transform minimapCamera = transform.Find("MinimapCamera");
         if (minimapCamera) minimapCamera.gameObject.SetActive(visible);
