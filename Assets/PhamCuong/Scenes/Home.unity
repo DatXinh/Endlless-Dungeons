@@ -71419,7 +71419,7 @@ MonoBehaviour:
   sfxSource: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 2f93be3ffd5536141bfa93e26b1cdfa2, type: 2}
   AudioSource:
-  - {fileID: 0}
+  - {fileID: 1204056387}
 --- !u!4 &1822190328
 Transform:
   m_ObjectHideFlags: 0
