@@ -3,12 +3,8 @@ using UnityEngine.UI;
 
 public class WeaponInteractable : MonoBehaviour, IInteractable
 {
-    public WeaponData weaponData;
-    public bool isSale = false;
-    [Header("Thông tin vũ khí")]
-    public WeaponTooltipDisplay weaponTooltipDisplay; // Hiển thị thông tin vũ khí
+    public WeaponData weaponData; // Dữ liệu vũ khí
     public string weaponName = "Tên vũ khí";
-    public int weaponPrice;
     public Sprite weaponIcon;
     public Collider2D interacCollider;
     public Transform weaponParent;
@@ -18,9 +14,7 @@ public class WeaponInteractable : MonoBehaviour, IInteractable
         weaponData = GetComponent<WeaponData>();
         weaponName = weaponData.weaponName;
         weaponIcon = weaponData.weaponIcon;
-        weaponPrice = weaponData.WeaponPrice;
         interacCollider = GetComponent<Collider2D>();
-        weaponTooltipDisplay = GetComponent<WeaponTooltipDisplay>();
     }
     public void Interact()
     {
@@ -54,20 +48,6 @@ public class WeaponInteractable : MonoBehaviour, IInteractable
             launchProjectile.resetPlayerMP();
         }
         transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            weaponTooltipDisplay.ShowTooltip();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            weaponTooltipDisplay.HideTooltip();
-        }
+        weaponIcon = weaponData.weaponIcon;
     }
 }

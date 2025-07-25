@@ -17,8 +17,6 @@ GameObject:
   - component: {fileID: 2570953925471318445}
   - component: {fileID: 9059553527290997709}
   - component: {fileID: 3766759527391991602}
-  - component: {fileID: 3688768949263709525}
-  - component: {fileID: 7740792210841072739}
   m_Layer: 7
   m_Name: Slime
   m_TagString: Enemy
@@ -169,7 +167,7 @@ Animator:
   m_GameObject: {fileID: 8558169933533535754}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: daf50beac8bc2a644879adc32848bacf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5e53a97371a14ce4cb21f2bb04b77de2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -249,40 +247,3 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHeal: {fileID: 0}
   currentHeal: {fileID: 0}
---- !u!114 &3688768949263709525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558169933533535754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 3766759527391991602}
-  animator: {fileID: 2983383017131691898}
-  parameterName: IsDead
-  scriptsToDisable:
-  - {fileID: 2570953925471318445}
---- !u!114 &7740792210841072739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558169933533535754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loot:
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
-  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
-  SpawnBoss: {fileID: 0}
-  dropRadius: 2

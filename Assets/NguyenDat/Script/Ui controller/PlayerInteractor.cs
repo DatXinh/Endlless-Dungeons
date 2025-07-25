@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerInteractor : MonoBehaviour
@@ -8,29 +7,17 @@ public class PlayerInteractor : MonoBehaviour
     public Transform weaponParent;
 
     public Image WeaponIcon;
-    public int Coins = 100;
 
     public TestWeaponAtk testWeaponAtk;
     public ScaleWeapon scaleWeapon;
 
-    public PlayerHP playerHP; // Thêm biến để tham chiếu đến PlayerHP
-    public PLayerMP playerMP; // Thêm biến để tham chiếu đến PlayerMP   
-
     private GameObject[] weaponSlots = new GameObject[2]; // 0: chính, 1: phụ
     private int activeWeaponIndex = 0; // slot hiện tại đang dùng
-
-    public TextMeshProUGUI CointsText; // Hiển thị số tiền hiện tại
 
     private void Awake()
     {
         testWeaponAtk = weaponParent.GetComponent<TestWeaponAtk>();
         scaleWeapon = weaponParent.GetComponent<ScaleWeapon>();
-        playerHP = GetComponentInParent<PlayerHP>();
-        playerMP = GetComponentInParent<PLayerMP>();
-        if (CointsText != null)
-        {
-            CointsText.text = Coins.ToString();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -70,23 +57,6 @@ public class PlayerInteractor : MonoBehaviour
 
             weaponInteractable.weaponParent = weaponParent;
 
-            // Kiểm tra nếu là vũ khí bán (isSale = true)
-            if (weaponInteractable.isSale)
-            {
-                if (Coins >= weaponInteractable.weaponPrice)
-                {
-                    Coins -= weaponInteractable.weaponPrice;
-                    if (CointsText != null)
-                    {
-                        CointsText.text = Coins.ToString();
-                    }
-                }
-                else
-                {
-                    return;
-                }
-            }
-
             // Trường hợp: chưa có vũ khí nào
             if (weaponSlots[0] == null)
             {
@@ -120,39 +90,8 @@ public class PlayerInteractor : MonoBehaviour
                 weaponSlots[current] = newWeapon;
                 EquipWeapon(current);
             }
+
             weaponInteractable.Interact();
-        }
-        else if (currentInteractable is HPInteracable hPInteracable)
-        {
-            if (Coins > 30)
-            {
-                playerHP.Heal(hPInteracable.healAmount);
-                hPInteracable.Interact();
-                Coins -= 30;
-                if (CointsText != null)
-                {
-                    CointsText.text = Coins.ToString();
-                }
-            }
-
-        }
-        else if (currentInteractable is MPInteractable mPInteracable)
-        {
-            if (Coins > 30)
-            {
-                playerMP.RecoverMP(mPInteracable.ManaAmount);
-                mPInteracable.Interact();
-                Coins -= 30;
-                if (CointsText != null)
-                {
-                    CointsText.text = Coins.ToString();
-                }
-            }
-
-        }
-        else if (currentInteractable != null)
-        {
-            currentInteractable.Interact();
         }
     }
 
@@ -214,12 +153,5 @@ public class PlayerInteractor : MonoBehaviour
             }
         }
     }
-    public void earnCoins(int amount)
-    {
-        Coins += amount;
-        if (CointsText != null)
-        {
-            CointsText.text = Coins.ToString();
-        }
-    }
+
 }

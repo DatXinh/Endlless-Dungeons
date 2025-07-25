@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 655818492400156800}
   - component: {fileID: 3944391508701664047}
   - component: {fileID: 945420974951284413}
+  - component: {fileID: 4869651608459967136}
   - component: {fileID: -4494271547225818997}
   m_Layer: 0
   m_Name: TrapBox
@@ -163,6 +164,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4869651608459967136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286052999795039852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1
+  currentHP: 0
+  isInvulnerable: 0
 --- !u!114 &-4494271547225818997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +192,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 4479899988509179688, guid: 997ff30ff982c4d439ac8dbaae5de73b, type: 3}
-  weaponDame: {fileID: 0}
-  weaponDamage: 0
-  weaponCriticalChange: 0

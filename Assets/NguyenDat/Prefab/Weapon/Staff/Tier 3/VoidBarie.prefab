@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7589099626293503526}
   - component: {fileID: 873177928233381474}
   - component: {fileID: 5533050468546001827}
+  - component: {fileID: 7536567888429136050}
   - component: {fileID: -5225767932813740574}
   m_Layer: 0
   m_Name: VoidBarie
@@ -166,6 +167,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponDamage: 0
+  weaponCriticalChange: 0
+--- !u!114 &7536567888429136050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286575111412870413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab: {fileID: 4167336790067339163, guid: b06e8b32d584c854a92d30dee282c0d9, type: 3}
+  weaponDame: {fileID: 0}
   weaponDamage: 0
   weaponCriticalChange: 0
 --- !u!114 &-5225767932813740574
