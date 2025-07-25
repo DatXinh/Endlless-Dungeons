@@ -4,6 +4,7 @@ public class CoinFollowPlayer : MonoBehaviour
 {
     public float moveSpeed = 7f;
     private Transform playerTransform;
+    public PlayerInteractor playerInteractor;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class CoinFollowPlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerInteractor playerInteractor = other.GetComponent<PlayerInteractor>();
+            playerInteractor = other.GetComponentInChildren<PlayerInteractor>();
             if (playerInteractor != null)
             {
                 playerInteractor.earnCoins(5);

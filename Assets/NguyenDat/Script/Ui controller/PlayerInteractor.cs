@@ -216,6 +216,7 @@ public class PlayerInteractor : MonoBehaviour
     }
     public void earnCoins(int amount)
     {
+        Debug.Log("Earned Coins: " + amount);
         Coins += amount;
         if (CointsText != null)
         {
