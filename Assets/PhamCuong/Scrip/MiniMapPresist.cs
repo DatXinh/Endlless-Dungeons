@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 public class MiniMapPresist : MonoBehaviour
 {
     private static MiniMapPresist instance;
-
+    public GameObject minimapCamera;
+    public GameObject rawImage;
+    public GameObject border;
     void Awake()
     {
         if (instance != null && instance != this)
@@ -25,6 +27,7 @@ public class MiniMapPresist : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+
         string currentScene = scene.name;
 
         // Danh sách các scene KHÔNG cần minimap
@@ -41,16 +44,16 @@ public class MiniMapPresist : MonoBehaviour
     void SetMinimapVisible(bool visible)
     {
         if (instance == null) return; // tránh lỗi khi instance chưa được khởi tạo
-        // Ẩn hoặc hiện camera minimap
-        Transform minimapCamera = transform.Find("MinimapCamera");
-        if (minimapCamera) minimapCamera.gameObject.SetActive(visible);
+        //Transform minimapCamera = transform.Find("MinimapCamera");
 
-        // Ẩn hoặc hiện RawImage
+        if (minimapCamera) minimapCamera.SetActive(visible);
         
-        Transform rawImage = transform.Find("MinimapDisplay");
-        if (rawImage) rawImage.gameObject.SetActive(visible);
-        //border
-        Transform border = transform.Find("Border");
-        if (border) border.gameObject.SetActive(visible);
+     
+        
+        //Transform rawImage = transform.Find("MinimapDisplay");
+        if (rawImage) rawImage.SetActive(visible);
+        
+        //Transform border = transform.Find("Border");
+        if (border) border.SetActive(visible);
     }
 }

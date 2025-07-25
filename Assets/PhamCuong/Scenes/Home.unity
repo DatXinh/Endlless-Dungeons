@@ -4194,6 +4194,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0764a641f2ee4b4c85e7b01fac4696b, type: 3}
+--- !u!1 &279986236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3949508947989672610, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+  m_PrefabInstance: {fileID: 1480882101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &284629041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142493729611151165, guid: 0edc144901fd8b34091595b0ea405dfd, type: 3}
@@ -5740,6 +5745,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7463384940252236279, guid: d0764a641f2ee4b4c85e7b01fac4696b, type: 3}
   m_PrefabInstance: {fileID: 1799690498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &593198480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2121816561182492337, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+  m_PrefabInstance: {fileID: 1480882101}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &594578188
 PrefabInstance:
@@ -47611,6 +47621,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182842805}
   m_CullTransparentMesh: 1
+--- !u!1 &1199497859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2332405091931019459, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+  m_PrefabInstance: {fileID: 1480882101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1201856948
 GameObject:
   m_ObjectHideFlags: 0
@@ -53781,6 +53796,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6173036865079375544, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: border
+      value: 
+      objectReference: {fileID: 593198480}
+    - target: {fileID: 6173036865079375544, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: rawImage
+      value: 
+      objectReference: {fileID: 279986236}
+    - target: {fileID: 6173036865079375544, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: minimapCamera
+      value: 
+      objectReference: {fileID: 1199497859}
     - target: {fileID: 6520021204409828451, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -53793,7 +53820,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestPlayer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4246689262460740559, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -71390,6 +71418,8 @@ MonoBehaviour:
   musicSource: {fileID: 1204056387}
   sfxSource: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 2f93be3ffd5536141bfa93e26b1cdfa2, type: 2}
+  AudioSource:
+  - {fileID: 0}
 --- !u!4 &1822190328
 Transform:
   m_ObjectHideFlags: 0
@@ -73184,7 +73214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2096727963
 MonoBehaviour:
   m_ObjectHideFlags: 0
