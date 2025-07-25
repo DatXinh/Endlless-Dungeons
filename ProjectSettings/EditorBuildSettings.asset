@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/PhamCuong/Scenes/Start Game.unity
     guid: 40df67441d585c546891c2ed3bf576af
-  - enabled: 1
+  - enabled: 0
     path: Assets/PhamCuong/Scenes/LoadScene.unity
     guid: 38ceb8265113672418dfb37e7248c3f1
-  - enabled: 1
+  - enabled: 0
     path: Assets/PhamCuong/Scenes/Home.unity
     guid: f8228573dc7628c4db6d0ecce888fa7b
   - enabled: 1
@@ -38,6 +35,48 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NguyenDat/Secens/Dungeons/Tier1/1-Shop.unity
     guid: c66cd3d5107e9714a84d7ff6e548a49e
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier2/2-1.unity
+    guid: 68c01713317afea42b71de50cabd7a30
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier2/2-2.unity
+    guid: 9b7f624e873b67b43be55a8e30ba19f6
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier2/2-3.unity
+    guid: ad1dbde7799929843913ca8506a14c06
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier2/2-4.unity
+    guid: f587037bf3dc78f45b2487a2b31ed358
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier2/2-5.unity
+    guid: 373b4cdd2ac23cf4cac76f48a02c22cb
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier2/2-Boss.unity
+    guid: cdb6ab745fa10264b9a0598fb8199a5f
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier2/2-Shop.unity
+    guid: a39f33b51471297409d85d278e2c2e2e
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier3/3-1.unity
+    guid: fc18046dabf8f3541bc6cf0454f4f14c
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier3/3-2.unity
+    guid: 437b96815b8d2c84796e93fda33c1f09
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier3/3-3.unity
+    guid: 8e1365dc059eaa1438085d897942c154
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier3/3-4.unity
+    guid: 8476b02cfef7cd743a900475a210dbcb
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier3/3-5.unity
+    guid: 80e1bfca4e8fcc743a5eb2fc3fafa6e1
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier3/3-Boss.unity
+    guid: c88d4742bc1c5144ab28fa7237b34a2e
+  - enabled: 1
+    path: Assets/NguyenDat/Secens/Dungeons/Tier3/3-Shop.unity
+    guid: 84e56b3f8d539a747934979b73c1b855
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: dec091bff1bf79d40b6291fd17c00eeb, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: b421a8b815c1b744bac5e80fde6e96f3, type: 2}
