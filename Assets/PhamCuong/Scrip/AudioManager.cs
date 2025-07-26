@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Mixer")]
     public AudioMixer audioMixer; // Kéo MainMixer vào đây trong Inspector
-    public AudioSource [] AudioSource;
+
     private void Awake()
     {
         // Singleton Pattern
@@ -24,8 +24,6 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        AudioSource = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
     }
 
     /// <summary>
