@@ -5,7 +5,7 @@ public class BrainMole : MonoBehaviour
     [Header("Cone Settings")]
     public float coneAngle = 60f; // Góc hình nón (độ)
     public float coneLength = 5f; // Độ dài hình nón
-    public Vector2 coneDirection; // Hướng hình nón (theo local space)
+    public Vector2 coneDirection = Vector2.right; // Hướng hình nón (theo local space)
 
     [Header("Detection")]
     public LayerMask detectionMask; // Lớp để phát hiện (nên để Player)
@@ -53,9 +53,6 @@ public class BrainMole : MonoBehaviour
 
     void Update()
     {
-        // Cập nhật coneDirection.x theo scale.x
-        coneDirection.x = Mathf.Sign(transform.localScale.x) * Mathf.Abs(coneDirection.x);
-
         canAttack = CheckPlayerInCone();
 
         // Nếu có thể tấn công thì không cho phép di chuyển, ngược lại cho phép di chuyển

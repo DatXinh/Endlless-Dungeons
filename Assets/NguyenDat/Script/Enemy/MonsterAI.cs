@@ -17,6 +17,7 @@ public class monsterAI : MonoBehaviour
     private float lastDistanceToPlayer = 0f;
     private bool canMove = false;
 
+    private SpriteRenderer spriteRenderer;
     private int idleFacing = 1; // 1: phải, -1: trái
 
     void Awake()
@@ -29,11 +30,12 @@ public class monsterAI : MonoBehaviour
                 playerTransform = player.transform;
             }
         }
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
     {
-        if (playerTransform == null)
+        if (playerTransform == null || spriteRenderer == null)
             return;
 
         checkTimer -= Time.deltaTime;
@@ -52,12 +54,10 @@ public class monsterAI : MonoBehaviour
             // Nếu phát hiện player thì di chuyển về phía player
             transform.position += lastDirectionToPlayer * moveSpeed * Time.deltaTime;
 
-            // Lật object theo hướng di chuyển về phía player
+            // Lật sprite theo hướng di chuyển về phía player
             if (lastDirectionToPlayer.x != 0)
             {
-                Vector3 scale = transform.localScale;
-                scale.x = lastDirectionToPlayer.x > 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-                transform.localScale = scale;
+                spriteRenderer.flipX = lastDirectionToPlayer.x > 0;
             }
         }
         else if (!canMove && isMovable)
@@ -69,10 +69,8 @@ public class monsterAI : MonoBehaviour
                 rotateTimer = rotateInterval;
                 idleFacing *= -1; // Đổi hướng
             }
-            // Lật object theo hướng idleFacing
-            Vector3 scale = transform.localScale;
-            scale.x = idleFacing > 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-            transform.localScale = scale;
+            // Lật sprite theo hướng idleFacing
+            spriteRenderer.flipX = idleFacing > 0;
         }
         // Nếu isMovable == false thì không quay trái/phải, giữ nguyên hướng hiện tại
     }

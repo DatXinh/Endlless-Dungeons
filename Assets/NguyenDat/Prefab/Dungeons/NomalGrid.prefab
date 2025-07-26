@@ -89,7 +89,6 @@ MonoBehaviour:
   minTrapPerRoom: 3
   maxTrapPerRoom: 7
   portalPrefab: {fileID: 7122153849931878849, guid: 55793048b3580a14182160e26dd09e4d, type: 3}
-  chestPrefab: {fileID: 1046014072255985031, guid: 8f5344b879df2dc4197305020cee4e05, type: 3}
   decoParent: {fileID: 7858190165641444592}
   trapParent: {fileID: 7458278192787257870}
 --- !u!114 &455017040245435748
@@ -168,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3229131340919828191}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Enemys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +200,7 @@ GameObject:
   - component: {fileID: 1084357027247802070}
   - component: {fileID: 3492663833303569959}
   - component: {fileID: 3732989906914489683}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

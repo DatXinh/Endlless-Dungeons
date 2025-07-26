@@ -58,10 +58,6 @@ public class PLayerMP : MonoBehaviour
         if (currentMP >= 0)
         {
             currentMP += amount;
-            if (currentMP > maxMP)
-            {
-                currentMP = maxMP;
-            }
             if (manaBar != null)
             {
                 manaBar.fillAmount = (float)currentMP / maxMP; // Update mana bar
@@ -78,6 +74,10 @@ public class PLayerMP : MonoBehaviour
                 {
                     floatingDamage.SetDamageValue(amount, Color.blue); // Set the mana recovery value and color
                 }
+            }
+            if (currentMP > maxMP)
+            {
+                currentMP = maxMP;
             }
         }
     }

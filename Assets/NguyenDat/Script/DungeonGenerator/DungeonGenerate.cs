@@ -35,8 +35,6 @@ public class DungeonGenerate : MonoBehaviour
 
     [Header("Portal")]
     public GameObject portalPrefab;
-    [Header("Chest")]
-    public GameObject chestPrefab;
 
     public Transform decoParent;
     public Transform trapParent;
@@ -52,10 +50,16 @@ public class DungeonGenerate : MonoBehaviour
         DrawMap();
     }
 
-
+    /// <summary>
+    /// Tự động tính mapRange và roomSpacing dựa trên số lượng và kích thước phòng (giá trị nhỏ hơn, map compact hơn nữa)
+    /// </summary>
     private void AutoCalculateMapRangeAndRoomSpacing()
     {
+        // Giảm spacing tối đa, phòng gần nhau nhất có thể mà không chồng lên nhau
         roomSpacing = Mathf.Max(1, roomSizeMinMax.y / 6);
+
+        // mapRange nhỏ hơn nữa, map sẽ rất compact
+        // Công thức: mapRange = (maxRoomCount * (maxRoomSize + roomSpacing)) / 4
         int maxRoomSize = Mathf.Max(roomSizeMinMax.x, roomSizeMinMax.y);
         mapRange = Mathf.CeilToInt((maxRoomCount * (maxRoomSize + roomSpacing)) / 6f);
     }
@@ -76,6 +80,8 @@ public class DungeonGenerate : MonoBehaviour
         RectInt startRoom = new RectInt(-10, -10, 20, 20);
         rooms.Add(startRoom);
         CarveRoom(startRoom);
+        SpawnRoomDeco(startRoom);
+        SpawnRoomTrap(startRoom);
 
         int roomCount = Random.Range(minRoomCount, maxRoomCount + 1);
 
@@ -102,7 +108,6 @@ public class DungeonGenerate : MonoBehaviour
             rooms.Add(newRoom);
             CarveRoom(newRoom);
             SpawnRoomDeco(newRoom);
-            SpawnRoomTrap(newRoom);
         }
 
         List<(float dist, int a, int b)> connections = new();
@@ -147,10 +152,7 @@ public class DungeonGenerate : MonoBehaviour
         monsterSpawner.SpawnAllMonsters(rooms, groundTilemap);
 
         // === Spawn portal in the farthest room from center ===
-        int portalRoomIndex = SpawnPortalInFarthestRoom();
-
-        // === Spawn chest in every room except start and portal room ===
-        SpawnChestsInRooms(portalRoomIndex);
+        SpawnPortalInFarthestRoom();
     }
 
     void CarveRoom(RectInt room)
@@ -319,39 +321,33 @@ public class DungeonGenerate : MonoBehaviour
             trapObj.name = prefab.name;
         }
     }
-    private int SpawnPortalInFarthestRoom()
+
+    /// <summary>
+    /// Tìm phòng xa tâm nhất và sinh portalPrefab ở đó
+    /// </summary>
+    private void SpawnPortalInFarthestRoom()
     {
         if (portalPrefab == null || rooms.Count == 0)
-            return -1;
+            return;
 
+        // Tâm bản đồ là (0,0) hoặc tâm phòng đầu tiên
         Vector2 center = Vector2.zero;
-        float maxDist = float.MinValue;
-        int farthestRoomIndex = 0;
 
-        for (int i = 0; i < rooms.Count; i++)
+        float maxDist = float.MinValue;
+        RectInt farthestRoom = rooms[0];
+
+        foreach (var room in rooms)
         {
-            float dist = Vector2.Distance(rooms[i].center, center);
+            float dist = Vector2.Distance(room.center, center);
             if (dist > maxDist)
             {
                 maxDist = dist;
-                farthestRoomIndex = i;
+                farthestRoom = room;
             }
         }
 
-        RectInt farthestRoom = rooms[farthestRoomIndex];
+        // Lấy vị trí world center của phòng xa nhất
         Vector3 portalPos = new Vector3(farthestRoom.center.x + 0.5f, farthestRoom.center.y + 0.5f, 0f);
         Instantiate(portalPrefab, portalPos, Quaternion.identity);
-        return farthestRoomIndex;
-    }
-    private void SpawnChestsInRooms(int portalRoomIndex)
-    {
-        if (chestPrefab == null) return;
-        for (int i = 0; i < rooms.Count; i++)
-        {
-            if (i == 0 || i == portalRoomIndex) continue; // bỏ phòng đầu và phòng portal
-            RectInt room = rooms[i];
-            Vector3 chestPos = new Vector3(room.center.x + 0.5f, room.center.y + 0.5f, 0f);
-            Instantiate(chestPrefab, chestPos, Quaternion.identity);
-        }
     }
 }

@@ -154,7 +154,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -168,7 +168,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -233,12 +233,12 @@ TextureImporter:
       name: Chests_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 224
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 223
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: Chests_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 224
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 223
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: Chests_2
       rect:
         serializedVersion: 2
-        x: 97
-        y: 224
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 96
+        y: 223
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,12 +299,12 @@ TextureImporter:
       name: Chests_3
       rect:
         serializedVersion: 2
-        x: 145
-        y: 224
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 144
+        y: 223
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,12 +321,12 @@ TextureImporter:
       name: Chests_4
       rect:
         serializedVersion: 2
-        x: 194
-        y: 224
-        width: 28
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 193
+        y: 223
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,12 +343,12 @@ TextureImporter:
       name: Chests_5
       rect:
         serializedVersion: 2
-        x: 2
-        y: 192
-        width: 29
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 191
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,12 +365,12 @@ TextureImporter:
       name: Chests_6
       rect:
         serializedVersion: 2
-        x: 50
-        y: 192
-        width: 30
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 191
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,12 +387,12 @@ TextureImporter:
       name: Chests_7
       rect:
         serializedVersion: 2
-        x: 98
-        y: 192
-        width: 40
-        height: 9
-      alignment: 9
-      pivot: {x: 0.36708316, y: 0}
+        x: 97
+        y: 191
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -409,12 +409,12 @@ TextureImporter:
       name: Chests_8
       rect:
         serializedVersion: 2
-        x: 146
-        y: 192
-        width: 39
-        height: 11
-      alignment: 9
-      pivot: {x: 0.38107848, y: 0}
+        x: 145
+        y: 191
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -431,12 +431,12 @@ TextureImporter:
       name: Chests_9
       rect:
         serializedVersion: 2
-        x: 194
-        y: 192
-        width: 39
-        height: 11
-      alignment: 9
-      pivot: {x: 0.375277, y: 0}
+        x: 193
+        y: 191
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -453,12 +453,12 @@ TextureImporter:
       name: Chests_10
       rect:
         serializedVersion: 2
-        x: 2
-        y: 160
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 159
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -475,12 +475,12 @@ TextureImporter:
       name: Chests_11
       rect:
         serializedVersion: 2
-        x: 50
-        y: 160
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 159
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -497,12 +497,12 @@ TextureImporter:
       name: Chests_12
       rect:
         serializedVersion: 2
-        x: 97
-        y: 160
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 96
+        y: 159
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -519,12 +519,12 @@ TextureImporter:
       name: Chests_13
       rect:
         serializedVersion: 2
-        x: 145
-        y: 160
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 144
+        y: 159
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -541,12 +541,12 @@ TextureImporter:
       name: Chests_14
       rect:
         serializedVersion: 2
-        x: 194
-        y: 160
-        width: 28
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 193
+        y: 159
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -563,12 +563,12 @@ TextureImporter:
       name: Chests_15
       rect:
         serializedVersion: 2
-        x: 2
-        y: 128
-        width: 29
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 127
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -585,12 +585,12 @@ TextureImporter:
       name: Chests_16
       rect:
         serializedVersion: 2
-        x: 50
-        y: 128
-        width: 30
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 127
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -607,12 +607,12 @@ TextureImporter:
       name: Chests_17
       rect:
         serializedVersion: 2
-        x: 98
-        y: 128
-        width: 40
-        height: 9
-      alignment: 9
-      pivot: {x: 0.3614273, y: 0.012568156}
+        x: 97
+        y: 127
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -629,12 +629,12 @@ TextureImporter:
       name: Chests_18
       rect:
         serializedVersion: 2
-        x: 146
-        y: 128
-        width: 39
-        height: 11
-      alignment: 9
-      pivot: {x: 0.37817812, y: 0}
+        x: 145
+        y: 127
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -651,12 +651,12 @@ TextureImporter:
       name: Chests_19
       rect:
         serializedVersion: 2
-        x: 194
-        y: 128
-        width: 39
-        height: 11
-      alignment: 9
-      pivot: {x: 0.37237665, y: 0}
+        x: 193
+        y: 127
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -673,12 +673,12 @@ TextureImporter:
       name: Chests_20
       rect:
         serializedVersion: 2
-        x: 2
-        y: 96
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 95
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -695,12 +695,12 @@ TextureImporter:
       name: Chests_21
       rect:
         serializedVersion: 2
-        x: 50
-        y: 96
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 95
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -717,12 +717,12 @@ TextureImporter:
       name: Chests_22
       rect:
         serializedVersion: 2
-        x: 97
-        y: 96
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 96
+        y: 95
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -739,12 +739,12 @@ TextureImporter:
       name: Chests_23
       rect:
         serializedVersion: 2
-        x: 145
-        y: 96
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 144
+        y: 95
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -761,12 +761,12 @@ TextureImporter:
       name: Chests_24
       rect:
         serializedVersion: 2
-        x: 194
-        y: 96
-        width: 28
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 193
+        y: 95
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -783,12 +783,12 @@ TextureImporter:
       name: Chests_25
       rect:
         serializedVersion: 2
-        x: 2
-        y: 64
-        width: 29
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 63
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -805,12 +805,12 @@ TextureImporter:
       name: Chests_26
       rect:
         serializedVersion: 2
-        x: 50
-        y: 64
-        width: 30
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 63
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -827,12 +827,12 @@ TextureImporter:
       name: Chests_27
       rect:
         serializedVersion: 2
-        x: 98
-        y: 64
-        width: 40
-        height: 9
-      alignment: 9
-      pivot: {x: 0.36296806, y: 0.017400954}
+        x: 97
+        y: 63
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -849,12 +849,12 @@ TextureImporter:
       name: Chests_28
       rect:
         serializedVersion: 2
-        x: 146
-        y: 64
-        width: 39
-        height: 11
-      alignment: 9
-      pivot: {x: 0.37150145, y: -0.0142374905}
+        x: 145
+        y: 63
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -871,12 +871,12 @@ TextureImporter:
       name: Chests_29
       rect:
         serializedVersion: 2
-        x: 194
-        y: 64
-        width: 39
-        height: 11
-      alignment: 9
-      pivot: {x: 0.37150103, y: -0.01423541}
+        x: 193
+        y: 63
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -893,12 +893,12 @@ TextureImporter:
       name: Chests_30
       rect:
         serializedVersion: 2
-        x: 2
-        y: 32
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1
+        y: 31
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -915,12 +915,12 @@ TextureImporter:
       name: Chests_31
       rect:
         serializedVersion: 2
-        x: 50
-        y: 32
-        width: 28
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 49
+        y: 31
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -937,12 +937,12 @@ TextureImporter:
       name: Chests_32
       rect:
         serializedVersion: 2
-        x: 97
-        y: 32
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 96
+        y: 31
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -959,12 +959,12 @@ TextureImporter:
       name: Chests_33
       rect:
         serializedVersion: 2
-        x: 145
-        y: 32
-        width: 29
-        height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 144
+        y: 31
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -981,12 +981,12 @@ TextureImporter:
       name: Chests_34
       rect:
         serializedVersion: 2
-        x: 194
-        y: 32
-        width: 28
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 193
+        y: 31
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1003,12 +1003,12 @@ TextureImporter:
       name: Chests_35
       rect:
         serializedVersion: 2
-        x: 2
+        x: 1
         y: 0
-        width: 29
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1025,12 +1025,12 @@ TextureImporter:
       name: Chests_36
       rect:
         serializedVersion: 2
-        x: 50
+        x: 49
         y: 0
-        width: 30
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1047,12 +1047,12 @@ TextureImporter:
       name: Chests_37
       rect:
         serializedVersion: 2
-        x: 98
+        x: 97
         y: 0
-        width: 40
-        height: 9
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 42
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1069,12 +1069,12 @@ TextureImporter:
       name: Chests_38
       rect:
         serializedVersion: 2
-        x: 146
+        x: 145
         y: 0
-        width: 39
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 41
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1091,12 +1091,12 @@ TextureImporter:
       name: Chests_39
       rect:
         serializedVersion: 2
-        x: 194
+        x: 193
         y: 0
-        width: 39
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 41
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1113,7 +1113,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c031454469818fc42b72b9a18201c907
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 

@@ -23,9 +23,9 @@ TagManager:
   - Player
   - Enemy
   - Wall
-  - 
-  - 
-  - 
+  - Minimap
+  - Icon
+  - Ground
   - 
   - 
   - 
