@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9164316611890209985}
   - component: {fileID: 4582960477819689258}
   - component: {fileID: 7652576496962749228}
-  - component: {fileID: 1516620218787386383}
   m_Layer: 0
   m_Name: ManaBox
   m_TagString: Enemy
@@ -163,18 +162,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1516620218787386383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5670163665283357265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b271aeab73ea4843992e82df178100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 1
-  currentHP: 0
-  isInvulnerable: 0

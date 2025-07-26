@@ -22,7 +22,7 @@ public class LaserWeapon : MonoBehaviour
 
     private void Awake()
     {
-        weaponData = GetComponent<WeaponData>();
+        weaponData = GetComponentInParent<WeaponData>();
         playerMP = GetComponentInParent<PLayerMP>();
         damage = weaponData.weaponDamage;
         manaCost = weaponData.weaponManaCost;
