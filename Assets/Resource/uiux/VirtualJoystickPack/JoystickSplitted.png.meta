@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -125,10 +125,10 @@ TextureImporter:
       name: JoystickSplitted_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 183
-        width: 140
-        height: 145
+        x: 28
+        y: 27
+        width: 301
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,77 +143,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: JoystickSplitted_1
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 173
-        width: 151
-        height: 156
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 531855198cf453780800000000000000
-      internalID: -8703962981973262027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JoystickSplitted_2
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 28
-        width: 140
-        height: 145
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89001389233319320800000000000000
-      internalID: 2562885955345252504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JoystickSplitted_3
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 27
-        width: 149
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0fedbd2fcf8786bd0800000000000000
-      internalID: -2636724554023837968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 48469a0413568e543b8269ee32025347
     internalID: 0
     vertices: []
     indices: 
