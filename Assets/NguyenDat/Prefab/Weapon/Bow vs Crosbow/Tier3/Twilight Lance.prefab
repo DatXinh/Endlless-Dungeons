@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 1639298856630507314}
   - component: {fileID: 6701283655671869262}
   - component: {fileID: -5085261072878251149}
-  - component: {fileID: 2074724587846466730}
   - component: {fileID: 7872638270469921318}
   m_Layer: 0
   m_Name: Twilight Lance
@@ -209,22 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5d6c51db39254aac4c03fbd894c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDamage: 0
-  weaponCriticalChange: 0
---- !u!114 &2074724587846466730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4999439687539254567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 9147986639488481567, guid: e9f8b05ac05f06e409c201b825527c00, type: 3}
-  weaponDame: {fileID: 0}
   weaponDamage: 0
   weaponCriticalChange: 0
 --- !u!114 &7872638270469921318

@@ -119,63 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &148416402
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3856021167722425894, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002112644532160807, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
-      propertyPath: m_Name
-      value: Fallen Dungeon Keeper
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d2326ea20f6408540b5d7f7e159c7985, type: 3}
 --- !u!1 &483972517
 GameObject:
   m_ObjectHideFlags: 0
@@ -33786,6 +33729,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1956065185109660643, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956065185109660643, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956065185109660643, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 2102032178402211339, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -33841,4 +33796,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 483972519}
   - {fileID: 4254449663040499433}
-  - {fileID: 148416402}
