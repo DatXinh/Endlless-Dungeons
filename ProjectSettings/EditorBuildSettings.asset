@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/PhamCuong/Scenes/Start Game.unity
     guid: 40df67441d585c546891c2ed3bf576af
-  - enabled: 0
+  - enabled: 1
     path: Assets/PhamCuong/Scenes/LoadScene.unity
     guid: 38ceb8265113672418dfb37e7248c3f1
-  - enabled: 0
+  - enabled: 1
     path: Assets/PhamCuong/Scenes/Home.unity
     guid: f8228573dc7628c4db6d0ecce888fa7b
   - enabled: 1
