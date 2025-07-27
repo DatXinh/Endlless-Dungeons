@@ -1,34 +1,53 @@
 ﻿using UnityEngine;
 
-public class PauseManager : MonoBehaviour
+public class CanvasToggle : MonoBehaviour
 {
-    public GameObject pauseMenu; // Gán canvas vào đây
+    public GameObject[] canvases;
 
-    private bool isPaused = false;
-
-    public void TogglePause()
+    // Hiện 1 canvas theo index
+    public void ShowCanvas(int index)
     {
-        if (isPaused)
+        if (index >= 0 && index < canvases.Length)
         {
-            ResumeGame();
-        }
-        else
-        {
-            PauseGame();
+            canvases[index].SetActive(true);
+            CheckPauseState();
         }
     }
 
-    public void PauseGame()
+    // Tắt 1 canvas theo index
+    public void HideCanvas(int index)
     {
-        Time.timeScale = 0f;
-        pauseMenu.SetActive(true);
-        isPaused = true;
+        if (index >= 0 && index < canvases.Length)
+        {
+            canvases[index].SetActive(false);
+            CheckPauseState();
+        }
     }
 
-    public void ResumeGame()
+    // Ẩn tất cả canvas
+    public void HideAllCanvases()
     {
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
-        isPaused = false;
+        foreach (GameObject canvas in canvases)
+        {
+            canvas.SetActive(false);
+        }
+        CheckPauseState();
+    }
+
+    // Kiểm tra xem có canvas nào đang bật không => dừng/thả thời gian
+    private void CheckPauseState()
+    {
+        bool anyActive = false;
+
+        foreach (GameObject canvas in canvases)
+        {
+            if (canvas.activeSelf)
+            {
+                anyActive = true;
+                break;
+            }
+        }
+
+        Time.timeScale = anyActive ? 0f : 1f;
     }
 }
