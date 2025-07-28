@@ -467,7 +467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 8674347983989703571}
   animator: {fileID: 6840336915560201318}
   parameterName: IsDead
   scriptsToDisable:
@@ -492,6 +491,7 @@ MonoBehaviour:
   healthBar: {fileID: 4463573937263329017}
   maxHeal: {fileID: 1327786280847048705}
   currentHeal: {fileID: 8957305925538815620}
+  bossPlayDeadAnimation: {fileID: 0}
 --- !u!1001 &2944915526320190290
 PrefabInstance:
   m_ObjectHideFlags: 0

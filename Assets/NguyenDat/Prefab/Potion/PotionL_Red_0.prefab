@@ -162,7 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 75
+  CoinCost: 30
   Tooltip: {fileID: 3326465571440094754}
+  isSale: 0
+  coinText: {fileID: 1260981919753761382}
 --- !u!1 &2118530243489694964
 GameObject:
   m_ObjectHideFlags: 0

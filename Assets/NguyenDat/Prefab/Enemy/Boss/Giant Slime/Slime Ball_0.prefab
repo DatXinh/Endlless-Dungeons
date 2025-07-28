@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 247880460002850706}
   - component: {fileID: 1436118001446244559}
   - component: {fileID: 8117422956155750440}
+  - component: {fileID: -8942669524782690236}
   m_Layer: 0
   m_Name: Slime Ball_0
   m_TagString: Untagged
@@ -196,3 +197,16 @@ MonoBehaviour:
   IsEnemy: 1
   canPierce: 1
   lifeTime: 5
+--- !u!114 &-8942669524782690236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706263220497451186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 40

@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeadMesseng : MonoBehaviour
 {
@@ -7,10 +8,7 @@ public class DeadMesseng : MonoBehaviour
     public GameObject deadMesseng;
 
     public PlayerHP playerHP;
-    private void Awake()
-    {
-        playerHP = GetComponentInParent<PlayerHP>();
-    }
+    public PlayerInteractor playerInteractor;
     public  void Revive()
     {
         rightPanel.SetActive(true);
@@ -23,6 +21,10 @@ public class DeadMesseng : MonoBehaviour
     }
     public void Giveup()
     {
-
+        playerInteractor.Coins = 50;
+        playerInteractor.setCoinNumber();
+        playerInteractor.RemoveAllWeapons();
+        SceneLoadManager.nextSceneName = "Home";
+        SceneManager.LoadScene("LoadScene");
     }
 }

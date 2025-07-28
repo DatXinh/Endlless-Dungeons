@@ -4,158 +4,135 @@ using System.Collections.Generic;
 
 public class SlimeBossAI : MonoBehaviour
 {
-    public float moveSpeed; // Tốc độ di chuyển của boss
+    [Header("Movement")]
+    public float moveSpeed = 2f;
+    public SpriteRenderer spriteRenderer;
 
-    public SpriteRenderer spriteRenderer; // Gán SpriteRenderer trong Inspector
-
-    public GameObject slimePrefab;// Prefab slime con, gán trong Inspector
-    public GameObject rainbowSlimePrefab; // Prefab Rainbow Slime, gán trong Inspector
-    public int slimeCount; // Số lượng slime con triệu hồi
-    public float spawnRadius; // Bán kính xuất hiện slime con quanh boss
-    public int maxSlimeCount = 21; // Giới hạn số lượng slime con
+    [Header("Summon Slimes")]
+    public GameObject slimePrefab;
+    public GameObject rainbowSlimePrefab;
+    public int slimeCount = 5;
+    public int maxSlimeCount = 21;
+    public float spawnRadius = 3f;
     public Transform slimeParent;
 
-    public GameObject slimeBallPrefab; // Prefab quả cầu slime, gán trong Inspector
-    public float slimeBallRadius; // Bán kính sinh ra quả cầu slime quanh boss
-    public float slimeBallSpeed; // Tốc độ phóng quả cầu slime
-    public float sequentialDelay; // Độ trễ giữa các lần phóng liên tiếp
+    [Header("Slime Ball Attack")]
+    public GameObject slimeBallPrefab;
+    public float slimeBallRadius = 3f;
+    public float slimeBallSpeed = 5f;
+    public float sequentialDelay = 0.1f;
 
     private Transform playerTransform;
     private List<GameObject> spawnedSlimeBalls = new List<GameObject>();
+    private readonly WaitForSeconds wait2s = new WaitForSeconds(2f);
+    private WaitForSeconds waitSequential;
 
     void Start()
     {
-        // Tìm GameObject có tag "Player"
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            playerTransform = player.transform;
-        }
-
-        // Bắt đầu vòng lặp hành động mỗi 2 giây
+        playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
+        waitSequential = new WaitForSeconds(sequentialDelay);
         StartCoroutine(BossActionLoop());
     }
 
     void Update()
     {
-        if (playerTransform != null)
+        if (playerTransform == null) return;
+
+        Vector3 dir = (playerTransform.position - transform.position).normalized;
+        transform.position += dir * moveSpeed * Time.deltaTime;
+
+        if (spriteRenderer != null && Mathf.Abs(dir.x) > 0.01f)
         {
-
-            // Di chuyển về phía người chơi
-            Vector3 direction = (playerTransform.position - transform.position).normalized;
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
-
-            // Lật sprite theo hướng di chuyển
-            if (spriteRenderer != null)
-            {
-                if (direction.x != 0)
-                {
-                    spriteRenderer.flipX = direction.x < 0;
-                }
-            }
+            spriteRenderer.flipX = dir.x < 0;
         }
     }
 
-    // Vòng lặp hành động: cứ 3 giây chọn 1 hành động
     private IEnumerator BossActionLoop()
     {
         while (true)
         {
             int action = Random.Range(0, 2); // 0: summon, 1: attack
+
             if (action == 0)
-            {
                 yield return SummonSlimes();
-            }
             else
-            {
-                Attack();
-                // Attack đã tự xử lý thời gian chờ trong AttackRoutine
-                // Đợi thời gian phóng bóng nếu sequential
-                float waitTime = sequentialDelay * 12f;
-                yield return new WaitForSeconds(waitTime);
-            }
-            // Đảm bảo tổng thời gian mỗi vòng là ít nhất 2 giây
-            yield return new WaitForSeconds(Mathf.Max(0, 2f - Time.deltaTime));
+                yield return Attack();
+
+            yield return wait2s;
         }
     }
 
-    // Hàm triệu hồi slime con sau 3 giây
     private IEnumerator SummonSlimes()
     {
         yield return new WaitForSeconds(3f);
 
-        if (slimePrefab != null && slimeParent != null)
+        if (slimePrefab == null || slimeParent == null) yield break;
+
+        int currentCount = slimeParent.childCount;
+        int amount = Mathf.Min(slimeCount, maxSlimeCount - currentCount);
+        if (amount <= 0) yield break;
+
+        for (int i = 0; i < amount; i++)
         {
-            int currentSlimeCount = slimeParent.childCount;
+            Vector2 offset = Random.insideUnitCircle.normalized * spawnRadius;
+            Vector3 spawnPos = transform.position + (Vector3)offset;
 
-            int spawnAmount = Mathf.Min(slimeCount, maxSlimeCount - currentSlimeCount);
+            GameObject prefab = (Random.value <= 0.1f && rainbowSlimePrefab != null) ? rainbowSlimePrefab : slimePrefab;
 
-            for (int i = 0; i < spawnAmount; i++)
-            {
-                Vector2 offset = Random.insideUnitCircle.normalized * spawnRadius;
-                Vector3 spawnPos = transform.position + new Vector3(offset.x, offset.y, 0);
-
-                // 10% cơ hội sinh rainbow slime
-                GameObject prefabToSpawn = (Random.value <= 0.1f && rainbowSlimePrefab != null)
-                    ? rainbowSlimePrefab
-                    : slimePrefab;
-
-                GameObject slime = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
-                slime.transform.SetParent(slimeParent);
-            }
+            GameObject slime = Instantiate(prefab, spawnPos, Quaternion.identity, slimeParent);
         }
     }
 
-
-    // Phương thức tấn công sinh ra 12 quả cầu slime
-    public void Attack()
+    private IEnumerator Attack()
     {
-        if (slimeBallPrefab == null || playerTransform == null) return;
+        if (slimeBallPrefab == null || playerTransform == null) yield break;
 
         spawnedSlimeBalls.Clear();
         float angleStep = 360f / 12f;
+
         for (int i = 0; i < 12; i++)
         {
             float angle = i * angleStep * Mathf.Deg2Rad;
             Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * slimeBallRadius;
             Vector3 spawnPos = transform.position + offset;
+
             GameObject ball = Instantiate(slimeBallPrefab, spawnPos, Quaternion.identity);
             spawnedSlimeBalls.Add(ball);
         }
-        StartCoroutine(AttackRoutine());
+
+        int attackType = Random.Range(0, 2); // 0: all at once, 1: sequential
+        yield return StartCoroutine(attackType == 0 ? FireAllAtOnce() : FireSequentially());
+
+        spawnedSlimeBalls.Clear();
     }
 
-    // Phóng slime ball ngay sau khi sinh ra
-    private IEnumerator AttackRoutine()
+    private IEnumerator FireAllAtOnce()
     {
-        int attackType = Random.Range(0, 2); // 0 hoặc 1
-        if (attackType == 0)
+        foreach (GameObject ball in spawnedSlimeBalls)
         {
-            // Phóng tất cả cùng lúc
-            foreach (var ball in spawnedSlimeBalls)
-            {
-                if (ball != null)
-                {
-                    SlimeBall slimeBall = ball.GetComponent<SlimeBall>();
-                    if (slimeBall != null)
-                        slimeBall.Launch(playerTransform.position, slimeBallSpeed);
-                }
-            }
+            if (ball != null)
+                LaunchBall(ball);
         }
-        else
+        yield return null;
+    }
+
+    private IEnumerator FireSequentially()
+    {
+        foreach (GameObject ball in spawnedSlimeBalls)
         {
-            // Phóng lần lượt từng quả cầu
-            foreach (var ball in spawnedSlimeBalls)
-            {
-                if (ball != null)
-                {
-                    SlimeBall slimeBall = ball.GetComponent<SlimeBall>();
-                    if (slimeBall != null)
-                        slimeBall.Launch(playerTransform.position, slimeBallSpeed);
-                }
-                yield return new WaitForSeconds(sequentialDelay);
-            }
+            if (ball != null)
+                LaunchBall(ball);
+
+            yield return waitSequential;
         }
-        spawnedSlimeBalls.Clear();
+    }
+
+    private void LaunchBall(GameObject ball)
+    {
+        SlimeBall slimeBall = ball.GetComponent<SlimeBall>();
+        if (slimeBall != null)
+        {
+            slimeBall.Launch(playerTransform.position, slimeBallSpeed);
+        }
     }
 }

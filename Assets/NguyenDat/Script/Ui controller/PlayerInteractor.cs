@@ -25,8 +25,8 @@ public class PlayerInteractor : MonoBehaviour
     {
         testWeaponAtk = weaponParent.GetComponent<TestWeaponAtk>();
         scaleWeapon = weaponParent.GetComponent<ScaleWeapon>();
-        playerHP = GetComponentInParent<PlayerHP>();
-        playerMP = GetComponentInParent<PLayerMP>();
+        playerHP = GetComponent<PlayerHP>();
+        playerMP = GetComponent<PLayerMP>();
         if (CointsText != null)
         {
             CointsText.text = Coins.ToString();
@@ -128,7 +128,10 @@ public class PlayerInteractor : MonoBehaviour
             {
                 playerHP.Heal(hPInteracable.healAmount);
                 hPInteracable.Interact();
-                Coins -= 30;
+                if (hPInteracable.isSale)
+                {
+                    Coins -= hPInteracable.CoinCost;
+                }
                 if (CointsText != null)
                 {
                     CointsText.text = Coins.ToString();
@@ -142,7 +145,10 @@ public class PlayerInteractor : MonoBehaviour
             {
                 playerMP.RecoverMP(mPInteracable.ManaAmount);
                 mPInteracable.Interact();
-                Coins -= 30;
+                if (mPInteracable.isSale)
+                {
+                    Coins -= mPInteracable.CoinCost;
+                }
                 if (CointsText != null)
                 {
                     CointsText.text = Coins.ToString();
@@ -218,9 +224,70 @@ public class PlayerInteractor : MonoBehaviour
     {
         Debug.Log("Earned Coins: " + amount);
         Coins += amount;
+        setCoinNumber();
+    }
+    public void setCoinNumber()
+    {
         if (CointsText != null)
         {
             CointsText.text = Coins.ToString();
         }
+    }
+    // Xóa vũ khí đang dùng, nếu còn vũ khí phụ thì chuyển nó thành vũ khí chính
+    public void RemoveCurrentWeapon()
+    {
+        // Nếu không có vũ khí nào thì không làm gì
+        if (weaponSlots[0] == null && weaponSlots[1] == null)
+            return;
+
+        // Nếu có 2 vũ khí
+        if (weaponSlots[0] != null && weaponSlots[1] != null)
+        {
+            // Xóa vũ khí đang dùng
+            GameObject weaponToRemove = weaponSlots[activeWeaponIndex];
+            Destroy(weaponToRemove);
+            // Thay thế vũ khí còn lại thành vũ khí chính
+            int otherIndex = 1 - activeWeaponIndex;
+            weaponSlots[activeWeaponIndex] = null;
+            weaponSlots[0] = weaponSlots[otherIndex];
+            weaponSlots[1] = null;
+            activeWeaponIndex = 0;
+            EquipWeapon(0);
+        }
+        // Nếu chỉ có 1 vũ khí
+        else
+        {
+            if (weaponSlots[0] != null)
+            {
+                Destroy(weaponSlots[0]);
+                weaponSlots[0] = null;
+            }
+            else if (weaponSlots[1] != null)
+            {
+                Destroy(weaponSlots[1]);
+                weaponSlots[1] = null;
+            }
+            activeWeaponIndex = 0;
+            // Ẩn icon vũ khí nếu có
+            if (WeaponIcon != null)
+                WeaponIcon.enabled = false;
+        }
+    }
+
+    // Xóa tất cả vũ khí hiện có
+    public void RemoveAllWeapons()
+    {
+        for (int i = 0; i < weaponSlots.Length; i++)
+        {
+            if (weaponSlots[i] != null)
+            {
+                Destroy(weaponSlots[i]);
+                weaponSlots[i] = null;
+            }
+        }
+        activeWeaponIndex = 0;
+        // Ẩn icon vũ khí nếu có
+        if (WeaponIcon != null)
+            WeaponIcon.enabled = false;
     }
 }

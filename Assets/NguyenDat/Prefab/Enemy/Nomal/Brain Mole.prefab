@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6929901471619393438}
   - component: {fileID: 3082531283968240023}
   - component: {fileID: 3934998504749335663}
-  - component: {fileID: 2549124205298437402}
+  - component: {fileID: 3049067299703353762}
   m_Layer: 7
   m_Name: Brain Mole
   m_TagString: Enemy
@@ -265,7 +265,7 @@ MonoBehaviour:
   scriptsToDisable:
   - {fileID: 6929901471619393438}
   - {fileID: 7407698012709133340}
---- !u!114 &2549124205298437402
+--- !u!114 &3049067299703353762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,16 +274,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6377900764625738663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot:
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
-  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  SpawnBoss: {fileID: 0}
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
   dropRadius: 2
 --- !u!1 &8946566840064408211
 GameObject:
