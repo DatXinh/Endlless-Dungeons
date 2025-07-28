@@ -3,7 +3,13 @@
 public class CanvasToggle : MonoBehaviour
 {
     public GameObject[] canvases;
-
+    private void Start()
+    {
+        foreach (GameObject canvas in canvases)
+        {
+            canvas.SetActive(false);
+        }
+    }
     // Hiện 1 canvas theo index
     public void ShowCanvas(int index)
     {

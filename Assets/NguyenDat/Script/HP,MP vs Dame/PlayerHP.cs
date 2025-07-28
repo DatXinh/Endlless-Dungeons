@@ -170,4 +170,9 @@ public class PlayerHP : MonoBehaviour
             pausedAudioSources = null;
         }
     }
+    public void resetHP()
+    {
+        currentHP = maxHP;
+        UpdateHealthUI();
+    }
 }

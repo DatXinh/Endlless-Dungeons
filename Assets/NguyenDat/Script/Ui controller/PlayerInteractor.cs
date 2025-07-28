@@ -25,8 +25,6 @@ public class PlayerInteractor : MonoBehaviour
     {
         testWeaponAtk = weaponParent.GetComponent<TestWeaponAtk>();
         scaleWeapon = weaponParent.GetComponent<ScaleWeapon>();
-        playerHP = GetComponent<PlayerHP>();
-        playerMP = GetComponent<PLayerMP>();
         if (CointsText != null)
         {
             CointsText.text = Coins.ToString();
@@ -236,6 +234,7 @@ public class PlayerInteractor : MonoBehaviour
     // Xóa vũ khí đang dùng, nếu còn vũ khí phụ thì chuyển nó thành vũ khí chính
     public void RemoveCurrentWeapon()
     {
+        
         // Nếu không có vũ khí nào thì không làm gì
         if (weaponSlots[0] == null && weaponSlots[1] == null)
             return;
@@ -277,6 +276,10 @@ public class PlayerInteractor : MonoBehaviour
     // Xóa tất cả vũ khí hiện có
     public void RemoveAllWeapons()
     {
+        playerHP.resetHP(); // Reset HP khi xóa vũ khí
+        playerMP.resetMp(); // Reset MP khi xóa vũ khí
+        Coins = 100;
+        setCoinNumber();
         for (int i = 0; i < weaponSlots.Length; i++)
         {
             if (weaponSlots[i] != null)

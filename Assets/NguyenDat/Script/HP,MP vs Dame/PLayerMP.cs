@@ -24,12 +24,6 @@ public class PLayerMP : MonoBehaviour
             currentMPText.text = currentMP.ToString(); // Set the current mana text
         }
     }
-
-    void Update()
-    {
-        
-    }
-
     // Method to use mana
     public bool UseMP(int amount)
     {
@@ -62,15 +56,8 @@ public class PLayerMP : MonoBehaviour
             {
                 currentMP = maxMP;
             }
-            if (manaBar != null)
-            {
-                manaBar.fillAmount = (float)currentMP / maxMP; // Update mana bar
-            }
-            if (currentMPText != null)
-            {
-                currentMPText.text = currentMP.ToString(); // Update current mana text
-            }
-            if(ManaPopupText != null)
+            UpdateManaUI();
+            if (ManaPopupText != null)
             {
                 GameObject popup = Instantiate(ManaPopupText, transform.position, Quaternion.identity);
                 FloatingDamage floatingDamage = popup.GetComponent<FloatingDamage>();
@@ -80,5 +67,21 @@ public class PLayerMP : MonoBehaviour
                 }
             }
         }
+    }
+    public void UpdateManaUI()
+    {
+        if (manaBar != null)
+        {
+            manaBar.fillAmount = (float)currentMP / maxMP; // Update mana bar
+        }
+        if (currentMPText != null)
+        {
+            currentMPText.text = currentMP.ToString(); // Update current mana text
+        }
+    }
+    public void resetMp()
+    {
+        currentMP = maxMP; // Reset current mana to maximum mana
+        UpdateManaUI();
     }
 }
