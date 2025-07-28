@@ -51573,14 +51573,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5392941115331493961, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
-      propertyPath: objectsToToggle.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5392941115331493961, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
-      propertyPath: 'objectsToToggle.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1480882102}
     - target: {fileID: 6776555899939453949, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_Name
       value: TestPlayer
@@ -51590,11 +51582,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
---- !u!1 &1480882102 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6776555899939453949, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
-  m_PrefabInstance: {fileID: 1480882101}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1482517912
 PrefabInstance:
   m_ObjectHideFlags: 0
