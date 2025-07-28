@@ -54,7 +54,7 @@ public class EnemyHP : MonoBehaviour
                 if (currentHP < 0)
                 {
                     currentHP = 0;
-                    bossPlayDeadAnimation?.DisableScripts(); // Disable scripts if health reaches zero
+                    bossPlayDeadAnimation.DisableScripts(); // Disable scripts if health reaches zero
                 }
                 if (healthBar != null)
                 {

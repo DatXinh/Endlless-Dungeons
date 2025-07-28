@@ -35,27 +35,27 @@ public class ChestInteractable : MonoBehaviour, IInteractable
         float rand = Random.value;
         Vector3 spawnPos = spawnPoint != null ? spawnPoint.position : transform.position;
 
-        if (rand < 0.10f)
+        if (rand < 0.25f)
         {
             SpawnCoins(2, spawnPos);
         }
-        else if (rand < 0.20f)
+        else if (rand < 0.5f)
         {
             SpawnCoins(4, spawnPos);
         }
-        else if (rand < 0.30f)
+        else if (rand < 0.75f)
         {
             SpawnCoins(6, spawnPos);
         }
-        else if (rand < 0.40f)
+        else if (rand < 0.8f)
         {
             SpawnCoins(8, spawnPos);
         }
-        else if (rand < 0.50f)
+        else if (rand < 0.85f)
         {
             SpawnCoins(10, spawnPos);
         }
-        else if (rand < 0.75f && potionPrefabs.Length > 0)
+        else if (rand < 0.95f && potionPrefabs.Length > 0)
         {
             int index = Random.Range(0, potionPrefabs.Length);
             Instantiate(potionPrefabs[index], spawnPos, Quaternion.identity);

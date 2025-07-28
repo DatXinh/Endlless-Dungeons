@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: -8422854031820342490}
   - component: {fileID: 4479912432181090473}
   - component: {fileID: 2368992684004479251}
-  - component: {fileID: 8536277079012525558}
-  - component: {fileID: 8218026233756615822}
+  - component: {fileID: 2769957952398158653}
+  - component: {fileID: 3978272008920357803}
   m_Layer: 7
   m_Name: Ranbow SLime
   m_TagString: Enemy
@@ -178,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 8558169933533535754}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: daf50beac8bc2a644879adc32848bacf, type: 2}
+  m_Controller: {fileID: 9100000, guid: e29bf1b6b5cb7f74db443da2797f86d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -240,8 +240,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHeal: {fileID: 0}
   currentHeal: {fileID: 0}
-  bossPlayDeadAnimation: {fileID: 0}
---- !u!114 &8536277079012525558
+  bossPlayDeadAnimation: {fileID: 2769957952398158653}
+--- !u!114 &2769957952398158653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,7 +257,7 @@ MonoBehaviour:
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 4479912432181090473}
---- !u!114 &8218026233756615822
+--- !u!114 &3978272008920357803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
