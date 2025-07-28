@@ -373,7 +373,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManaAmount: 75
+  CoinCost: 30
   Tooltip: {fileID: 1714748239362260145}
+  isSale: 0
+  coinText: {fileID: 875234339870712339}
 --- !u!1 &1714748239362260145
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2204103559958056175
 RectTransform:
   m_ObjectHideFlags: 0

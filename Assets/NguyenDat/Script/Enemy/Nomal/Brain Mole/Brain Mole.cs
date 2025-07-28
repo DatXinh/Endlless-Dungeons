@@ -19,18 +19,8 @@ public class BrainMole : MonoBehaviour
     {
         // Lấy tham chiếu đến script MonsterAI trên cùng GameObject
         monsterAIComponent = GetComponent<monsterAI>();
-        if (monsterAIComponent == null)
-        {
-            Debug.LogWarning("monsterAI component not found on " + gameObject.name);
-        }
-
         // Lấy tham chiếu đến Animator trên cùng GameObject
         animator = GetComponent<Animator>();
-        if (animator == null)
-        {
-            Debug.LogWarning("Animator component not found on " + gameObject.name);
-        }
-
         // Tìm gameobject con và lấy CircleCollider2D đầu tiên nếu có
         if (transform.childCount > 0)
         {
@@ -40,14 +30,6 @@ public class BrainMole : MonoBehaviour
                 if (childCircleCollider != null)
                     break;
             }
-            if (childCircleCollider == null)
-            {
-                Debug.LogWarning("No CircleCollider2D found on any child of " + gameObject.name);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("No child GameObject found under " + gameObject.name);
         }
     }
 
@@ -55,25 +37,27 @@ public class BrainMole : MonoBehaviour
     {
         // Cập nhật coneDirection.x theo scale.x
         coneDirection.x = Mathf.Sign(transform.localScale.x) * Mathf.Abs(coneDirection.x);
-
-        canAttack = CheckPlayerInCone();
-
         // Nếu có thể tấn công thì không cho phép di chuyển, ngược lại cho phép di chuyển
-        if (monsterAIComponent != null)
+        if (canAttack)
         {
-            monsterAIComponent.isMovable = !canAttack;
-        }
-
-        // Nếu có thể tấn công thì setTrigger "Atk"
-        if (animator != null)
-        {
-            if (canAttack)
+            if (monsterAIComponent != null)
             {
-                SetAttackTrigger();
+                monsterAIComponent.isMovable = !canAttack;
+                // Nếu có thể tấn công thì setTrigger "Atk"
+                if (animator != null)
+                {
+                    if (canAttack)
+                    {
+                        SetAttackTrigger();
+                    }
+                }
             }
-        }
+        }     
     }
-
+    private void FixedUpdate()
+    {
+        canAttack = CheckPlayerInCone();
+    }
     // Hàm set trigger "Atk" cho Animator nếu canAttack = true
     public void SetAttackTrigger()
     {

@@ -16,6 +16,7 @@ public class EnemyHP : MonoBehaviour
     public TMP_Text currentHeal; // Reference to the current health text UI element
 
     private bool isInvincible = false; // Invincibility state
+    public BossPlayDeadAnimation bossPlayDeadAnimation;
 
     void Start()
     {
@@ -31,6 +32,10 @@ public class EnemyHP : MonoBehaviour
         if (currentHeal != null)
         {
             currentHeal.text = currentHP.ToString(); // Set the current health text
+        }
+        if (bossPlayDeadAnimation == null)
+        {
+            bossPlayDeadAnimation = GetComponent<BossPlayDeadAnimation>();
         }
     }
     // Method to take damage
@@ -49,6 +54,7 @@ public class EnemyHP : MonoBehaviour
                 if (currentHP < 0)
                 {
                     currentHP = 0;
+                    bossPlayDeadAnimation?.DisableScripts(); // Disable scripts if health reaches zero
                 }
                 if (healthBar != null)
                 {

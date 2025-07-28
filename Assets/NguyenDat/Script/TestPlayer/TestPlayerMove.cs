@@ -23,18 +23,8 @@ public class TestPlayerMove : MonoBehaviour
     private static TestPlayerMove instance;
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     public void SetMoveInput(Vector2 input)
@@ -78,19 +68,6 @@ public class TestPlayerMove : MonoBehaviour
             transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
         }
     }
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Đặt lại vị trí mỗi khi load scene mới
-        transform.position = Vector3.zero; // (0,0,0)
-    }
-
-    private void OnDestroy()
-    {
-        // Gỡ đăng ký nếu object bị huỷ
-        if (instance == this)
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
     public void Dash()
     {
         Debug.Log("Dash called");

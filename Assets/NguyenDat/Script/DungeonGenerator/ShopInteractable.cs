@@ -93,6 +93,21 @@ public class ShopInteractable : MonoBehaviour , IInteractable
                     }
                 }
             }
+            else
+            {
+                MPInteractable mpInteractable = spawned.GetComponent<MPInteractable>();
+                HPInteracable hpInteractable = spawned.GetComponent<HPInteracable>();
+                if (mpInteractable != null)
+                {
+                    mpInteractable.isSale = true;
+                    mpInteractable.setCoinText();
+                }
+                else
+                {
+                    hpInteractable.isSale = true;
+                    hpInteractable.setCoinText();
+                }
+            }
         }
     }
 }

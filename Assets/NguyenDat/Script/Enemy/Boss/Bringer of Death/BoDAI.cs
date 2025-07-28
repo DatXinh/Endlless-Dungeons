@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class BoDAI : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float speed;
+    public float speed = 2f;
+
     [Header("Cone Settings")]
     public float coneAngle = 60f;
     public float coneLength = 5f;
@@ -23,11 +23,14 @@ public class BoDAI : MonoBehaviour
 
     private float stateTimer = 0f;
     private bool isRanging = false;
+    private static GameObject[] playersCache;
 
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        if (animator == null) animator = GetComponentInChildren<Animator>();
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
+
+        CachePlayers();
         FindNearestPlayer();
     }
 
@@ -35,58 +38,74 @@ public class BoDAI : MonoBehaviour
     {
         canAttack = CheckPlayerInCone();
 
-        // Nếu phát hiện player → dừng lại và tấn công
         if (canAttack)
         {
-            animator.SetTrigger("IsMelee");
+            rb.linearVelocity = Vector2.zero;
+            animator?.SetTrigger("IsMelee");
         }
         else
         {
-            FindNearestPlayer();
-            stateTimer += Time.deltaTime;
-            if (stateTimer >= 2f)
-            {
-                isRanging = !isRanging;
-                stateTimer = 0f;
-            }
-
-            if (isRanging)
-            {
-                // Dừng di chuyển và set trigger "IsRange"
-                rb.linearVelocity = Vector2.zero; // Updated to use linearVelocity
-                if (animator != null)
-                {
-                    animator.SetTrigger("IsRange");
-                }
-            }
-            else
-            {
-                animator.SetTrigger("IsMoving");
-                Vector2 direction = (targetPlayer.transform.position - transform.position).normalized;
-                Vector2 oldPosition = rb.position;
-                Vector2 newPosition = oldPosition + direction * Time.deltaTime * speed; // speed = 3
-                rb.MovePosition(newPosition);
-                // Lật hướng nhìn
-                if (flipTransform != null)
-                {
-                    Vector3 scale = flipTransform.localScale;
-                    scale.x = direction.x < 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-                    flipTransform.localScale = scale;
-                }
-
-                // Cập nhật hướng coneDirection theo hướng lật
-                coneDirection = (flipTransform.localScale.x > 0) ? Vector2.left : Vector2.right;
-            }
+            HandlePatrol();
         }
+    }
+
+    void HandlePatrol()
+    {
+        if (targetPlayer == null || !targetPlayer.activeInHierarchy)
+        {
+            CachePlayers();
+            FindNearestPlayer();
+        }
+
+        stateTimer += Time.deltaTime;
+        if (stateTimer >= 2f)
+        {
+            isRanging = !isRanging;
+            stateTimer = 0f;
+        }
+
+        if (isRanging)
+        {
+            rb.linearVelocity = Vector2.zero;
+            animator?.SetTrigger("IsRange");
+        }
+        else if (targetPlayer != null)
+        {
+            animator?.SetTrigger("IsMoving");
+
+            Vector2 direction = (targetPlayer.transform.position - transform.position).normalized;
+            rb.linearVelocity = direction * speed;
+
+            UpdateFlip(direction);
+        }
+    }
+
+    void UpdateFlip(Vector2 moveDir)
+    {
+        if (flipTransform != null)
+        {
+            Vector3 scale = flipTransform.localScale;
+            scale.x = moveDir.x < 0 ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+            flipTransform.localScale = scale;
+
+            coneDirection = (scale.x > 0) ? Vector2.left : Vector2.right;
+        }
+    }
+
+    void CachePlayers()
+    {
+        playersCache = GameObject.FindGameObjectsWithTag("Player");
     }
 
     void FindNearestPlayer()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         float minDist = float.MaxValue;
         GameObject nearest = null;
-        foreach (GameObject player in players)
+
+        foreach (var player in playersCache)
         {
+            if (!player.activeInHierarchy) continue;
+
             float dist = (player.transform.position - transform.position).sqrMagnitude;
             if (dist < minDist)
             {
@@ -94,36 +113,34 @@ public class BoDAI : MonoBehaviour
                 nearest = player;
             }
         }
+
         targetPlayer = nearest;
         summonPortal.target = nearest?.transform;
     }
 
     bool CheckPlayerInCone()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-        foreach (GameObject player in players)
+        foreach (var player in playersCache)
         {
-            Vector2 toPlayer = (Vector2)(player.transform.position - transform.position);
-            float distance = toPlayer.magnitude;
-            if (distance > coneLength)
-                continue;
+            if (!player.activeInHierarchy) continue;
 
-            Vector2 dirNormalized = toPlayer.normalized;
+            Vector2 toPlayer = player.transform.position - transform.position;
+            if (toPlayer.magnitude > coneLength) continue;
+
             Vector2 coneDirWorld = transform.TransformDirection(coneDirection.normalized);
-            float angle = Vector2.Angle(coneDirWorld, dirNormalized);
+            float angle = Vector2.Angle(coneDirWorld, toPlayer.normalized);
             if (angle <= coneAngle * 0.5f)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, dirNormalized, coneLength, detectionMask);
-                if (hit && hit.collider != null && hit.collider.gameObject == player)
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, toPlayer.normalized, coneLength, detectionMask);
+                if (hit.collider != null && hit.collider.gameObject == player)
                 {
                     targetPlayer = player;
+                    summonPortal.target = player.transform;
                     return true;
                 }
             }
         }
 
-        targetPlayer = null;
         return false;
     }
 
@@ -136,6 +153,7 @@ public class BoDAI : MonoBehaviour
         float halfAngle = coneAngle * 0.5f;
         Quaternion leftRot = Quaternion.AngleAxis(-halfAngle, Vector3.forward);
         Quaternion rightRot = Quaternion.AngleAxis(halfAngle, Vector3.forward);
+
         Vector3 leftDir = leftRot * coneDirWorld;
         Vector3 rightDir = rightRot * coneDirWorld;
 
@@ -143,12 +161,11 @@ public class BoDAI : MonoBehaviour
         Gizmos.DrawLine(origin, origin + leftDir * coneLength);
         Gizmos.DrawLine(origin, origin + rightDir * coneLength);
 
-        // Cung hình nón
         int segments = 30;
         Vector3 prevPoint = origin + leftDir * coneLength;
         for (int i = 1; i <= segments; i++)
         {
-            float t = (float)i / segments;
+            float t = i / (float)segments;
             float angle = -halfAngle + coneAngle * t;
             Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward);
             Vector3 point = origin + (rot * coneDirWorld) * coneLength;
@@ -156,5 +173,6 @@ public class BoDAI : MonoBehaviour
             prevPoint = point;
         }
     }
+
     public GameObject TargetPlayer => targetPlayer;
 }

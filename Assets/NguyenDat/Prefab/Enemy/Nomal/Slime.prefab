@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9059553527290997709}
   - component: {fileID: 3766759527391991602}
   - component: {fileID: 3688768949263709525}
-  - component: {fileID: 7740792210841072739}
+  - component: {fileID: 7331599244595675648}
   m_Layer: 7
   m_Name: Slime
   m_TagString: Enemy
@@ -266,7 +266,7 @@ MonoBehaviour:
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 2570953925471318445}
---- !u!114 &7740792210841072739
+--- !u!114 &7331599244595675648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,14 +275,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8558169933533535754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot:
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
-  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
-  SpawnBoss: {fileID: 0}
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
   dropRadius: 2

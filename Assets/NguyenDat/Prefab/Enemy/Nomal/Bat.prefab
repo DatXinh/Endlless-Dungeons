@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3605569864396460317}
   - component: {fileID: 2962745093001154714}
   - component: {fileID: 7344359804852026217}
-  - component: {fileID: 4488026371075980538}
+  - component: {fileID: -8720005265096263110}
   m_Layer: 7
   m_Name: Bat
   m_TagString: Enemy
@@ -294,7 +294,7 @@ MonoBehaviour:
   parameterName: Dead
   scriptsToDisable:
   - {fileID: 2756070236283725525}
---- !u!114 &4488026371075980538
+--- !u!114 &-8720005265096263110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,14 +303,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220867173273594807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot:
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  SpawnBoss: {fileID: 0}
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
   dropRadius: 2

@@ -37,7 +37,7 @@ public class SelfDestruct : MonoBehaviour
         if (loot == null || loot.Length == 0) return;
 
         // Chọn số lượng loot ngẫu nhiên từ 3 đến 5 (giới hạn không vượt quá số lượng loot có sẵn)
-        int lootCount = Random.Range(3, Mathf.Min(6, loot.Length + 1));
+        int lootCount = Random.Range(1, Mathf.Min(3, loot.Length + 1));
 
         // Tạo danh sách chỉ số ngẫu nhiên không trùng
         System.Collections.Generic.List<int> indices = new System.Collections.Generic.List<int>();

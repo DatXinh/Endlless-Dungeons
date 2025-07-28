@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3849168654883660515}
   - component: {fileID: 7596834531951061698}
   - component: {fileID: 1284861924758995337}
+  - component: {fileID: 7484569731514378506}
   m_Layer: 0
   m_Name: Ice Spike
   m_TagString: EnemyProjectile
@@ -193,3 +194,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destroyable: 1
+--- !u!114 &7484569731514378506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259940307784442884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30

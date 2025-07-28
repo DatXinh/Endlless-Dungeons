@@ -1,13 +1,18 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class MPInteractable : MonoBehaviour, IInteractable
 {
     public int ManaAmount = 20;
+    public int CoinCost = 30;
     public GameObject Tooltip;
+    public bool isSale = false; // Biến kiểm tra xem có phải là bán hay không
+    public TextMeshProUGUI coinText; // Tham chiếu đến TextMeshProUGUI để hiển thị số lượng mana
 
     private void Awake()
     {
-        Tooltip.SetActive(false); // Ẩn tooltip ban đầu
+        Tooltip.SetActive(false);
+        setCoinText();
     }
     public string GetInteractionPrompt()
     {
@@ -17,6 +22,17 @@ public class MPInteractable : MonoBehaviour, IInteractable
     public void Interact()
     {
         Destroy(gameObject);
+    }
+    public void setCoinText()
+    {
+        if (isSale)
+        {
+            coinText.text = CoinCost.ToString();
+        }
+        else
+        {
+            coinText.text = "0";
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
