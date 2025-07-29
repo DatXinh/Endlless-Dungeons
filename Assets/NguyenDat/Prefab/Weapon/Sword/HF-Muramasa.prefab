@@ -359,7 +359,7 @@ MonoBehaviour:
   weaponProjectile: {fileID: 0}
   weaponType: 1
   weaponLevel: 3
-  WeaponPrice: 0
+  WeaponPrice: 9999
 --- !u!114 &3516519618686778319
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9059553527290997709}
   - component: {fileID: 3766759527391991602}
   - component: {fileID: 3688768949263709525}
-  - component: {fileID: 7331599244595675648}
+  - component: {fileID: 7765350577695592597}
   m_Layer: 7
   m_Name: Slime
   m_TagString: Enemy
@@ -169,7 +169,7 @@ Animator:
   m_GameObject: {fileID: 8558169933533535754}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: daf50beac8bc2a644879adc32848bacf, type: 2}
+  m_Controller: {fileID: 9100000, guid: e29bf1b6b5cb7f74db443da2797f86d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -249,6 +249,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHeal: {fileID: 0}
   currentHeal: {fileID: 0}
+  bossPlayDeadAnimation: {fileID: 3688768949263709525}
 --- !u!114 &3688768949263709525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,12 +262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 3766759527391991602}
   animator: {fileID: 2983383017131691898}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 2570953925471318445}
---- !u!114 &7331599244595675648
+--- !u!114 &7765350577695592597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

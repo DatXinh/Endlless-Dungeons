@@ -208,6 +208,7 @@ MonoBehaviour:
   checkInterval: 0.2
   rotateInterval: 2
   isMovable: 1
+  playerTransform: {fileID: 0}
 --- !u!114 &6929901471619393438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +248,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHeal: {fileID: 0}
   currentHeal: {fileID: 0}
+  bossPlayDeadAnimation: {fileID: 3934998504749335663}
 --- !u!114 &3934998504749335663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 3082531283968240023}
   animator: {fileID: 4452396022009836058}
   parameterName: IsDead
   scriptsToDisable:

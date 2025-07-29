@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4045027688676447036
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &8134692537190549277
 MonoBehaviour:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5804427173509396688, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CanvasToggle, Assembly-CSharp
         m_MethodName: ShowCanvas
         m_Mode: 3
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5804427173509396688, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CanvasToggle, Assembly-CSharp
         m_MethodName: HideCanvas
         m_Mode: 3
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7368833364219541040, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadSceneByName
         m_Mode: 5
@@ -865,6 +865,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Start Game
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerInteractor, Assembly-CSharp
+        m_MethodName: RemoveAllWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6392881511507471419
