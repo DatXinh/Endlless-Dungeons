@@ -941,7 +941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 506051456052047058}
   animator: {fileID: 5204750563409903640}
   parameterName: IsDead
   scriptsToDisable:
@@ -958,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 12500
+  maxHP: 50000
   currentHP: 0
   InvincibilityTime: 0.17
   damageReductionRate: 22
@@ -966,6 +965,7 @@ MonoBehaviour:
   healthBar: {fileID: 4070502264218940071}
   maxHeal: {fileID: 1720839534829259871}
   currentHeal: {fileID: 8773617556851970778}
+  bossPlayDeadAnimation: {fileID: 1556942359404822310}
 --- !u!1 &7297110992409463927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,33 +1469,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot:
-  - {fileID: 4058967442695848511, guid: cf676e4962c14cd488da344297fdc59b, type: 3}
-  - {fileID: 7514586837790412939, guid: 53f3485ff2257dc429a5c9e51824671f, type: 3}
-  - {fileID: 6754454126528601475, guid: 3500d43da61308f4c817c892ba87c2e7, type: 3}
-  - {fileID: 6033830091480513566, guid: 559c8334f187ce94fab773c51ca999b1, type: 3}
-  - {fileID: 4419492662897351664, guid: 5c0e5748ece0d5741b19b26c159abcf8, type: 3}
-  - {fileID: 1639490275339319330, guid: c36fd99c678b8124799509caab3dd52c, type: 3}
-  - {fileID: 1516541159106573912, guid: 8718b261e0b7955478271fa4109e0c08, type: 3}
-  - {fileID: 2289391151377592596, guid: ea55fb0c03f58e34f80a2f88c16d5767, type: 3}
-  - {fileID: 3594781134254194807, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
   - {fileID: 1554056249309393891, guid: 28f20c152a42b6d40adbf215fe8a8fe3, type: 3}
-  - {fileID: 6085964754415221086, guid: f0c70f3dc705c444bada8825b8f4c46e, type: 3}
-  - {fileID: 2203846391878563995, guid: d25f9caa374fa20468f0ccf2bf66992b, type: 3}
   - {fileID: 2017520202438690922, guid: 083b2fbe245bcde4fb7d878f8a90f061, type: 3}
-  - {fileID: 488743204118899581, guid: 36ba41b2a3a733b4393922444309f782, type: 3}
-  - {fileID: 3997363000707474565, guid: c5e06d9b43a4cee4cb5cb2386785141b, type: 3}
-  - {fileID: 3362582173471295174, guid: 3b5bf3372258e6445bd546495b9f6c73, type: 3}
   - {fileID: 8752464525617690650, guid: 84cb4a5f17f92d64b8b90fd8b19159a2, type: 3}
-  - {fileID: 6678569435755268935, guid: d5909ad9956e7aa4b9e130db4050ee73, type: 3}
-  - {fileID: 7579230444333726614, guid: c835eb7b33c0d8449b5ada5d271823b7, type: 3}
-  - {fileID: 740544398467360445, guid: 5040106ef7532bd44bd487a13383dd2b, type: 3}
-  - {fileID: 2224703434937752579, guid: 24367df9896ab9b4abae3c3060acaeb7, type: 3}
   - {fileID: 7752384395813104827, guid: d56e2106a24259b4c8a94580793b8989, type: 3}
   - {fileID: 5519456457138781898, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
-  - {fileID: 3045790389127171731, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
-  - {fileID: 6502661645446167304, guid: eaf462f94100a67418070b48d7aaca31, type: 3}
-  - {fileID: 7083945584695108612, guid: 5aea1dc35aae7c44397e785d9729ec58, type: 3}
-  - {fileID: 5419681705321532591, guid: 34ff4e98ef26ed140aa500b7e8ddef4e, type: 3}
   SpawnBoss: {fileID: 0}
   dropRadius: 3
 --- !u!1 &8399041558859053860

@@ -58,9 +58,9 @@ MonoBehaviour:
     \u2014 nh\u01B0ng v\u1EBFt th\u01B0\u01A1ng l\xE0 th\u1EADt. M\u1ED9t v\u1EADt
     th\u1EC3 ch\u01B0a t\u1EEBng \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn, \u0111\u1EBFn
     t\u1EEB t\u1EA7ng \u0111\xE1y c\u1EE7a g\u01B0\u01A1ng.\u201D"
-  weaponDamage: 125
-  weaponCriticalChange: 90
-  weaponManaCost: 9
+  weaponDamage: 410
+  weaponCriticalChange: 88
+  weaponManaCost: 8
   weaponProjectile: {fileID: 6127034259862850823, guid: 83b90069ae79e3547be263a3656bdcd5, type: 3}
   weaponType: 3
   weaponLevel: 3

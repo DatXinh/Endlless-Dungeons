@@ -55,7 +55,7 @@ public class PWeaponDame : MonoBehaviour
                 float critMultiplier = Random.Range(1.5f, 3.0f);
                 finalDamage = Mathf.RoundToInt(baseDamage * critMultiplier);
             }
-            enemyHP.TakeDamage(finalDamage, isCritical);
+            Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
         }
     }
 }

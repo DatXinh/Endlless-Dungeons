@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class BoDAI : MonoBehaviour
 {
@@ -20,7 +21,10 @@ public class BoDAI : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject targetPlayer;
     public SummonPortal summonPortal;
+    public EnemyHP enemyHP;
+    public GameObject TinyMana;
 
+    private bool hasSpawnedManaBurst = false;
     private float stateTimer = 0f;
     private bool isRanging = false;
     private static GameObject[] playersCache;
@@ -29,15 +33,19 @@ public class BoDAI : MonoBehaviour
     {
         if (animator == null) animator = GetComponentInChildren<Animator>();
         if (rb == null) rb = GetComponent<Rigidbody2D>();
-
+        if(enemyHP == null) enemyHP = GetComponent<EnemyHP>();
         CachePlayers();
         FindNearestPlayer();
     }
 
     void Update()
     {
+        if (!hasSpawnedManaBurst && enemyHP.GetHealthPercent() < 50f)
+        {
+            hasSpawnedManaBurst = true;
+            SpawnTinyManaBurst();
+        }
         canAttack = CheckPlayerInCone();
-
         if (canAttack)
         {
             rb.linearVelocity = Vector2.zero;
@@ -47,6 +55,7 @@ public class BoDAI : MonoBehaviour
         {
             HandlePatrol();
         }
+        
     }
 
     void HandlePatrol()
@@ -144,6 +153,25 @@ public class BoDAI : MonoBehaviour
         return false;
     }
 
+    void SpawnTinyManaBurst()
+    {
+        if (TinyMana == null) return;
+        int count = Random.Range(5, 11); // 5 đến 10
+        float minForce = 4f;
+        float maxForce = 7f;
+        for (int i = 0; i < count; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            GameObject mana = Instantiate(TinyMana, transform.position, Quaternion.identity);
+            Rigidbody2D manaRb = mana.GetComponent<Rigidbody2D>();
+            if (manaRb != null)
+            {
+                float force = Random.Range(minForce, maxForce);
+                manaRb.linearVelocity = dir * force;
+            }
+        }
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -173,6 +201,5 @@ public class BoDAI : MonoBehaviour
             prevPoint = point;
         }
     }
-
     public GameObject TargetPlayer => targetPlayer;
 }

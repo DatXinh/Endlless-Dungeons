@@ -272,4 +272,5 @@ MonoBehaviour:
   parent: {fileID: 0}
   weaponLoot: []
   potionLoot: []
+  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
   dropRadius: 2

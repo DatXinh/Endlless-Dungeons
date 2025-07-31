@@ -236,8 +236,8 @@ MonoBehaviour:
     t\u1EA1i trong b\u1EA5t k\u1EF3 t\xE0i li\u1EC7u y d\u01B0\u1EE3c n\xE0o. M\u1ED9t
     s\u1ED1 h\u1ECDc gi\u1EA3 cho r\u1EB1ng n\xF3 l\xE0 tinh ch\u1EA5t c\u1EE7a n\u1ED7i
     s\u1EE3.\u201D"
-  weaponDamage: 35
-  weaponCriticalChange: 55
+  weaponDamage: 20
+  weaponCriticalChange: 25
   weaponManaCost: 3
   weaponProjectile: {fileID: 6587683697731803141, guid: e5b2eaafa23a5a84d953ef208f8ada34, type: 3}
   weaponType: 6

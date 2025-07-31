@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7405786692807099351, guid: e471f98c0ee93214891704b3da37a46c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8757408973349676889, guid: e471f98c0ee93214891704b3da37a46c, type: 3}
       propertyPath: m_Name
       value: BossGrid 1

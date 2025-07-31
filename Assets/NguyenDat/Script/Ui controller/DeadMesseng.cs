@@ -3,21 +3,27 @@ using UnityEngine.SceneManagement;
 
 public class DeadMesseng : MonoBehaviour
 {
+    public int reviveTime = 2;
     public GameObject rightPanel;
     public GameObject leftPanel;
     public GameObject deadMesseng;
+    public GameObject reviveButton;
 
     public PlayerHP playerHP;
     public PlayerInteractor playerInteractor;
+
     public  void Revive()
     {
-        rightPanel.SetActive(true);
-        leftPanel.SetActive(true);
-        deadMesseng.SetActive(false);
-        playerHP.currentHP = playerHP.maxHP;
-        Time.timeScale = 1;
-        playerHP.UpdateHealthUI();
-        playerHP.ResumeGame();
+        if(reviveTime > 0)
+        {
+            playerHP.ResumeGame();
+            reviveTime--;
+            rightPanel.SetActive(true);
+            leftPanel.SetActive(true);
+            deadMesseng.SetActive(false);
+            playerHP.currentHP = playerHP.maxHP;
+            playerHP.UpdateHealthUI();
+        }
     }
     public void Giveup()
     {

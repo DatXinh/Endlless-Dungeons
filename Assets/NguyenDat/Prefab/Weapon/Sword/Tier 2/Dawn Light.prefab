@@ -240,7 +240,7 @@ MonoBehaviour:
     m\xE1u. Ng\u01B0\u1EDDi r\xE8n n\xF3 t\u1EEBng tin r\u1EB1ng b\xECnh minh c\xF3
     th\u1EC3 gi\u1EBFt ch\u1EBFt \xE1c m\u1ED9ng \u2013 nh\u01B0ng r\u1ED3i ch\xEDnh
     b\xECnh minh kh\xF4ng bao gi\u1EDD \u0111\u1EBFn n\u1EEFa.\u201D"
-  weaponDamage: 87
+  weaponDamage: 105
   weaponCriticalChange: 45
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}

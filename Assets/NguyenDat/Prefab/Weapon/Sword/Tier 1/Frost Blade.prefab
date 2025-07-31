@@ -282,9 +282,9 @@ MonoBehaviour:
   weaponDescription: "\u201CL\u01B0\u1EE1i ki\u1EBFm kh\xF4ng l\u1EA1nh v\xEC b\u0103ng,
     m\xE0 v\xEC th\u1EE9 \u0111\xE3 b\u1ECB ni\xEAm phong trong n\xF3 t\u1EEB t\u1EA7ng
     h\u1EA7m b\u1EAFc \u2013 m\u1ED9t th\u1EF1c th\u1EC3 kh\xF4ng c\xF3 nhi\u1EC7t.\u201D"
-  weaponDamage: 25
-  weaponCriticalChange: 22
-  weaponManaCost: 3
+  weaponDamage: 65
+  weaponCriticalChange: 33
+  weaponManaCost: 2
   weaponProjectile: {fileID: 7762073486339418003, guid: 083bc78c813a4eb4ba008db11f87357d, type: 3}
   weaponType: 1
   weaponLevel: 1

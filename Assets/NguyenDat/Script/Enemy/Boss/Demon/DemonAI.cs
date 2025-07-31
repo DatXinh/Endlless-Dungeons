@@ -21,7 +21,8 @@ public class DemonAI : MonoBehaviour
     public GameObject targetPlayer;
     private EnemyHP EnemyHealth;
 
-
+    public GameObject TinyMana;
+    private bool hasSpawnedManaBurst = false;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,6 +34,11 @@ public class DemonAI : MonoBehaviour
     void Update()
     {
         canAttack = CheckPlayerInCone();
+        if (!hasSpawnedManaBurst && EnemyHealth.GetHealthPercent() < 50f)
+        {
+            hasSpawnedManaBurst = true;
+            SpawnTinyManaBurst();
+        }
 
         // Nếu phát hiện player → dừng lại và tấn công
         if (canAttack)
@@ -128,6 +134,25 @@ public class DemonAI : MonoBehaviour
         return false;
     }
 
+    void SpawnTinyManaBurst()
+    {
+        if (TinyMana == null) return;
+        int count = Random.Range(5, 11); // 5 đến 10
+        float minForce = 4f;
+        float maxForce = 7f;
+        for (int i = 0; i < count; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            GameObject mana = Instantiate(TinyMana, transform.position, Quaternion.identity);
+            Rigidbody2D manaRb = mana.GetComponent<Rigidbody2D>();
+            if (manaRb != null)
+            {
+                float force = Random.Range(minForce, maxForce);
+                manaRb.linearVelocity = dir * force;
+            }
+        }
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

@@ -1679,7 +1679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48.4, y: -31.3}
+  m_AnchoredPosition: {x: 5, y: 20}
   m_SizeDelta: {x: 289.6601, y: 284.6044}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1900032823288734547
@@ -2095,8 +2095,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1000, y: -200}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchoredPosition: {x: -1059, y: -244.74998}
+  m_SizeDelta: {x: 528.9622, y: 489.5}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1353715822702375520
 CanvasRenderer:
@@ -2359,9 +2359,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2a266aebdf9d149b54063832de097f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reviveTime: 10
   rightPanel: {fileID: 2272535272841807977}
   leftPanel: {fileID: 6876484311829509506}
   deadMesseng: {fileID: 7205181621606051187}
+  reviveButton: {fileID: 6901664851583725206}
   playerHP: {fileID: 0}
   playerInteractor: {fileID: 0}
 --- !u!1 &7345592598005365749
@@ -3270,6 +3272,10 @@ PrefabInstance:
     - target: {fileID: 7596575816354821690, guid: f589e4316ab5b8f4eb2419bc067dbabc, type: 3}
       propertyPath: m_Name
       value: MiniMapRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874416011025679327, guid: f589e4316ab5b8f4eb2419bc067dbabc, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 7424
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

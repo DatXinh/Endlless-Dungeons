@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: sceneName
       value: 3-1
       objectReference: {fileID: 0}
+    - target: {fileID: 7405786692807099351, guid: cbbfec0f0a2a1674487a36a06ac8868c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8757408973349676889, guid: cbbfec0f0a2a1674487a36a06ac8868c, type: 3}
       propertyPath: m_Name
       value: BossGrid 2

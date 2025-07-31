@@ -56,7 +56,7 @@ MonoBehaviour:
     s\u0129 ho\xE0ng gia, ng\u01B0\u1EDDi \u0111\xE3 ch\u1EBFt \u0111\u1EE9ng khi
     b\u1EA3o v\u1EC7 c\xE1nh c\u1ED5ng cu\u1ED1i c\xF9ng. X\xE1c \xF4ng v\u1EABn
     \u1EDF \u0111\xF3, c\xF2n ki\u1EBFm th\xEC bi\u1EBFn m\u1EA5t.\u201D"
-  weaponDamage: 99
+  weaponDamage: 110
   weaponCriticalChange: 49
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}

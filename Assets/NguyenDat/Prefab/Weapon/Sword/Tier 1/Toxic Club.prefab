@@ -244,7 +244,7 @@ MonoBehaviour:
   weaponDescription: "\u201CD\xEDnh b\u1EA9n t\u1EEB ch\u1EA5t l\u1ECFng ch\u1EA3y
     ra t\u1EEB t\u1EA7ng \u0111\xE1y. Kh\xF4ng ai d\xE1m t\u1EA9y r\u1EEDa v\xEC
     s\u1EE3... n\xF3 t\u1EC9nh d\u1EADy.\u201D"
-  weaponDamage: 45
+  weaponDamage: 75
   weaponCriticalChange: 33
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}

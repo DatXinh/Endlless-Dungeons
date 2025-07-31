@@ -287,8 +287,8 @@ MonoBehaviour:
     t\u1EEB h\xE0ng ng\xE0n n\u0103m tr\u01B0\u1EDBc. M\u1ED7i l\u1EA7n vung, ng\u1ECDn
     l\u1EEDa trong l\xF2ng \u0111\u1EA5t \u0111\xE1p l\u1EA1i nh\u01B0 th\u1EC3 \u0111\u01B0\u1EE3c
     tri\u1EC7u h\u1ED3i.\u201D"
-  weaponDamage: 88
-  weaponCriticalChange: 56
+  weaponDamage: 115
+  weaponCriticalChange: 49
   weaponManaCost: 5
   weaponProjectile: {fileID: 6879983362614959756, guid: 2fb4f95d5de3d5347aef770125fd333d, type: 3}
   weaponType: 1

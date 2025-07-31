@@ -27,6 +27,7 @@ public class FrozenSoul : MonoBehaviour
     public GameObject crystalShardPrefab;
     public GameObject iceBombPrefab;
     public float bulletSpeed = 5f;
+    public GameObject tinyMana;
 
     [Header("Crystal Settings")]
     public float crystalRespawnInterval = 4f;
@@ -35,6 +36,8 @@ public class FrozenSoul : MonoBehaviour
     private Coroutine attackRoutine;
     private Coroutine crystalRespawnRoutine;
     private Transform[] shardOrbits;
+
+    public AudioSource bossMusic;
 
     private readonly WaitForSeconds wait2s = new WaitForSeconds(2f);
     private readonly WaitForSeconds wait1_5s = new WaitForSeconds(1.5f);
@@ -49,12 +52,12 @@ public class FrozenSoul : MonoBehaviour
         if (player != null)
             this.player = player.transform;
         attackRoutine = StartCoroutine(Phase1Routine());
+        bossMusic.Play();
     }
 
     void Update()
     {
         float hpPercent = health.GetHealthPercent();
-
         switch (currentPhase)
         {
             case 1 when hpPercent <= phase2Threshold:
@@ -84,9 +87,20 @@ public class FrozenSoul : MonoBehaviour
         currentPhase = newPhase;
         if (attackRoutine != null) StopCoroutine(attackRoutine);
         attackRoutine = StartCoroutine(newRoutine);
-
         if (crystalRespawnRoutine == null)
             crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
+        if (tinyMana != null)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                GameObject mana = Instantiate(tinyMana, transform.position, Quaternion.identity);
+                MPRecover  mPRecover = mana.GetComponent<MPRecover>();
+                if (mPRecover != null)
+                {
+                    mPRecover.manaRecoverAmount = 25;
+                }
+            }
+        }
     }
 
     void MoveController()
@@ -137,7 +151,7 @@ public class FrozenSoul : MonoBehaviour
     {
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 18);
+            ShootCircle(iceBulletPrefab, 8);
             yield return wait2s;
         }
     }
@@ -146,7 +160,7 @@ public class FrozenSoul : MonoBehaviour
     {
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 20);
+            ShootCircle(iceBulletPrefab, 10);
             yield return wait1_5s;
         }
     }
@@ -155,7 +169,7 @@ public class FrozenSoul : MonoBehaviour
     {
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 22);
+            ShootCircle(iceBulletPrefab, 12);
             yield return wait1_2s;
 
             Vector3 spawnPos = player.position + Vector3.up * 8f;
@@ -177,7 +191,7 @@ public class FrozenSoul : MonoBehaviour
             {
                 transform.position += direction * dashSpeed * Time.deltaTime;
                 if (elapsed == 0f)
-                    ShootCircle(iceBulletPrefab, 24);
+                    ShootCircle(iceBulletPrefab, 14);
 
                 elapsed += Time.deltaTime;
                 yield return null;
@@ -190,7 +204,7 @@ public class FrozenSoul : MonoBehaviour
     {
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 24);
+            ShootCircle(iceBulletPrefab, 15);
 
             Vector3 offset = Random.insideUnitCircle * 2f;
             Vector3 spawnPos = player.position + Vector3.up * 7f + offset;
@@ -212,7 +226,7 @@ public class FrozenSoul : MonoBehaviour
             {
                 transform.position += direction * dashSpeedPhase6 * Time.deltaTime;
                 if (elapsed == 0f)
-                    ShootCircle(iceBulletPrefab, 24);
+                    ShootCircle(iceBulletPrefab, 16);
 
                 elapsed += Time.deltaTime;
                 yield return null;

@@ -56,7 +56,7 @@ MonoBehaviour:
   weaponDescription: "\u201CKh\xF4ng ph\u1EA3i kim lo\u1EA1i. L\xE0 l\xF4ng c\u1EE7a
     con chim cu\u1ED1i c\xF9ng t\u1EEBng bay qua khe n\u1EE9t gi\u1EEFa hai c\xF5i
     \u2013 r\u1ED3i ch\xE1y r\u1EE5i trong l\u1EA7n quay v\u1EC1.\u201D"
-  weaponDamage: 67
+  weaponDamage: 110
   weaponCriticalChange: 45
   weaponManaCost: 4
   weaponProjectile: {fileID: 2668570120682506747, guid: f730b988b5f8a074eb7b71cffa9b06f5, type: 3}

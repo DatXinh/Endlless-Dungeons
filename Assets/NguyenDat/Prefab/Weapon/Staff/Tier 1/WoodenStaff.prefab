@@ -173,7 +173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8020834684591623998}
   - component: {fileID: 9064522513435234669}
-  - component: {fileID: 3979772347133402214}
   - component: {fileID: 7651109932265585226}
   - component: {fileID: 7154827775035258445}
   - component: {fileID: 7310875635008741424}
@@ -222,34 +221,13 @@ MonoBehaviour:
     Nh\u01B0ng ngay c\u1EA3 m\u1EA3nh g\u1ED7 v\xF4 danh c\u0169ng t\u1EEBng \u0111\u01B0\u1EE3c
     tr\u1ED3ng t\u1EEB v\xF9ng \u0111\u1EA5t kh\xF4ng c\xF2n hi\u1EC7n di\u1EC7n
     tr\xEAn b\u1EA3n \u0111\u1ED3.\u201D"
-  weaponDamage: 30
+  weaponDamage: 100
   weaponCriticalChange: 15
   weaponManaCost: 3
   weaponProjectile: {fileID: 3285054734939882046, guid: 59b561f13dfa7cf42b3866a55383ec3e, type: 3}
   weaponType: 4
   weaponLevel: 1
   WeaponPrice: 10
---- !u!114 &3979772347133402214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9196884388127578162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f81ca530da3ba45bc000c470f64586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 5199771111005897618}
-  weaponTransform: {fileID: 8020834684591623998}
-  launchForce: 10
-  audioSource: {fileID: 0}
-  WeaponDamage: 0
-  WeaponCritalChange: 0
-  WeaponManaCost: 0
-  pLayerMP: {fileID: 0}
 --- !u!58 &7651109932265585226
 CircleCollider2D:
   m_ObjectHideFlags: 0

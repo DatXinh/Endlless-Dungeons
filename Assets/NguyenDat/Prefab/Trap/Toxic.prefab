@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7733460017768600195}
   - component: {fileID: 321599090686531957}
   - component: {fileID: 6547498938801846151}
+  - component: {fileID: -6275962866874797332}
   m_Layer: 0
   m_Name: Toxic
   m_TagString: Untagged
@@ -189,3 +190,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 5
+--- !u!114 &-6275962866874797332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4479899988509179688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25

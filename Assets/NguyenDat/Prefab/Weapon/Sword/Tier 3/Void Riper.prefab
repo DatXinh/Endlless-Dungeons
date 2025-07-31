@@ -273,7 +273,7 @@ MonoBehaviour:
     kh\u1EAFc th\u1EF1c t\u1EA1i b\u1ECB x\xE9 to\u1EA1c. Kh\xF4ng ai \u0111\xFAc
     ra n\xF3 \u2013 n\xF3 ch\u1EC9 hi\u1EC7n ra, v\xE0 ng\u01B0\u1EDDi \u0111\u1EA7u
     ti\xEAn ch\u1EA1m v\xE0o \u0111\xE3 bi\u1EBFn m\u1EA5t.\u201D"
-  weaponDamage: 275
+  weaponDamage: 245
   weaponCriticalChange: 75
   weaponManaCost: 5
   weaponProjectile: {fileID: 4791221879380248428, guid: 8a0609de9affdeb4089339771c84f3fc, type: 3}

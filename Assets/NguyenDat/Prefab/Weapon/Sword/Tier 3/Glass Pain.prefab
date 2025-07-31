@@ -56,8 +56,8 @@ MonoBehaviour:
     v\u1EE5 n\u1ED5 c\u1EA5m thu\u1EADt. D\u1EC5 g\xE3y, nh\u01B0ng m\u1ED7i v\u1EBFt
     n\u1EE9t \u0111\u1EC1u mang theo ti\u1EBFng g\xE0o kh\xF4ng thu\u1ED9c v\u1EC1
     th\u1EBF gi\u1EDBi n\xE0y.\u201D"
-  weaponDamage: 264
-  weaponCriticalChange: 33
+  weaponDamage: 190
+  weaponCriticalChange: 77
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1

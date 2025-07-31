@@ -10,10 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8209638531797056673}
   - component: {fileID: 655818492400156800}
+  - component: {fileID: 611284337898925282}
   - component: {fileID: 3944391508701664047}
   - component: {fileID: 945420974951284413}
-  - component: {fileID: -4494271547225818997}
-  m_Layer: 0
+  - component: {fileID: 8181168840468568614}
+  - component: {fileID: 534725087437743814}
+  - component: {fileID: 2877505278598425839}
+  - component: {fileID: 6917412156915824346}
+  m_Layer: 7
   m_Name: TrapBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -90,6 +94,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &611284337898925282
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286052999795039852}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d6418fdf2323b242845ce2f76b32e71, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &3944391508701664047
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +189,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4494271547225818997
+--- !u!114 &8181168840468568614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,10 +198,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 7286052999795039852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeb11f38c34cea43a4f5aa148fbee54, type: 3}
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 4479899988509179688, guid: 997ff30ff982c4d439ac8dbaae5de73b, type: 3}
-  weaponDame: {fileID: 0}
-  weaponDamage: 0
-  weaponCriticalChange: 0
+  maxHP: 1
+  currentHP: 0
+  InvincibilityTime: 0.17
+  damageReductionRate: 0
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}
+  bossPlayDeadAnimation: {fileID: 534725087437743814}
+--- !u!114 &534725087437743814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286052999795039852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 611284337898925282}
+  parameterName: IsDesTroy
+  scriptsToDisable: []
+--- !u!114 &2877505278598425839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286052999795039852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153912128c3cb774aa1beee553e87716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootPrefab1: {fileID: 0}
+  lootPrefab2: {fileID: 0}
+  Toxictrap: {fileID: 4479899988509179688, guid: 997ff30ff982c4d439ac8dbaae5de73b, type: 3}
+--- !u!114 &6917412156915824346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286052999795039852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
+  dropRadius: 2

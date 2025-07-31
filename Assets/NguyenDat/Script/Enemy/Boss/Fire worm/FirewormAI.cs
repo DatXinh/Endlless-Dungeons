@@ -24,11 +24,19 @@ public class FirewormAI : MonoBehaviour
     [Header("Độ lệch hướng")]
     public float randomAngleRange = 30f; // độ lệch ± khi di chuyển để khó đoán
 
+    [Header("Tiny Mana")]
+    public GameObject TinyMana;
+    private bool hasSpawnedManaBurst = false;
+
+    [Header("EnemyHP")]
+    public EnemyHP enemyHP;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        enemyHP = GetComponent<EnemyHP>();
         atkTimer = 1f;
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -88,6 +96,11 @@ public class FirewormAI : MonoBehaviour
         {
             moveDirection = Vector2.zero;
         }
+        if (!hasSpawnedManaBurst && enemyHP.GetHealthPercent()<50f)
+        {
+            hasSpawnedManaBurst = true;
+            SpawnTinyManaBurst();
+        }
     }
 
     void FixedUpdate()
@@ -101,4 +114,25 @@ public class FirewormAI : MonoBehaviour
         float angleOffset = Random.Range(-randomAngleRange, randomAngleRange);
         return Quaternion.Euler(0, 0, angleOffset) * dir;
     }
+    void SpawnTinyManaBurst()
+    {
+        if (TinyMana == null) return;
+        int count = Random.Range(5, 11); // 5 đến 10
+        float minForce = 4f;
+        float maxForce = 7f;
+        for (int i = 0; i < count; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            GameObject mana = Instantiate(TinyMana, transform.position, Quaternion.identity);
+            Rigidbody2D manaRb = mana.GetComponent<Rigidbody2D>();
+            if (manaRb != null)
+            {
+                float force = Random.Range(minForce, maxForce);
+                manaRb.linearVelocity = dir * force;
+            }
+        }
+    }
+
+
 }

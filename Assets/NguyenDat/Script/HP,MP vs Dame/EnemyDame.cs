@@ -13,4 +13,12 @@ public class EnemyDame : MonoBehaviour
             playerHP.TakeDamage(damage);
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        PlayerHP playerHP = collision.GetComponent<PlayerHP>();
+        if (playerHP != null)
+        {
+            playerHP.TakeDamage(damage);
+        }
+    }
 }

@@ -219,8 +219,8 @@ MonoBehaviour:
   weaponDescription: "\u201CN\xF3 kh\xF4ng ph\xE1t s\xE1ng trong b\xF3ng t\u1ED1i.
     N\xF3 ch\u1EC9 l\xE0m m\u1ECDi th\u1EE9 xung quanh qu\xEAn \u0111i \xE1nh s\xE1ng
     t\u1EEBng t\u1ED3n t\u1EA1i.\u201D"
-  weaponDamage: 44
-  weaponCriticalChange: 23
+  weaponDamage: 85
+  weaponCriticalChange: 30
   weaponManaCost: 3
   weaponProjectile: {fileID: 2632702078711203918, guid: 2d8aaa0942a19f346a264671d1468965, type: 3}
   weaponType: 4

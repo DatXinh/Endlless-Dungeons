@@ -283,8 +283,8 @@ MonoBehaviour:
     kim lo\u1EA1i kh\xF4ng bao gi\u1EDD ngu\u1ED9i . V\u1EBFt th\u01B0\u01A1ng t\u1EEB
     l\u01B0\u1EE1i g\u01B0\u01A1m khi\u1EBFn k\u1EBB th\xF9 nh\u01B0 b\u1ECB nung
     trong l\xF2 r\xE8n."
-  weaponDamage: 70
-  weaponCriticalChange: 45
+  weaponDamage: 119
+  weaponCriticalChange: 55
   weaponManaCost: 4
   weaponProjectile: {fileID: 2356007746013892179, guid: b5de234240ae0b14a9263863dc7963a1, type: 3}
   weaponType: 1

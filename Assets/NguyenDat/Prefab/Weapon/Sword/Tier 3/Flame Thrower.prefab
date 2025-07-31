@@ -283,9 +283,9 @@ MonoBehaviour:
   weaponIcon: {fileID: 7261363190621134788, guid: a823ad3d4dd074641aa8db1da77ff5f3, type: 3}
   weaponDescription: "\u201CK\u1EBFt h\u1EE3p gi\u1EEFa ma thu\u1EADt v\xE0 c\u01A1
     kh\xED c\u1ED5. L\u1EEDa phun ra theo \xFD ch\xED, kh\xF4ng theo logic.\u201D"
-  weaponDamage: 215
+  weaponDamage: 188
   weaponCriticalChange: 66
-  weaponManaCost: 4
+  weaponManaCost: 5
   weaponProjectile: {fileID: 8176644171792882619, guid: 98e87c5115084404ca38fc2e0cd7f25b, type: 3}
   weaponType: 1
   weaponLevel: 3
