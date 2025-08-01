@@ -121,7 +121,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -135,7 +135,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -201,9 +201,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 833
+        y: 834
         width: 601
-        height: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,10 +222,10 @@ TextureImporter:
       name: Menu Buttons sprite (BnW)_1
       rect:
         serializedVersion: 2
-        x: 608
-        y: 833
-        width: 602
-        height: 201
+        x: 609
+        y: 834
+        width: 601
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,9 +245,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1215
-        y: 833
+        y: 834
         width: 602
-        height: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,9 +267,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1825
-        y: 833
-        width: 202
-        height: 201
+        y: 834
+        width: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,9 +289,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2035
-        y: 833
+        y: 834
         width: 202
-        height: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,9 +311,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 625
+        y: 626
         width: 601
-        height: 202
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +332,10 @@ TextureImporter:
       name: Menu Buttons sprite (BnW)_6
       rect:
         serializedVersion: 2
-        x: 608
-        y: 625
-        width: 602
-        height: 202
+        x: 609
+        y: 626
+        width: 601
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,9 +355,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1215
-        y: 625
+        y: 626
         width: 602
-        height: 202
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,9 +377,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1825
-        y: 625
-        width: 202
-        height: 202
+        y: 626
+        width: 201
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,9 +399,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2035
-        y: 625
+        y: 626
         width: 202
-        height: 202
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,9 +442,9 @@ TextureImporter:
       name: Menu Buttons sprite (BnW)_11
       rect:
         serializedVersion: 2
-        x: 608
+        x: 609
         y: 416
-        width: 602
+        width: 601
         height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -488,7 +488,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1825
         y: 416
-        width: 202
+        width: 201
         height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -552,9 +552,9 @@ TextureImporter:
       name: Menu Buttons sprite (BnW)_16
       rect:
         serializedVersion: 2
-        x: 608
+        x: 609
         y: 208
-        width: 602
+        width: 601
         height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -598,7 +598,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1825
         y: 208
-        width: 202
+        width: 201
         height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -643,7 +643,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 601
-        height: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -662,10 +662,10 @@ TextureImporter:
       name: Menu Buttons sprite (BnW)_21
       rect:
         serializedVersion: 2
-        x: 608
+        x: 609
         y: 0
-        width: 202
-        height: 201
+        width: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -686,8 +686,8 @@ TextureImporter:
         serializedVersion: 2
         x: 818
         y: 0
-        width: 202
-        height: 201
+        width: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,7 +709,7 @@ TextureImporter:
         x: 1027
         y: 0
         width: 202
-        height: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -728,10 +728,10 @@ TextureImporter:
       name: Menu Buttons sprite (BnW)_24
       rect:
         serializedVersion: 2
-        x: 1238
+        x: 1239
         y: 0
-        width: 202
-        height: 201
+        width: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -753,7 +753,7 @@ TextureImporter:
         x: 1448
         y: 0
         width: 202
-        height: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -774,8 +774,8 @@ TextureImporter:
         serializedVersion: 2
         x: 1658
         y: 0
-        width: 202
-        height: 201
+        width: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -797,7 +797,7 @@ TextureImporter:
         x: 1868
         y: 0
         width: 202
-        height: 201
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -816,10 +816,10 @@ TextureImporter:
       name: Menu Buttons sprite (BnW)_28
       rect:
         serializedVersion: 2
-        x: 2078
+        x: 2079
         y: 0
-        width: 201
-        height: 201
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -838,7 +838,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a5716f2ef2148524993037f54c57be71
     internalID: 0
     vertices: []
     indices: 

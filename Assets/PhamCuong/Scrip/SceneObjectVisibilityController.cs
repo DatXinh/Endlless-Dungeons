@@ -14,6 +14,7 @@ public class SceneObjectVisibilityController : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject); // Nếu là object xuyên scene
         SceneManager.sceneLoaded += OnSceneLoaded;
+        Time.timeScale = 1f; // Đảm bảo timeScale trở lại bình thường nếu đang pause
     }
 
     private void OnDestroy()

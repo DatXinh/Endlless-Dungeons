@@ -16,11 +16,13 @@ public class CanvasTrigger : MonoBehaviour
         if (other.CompareTag("Player")) // Player phải có tag là "Player"
         {
             canvasUI.SetActive(true); // Bật Canvas lên
+            Time.timeScale = 0f; // Dừng thời gian khi bật Canvas
         }
     }
 
     public void CloseCanvas()
     {
         canvasUI.SetActive(false); // Tắt canvas khi nhấn nút
+        Time.timeScale = 1f; // Thả thời gian khi tắt Canvas
     }
 }
