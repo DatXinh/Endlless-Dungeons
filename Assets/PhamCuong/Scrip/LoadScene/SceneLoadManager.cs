@@ -9,6 +9,7 @@ public class SceneLoadManager : MonoBehaviour
     {
         // Gọi chuyển scene sau 5 giây
         Invoke("LoadNextScene", 5f);
+        Time.timeScale = 1f; // Đảm bảo thời gian không bị dừng
     }
 
     void LoadNextScene()
