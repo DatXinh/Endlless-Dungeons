@@ -38,7 +38,7 @@ public class WeaponTooltipDisplay : MonoBehaviour
             weaponName.color = Color.red;
         }
         weaponDama.text = weaponData.weaponDamage.ToString();
-        weaponCrit.text = weaponData.weaponCriticalChange.ToString();
+        weaponCrit.text = weaponData.weaponCriticalChange.ToString() + "%";
         weaponMana.text = weaponData.weaponManaCost.ToString();
         weaponPrice.text = weaponData.WeaponPrice.ToString();
         tooltipPanel.SetActive(true);

@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23bd0d83290207046aa59a2137f63e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
   spriteRenderer: {fileID: 1688196522836848802}
 --- !u!114 &3766759527391991602
 MonoBehaviour:
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 744813551124864205}
   - component: {fileID: 1413993205549113237}
   - component: {fileID: 2046901175767201228}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

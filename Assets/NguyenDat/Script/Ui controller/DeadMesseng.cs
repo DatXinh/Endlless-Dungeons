@@ -7,7 +7,7 @@ public class DeadMesseng : MonoBehaviour
     public GameObject rightPanel;
     public GameObject leftPanel;
     public GameObject deadMesseng;
-    public GameObject reviveButton;
+    public GameObject pauseButton;
 
     public PlayerHP playerHP;
     public PlayerInteractor playerInteractor;
@@ -20,6 +20,7 @@ public class DeadMesseng : MonoBehaviour
             reviveTime--;
             rightPanel.SetActive(true);
             leftPanel.SetActive(true);
+            pauseButton.SetActive(true);
             deadMesseng.SetActive(false);
             playerHP.currentHP = playerHP.maxHP;
             playerHP.UpdateHealthUI();

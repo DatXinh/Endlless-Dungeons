@@ -271,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 455017040245435748, guid: 7af9144aa39893540b204c356b3c91e0, type: 3}
       propertyPath: 'eliteEnemyPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 571989167598489800, guid: f548b4fa49c30c84fa23f3563f804909, type: 3}
+      objectReference: {fileID: 8558169933533535754, guid: f50c55c88fdb86b42a643e264c39894b, type: 3}
     - target: {fileID: 455017040245435748, guid: 7af9144aa39893540b204c356b3c91e0, type: 3}
       propertyPath: 'eliteEnemyPrefabs.Array.data[1]'
       value: 

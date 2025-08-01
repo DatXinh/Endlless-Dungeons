@@ -107,8 +107,8 @@ MonoBehaviour:
   normalEnemyPrefabs:
   - {fileID: 1220867173273594807, guid: 05659ac01aa948642a2202ed9400d948, type: 3}
   - {fileID: 6377900764625738663, guid: 75a85d190062bb84482a8abd5ac7dbe0, type: 3}
+  - {fileID: 8558169933533535754, guid: 5a6d3250016335e46ad967a288120a67, type: 3}
   eliteEnemyPrefabs:
-  - {fileID: 571989167598489800, guid: f548b4fa49c30c84fa23f3563f804909, type: 3}
   - {fileID: 8558169933533535754, guid: f50c55c88fdb86b42a643e264c39894b, type: 3}
   eliteEnemyChance: 0.1
   minMonsterCount: 6

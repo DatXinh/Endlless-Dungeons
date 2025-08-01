@@ -301,9 +301,9 @@ GameObject:
   - component: {fileID: 7089504748901484676}
   - component: {fileID: 7430602791356937420}
   - component: {fileID: 4882418779879025261}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AtkPos
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

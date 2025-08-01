@@ -24,7 +24,8 @@ public class PlayerHP : MonoBehaviour
     public GameObject rightPanel;
     public GameObject leftPanel;
     public GameObject deadMesseng;
-    public AudioSource [] allAudioSources;
+    public GameObject pauseButton;
+    public AudioSource[] allAudioSources;
     public List<AudioSource> playAudioSources = new List<AudioSource>();
 
     void Start()
@@ -73,6 +74,7 @@ public class PlayerHP : MonoBehaviour
             leftPanel.SetActive(false);
             rightPanel.SetActive(false);
             deadMesseng.SetActive(true);
+            pauseButton.SetActive(false);
             PauseGame();
         }
     }
@@ -115,31 +117,6 @@ public class PlayerHP : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.fillAmount = healthPercent;
-
-            Color healthColor;
-
-            if (healthPercent > 0.8f)
-            {
-                healthColor = new Color(0f, 1f, 0f); // Xanh lá
-            }
-            else if (healthPercent > 0.6f)
-            {
-                healthColor = new Color(0.5f, 1f, 0f); // Vàng xanh
-            }
-            else if (healthPercent > 0.4f)
-            {
-                healthColor = new Color(1f, 1f, 0f); // Vàng
-            }
-            else if (healthPercent > 0.2f)
-            {
-                healthColor = new Color(1f, 0.5f, 0f); // Cam
-            }
-            else
-            {
-                healthColor = new Color(1f, 0f, 0f); // Đỏ
-            }
-
-            healthBar.color = healthColor;
         }
 
         if (currentHeal != null)
