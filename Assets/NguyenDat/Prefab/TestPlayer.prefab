@@ -290,12 +290,12 @@ MonoBehaviour:
   healthBar: {fileID: 2027232366832638876}
   maxHeal: {fileID: 5223172938878608512}
   currentHeal: {fileID: 8838656969530587355}
-  joystick: {fileID: 0}
-  joystickAttackAndAim: {fileID: 0}
+  joystick: {fileID: 3381391178491776238}
+  joystickAttackAndAim: {fileID: 8426108463692154582}
   rightPanel: {fileID: 4121204888396628550}
   leftPanel: {fileID: 8779471450992082861}
   deadMesseng: {fileID: 4991446657845716828}
-  pauseButton: {fileID: 0}
+  pauseButton: {fileID: 5967498061307820193}
   allAudioSources: []
   playAudioSources: []
 --- !u!114 &8542990334044637621
@@ -1375,6 +1375,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3381391178491776238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 600598966967486145, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+  m_PrefabInstance: {fileID: 2790222722959149615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce534793aec7e146854ef15aac39df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4121204888396628550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2272535272841807977, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
@@ -1407,6 +1418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5967498061307820193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8387975291592618638, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+  m_PrefabInstance: {fileID: 2790222722959149615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7422909645454741384 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4736559985198269863, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
