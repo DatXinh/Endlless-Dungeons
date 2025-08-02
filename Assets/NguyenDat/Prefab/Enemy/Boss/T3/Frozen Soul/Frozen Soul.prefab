@@ -300,6 +300,7 @@ MonoBehaviour:
   - {fileID: 8752464525617690650, guid: 84cb4a5f17f92d64b8b90fd8b19159a2, type: 3}
   - {fileID: 7752384395813104827, guid: d56e2106a24259b4c8a94580793b8989, type: 3}
   - {fileID: 7083945584695108612, guid: 5aea1dc35aae7c44397e785d9729ec58, type: 3}
+  LoreItem: {fileID: 6292379482442014467, guid: 1b297d987db03ee45b0b5ffe95c0620c, type: 3}
   SpawnBoss: {fileID: 0}
   dropRadius: 3
 --- !u!1 &6502596347719312711
