@@ -81512,6 +81512,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2545573448332680497, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991446657845716828, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5521577008648066387, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -81574,6 +81582,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8886899884760006340, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081448460785130714, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
