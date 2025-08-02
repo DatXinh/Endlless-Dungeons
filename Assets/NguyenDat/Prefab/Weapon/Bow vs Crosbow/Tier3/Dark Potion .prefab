@@ -223,7 +223,7 @@ MonoBehaviour:
   weaponDamage: 450
   weaponCriticalChange: 75
   weaponManaCost: 6
-  weaponProjectile: {fileID: 6834534519335637225, guid: 973fd922793f12d489edaba4b702708f, type: 3}
+  weaponProjectile: {fileID: 6834534519335637225, guid: 9a1aaffaadbbf5e40977ab44116b682c, type: 3}
   weaponType: 3
   weaponLevel: 3
   WeaponPrice: 100

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5608248280318720826}
   - component: {fileID: -9006806381620085017}
   m_Layer: 0
-  m_Name: Cinder Arrow
+  m_Name: Cinder Arrow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
