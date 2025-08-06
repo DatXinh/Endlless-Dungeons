@@ -31,6 +31,7 @@ public class DeadMesseng : MonoBehaviour
         playerInteractor.Coins = 50;
         playerInteractor.setCoinNumber();
         playerInteractor.RemoveAllWeapons();
+        deadMesseng.SetActive(false);
         SceneLoadManager.nextSceneName = "Home";
         SceneManager.LoadScene("LoadScene");
     }

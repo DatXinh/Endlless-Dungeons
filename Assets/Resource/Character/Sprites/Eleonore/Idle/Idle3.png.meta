@@ -121,10 +121,10 @@ TextureImporter:
         serializedVersion: 2
         x: 8
         y: 7
-        width: 40
+        width: 46
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Idle3_1
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 21
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e385877c819a7b50800000000000000
-      internalID: 6591741037096829927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e5daa024d36270c499b5b24e5cf9b9b5
     internalID: 0
     vertices: []
     indices: 

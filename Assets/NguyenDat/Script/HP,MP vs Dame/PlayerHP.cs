@@ -41,7 +41,6 @@ public class PlayerHP : MonoBehaviour
         }
         UpdateHealthUI(); // Update the health UI at the start
         deadMesseng.SetActive(false);
-        allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
     }
     // Method to take damage
     public void TakeDamage(int damage)
@@ -126,6 +125,7 @@ public class PlayerHP : MonoBehaviour
     }
     public void PauseGame()
     {
+        allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         foreach (AudioSource audio in allAudioSources)
         {
             if (audio.isPlaying)

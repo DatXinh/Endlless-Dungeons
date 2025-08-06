@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 5695889659574220862}
   - component: {fileID: 6035440556193388163}
   - component: {fileID: 9157258733625566617}
+  - component: {fileID: 482761350099557298}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -380,7 +381,7 @@ Camera:
   m_GameObject: {fileID: 2907362585235972688}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -506,6 +507,26 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &482761350099557298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907362585235972688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927687a9cd7fad147ba392c596bf98df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 8356368311153882744}
+  Tier1Scenes: []
+  tier1: {r: 1, g: 0.41451135, b: 0, a: 1}
+  Tier2Scenes: []
+  tier2: {r: 0.7289032, g: 1, b: 0, a: 0}
+  Tier3Scenes: []
+  tier3: {r: 1, g: 0.16911058, b: 0, a: 0}
+  defaultColor: {r: 0, g: 0.013426781, b: 1, a: 1}
 --- !u!1 &4918942859033818499
 GameObject:
   m_ObjectHideFlags: 0
