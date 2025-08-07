@@ -7,6 +7,7 @@ public class PWeaponDame : MonoBehaviour
 
     public int weaponDamage;
     public int weaponCriticalChange;
+    private int FinalWeaponDamage;
 
     void Start()
     {
@@ -17,6 +18,18 @@ public class PWeaponDame : MonoBehaviour
             weaponDamage = weaponData.weaponDamage;
             weaponCriticalChange = weaponData.weaponCriticalChange;
         }
+        // Tính toán sát thương cuối cùng dựa trên vòng lặp hiện tại
+        if (LoopManager.Instance != null)
+        {
+            if (LoopManager.Instance.currentLoop > 0)
+            {
+                FinalWeaponDamage = (int)(weaponDamage * (LoopManager.Instance.currentLoop * 0.2f));
+            }
+            else
+            {
+                FinalWeaponDamage = weaponDamage; // Sử dụng sát thương gốc nếu không có LoopManager
+            }
+        }
     }
 
     // Gây sát thương khi va chạm với Enemy (dùng Collider 2D)
@@ -25,7 +38,7 @@ public class PWeaponDame : MonoBehaviour
         EnemyHP enemyHP = collision.GetComponent<EnemyHP>();
         if (enemyHP != null)
         {
-            int baseDamage = weaponDamage;
+            int baseDamage = FinalWeaponDamage;
             int critRate = weaponCriticalChange;
 
             bool isCritical = Random.Range(0, 100) < critRate;
@@ -44,7 +57,7 @@ public class PWeaponDame : MonoBehaviour
         EnemyHP enemyHP = collision.GetComponent<EnemyHP>();
         if (enemyHP != null)
         {
-            int baseDamage = weaponDamage;
+            int baseDamage = FinalWeaponDamage;
             int critRate = weaponCriticalChange;
 
             bool isCritical = Random.Range(0, 100) < critRate;

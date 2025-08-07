@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 5118933175596216487, guid: 0a7e21c210fb9414ca13bcd09ac3f3b5, type: 3}
+      propertyPath: sceneName
+      value: 1-1
+      objectReference: {fileID: 0}
     - target: {fileID: 5932301334377907776, guid: 0a7e21c210fb9414ca13bcd09ac3f3b5, type: 3}
       propertyPath: monsterPrefabs.Array.size
       value: 2

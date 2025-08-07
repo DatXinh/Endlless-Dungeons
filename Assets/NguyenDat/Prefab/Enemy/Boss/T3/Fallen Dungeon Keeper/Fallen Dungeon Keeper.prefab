@@ -957,10 +957,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50000
+  BaseHP: 50000
+  maxHP: 0
   currentHP: 0
   InvincibilityTime: 0.17
-  damageReductionRate: 22
+  damageReductionRate: 25
   damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
   healthBar: {fileID: 4070502264218940071}
   maxHeal: {fileID: 1720839534829259871}

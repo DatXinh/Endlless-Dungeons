@@ -13,4 +13,13 @@ public class SceneButtonHandler : MonoBehaviour
         // Chuyển sang scene loading
         SceneManager.LoadScene("LoadScene");
     }
+    public void OnClickLoadSceneWithLoop()
+    {
+        // Gán tên scene muốn chuyển đến
+        SceneLoadManager.nextSceneName = targetSceneName;
+        // Đặt chế độ chơi là Endless
+        LoopManager.Instance.SetGameMode(LoopManager.GameMode.Endless);
+        // Chuyển sang scene loading
+        SceneManager.LoadScene("LoadScene");
+    }
 }

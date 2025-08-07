@@ -220,6 +220,7 @@ MonoBehaviour:
   detectionRadius: 15
   moveSpeed: 10
   keepDistance: 3
+  rb: {fileID: 0}
 --- !u!114 &2368992684004479251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  BaseHP: 100
+  maxHP: 0
   currentHP: 0
   InvincibilityTime: 0.17
   damageReductionRate: 0

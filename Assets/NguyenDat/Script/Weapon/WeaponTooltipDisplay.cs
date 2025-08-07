@@ -13,11 +13,23 @@ public class WeaponTooltipDisplay : MonoBehaviour
     public TextMeshProUGUI weaponPrice;
     private WeaponData weaponData;
     public int weaponLevel;
+    private int FinalWeaponDamage;
 
     private void Awake()
     {
         weaponData = GetComponent<WeaponData>();
         weaponLevel = weaponData.weaponLevel;
+        if (LoopManager.Instance != null)
+        {
+            if (LoopManager.Instance.currentLoop > 0)
+            {
+                FinalWeaponDamage = (int)(weaponData.weaponDamage * (LoopManager.Instance.currentLoop * 0.2f));
+            }
+            else
+            {
+                FinalWeaponDamage = weaponData.weaponDamage; // Use base damage if no LoopManager
+            }
+        }
         HideTooltip();
     }
 
@@ -37,7 +49,7 @@ public class WeaponTooltipDisplay : MonoBehaviour
         {
             weaponName.color = Color.red;
         }
-        weaponDama.text = weaponData.weaponDamage.ToString();
+        weaponDama.text = FinalWeaponDamage.ToString();
         weaponCrit.text = weaponData.weaponCriticalChange.ToString() + "%";
         weaponMana.text = weaponData.weaponManaCost.ToString();
         weaponPrice.text = weaponData.WeaponPrice.ToString();

@@ -49,8 +49,6 @@ public class EnemySelfDestroy : MonoBehaviour
         }
         else
         {
-            // Không sinh ra gì
-
         }
     }
 }

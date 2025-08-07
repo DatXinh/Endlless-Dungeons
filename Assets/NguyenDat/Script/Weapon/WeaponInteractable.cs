@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WeaponInteractable : MonoBehaviour, IInteractable
 {
     public WeaponData weaponData;
     public bool isSale = false;
+    public bool isEquip = false;
     [Header("Thông tin vũ khí")]
     public WeaponTooltipDisplay weaponTooltipDisplay; // Hiển thị thông tin vũ khí
     public string weaponName = "Tên vũ khí";
@@ -21,6 +23,13 @@ public class WeaponInteractable : MonoBehaviour, IInteractable
         weaponPrice = weaponData.WeaponPrice;
         interacCollider = GetComponent<Collider2D>();
         weaponTooltipDisplay = GetComponent<WeaponTooltipDisplay>();
+    }
+    private void OnSceneLoaded(Scene scene,LoadSceneMode mode)
+    {
+        if (isEquip == false)
+        {
+            Destroy(gameObject);
+        }
     }
     public void Interact()
     {

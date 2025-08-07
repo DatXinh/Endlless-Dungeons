@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class EnemyHP : MonoBehaviour
 {
-    public float maxHP = 100; // Maximum health points
+    public int BaseHP;
+    public float maxHP; // Maximum health points
     public float currentHP; // Current health points
     public float InvincibilityTime = 0.17f; // Invincibility time in seconds after taking damage
     public int damageReductionRate = 0; // Tỉ lệ miễn thương (0-100)
@@ -20,26 +21,26 @@ public class EnemyHP : MonoBehaviour
 
     void Start()
     {
+        if (LoopManager.Instance != null)
+        {
+            if (LoopManager.Instance.currentLoop > 0)
+            {
+                maxHP = BaseHP * (LoopManager.Instance.currentLoop * 0.2f); // Increase max HP based on current loop
+            }
+            else
+            {
+                maxHP = BaseHP; // Use base HP if no LoopManager or current loop is 0
+            }
+        }
         currentHP = maxHP; // Initialize current health to maximum health
-        if (healthBar != null)
-        {
-            healthBar.fillAmount = 1f; // Set health bar to full at the start
-        }
-        if (maxHeal != null)
-        {
-            maxHeal.text = maxHP.ToString(); // Set the maximum health text
-        }
-        if (currentHeal != null)
-        {
-            currentHeal.text = currentHP.ToString(); // Set the current health text
-        }
+        UpdateHPUI(); // Update health UI at the start
         if (bossPlayDeadAnimation == null)
         {
             bossPlayDeadAnimation = GetComponent<BossPlayDeadAnimation>();
         }
     }
     // Method to take damage
-    public void TakeDamage(int damage , bool isCritical)
+    public void TakeDamage(int damage, bool isCritical)
     {
         if (currentHP > 0)
         {
@@ -51,18 +52,14 @@ public class EnemyHP : MonoBehaviour
                 int finalDamage = Mathf.RoundToInt(reducedDamage);
 
                 currentHP -= finalDamage;
-                if (currentHP < 0)
+                UpdateHPUI(); // Update health UI
+                if (currentHP <= 0)
                 {
-                    currentHP = 0;
-                    bossPlayDeadAnimation.DisableScripts(); // Disable scripts if health reaches zero
-                }
-                if (healthBar != null)
-                {
-                    healthBar.fillAmount = currentHP / maxHP; // Update health bar
-                }
-                if (currentHeal != null)
-                {
-                    currentHeal.text = currentHP.ToString(); // Update current health text
+                    currentHP = 0; // Ensure health doesn't go below zero
+                    if (bossPlayDeadAnimation != null)
+                    {
+                        bossPlayDeadAnimation.DisableScripts();
+                    }
                 }
                 // Display damage popup
                 if (damagePopupPrefab != null)
@@ -90,18 +87,22 @@ public class EnemyHP : MonoBehaviour
         if (currentHP > 0)
         {
             currentHP += amount;
-            if (healthBar != null)
-            {
-                healthBar.fillAmount = currentHP / maxHP; // Update health bar
-            }
-            if (currentHeal != null)
-            {
-                currentHeal.text = currentHP.ToString(); // Update current health text
-            }
-            if (currentHP > maxHP)
-            {
-                currentHP = maxHP;
-            }
+            UpdateHPUI(); // Update health UI
+        }
+    }
+    public void UpdateHPUI()
+    {
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = currentHP / maxHP; // Update health bar
+        }
+        if (maxHeal != null)
+        {
+            maxHeal.text = maxHP.ToString(); // Update maximum health text
+        }
+        if (currentHeal != null)
+        {
+            currentHeal.text = currentHP.ToString(); // Update current health text
         }
     }
     public float GetHealthPercent()

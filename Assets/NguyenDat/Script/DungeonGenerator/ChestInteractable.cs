@@ -9,11 +9,13 @@ public class ChestInteractable : MonoBehaviour, IInteractable
     public GameObject[] weaponPrefabs;
 
     public Transform spawnPoint; // Vị trí sinh vật phẩm
+    public AudioSource audioSource;
 
     private void Awake()
     {
         chestCollider = GetComponent<Collider2D>();
         chestAnimator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public string GetInteractionPrompt()
@@ -73,6 +75,13 @@ public class ChestInteractable : MonoBehaviour, IInteractable
         {
             Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
             Instantiate(coinPrefab, position + offset, Quaternion.identity);
+        }
+    }
+    void playAudio()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
         }
     }
 }

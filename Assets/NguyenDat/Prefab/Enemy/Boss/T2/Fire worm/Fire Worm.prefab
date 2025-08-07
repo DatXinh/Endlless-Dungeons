@@ -346,10 +346,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 25000
+  BaseHP: 25000
+  maxHP: 0
   currentHP: 0
   InvincibilityTime: 0.01
-  damageReductionRate: 0
+  damageReductionRate: 15
   damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
   healthBar: {fileID: 7944913190633786957}
   maxHeal: {fileID: 4746497402641969333}

@@ -28,10 +28,14 @@ public class DeadMesseng : MonoBehaviour
     }
     public void Giveup()
     {
-        playerInteractor.Coins = 50;
         playerInteractor.setCoinNumber();
         playerInteractor.RemoveAllWeapons();
+        rightPanel.SetActive(true);
+        leftPanel.SetActive(true);
+        pauseButton.SetActive(true);
         deadMesseng.SetActive(false);
+        LoopManager.Instance.ResetLoop();
+        LoopManager.Instance.SetGameMode(LoopManager.GameMode.Normal);
         SceneLoadManager.nextSceneName = "Home";
         SceneManager.LoadScene("LoadScene");
     }

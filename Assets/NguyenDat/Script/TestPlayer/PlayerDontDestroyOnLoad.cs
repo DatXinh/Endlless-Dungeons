@@ -28,7 +28,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        SetPhysicalCameraByScene(SceneManager.GetActiveScene());
+
     }
 
     private void Update()
@@ -55,24 +55,26 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         // Cập nhật tên màn chơi
         if (sceneNameText != null)
         {
-            sceneNameText.text = $"Màn chơi: {scene.name}";
+            sceneNameText.text = $"Màn chơi: {scene.name}" + LoopManager.Instance.currentGameMode;
         }
+        SetPhysicalCameraByScene(scene);
     }
     public void ResetPlayTime()
     {
         playTime = 0f;
-
         if (playTimeText != null)
         {
             playTimeText.text = "Thời gian chơi: 00:00";
         }
+        LoopManager.Instance.ResetLoop();
+        LoopManager.Instance.SetGameMode(LoopManager.GameMode.Normal);
     }
     public void SetPhysicalCameraByScene(Scene scene)
     {
         if (mainCamera != null)
         {
             // Ví dụ: chỉ bật Physical Camera ở cảnh "Level_1" và "Level_2"
-            if (scene.name == "1-Boss" || scene.name == "2-Boss"||scene.name=="3-Boss")
+            if (scene.name == "1-Boss" || scene.name == "2-Boss" || scene.name == "3-Boss")
             {
                 mainCamera.usePhysicalProperties = false;
             }
