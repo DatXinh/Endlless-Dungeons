@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 23f9e6a939c1f4245835bd51c791019d
+guid: c69aaad3252999848a0f0658027607d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1896974073269309352
-    second: The traveler in a red hooded cloak stands before a massive, ornate dungeon_door
-      deep within the dungeon, intricately carved with symbols of ancient power The
-      strange energies from within the dungeon__0
+      213: -6672687196592866246
+    second: img5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,9 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: The traveler in a red hooded cloak stands before a massive, ornate dungeon_door
-        deep within the dungeon, intricately carved with symbols of ancient power
-        The strange energies from within the dungeon__0
+      name: img5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -132,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85038a681289ca5e0800000000000000
-      internalID: -1896974073269309352
+      spriteID: a3cf8cd195ad563a0800000000000000
+      internalID: -6672687196592866246
       vertices: []
       indices: 
       edges: []
@@ -152,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      The traveler in a red hooded cloak stands before a massive, ornate dungeon_door deep within the dungeon, intricately carved with symbols of ancient power The strange energies from within the dungeon__0: -1896974073269309352
+      img5_0: -6672687196592866246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

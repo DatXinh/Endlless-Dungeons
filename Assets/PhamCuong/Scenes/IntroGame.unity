@@ -288,12 +288,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slideImage: {fileID: 602838372}
   slides:
-  - {fileID: 21300000, guid: 00ca94ca2b35b7441a1d462f08b1dc07, type: 3}
-  - {fileID: 21300000, guid: c554b9edbd310f749b4093b01172b3ba, type: 3}
-  - {fileID: 21300000, guid: 09a26d6217b06024cb63b8af724977e1, type: 3}
-  - {fileID: 21300000, guid: 47ccc8e590334914eaf54315313c6940, type: 3}
-  - {fileID: 21300000, guid: f415b91bd62b8814582de4a986fc4535, type: 3}
-  - {fileID: 21300000, guid: 23f9e6a939c1f4245835bd51c791019d, type: 3}
+  - {fileID: 21300000, guid: 9a90073a59f2e9e45b155889419ce86c, type: 3}
+  - {fileID: 21300000, guid: 5b2740b1de3a2904a8b3c0587b8ad8ca, type: 3}
+  - {fileID: 21300000, guid: 422a6059a864b834e977b20a72c4adc9, type: 3}
+  - {fileID: 21300000, guid: 6b78c9526c1a7d2438d9525ac15f5d48, type: 3}
+  - {fileID: 21300000, guid: c69aaad3252999848a0f0658027607d4, type: 3}
+  - {fileID: 21300000, guid: 6e7d904b0be535946870647e16720521, type: 3}
   fadeDuration: 1
   displayDuration: 4
   sceneToLoad: Home

@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: f415b91bd62b8814582de4a986fc4535
+guid: 6e7d904b0be535946870647e16720521
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4409061197280577212
-    second: Inside the ancient dungeon, the traveler navigates a dimly lit, cavernous
-      space Ancient runes glow faintly on the stone walls, and strange, otherworldly
-      sounds echo from deeper within The air is thi_0
+      213: -3187034389369850528
+    second: img6_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,9 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inside the ancient dungeon, the traveler navigates a dimly lit, cavernous
-        space Ancient runes glow faintly on the stone walls, and strange, otherworldly
-        sounds echo from deeper within The air is thi_0
+      name: img6_0
       rect:
         serializedVersion: 2
         x: 0
@@ -132,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 449f127833edfc2c0800000000000000
-      internalID: -4409061197280577212
+      spriteID: 065f7a6cb1165c3d0800000000000000
+      internalID: -3187034389369850528
       vertices: []
       indices: 
       edges: []
@@ -152,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inside the ancient dungeon, the traveler navigates a dimly lit, cavernous space Ancient runes glow faintly on the stone walls, and strange, otherworldly sounds echo from deeper within The air is thi_0: -4409061197280577212
+      img6_0: -3187034389369850528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

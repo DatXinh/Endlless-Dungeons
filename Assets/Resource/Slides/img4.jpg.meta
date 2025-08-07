@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 09a26d6217b06024cb63b8af724977e1
+guid: 6b78c9526c1a7d2438d9525ac15f5d48
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8575635346226018489
-    second: A peaceful landscape of Solara with lush green fields and a clear blue
-      sky, a small, mysterious traveler figure in a red cloak stands on a path leading
-      towards a distant, imposing mountain, Velgrath,__0
+      213: 3585665313596270126
+    second: img4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,9 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: A peaceful landscape of Solara with lush green fields and a clear blue
-        sky, a small, mysterious traveler figure in a red cloak stands on a path
-        leading towards a distant, imposing mountain, Velgrath,__0
+      name: img4_0
       rect:
         serializedVersion: 2
         x: 0
@@ -132,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7470ae896193df880800000000000000
-      internalID: -8575635346226018489
+      spriteID: e266854ea97d2c130800000000000000
+      internalID: 3585665313596270126
       vertices: []
       indices: 
       edges: []
@@ -152,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      A peaceful landscape of Solara with lush green fields and a clear blue sky, a small, mysterious traveler figure in a red cloak stands on a path leading towards a distant, imposing mountain, Velgrath,__0: -8575635346226018489
+      img4_0: 3585665313596270126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
