@@ -294,6 +294,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6b78c9526c1a7d2438d9525ac15f5d48, type: 3}
   - {fileID: 21300000, guid: c69aaad3252999848a0f0658027607d4, type: 3}
   - {fileID: 21300000, guid: 6e7d904b0be535946870647e16720521, type: 3}
+  slideAudioClips:
+  - {fileID: 8300000, guid: a48cb9d65a49844468b7baa2bb1cd284, type: 3}
+  - {fileID: 8300000, guid: 5db74477852dfae4199e71bfc9b1f545, type: 3}
+  - {fileID: 8300000, guid: e0e21407195536f4990a5db8f267458f, type: 3}
+  - {fileID: 8300000, guid: f115257e254fdb34ba59c131bc569cb6, type: 3}
   fadeDuration: 1
   displayDuration: 4
   sceneToLoad: Home
