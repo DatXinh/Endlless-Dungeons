@@ -74,47 +74,36 @@ using System.Collections;
 
 public class IntroSlides : MonoBehaviour
 {
-    public Image slideImage;               // UI Image để hiển thị ảnh
-    public Sprite[] slides;                // Các Sprite ảnh
-    public AudioClip[] slideAudioClips;    // Các đoạn nhạc ứng với từng ảnh
+    public Image slideImage;         // Kéo Image UI vào đây
+    public Sprite[] slides;          // Kéo các Sprite ảnh intro vào đây
     public float fadeDuration = 1f;
-    public float displayDuration = 4f;
-    public string sceneToLoad = "Home";    // Scene sau intro
-
-    private AudioSource audioSource;
+    public float displayDuration = 2f;
+    public string sceneToLoad = "Home"; // Tên scene sau intro
 
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
         StartCoroutine(PlaySlides());
     }
 
     IEnumerator PlaySlides()
     {
-        slideImage.color = new Color(1, 1, 1, 0); // Ẩn ảnh ban đầu
+        slideImage.color = new Color(1, 1, 1, 0); // Ẩn ban đầu
 
-        for (int i = 0; i < slides.Length; i++)
+        foreach (Sprite slide in slides)
         {
-            slideImage.sprite = slides[i];
-
-            // Phát nhạc tương ứng
-            if (i < slideAudioClips.Length && slideAudioClips[i] != null)
-            {
-                audioSource.clip = slideAudioClips[i];
-                audioSource.Play();
-            }
+            slideImage.sprite = slide;
 
             // Fade in
             yield return StartCoroutine(FadeImage(0f, 1f));
 
-            // Chờ hiển thị ảnh
+            // Chờ thời gian hiển thị
             yield return new WaitForSeconds(displayDuration);
 
             // Fade out
             yield return StartCoroutine(FadeImage(1f, 0f));
         }
 
-        // Kết thúc, chuyển scene
+        // Chuyển scene
         SceneManager.LoadScene(sceneToLoad);
     }
 
