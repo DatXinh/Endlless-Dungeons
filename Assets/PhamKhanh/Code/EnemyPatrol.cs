@@ -2,110 +2,105 @@
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public enum EnemyState { Patrolling, Chasing }
-    private EnemyState currentState = EnemyState.Patrolling;
-
-    public Vector2 patrolRange = new Vector2(3f, 3f);
+    [Header("Patrol Settings")]
+    public Vector2 patrolRange = new Vector2(3, 3);
     public float moveSpeed = 2f;
     public float waitTime = 2f;
 
-    public float detectionRange = 5f;
-    public float attackRange = 1.5f;
-
+    [Header("Detection Settings")]
+    public float detectionRange = 6f;
+    public float attackRange = 4f;
+    public float retreatRange = 2f;
     public Transform player;
 
-    private Vector2 centerPoint;
-    private Vector2 targetPoint;
+    [Header("Attack Settings")]
+    public MonoBehaviour shootScript;
+
+    private Vector3 startPos;
+    private Vector3 patrolTarget;
     private float waitCounter;
 
-    void Start()
+    private void Start()
     {
-        centerPoint = transform.position;
-        ChooseNewTarget();
-
+        // Tìm player tự động
         if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        {
+            GameObject foundPlayer = GameObject.FindGameObjectWithTag("Player");
+            if (foundPlayer != null)
+                player = foundPlayer.transform;
+        }
+
+        startPos = transform.position;
+        SetNewPatrolPoint();
+        waitCounter = waitTime;
+
+        if (shootScript != null)
+            shootScript.enabled = false;
     }
 
-    void Update()
+    private void Update()
     {
         if (player == null) return;
 
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        float distance = Vector2.Distance(transform.position, player.position);
 
-        switch (currentState)
+        if (distance <= detectionRange)
         {
-            case EnemyState.Patrolling:
-                Patrol();
+            HandleChaseAndAttack(distance);
+        }
+        else
+        {
+            Patrol();
+            if (shootScript != null)
+                shootScript.enabled = false;
+        }
+    }
 
-                // Phát hiện player trong phạm vi
-                if (distanceToPlayer <= detectionRange)
-                {
-                    currentState = EnemyState.Chasing;
-                }
-                break;
+    void HandleChaseAndAttack(float distance)
+    {
+        Vector2 direction = (player.position - transform.position).normalized;
 
-            case EnemyState.Chasing:
-                ChasePlayer();
-
-                // Nếu player ra khỏi phạm vi -> quay lại tuần tra
-                if (distanceToPlayer > detectionRange + 1f) // Thêm ngưỡng để tránh nhấp nháy
-                {
-                    currentState = EnemyState.Patrolling;
-                    ChooseNewTarget();
-                }
-
-                break;
+        if (distance > attackRange)
+        {
+            transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
+            if (shootScript != null)
+                shootScript.enabled = false;
+        }
+        else if (distance < retreatRange)
+        {
+            transform.position -= (Vector3)(direction * moveSpeed * Time.deltaTime);
+            if (shootScript != null)
+                shootScript.enabled = false;
+        }
+        else
+        {
+            if (shootScript != null)
+                shootScript.enabled = true;
         }
     }
 
     void Patrol()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
+        if (Vector2.Distance(transform.position, patrolTarget) < 0.1f)
         {
-            waitCounter += Time.deltaTime;
-            if (waitCounter >= waitTime)
+            if (waitCounter <= 0)
             {
-                ChooseNewTarget();
-                waitCounter = 0f;
+                SetNewPatrolPoint();
+                waitCounter = waitTime;
+            }
+            else
+            {
+                waitCounter -= Time.deltaTime;
             }
         }
     }
 
-    void ChooseNewTarget()
+    void SetNewPatrolPoint()
     {
-        float randomX = Random.Range(-patrolRange.x, patrolRange.x);
-        float randomY = Random.Range(-patrolRange.y, patrolRange.y);
-        targetPoint = centerPoint + new Vector2(randomX, randomY);
-    }
-
-    void ChasePlayer()
-    {
-        if (player != null)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
-            if (Vector2.Distance(transform.position, player.position) <= attackRange)
-            {
-                // Tấn công ở đây (nếu có animation hoặc gây sát thương)
-                Debug.Log($"{gameObject.name} attacking player!");
-            }
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, patrolRange * 2);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
-
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        float randX = Random.Range(-patrolRange.x, patrolRange.x);
+        float randY = Random.Range(-patrolRange.y, patrolRange.y);
+        patrolTarget = new Vector3(startPos.x + randX, startPos.y + randY, transform.position.z);
     }
 }
-
-

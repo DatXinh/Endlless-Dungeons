@@ -180,9 +180,11 @@ MonoBehaviour:
   patrolRange: {x: 3, y: 3}
   moveSpeed: 2
   waitTime: 2
-  detectionRange: 5
-  attackRange: 1.5
+  detectionRange: 7
+  attackRange: 5
+  retreatRange: 2
   player: {fileID: 0}
+  shootScript: {fileID: 4637261749524395805}
 --- !u!61 &8174883649298023665
 BoxCollider2D:
   m_ObjectHideFlags: 0
