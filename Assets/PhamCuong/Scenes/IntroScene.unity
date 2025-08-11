@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 2
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 8
@@ -564,7 +564,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a5b06dd2057edc74db80eb18b8b48010, type: 3}
   m_Resource: {fileID: 8300000, guid: a5b06dd2057edc74db80eb18b8b48010, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.59
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 9
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 12
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 6
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 5
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 0
@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 10
@@ -2173,7 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 3
@@ -2341,7 +2341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 1
@@ -2584,7 +2584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 11
@@ -2752,7 +2752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 4
@@ -2920,7 +2920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 13
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b44f6752dbb3a4293fd324c685233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 1500
+  dropSpeed: 2000
   bounceHeight: 100
   bounceDuration: 0.8
   delayBeforeDrop: 7

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/PhamCuong/Scenes/Start Game.unity
     guid: 40df67441d585c546891c2ed3bf576af
   - enabled: 1
+    path: Assets/PhamCuong/Scenes/IntroGame.unity
+    guid: cb925b2c3b303fe43bfcd6b544455816
+  - enabled: 1
     path: Assets/PhamCuong/Scenes/Home.unity
     guid: f8228573dc7628c4db6d0ecce888fa7b
   - enabled: 1
@@ -80,6 +83,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NguyenDat/Secens/Test Monster/Test Monster.unity
     guid: 923312ff45364954eac9f61e28af8a1e
+  - enabled: 1
+    path: Assets/PhamCuong/Scenes/EndScene.unity
+    guid: 08864fc9985cbe240969a7f789f99e30
+  - enabled: 1
+    path: Assets/PhamCuong/Scenes/IntroScene.unity
+    guid: 03e4fd64307bb0a489da31aa879a6bc9
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: dec091bff1bf79d40b6291fd17c00eeb, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: b421a8b815c1b744bac5e80fde6e96f3, type: 2}
