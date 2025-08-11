@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 7032256274896316400}
   - component: {fileID: 4510204610404648985}
   - component: {fileID: 2078547370322285877}
-  - component: {fileID: 4637261749524395805}
-  - component: {fileID: 7634094093078397039}
   - component: {fileID: 8174883649298023665}
+  - component: {fileID: 7634094093078397039}
+  - component: {fileID: 4637261749524395805}
   m_Layer: 0
   m_Name: Bat Idle
   m_TagString: Untagged
@@ -145,46 +145,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4637261749524395805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7816680350611099541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb87b0c9440f4da4db31b4c67092584a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2907380795295322352, guid: 046d4052f8a8eb2498d1c830b26f544e, type: 3}
-  firePoint: {fileID: 3934353291160726487}
-  shootInterval: 3
-  bulletSpeed: 5
-  minShootRange: 0
-  maxShootRange: 5
-  bulletCount: 5
-  spreadAngle: 50
---- !u!114 &7634094093078397039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7816680350611099541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2791ef223e71ba4f8c8019479870029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolRange: {x: 3, y: 3}
-  moveSpeed: 2
-  waitTime: 2
-  detectionRange: 7
-  attackRange: 5
-  retreatRange: 2
-  player: {fileID: 0}
-  shootScript: {fileID: 4637261749524395805}
 --- !u!61 &8174883649298023665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -231,3 +191,43 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.2222223, y: 2.7777777}
   m_EdgeRadius: 0
+--- !u!114 &7634094093078397039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816680350611099541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2791ef223e71ba4f8c8019479870029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolRange: {x: 3, y: 3}
+  moveSpeed: 2
+  waitTime: 2
+  detectionRange: 7
+  attackRange: 5
+  retreatRange: 2
+  player: {fileID: 0}
+  shootScript: {fileID: 4637261749524395805}
+--- !u!114 &4637261749524395805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816680350611099541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb87b0c9440f4da4db31b4c67092584a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2907380795295322352, guid: 046d4052f8a8eb2498d1c830b26f544e, type: 3}
+  firePoint: {fileID: 3934353291160726487}
+  shootInterval: 3
+  bulletSpeed: 5
+  minShootRange: 0
+  maxShootRange: 5
+  bulletCount: 5
+  spreadAngle: 50
