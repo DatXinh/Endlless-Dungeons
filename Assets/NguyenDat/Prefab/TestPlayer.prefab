@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 242089233030799200}
@@ -77,6 +77,7 @@ MonoBehaviour:
   target: {fileID: 6290904597988363978}
   offset: {x: 0, y: 0, z: 0}
   followInLateUpdate: 1
+  smoothTime: 0.2
 --- !u!1 &1236801014046985580
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,13 +361,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bb9afa85b8b6c44960d72ca21f2b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 200
+  maxHP: 10000000
   currentHP: 0
   InvincibilityTime: 1
   damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
   healthBar: {fileID: 2027232366832638876}
   maxHeal: {fileID: 5223172938878608512}
   currentHeal: {fileID: 8838656969530587355}
+  damageReductionPercent: 0
   joystick: {fileID: 3381391178491776238}
   joystickAttackAndAim: {fileID: 8426108463692154582}
   rightPanel: {fileID: 4121204888396628550}
@@ -906,7 +908,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 4}
-  m_LocalScale: {x: 7.7, y: 1, z: 4}
+  m_LocalScale: {x: 8, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 950184431107959169}
@@ -1296,6 +1298,7 @@ MonoBehaviour:
   sceneNameText: {fileID: 5477968805807427031}
   playTimeText: {fileID: 7422909645454741384}
   mainCamera: {fileID: 8356368311153882744}
+  isCountingTime: 0
 --- !u!114 &1315330943311327292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1845,6 +1848,18 @@ PrefabInstance:
     - target: {fileID: 4376683826086305400, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736559985198269863, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+      propertyPath: m_text
+      value: "Th\u1EDDi gian ch\u01A1i : 0:0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736559985198269863, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736559985198269863, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4893027599712365848, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
       propertyPath: target

@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class PlayerHP : MonoBehaviour
     public TMP_Text maxHeal; // Reference to the health text UI element
     public TMP_Text currentHeal; // Reference to the current health text UI element
 
-    private bool isInvincible = false; // Trạng thái bất tử
+    public bool isInvincible = false; // Trạng thái bất tử
 
     public Joystick joystick;
     public JoystickAttackAndAim joystickAttackAndAim; // Reference to the joystick for attack and aim
@@ -33,26 +34,33 @@ public class PlayerHP : MonoBehaviour
         currentHP = maxHP; // Initialize current health to maximum health
         if (healthBar != null)
         {
-            healthBar.fillAmount = 1f; // Set health bar to full at the start
+            healthBar.fillAmount = 1f;
         }
         if (maxHeal != null)
         {
-            maxHeal.text = maxHP.ToString(); // Set the maximum health text
+            maxHeal.text = maxHP.ToString();
         }
-        UpdateHealthUI(); // Update the health UI at the start
+        UpdateHealthUI();
         deadMesseng.SetActive(false);
+
+        // Lắng nghe sự kiện load scene
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    // Method to take damage
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        isInvincible = false; // Reset bất tử khi vào scene mới
+    }
+
     public void TakeDamage(int damage)
     {
-        if (currentHP > 0) // Check if the player is alive
+        if (currentHP > 0)
         {
             if (!isInvincible)
             {
-                currentHP -= damage; // Reduce current health by damage amount
-                // Gây knockback nếu có direction từ attacker
-                UpdateHealthUI(); // Update the health UI
-                // Display damage popup
+                currentHP -= damage;
+                UpdateHealthUI();
+
                 if (damagePopupPrefab != null)
                 {
                     GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
@@ -65,9 +73,9 @@ public class PlayerHP : MonoBehaviour
                 StartCoroutine(InvincibilityCoroutine());
             }
         }
+
         if (currentHP <= 0)
         {
-
             joystick.OnPointerUp(null);
             joystickAttackAndAim.OnPointerUp(null);
             leftPanel.SetActive(false);
@@ -78,7 +86,6 @@ public class PlayerHP : MonoBehaviour
         }
     }
 
-    // Coroutine để xử lý bất tử
     private IEnumerator InvincibilityCoroutine()
     {
         isInvincible = true;
@@ -86,7 +93,6 @@ public class PlayerHP : MonoBehaviour
         isInvincible = false;
     }
 
-    // Hàm hồi máu
     public void Heal(int amount)
     {
         if (currentHP > 0)
@@ -97,7 +103,6 @@ public class PlayerHP : MonoBehaviour
                 currentHP = maxHP;
             }
             UpdateHealthUI();
-            // Display damage popup
             if (damagePopupPrefab != null)
             {
                 GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
@@ -109,6 +114,7 @@ public class PlayerHP : MonoBehaviour
             }
         }
     }
+
     public void UpdateHealthUI()
     {
         float healthPercent = (float)currentHP / maxHP;
@@ -123,6 +129,7 @@ public class PlayerHP : MonoBehaviour
             currentHeal.text = currentHP.ToString();
         }
     }
+
     public void PauseGame()
     {
         allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
@@ -146,9 +153,15 @@ public class PlayerHP : MonoBehaviour
         }
         playAudioSources.Clear();
     }
+
     public void resetHP()
     {
         currentHP = maxHP;
         UpdateHealthUI();
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

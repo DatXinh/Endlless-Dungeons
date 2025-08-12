@@ -23,12 +23,16 @@ public class PWeaponDame : MonoBehaviour
         {
             if (LoopManager.Instance.currentLoop > 0)
             {
-                FinalWeaponDamage = (int)(weaponDamage * (LoopManager.Instance.currentLoop * 0.2f));
+                FinalWeaponDamage = (int)(weaponDamage * (1 + (LoopManager.Instance.currentLoop * 0.2f)));
             }
             else
             {
                 FinalWeaponDamage = weaponDamage; // Sử dụng sát thương gốc nếu không có LoopManager
             }
+        }
+        else
+        {
+            FinalWeaponDamage = weaponDamage; // Sử dụng sát thương gốc nếu không có LoopManager
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerDontDestroyOnLoad : MonoBehaviour
 {
-    private static PlayerDontDestroyOnLoad instance;
+    public static PlayerDontDestroyOnLoad instance;
     public GameObject child;
 
     [Header("UI")]
@@ -15,6 +15,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
     public Camera mainCamera;
 
     private float playTime = 0f;
+    public bool isCountingTime = false; // biến mới để kiểm soát đếm thời gian
 
     private void Awake()
     {
@@ -28,18 +29,19 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     private void Update()
     {
-        playTime += Time.deltaTime;
-
-        if (playTimeText != null)
+        if (isCountingTime) // chỉ đếm khi biến này = true
         {
-            int minutes = Mathf.FloorToInt(playTime / 60f);
-            int seconds = Mathf.FloorToInt(playTime % 60f);
-            playTimeText.text = $"Thời gian chơi: {minutes:D2}:{seconds:D2}";
+            playTime += Time.deltaTime;
+            if (playTimeText != null)
+            {
+                int minutes = Mathf.FloorToInt(playTime / 60f);
+                int seconds = Mathf.FloorToInt(playTime % 60f);
+                playTimeText.text = $"Thời gian chơi: {minutes:D2}:{seconds:D2}";
+            }
         }
     }
 
@@ -59,6 +61,17 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         }
         SetPhysicalCameraByScene(scene);
     }
+
+    public void StartCountingTime() // hàm để bắt đầu đếm
+    {
+        isCountingTime = true;
+    }
+
+    public void StopCountingTime() // hàm để dừng đếm nếu cần
+    {
+        isCountingTime = false;
+    }
+
     public void ResetPlayTime()
     {
         playTime = 0f;
@@ -66,9 +79,11 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         {
             playTimeText.text = "Thời gian chơi: 00:00";
         }
+        isCountingTime = false; // reset luôn trạng thái
         LoopManager.Instance.ResetLoop();
         LoopManager.Instance.SetGameMode(LoopManager.GameMode.Normal);
     }
+
     public void SetPhysicalCameraByScene(Scene scene)
     {
         if (mainCamera != null)
@@ -84,6 +99,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
             }
         }
     }
+
     private void OnDestroy()
     {
         if (instance == this)
