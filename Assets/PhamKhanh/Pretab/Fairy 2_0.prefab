@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3984105447757326235}
   - component: {fileID: 5394116141865235175}
   - component: {fileID: 2678406154272972277}
-  - component: {fileID: 8266357502149512594}
   - component: {fileID: 8694298677484940898}
   - component: {fileID: 48161527327242877}
+  - component: {fileID: 4885311670009875519}
   m_Layer: 0
   m_Name: Fairy 2_0
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5123003862080659673}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.05, y: -2.44, z: 0}
+  m_LocalPosition: {x: 3.6186934, y: -2.1406457, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -114,26 +114,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8266357502149512594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5123003862080659673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2791ef223e71ba4f8c8019479870029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolRange: {x: 3, y: 3}
-  moveSpeed: 2
-  waitTime: 2
-  detectionRange: 6
-  attackRange: 5
-  retreatRange: 2
-  player: {fileID: 0}
-  shootScript: {fileID: 8694298677484940898}
 --- !u!114 &8694298677484940898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,13 +126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe85b69736b0ce043bca233a4a548033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  patrolRange: 3
+  attackRange: 5
   bulletPrefab: {fileID: 6668899021643919233, guid: e25074a302800c84fb11f55d2f692a7d, type: 3}
   firePoint: {fileID: 103480854536424066}
   shootInterval: 2
   bulletSpeed: 5
-  minShootRange: 2
-  maxShootRange: 5
-  delayBetweenBullets: 0.2
+  bulletSpread: 0.2
 --- !u!61 &48161527327242877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,6 +180,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.25, y: 1.6}
   m_EdgeRadius: 0
+--- !u!50 &4885311670009875519
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123003862080659673}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &7966821612791802010
 GameObject:
   m_ObjectHideFlags: 0
