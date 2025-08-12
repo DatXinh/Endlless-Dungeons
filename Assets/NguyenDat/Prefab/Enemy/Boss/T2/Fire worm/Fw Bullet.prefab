@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2606077146906968893}
   - component: {fileID: -14077877008194376}
   - component: {fileID: 781878109124531947}
+  - component: {fileID: -6749625938539870494}
   m_Layer: 0
   m_Name: Fw Bullet
   m_TagString: EnemyProjectile
@@ -220,3 +221,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.51942253, y: 0}
   m_Radius: 0.73057747
+--- !u!114 &-6749625938539870494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404242268148617716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22117b29bf4fc614f97c5c7f72b93f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destroyable: 0
