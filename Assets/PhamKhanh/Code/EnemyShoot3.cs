@@ -64,11 +64,11 @@ public class EnemyAI : MonoBehaviour
                 rb.linearVelocity = Vector2.zero;
             }
 
-            // Flip sprite theo hướng player
             if (player.position.x > transform.position.x)
-                spriteRenderer.flipX = false; // nhìn bên phải
+                spriteRenderer.flipX = true; // nếu sprite gốc nhìn trái, thì phải flip khi muốn nhìn phải
             else
-                spriteRenderer.flipX = true;  // nhìn bên trái
+                spriteRenderer.flipX = false;
+
 
             // Bắn
             shootTimer -= Time.deltaTime;
@@ -107,15 +107,25 @@ public class EnemyAI : MonoBehaviour
 
     void ShootForward()
     {
+        // Tính hướng từ enemy tới player
         Vector2 forwardDir = (player.position - firePoint.position).normalized;
-        float startAngle = -spreadAngle * (bulletCount - 1) / 2f;
+
+        // Lấy góc theo độ (rotation)
+        float baseAngle = Mathf.Atan2(forwardDir.y, forwardDir.x) * Mathf.Rad2Deg;
+
+        // Góc bắt đầu (để tỏa đều quanh hướng player)
+        float startAngle = baseAngle - spreadAngle * (bulletCount - 1) / 2f;
 
         for (int i = 0; i < bulletCount; i++)
         {
-            float angleOffset = startAngle + i * spreadAngle;
-            Quaternion rot = Quaternion.Euler(0, 0, angleOffset);
-            Vector2 shootDir = rot * forwardDir;
+            // Tính góc của viên đạn hiện tại
+            float currentAngle = startAngle + i * spreadAngle;
 
+            // Chuyển thành vector hướng
+            Vector2 shootDir = new Vector2(Mathf.Cos(currentAngle * Mathf.Deg2Rad),
+                                           Mathf.Sin(currentAngle * Mathf.Deg2Rad));
+
+            // Tạo viên đạn
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             Rigidbody2D rbBullet = bullet.GetComponent<Rigidbody2D>();
             rbBullet.linearVelocity = shootDir * bulletSpeed;

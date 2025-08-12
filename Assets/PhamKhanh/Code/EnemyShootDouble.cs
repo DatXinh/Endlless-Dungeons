@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class EnemyShootDouble : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class EnemyShootDouble : MonoBehaviour
     public Transform firePoint;
     public float shootInterval = 2f;
     public float bulletSpeed = 5f;
-    public float bulletSpread = 0.2f; // khoảng cách ngang giữa 2 viên
+    public float doubleShotDelay = 0.2f; // thời gian giữa 2 viên
 
     private Rigidbody2D rb;
     private GameObject player;
@@ -23,7 +24,7 @@ public class EnemyShootDouble : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0; // không rơi
+        rb.gravityScale = 0;
         rb.freezeRotation = true;
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -41,7 +42,6 @@ public class EnemyShootDouble : MonoBehaviour
 
         if (distanceToPlayer <= attackRange)
         {
-            // Dừng di chuyển khi tấn công
             rb.linearVelocity = Vector2.zero;
 
             // Xoay mặt về phía player
@@ -55,7 +55,7 @@ public class EnemyShootDouble : MonoBehaviour
             shootTimer -= Time.deltaTime;
             if (shootTimer <= 0f)
             {
-                ShootForward();
+                StartCoroutine(DoubleShoot());
                 shootTimer = shootInterval;
             }
         }
@@ -67,7 +67,6 @@ public class EnemyShootDouble : MonoBehaviour
 
     void Patrol()
     {
-        // Di chuyển đến điểm tuần tra
         Vector2 dir = (targetPoint - (Vector2)transform.position).normalized;
         rb.linearVelocity = dir * speed;
 
@@ -84,22 +83,17 @@ public class EnemyShootDouble : MonoBehaviour
         targetPoint = patrolCenter + new Vector2(offsetX, offsetY);
     }
 
+    IEnumerator DoubleShoot()
+    {
+        ShootForward(); // viên 1
+        yield return new WaitForSeconds(doubleShotDelay);
+        ShootForward(); // viên 2
+    }
+
     void ShootForward()
     {
-        // Hướng từ firePoint đến player
         Vector2 shootDir = (player.transform.position - firePoint.position).normalized;
-
-        // Tính vector vuông góc để tách các viên sang hai bên
-        Vector2 perpendicular = new Vector2(-shootDir.y, shootDir.x) * bulletSpread;
-
-        // Viên giữa
         FireBullet(firePoint.position, shootDir);
-
-        // Viên bên trái
-        FireBullet(firePoint.position + (Vector3)perpendicular, shootDir);
-
-        // Viên bên phải
-        FireBullet(firePoint.position - (Vector3)perpendicular, shootDir);
     }
 
     void FireBullet(Vector3 position, Vector2 direction)
@@ -119,4 +113,3 @@ public class EnemyShootDouble : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
-
