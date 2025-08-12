@@ -15,9 +15,12 @@ GameObject:
   - component: {fileID: 794032793453540842}
   - component: {fileID: 7533156660551925133}
   - component: {fileID: 3025422421374297369}
-  m_Layer: 0
+  - component: {fileID: 7140235197348468148}
+  - component: {fileID: -690347930729490774}
+  - component: {fileID: 4414720476877452998}
+  m_Layer: 7
   m_Name: skull2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8020143640844766479, guid: eba33b612fb6f9745b0ed042a2b8572a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -189,8 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08bdf8553f7f26428837a56b0f29570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 5
-  speed: 3
+  detectionRange: 10
+  speed: 5
   explodeDistance: 1.2
   countdownTime: 3
   damage: 50
@@ -207,9 +210,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2791ef223e71ba4f8c8019479870029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolRange: {x: 3, y: 3}
-  moveSpeed: 2
-  waitTime: 2
-  detectionRange: 5
+  speed: 2
+  patrolRange: 3
   attackRange: 1.5
-  player: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  shootInterval: 2
+  bulletSpeed: 5
+  bulletCount: 12
+--- !u!114 &7140235197348468148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326325475919171543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseHP: 500
+  maxHP: 0
+  currentHP: 0
+  InvincibilityTime: 0.17
+  damageReductionRate: 0
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}
+  bossPlayDeadAnimation: {fileID: -9084375825749845612, guid: 3ac2937b6bf6dd44bac0d7c68c1a8527, type: 3}
+--- !u!114 &-690347930729490774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326325475919171543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
+  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
+  dropRadius: 2
+--- !u!114 &4414720476877452998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326325475919171543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  parameterName: 
+  scriptsToDisable: []

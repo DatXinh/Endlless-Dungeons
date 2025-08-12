@@ -31,6 +31,9 @@ public class EnemyHP : MonoBehaviour
             {
                 maxHP = BaseHP; // Use base HP if no LoopManager or current loop is 0
             }
+        }else
+        {
+            maxHP = BaseHP; // Use base HP if no LoopManager
         }
         currentHP = maxHP; // Initialize current health to maximum health
         UpdateHPUI(); // Update health UI at the start

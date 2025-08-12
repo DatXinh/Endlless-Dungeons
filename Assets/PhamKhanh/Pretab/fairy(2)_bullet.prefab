@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 972470420134862622}
   - component: {fileID: 976260848544355568}
   - component: {fileID: -5857220997113740808}
+  - component: {fileID: 2570161840291315408}
+  - component: {fileID: 1765225599646836428}
+  - component: {fileID: 334555976052536125}
   m_Layer: 0
   m_Name: fairy(2)_bullet
   m_TagString: Untagged
@@ -78,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5387648806950423354, guid: 93a3a3cff7fa34245a2e9bf715e99487, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -160,8 +163,51 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6668899021643919233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea4560b59a6612448b88e285f7278b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2570161840291315408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668899021643919233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22117b29bf4fc614f97c5c7f72b93f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destroyable: 1
+--- !u!114 &1765225599646836428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668899021643919233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  FinalDamage: 0
+--- !u!114 &334555976052536125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668899021643919233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayer: 0
+  IsEnemy: 1
+  canPierce: 0
+  lifeTime: 5
