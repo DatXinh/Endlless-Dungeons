@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 161358831500140211}
   - component: {fileID: 2796821315321037595}
   - component: {fileID: 8052125686919555940}
-  - component: {fileID: 5991707998095304841}
   - component: {fileID: 5790846200819846868}
   m_Layer: 0
   m_Name: skull3
@@ -158,14 +157,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362005253058704295}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -176,28 +175,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &5991707998095304841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5362005253058704295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edaf123f9e5a0a44194ff356ffb507b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolRange: {x: 3, y: 3}
-  moveSpeed: 2
-  waitTime: 2
-  detectionRange: 5
-  explodeRange: 1.2
-  countdownTime: 2
-  damage: 50
-  explosionEffect: {fileID: 5608516125113093903, guid: 1dc762aa04a8b08478fc2730d69abe71, type: 3}
-  player: {fileID: 0}
+  m_Constraints: 4
 --- !u!114 &5790846200819846868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,9 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08bdf8553f7f26428837a56b0f29570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
   detectionRange: 5
-  speed: 3
-  explodeDistance: 1.2
-  countdownTime: 2
-  damage: 50
+  explosionRange: 1.2
+  patrolSpeed: 2
+  chaseSpeed: 4
+  patrolRange: 4
   explosionEffect: {fileID: 5608516125113093903, guid: 1dc762aa04a8b08478fc2730d69abe71, type: 3}
+  damage: 50
+  countdownTime: 2

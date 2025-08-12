@@ -1,149 +1,137 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class SuicideWithBullets : MonoBehaviour
+public class SuicideWithBullet : MonoBehaviour
 {
-    public enum EnemyState { Patrolling, Chasing, Exploding }
-    private EnemyState currentState = EnemyState.Patrolling;
-
-    [Header("Patrol")]
-    public Vector2 patrolRange = new Vector2(3f, 3f);
-    public float moveSpeed = 2f;
-    public float waitTime = 2f;
-
-    [Header("Detection")]
+    [Header("Player Detection")]
+    public string playerTag = "Player";
     public float detectionRange = 5f;
-    public float explodeRange = 1.2f;
-    public float countdownTime = 2f;
+    public float explosionRange = 1.2f;
 
-    [Header("Explosion")]
-    public int damage = 50;
+    [Header("Movement Settings")]
+    public float patrolSpeed = 2f;
+    public float chaseSpeed = 4f;
+    public float patrolRange = 4f; // khoảng cách tuần tra từ vị trí ban đầu
+
+    [Header("Explosion Settings")]
     public GameObject explosionEffect;
+    public float damage = 50f;
 
-    [Header("Bullet Spawn After Explosion")]
-    public GameObject bulletPrefab;
-    public int numberOfBullets = 8;
-    public float bulletSpeed = 5f;
+    [Header("Bullet Settings")]
+    public GameObject bulletPrefab;  // prefab viên đạn
+    public int bulletCount = 8;      // số viên đạn bắn ra
+    public float bulletSpeed = 5f;   // tốc độ viên đạn
 
+    private Rigidbody2D rb;
     private Transform player;
-    private Vector2 centerPoint;
-    private Vector2 targetPoint;
-    private float waitCounter;
-    private bool hasExploded = false;
+    private Vector2 initialPosition;
+    private bool chasingPlayer = false;
+    private int patrolDirection = 1;
 
     void Start()
     {
-        centerPoint = transform.position;
-        ChooseNewTarget();
-
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        rb = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
+        player = GameObject.FindGameObjectWithTag(playerTag).transform;
     }
 
     void Update()
     {
-        if (player == null || hasExploded) return;
-
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-        switch (currentState)
+        if (player != null)
         {
-            case EnemyState.Patrolling:
-                Patrol();
-                if (distanceToPlayer <= detectionRange)
-                {
-                    currentState = EnemyState.Chasing;
-                }
-                break;
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            case EnemyState.Chasing:
-                ChasePlayer();
-                if (distanceToPlayer <= explodeRange)
-                {
-                    currentState = EnemyState.Exploding;
-                    StartCoroutine(CountdownToExplode());
-                }
-                break;
+            if (distanceToPlayer <= detectionRange)
+            {
+                chasingPlayer = true;
+            }
+            else if (distanceToPlayer > detectionRange * 1.2f) // ra xa quá thì quay lại tuần tra
+            {
+                chasingPlayer = false;
+            }
+
+            if (distanceToPlayer <= explosionRange)
+            {
+                Explode();
+            }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (chasingPlayer && player != null)
+        {
+            // Xoay quái hướng về Player
+            Vector2 direction = (player.position - transform.position).normalized;
+            if (direction.x != 0)
+                transform.localScale = new Vector3(Mathf.Sign(direction.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+
+            rb.linearVelocity = direction * chaseSpeed;
+        }
+        else
+        {
+            Patrol();
         }
     }
 
     void Patrol()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-        Vector2 dir = (targetPoint - (Vector2)transform.position).normalized;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
-
-        if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
+        // Đi tới giới hạn bên trái hoặc phải
+        if (transform.position.x > initialPosition.x + patrolRange)
         {
-            waitCounter += Time.deltaTime;
-            if (waitCounter >= waitTime)
-            {
-                ChooseNewTarget();
-                waitCounter = 0f;
-            }
+            patrolDirection = -1;
+            Flip();
         }
-    }
-
-    void ChooseNewTarget()
-    {
-        float randomX = Random.Range(-patrolRange.x, patrolRange.x);
-        float randomY = Random.Range(-patrolRange.y, patrolRange.y);
-        targetPoint = centerPoint + new Vector2(randomX, randomY);
-    }
-
-    void ChasePlayer()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-        Vector2 dir = (player.position - transform.position).normalized;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
-    }
-
-    IEnumerator CountdownToExplode()
-    {
-        hasExploded = true;
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        int flashCount = 6;
-
-        for (int i = 0; i < flashCount; i++)
+        else if (transform.position.x < initialPosition.x - patrolRange)
         {
-            if (sr != null)
-                sr.color = (i % 2 == 0) ? Color.red : Color.white;
-
-            yield return new WaitForSeconds(countdownTime / flashCount);
+            patrolDirection = 1;
+            Flip();
         }
 
-        // Spawn explosion effect
+        rb.linearVelocity = new Vector2(patrolDirection * patrolSpeed, rb.linearVelocity.y);
+    }
+
+    void Flip()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    void Explode()
+    {
         if (explosionEffect != null)
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
-        // Gây sát thương nếu player ở gần
-        if (player != null && Vector2.Distance(transform.position, player.position) <= explodeRange + 0.5f)
         {
-            
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
         }
 
-        // Spawn bullets
+        // Sinh viên đạn tỏa tròn
         SpawnBullets();
 
+        // Gây sát thương cho Player nếu có script nhận damage (có thể thêm sau)
         Destroy(gameObject);
     }
 
     void SpawnBullets()
     {
-        if (bulletPrefab == null || numberOfBullets <= 0) return;
+        float angleStep = 360f / bulletCount;
+        float angle = 0f;
 
-        for (int i = 0; i < numberOfBullets; i++)
+        for (int i = 0; i < bulletCount; i++)
         {
-            float angle = i * (360f / numberOfBullets);
-            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+            // Tính hướng cho viên đạn
+            float bulletDirX = Mathf.Cos(angle * Mathf.Deg2Rad);
+            float bulletDirY = Mathf.Sin(angle * Mathf.Deg2Rad);
+            Vector3 bulletMoveVector = new Vector3(bulletDirX, bulletDirY, 0);
 
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            // Tạo viên đạn tại vị trí quái
+            GameObject tmpObj = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+            // Gán vận tốc cho viên đạn (nếu bullet có Rigidbody2D)
+            Rigidbody2D bulletRb = tmpObj.GetComponent<Rigidbody2D>();
+            if (bulletRb != null)
             {
-                rb.linearVelocity = dir * bulletSpeed;
+                bulletRb.linearVelocity = bulletMoveVector.normalized * bulletSpeed;
             }
+
+            angle += angleStep;
         }
     }
 }
