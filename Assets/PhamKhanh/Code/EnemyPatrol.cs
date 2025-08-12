@@ -2,105 +2,114 @@
 
 public class EnemyPatrol : MonoBehaviour
 {
-    [Header("Patrol Settings")]
-    public Vector2 patrolRange = new Vector2(3, 3);
-    public float moveSpeed = 2f;
-    public float waitTime = 2f;
+    [Header("Movement")]
+    public float speed = 2f;
+    public float patrolRange = 3f; // bán kính vùng tuần tra (hình vuông)
+    public float attackRange = 5f;
 
-    [Header("Detection Settings")]
-    public float detectionRange = 6f;
-    public float attackRange = 4f;
-    public float retreatRange = 2f;
-    public Transform player;
+    [Header("Shooting")]
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float shootInterval = 2f;
+    public float bulletSpeed = 5f;
+    public int bulletCount = 12;
 
-    [Header("Attack Settings")]
-    public MonoBehaviour shootScript;
+    private Rigidbody2D rb;
+    private GameObject player;
+    private Vector2 patrolCenter;
+    private Vector2 targetPoint;
+    private float shootTimer;
 
-    private Vector3 startPos;
-    private Vector3 patrolTarget;
-    private float waitCounter;
-
-    private void Start()
+    void Start()
     {
-        // Tìm player tự động
-        if (player == null)
-        {
-            GameObject foundPlayer = GameObject.FindGameObjectWithTag("Player");
-            if (foundPlayer != null)
-                player = foundPlayer.transform;
-        }
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0; // không rơi
+        rb.freezeRotation = true;
 
-        startPos = transform.position;
-        SetNewPatrolPoint();
-        waitCounter = waitTime;
+        player = GameObject.FindGameObjectWithTag("Player");
+        patrolCenter = transform.position;
+        ChooseNewPatrolPoint();
 
-        if (shootScript != null)
-            shootScript.enabled = false;
+        shootTimer = shootInterval;
     }
 
-    private void Update()
+    void Update()
     {
         if (player == null) return;
 
-        float distance = Vector2.Distance(transform.position, player.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance <= detectionRange)
+        if (distanceToPlayer <= attackRange)
         {
-            HandleChaseAndAttack(distance);
+            // Dừng di chuyển khi tấn công
+            rb.linearVelocity = Vector2.zero;
+
+            // Xoay mặt về phía player
+            Vector2 direction = player.transform.position - transform.position;
+            if (direction.x > 0.01f)
+                transform.localScale = new Vector3(1, 1, 1);
+            else if (direction.x < -0.01f)
+                transform.localScale = new Vector3(-1, 1, 1);
+
+            // Bắn
+            shootTimer -= Time.deltaTime;
+            if (shootTimer <= 0f)
+            {
+                ShootCircular();
+                shootTimer = shootInterval;
+            }
         }
         else
         {
             Patrol();
-            if (shootScript != null)
-                shootScript.enabled = false;
-        }
-    }
-
-    void HandleChaseAndAttack(float distance)
-    {
-        Vector2 direction = (player.position - transform.position).normalized;
-
-        if (distance > attackRange)
-        {
-            transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
-            if (shootScript != null)
-                shootScript.enabled = false;
-        }
-        else if (distance < retreatRange)
-        {
-            transform.position -= (Vector3)(direction * moveSpeed * Time.deltaTime);
-            if (shootScript != null)
-                shootScript.enabled = false;
-        }
-        else
-        {
-            if (shootScript != null)
-                shootScript.enabled = true;
         }
     }
 
     void Patrol()
     {
-        transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * Time.deltaTime);
+        // Di chuyển đến điểm tuần tra
+        Vector2 dir = (targetPoint - (Vector2)transform.position).normalized;
+        rb.linearVelocity = dir * speed;
 
-        if (Vector2.Distance(transform.position, patrolTarget) < 0.1f)
+        if (Vector2.Distance(transform.position, targetPoint) < 0.2f)
         {
-            if (waitCounter <= 0)
-            {
-                SetNewPatrolPoint();
-                waitCounter = waitTime;
-            }
-            else
-            {
-                waitCounter -= Time.deltaTime;
-            }
+            ChooseNewPatrolPoint();
         }
     }
 
-    void SetNewPatrolPoint()
+    void ChooseNewPatrolPoint()
     {
-        float randX = Random.Range(-patrolRange.x, patrolRange.x);
-        float randY = Random.Range(-patrolRange.y, patrolRange.y);
-        patrolTarget = new Vector3(startPos.x + randX, startPos.y + randY, transform.position.z);
+        float offsetX = Random.Range(-patrolRange, patrolRange);
+        float offsetY = Random.Range(-patrolRange, patrolRange);
+        targetPoint = patrolCenter + new Vector2(offsetX, offsetY);
+    }
+
+    void ShootCircular()
+    {
+        float angleStep = 360f / bulletCount;
+        float angle = 0f;
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            float bulletDirX = Mathf.Cos(angle * Mathf.Deg2Rad);
+            float bulletDirY = Mathf.Sin(angle * Mathf.Deg2Rad);
+            Vector2 bulletDirection = new Vector2(bulletDirX, bulletDirY).normalized;
+
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            Rigidbody2D rbBullet = bullet.GetComponent<Rigidbody2D>();
+            if (rbBullet != null)
+                rbBullet.linearVelocity = bulletDirection * bulletSpeed;
+
+            angle += angleStep;
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(patrolCenter == Vector2.zero ? transform.position : (Vector3)patrolCenter,
+            new Vector3(patrolRange * 2, patrolRange * 2, 0));
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

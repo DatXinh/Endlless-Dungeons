@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3016596419004985500}
   - component: {fileID: 8565277585264254837}
   - component: {fileID: 6094204228892672601}
-  - component: {fileID: 7812779551527880298}
   - component: {fileID: 2925662818682154547}
   - component: {fileID: 4068582121168171664}
+  - component: {fileID: 2252965823685183658}
   m_Layer: 0
   m_Name: TDS (1)
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2607831550603450617}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.39, y: 3.06, z: 0}
+  m_LocalPosition: {x: 5.36, y: 2.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -114,23 +114,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7812779551527880298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2607831550603450617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33288071e5e7f3040b400e44ba9d5a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7905091336239078242, guid: 16f8b3488fd298549bb5ccbcf29b8062, type: 3}
-  firePoint: {fileID: 3662752316582526571}
-  shootInterval: 2
-  bulletSpeed: 5
-  bulletCount: 12
 --- !u!114 &2925662818682154547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,14 +126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2791ef223e71ba4f8c8019479870029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolRange: {x: 3, y: 3}
-  moveSpeed: 2
-  waitTime: 2
-  detectionRange: 6
+  speed: 2
+  patrolRange: 3
   attackRange: 5
-  retreatRange: 2
-  player: {fileID: 0}
-  shootScript: {fileID: 7812779551527880298}
+  bulletPrefab: {fileID: 7905091336239078242, guid: 16f8b3488fd298549bb5ccbcf29b8062, type: 3}
+  firePoint: {fileID: 3662752316582526571}
+  shootInterval: 2
+  bulletSpeed: 5
+  bulletCount: 12
 --- !u!61 &4068582121168171664
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,6 +180,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9375, y: 1.75}
   m_EdgeRadius: 0
+--- !u!50 &2252965823685183658
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607831550603450617}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &9155708163199158900
 GameObject:
   m_ObjectHideFlags: 0
