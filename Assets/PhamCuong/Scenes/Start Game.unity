@@ -1215,6 +1215,7 @@ GameObject:
   - component: {fileID: 344997727}
   - component: {fileID: 344997726}
   - component: {fileID: 344997725}
+  - component: {fileID: 344997728}
   m_Layer: 5
   m_Name: Login
   m_TagString: Untagged
@@ -1285,7 +1286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 344997726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 344997728}
+        m_TargetAssemblyTypeName: CanvasToggle, Assembly-CSharp
+        m_MethodName: ShowCanvas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &344997726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,6 +1337,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344997723}
   m_CullTransparentMesh: 1
+--- !u!114 &344997728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344997723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ca0980e04d6d84aa84d08b42ddadef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvases:
+  - {fileID: 1713952808}
 --- !u!1 &545147644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,6 +1692,7 @@ GameObject:
   - component: {fileID: 622525276}
   - component: {fileID: 622525275}
   - component: {fileID: 622525274}
+  - component: {fileID: 622525277}
   m_Layer: 5
   m_Name: Register
   m_TagString: Untagged
@@ -1735,7 +1763,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 622525275}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 622525277}
+        m_TargetAssemblyTypeName: CanvasToggle, Assembly-CSharp
+        m_MethodName: ShowCanvas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &622525275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1774,6 +1814,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622525272}
   m_CullTransparentMesh: 1
+--- !u!114 &622525277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622525272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ca0980e04d6d84aa84d08b42ddadef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvases:
+  - {fileID: 1129469030}
 --- !u!1 &666841861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2589,6 +2643,7 @@ GameObject:
   - component: {fileID: 829804226}
   - component: {fileID: 829804225}
   - component: {fileID: 829804224}
+  - component: {fileID: 829804227}
   m_Layer: 5
   m_Name: Esc
   m_TagString: Untagged
@@ -2658,7 +2713,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829804225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 829804227}
+        m_TargetAssemblyTypeName: CanvasToggle, Assembly-CSharp
+        m_MethodName: HideCanvas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829804225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2697,6 +2764,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829804222}
   m_CullTransparentMesh: 1
+--- !u!114 &829804227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829804222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ca0980e04d6d84aa84d08b42ddadef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvases:
+  - {fileID: 1713952808}
 --- !u!1 &837141903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,7 +3508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b254830aa5b4bf34f90e59f445564e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Home
+  targetSceneName: IntroGame
 --- !u!1 &1129469030
 GameObject:
   m_ObjectHideFlags: 0
@@ -4794,6 +4875,7 @@ GameObject:
   - component: {fileID: 1557264938}
   - component: {fileID: 1557264937}
   - component: {fileID: 1557264936}
+  - component: {fileID: 1557264939}
   m_Layer: 5
   m_Name: Esc
   m_TagString: Untagged
@@ -4863,7 +4945,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1557264937}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1557264939}
+        m_TargetAssemblyTypeName: CanvasToggle, Assembly-CSharp
+        m_MethodName: HideCanvas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1557264937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4902,6 +4996,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557264934}
   m_CullTransparentMesh: 1
+--- !u!114 &1557264939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557264934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ca0980e04d6d84aa84d08b42ddadef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvases:
+  - {fileID: 1129469030}
 --- !u!1 &1613699947
 GameObject:
   m_ObjectHideFlags: 0
