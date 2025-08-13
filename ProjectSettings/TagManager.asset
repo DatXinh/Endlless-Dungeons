@@ -6,6 +6,9 @@ TagManager:
   tags:
   - EndlessDungeon
   - Dungeon
+  - ChaseRange
+  - AttackRange
+  - Enemy
   layers:
   - Default
   - TransparentFX
