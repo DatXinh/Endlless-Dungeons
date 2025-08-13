@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHP: 0
+  BaseHP: 375
   maxHP: 0
   currentHP: 0
   InvincibilityTime: 0.17
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5802826916044372498}
   - component: {fileID: 4610123004962158118}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: chaseZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 9211211253288391438}
   - component: {fileID: 5545326949111238376}
   - component: {fileID: 2906375526027695251}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: attackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,5 +413,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 15
   FinalDamage: 0

@@ -14,7 +14,10 @@ GameObject:
   - component: {fileID: 6305265313843804741}
   - component: {fileID: 8214503462547194431}
   - component: {fileID: 3057244676253963919}
-  m_Layer: 0
+  - component: {fileID: 2320630436800097885}
+  - component: {fileID: 7713663653475738369}
+  - component: {fileID: 6537869754177368042}
+  m_Layer: 7
   m_Name: Xeno 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -81,7 +84,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5562923813025455054, guid: c554f5c7bc880a7489e185bf976a36b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -196,6 +199,60 @@ MonoBehaviour:
   chaseZone: {fileID: 5326968433569312781}
   attackZone: {fileID: 6443212170404281319}
   patrolRadius: 2
+--- !u!114 &2320630436800097885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452467280126753766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseHP: 900
+  maxHP: 0
+  currentHP: 0
+  InvincibilityTime: 0.17
+  damageReductionRate: 0
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}
+  bossPlayDeadAnimation: {fileID: 0}
+--- !u!114 &7713663653475738369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452467280126753766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
+  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
+  dropRadius: 2
+--- !u!114 &6537869754177368042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452467280126753766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  parameterName: 
+  scriptsToDisable: []
 --- !u!1 &5249312441780172932
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6443212170404281319}
   - component: {fileID: 8581127820115133554}
+  - component: {fileID: 8468462588288056065}
   m_Layer: 0
   m_Name: attackZone
   m_TagString: Untagged
@@ -352,3 +410,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.7165478, y: 0.6261491}
   m_EdgeRadius: 0
+--- !u!114 &8468462588288056065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230905249624839333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  FinalDamage: 0

@@ -92,9 +92,12 @@ GameObject:
   - component: {fileID: 3527794912974375855}
   - component: {fileID: 2925383263175192299}
   - component: {fileID: 68768340051339826}
-  m_Layer: 0
+  - component: {fileID: 2557307231252810547}
+  - component: {fileID: 552449978586479150}
+  - component: {fileID: 5904129042153648648}
+  m_Layer: 7
   m_Name: Crow  1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +112,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.62, y: -8.08, z: 0}
-  m_LocalScale: {x: 5.7288, y: 5.7288, z: 5.7288}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5346936213987515750}
@@ -159,7 +162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6286954360436444883, guid: 7d160999cc835ff47a837b8e60242ab0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -244,8 +247,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0042796778, y: 0}
-  m_Size: {x: 0.17720316, y: 0.30000004}
+  m_Offset: {x: -0.028919697, y: -0.018479943}
+  m_Size: {x: 0.805521, y: 1.7660749}
   m_Direction: 0
 --- !u!50 &68768340051339826
 Rigidbody2D:
@@ -274,6 +277,60 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2557307231252810547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207965509407238403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  parameterName: 
+  scriptsToDisable: []
+--- !u!114 &552449978586479150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207965509407238403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseHP: 1250
+  maxHP: 0
+  currentHP: 0
+  InvincibilityTime: 0.17
+  damageReductionRate: 0
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}
+  bossPlayDeadAnimation: {fileID: 0}
+--- !u!114 &5904129042153648648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207965509407238403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
+  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
+  dropRadius: 2
 --- !u!1 &5712117184317292083
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3524919909218167154}
   - component: {fileID: 2964146399572189955}
+  - component: {fileID: 7757603706658833878}
   m_Layer: 0
   m_Name: attackZone
   m_TagString: Untagged
@@ -300,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 5712117184317292083}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.54, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -336,10 +394,24 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.00880544}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Offset: {x: 0.08188248, y: -0.111157894}
+  m_Size: {x: 0.8684699, y: 1.5951755}
   m_Direction: 0
+--- !u!114 &7757603706658833878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712117184317292083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  FinalDamage: 0
