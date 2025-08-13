@@ -1,55 +1,102 @@
 ﻿using UnityEngine;
 
-public class SuicideEnemy : MonoBehaviour
+public class EnemySuicide : MonoBehaviour
 {
+    [Header("Player Detection")]
+    public string playerTag = "Player";
     public float detectionRange = 5f;
-    public float speed = 3f;
-    public float explosionRadius = 1f;
-    public int damage = 50;
-    public GameObject explosionEffect;
+    public float explosionRange = 1.2f;
 
+    [Header("Movement Settings")]
+    public float patrolSpeed = 2f;
+    public float chaseSpeed = 4f;
+    public float patrolRange = 4f; // khoảng cách tuần tra từ vị trí ban đầu
+
+    [Header("Explosion Settings")]
+    public GameObject explosionEffect;
+    public float damage = 50f;
+
+    private Rigidbody2D rb;
     private Transform player;
-    private bool isChasing = false;
+    private Vector2 initialPosition;
+    private bool chasingPlayer = false;
+    private int patrolDirection = 1;
 
     void Start()
     {
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-            player = playerObj.transform;
+        rb = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
+        player = GameObject.FindGameObjectWithTag(playerTag).transform;
     }
 
     void Update()
     {
-        if (player == null) return;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-
-        if (distance <= detectionRange)
+        if (player != null)
         {
-            isChasing = true;
-        }
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (isChasing)
-        {
-            Vector2 direction = (player.position - transform.position).normalized;
+            if (distanceToPlayer <= detectionRange)
+            {
+                chasingPlayer = true;
+            }
+            else if (distanceToPlayer > detectionRange * 1.2f) // ra xa quá thì quay lại tuần tra
+            {
+                chasingPlayer = false;
+            }
 
-            // Di chuyển
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
-
-            // Quay mặt về hướng người chơi (sprite nhìn lên, nên cộng 90 độ)
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
+            if (distanceToPlayer <= explosionRange)
+            {
+                Explode();
+            }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void FixedUpdate()
     {
-        if (other.CompareTag("Player"))
+        if (chasingPlayer && player != null)
         {
-            if (explosionEffect != null)
-                Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            // Xoay quái hướng về Player
+            Vector2 direction = (player.position - transform.position).normalized;
+            if (direction.x != 0)
+                transform.localScale = new Vector3(Mathf.Sign(direction.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
-            Destroy(gameObject);
+            rb.linearVelocity = direction * chaseSpeed;
         }
+        else
+        {
+            Patrol();
+        }
+    }
+
+    void Patrol()
+    {
+        // Đi tới giới hạn bên trái hoặc phải
+        if (transform.position.x > initialPosition.x + patrolRange)
+        {
+            patrolDirection = -1;
+            Flip();
+        }
+        else if (transform.position.x < initialPosition.x - patrolRange)
+        {
+            patrolDirection = 1;
+            Flip();
+        }
+
+        rb.linearVelocity = new Vector2(patrolDirection * patrolSpeed, rb.linearVelocity.y);
+    }
+
+    void Flip()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    void Explode()
+    {
+        if (explosionEffect != null)
+        {
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        }
+        // Gây sát thương cho Player nếu có script nhận damage
+        Destroy(gameObject);
     }
 }

@@ -14,13 +14,9 @@ GameObject:
   - component: {fileID: 4945473522885276970}
   - component: {fileID: 8850232646122682077}
   - component: {fileID: 3571695618751287616}
-  - component: {fileID: 3601448223172669743}
-  - component: {fileID: -9173609545785123031}
-  - component: {fileID: 6482876430250728119}
-  - component: {fileID: -6395150050398309227}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: skull4
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 8020143640844766479, guid: 26b4cb0b50c1499469b75d31283f6277, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -161,14 +157,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958477435639065158}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -179,7 +175,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3571695618751287616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,83 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e55a1df73a6ac46abe9981a9b2d383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
   detectionRange: 5
-  speed: 3
-  explosionRadius: 1
-  damage: 50
+  explosionRange: 1.2
+  patrolSpeed: 2
+  chaseSpeed: 4
+  patrolRange: 4
   explosionEffect: {fileID: 5608516125113093903, guid: 1dc762aa04a8b08478fc2730d69abe71, type: 3}
---- !u!114 &3601448223172669743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958477435639065158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edaf123f9e5a0a44194ff356ffb507b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolRange: {x: 3, y: 3}
-  moveSpeed: 2
-  waitTime: 2
-  detectionRange: 5
-  explodeRange: 1.2
-  countdownTime: 2
   damage: 50
-  explosionEffect: {fileID: 5608516125113093903, guid: 1dc762aa04a8b08478fc2730d69abe71, type: 3}
-  player: {fileID: 0}
---- !u!114 &-9173609545785123031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958477435639065158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BaseHP: 100
-  maxHP: 0
-  currentHP: 0
-  InvincibilityTime: 0.17
-  damageReductionRate: 0
-  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
-  healthBar: {fileID: 0}
-  maxHeal: {fileID: 0}
-  currentHeal: {fileID: 0}
-  bossPlayDeadAnimation: {fileID: -9084375825749845612, guid: 3ac2937b6bf6dd44bac0d7c68c1a8527, type: 3}
---- !u!114 &6482876430250728119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958477435639065158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  weaponLoot: []
-  potionLoot: []
-  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  dropRadius: 2
---- !u!114 &-6395150050398309227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958477435639065158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  parameterName: 
-  scriptsToDisable: []

@@ -3,86 +3,133 @@ using System.Collections;
 
 public class Suicide2 : MonoBehaviour
 {
+    [Header("Player Detection")]
+    public string playerTag = "Player";
     public float detectionRange = 5f;
-    public float speed = 3f;
-    public float explodeDistance = 1.2f;
-    public float countdownTime = 2f;
-    public int damage = 50;
-    public GameObject explosionEffect;
+    public float explosionRange = 1.2f;
 
+    [Header("Movement Settings")]
+    public float patrolSpeed = 2f;
+    public float chaseSpeed = 4f;
+    public float patrolRange = 4f; // khoảng cách tuần tra từ vị trí ban đầu
+
+    [Header("Explosion Settings")]
+    public GameObject explosionEffect;
+    public float damage = 50f;
+    public float countdownTime = 2f; // thời gian đếm ngược
+
+    private Rigidbody2D rb;
     private Transform player;
-    private bool isChasing = false;
+    private Vector2 initialPosition;
+    private bool chasingPlayer = false;
+    private int patrolDirection = 1;
     private bool isCountingDown = false;
+
+    private SpriteRenderer sr;
 
     void Start()
     {
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+
+        initialPosition = transform.position;
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
         if (playerObj != null)
             player = playerObj.transform;
     }
 
     void Update()
     {
-        if (player == null) return;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-
-        if (distance <= detectionRange)
+        if (player != null && !isCountingDown)
         {
-            isChasing = true;
-        }
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (isChasing && !isCountingDown)
-        {
-            // Di chuyển đến người chơi
-            Vector2 direction = (player.position - transform.position).normalized;
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
+            if (distanceToPlayer <= detectionRange)
+            {
+                chasingPlayer = true;
+            }
+            else if (distanceToPlayer > detectionRange * 1.2f)
+            {
+                chasingPlayer = false;
+            }
 
-            // Quay mặt
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
-
-            // Bắt đầu countdown nếu đến gần
-            if (distance <= explodeDistance)
+            // Nếu đến gần player thì bắt đầu đếm ngược phát nổ
+            if (distanceToPlayer <= explosionRange)
             {
                 StartCoroutine(CountdownToExplode());
             }
         }
     }
 
+    void FixedUpdate()
+    {
+        if (!isCountingDown) // Khi đang đếm ngược thì đứng yên
+        {
+            if (chasingPlayer && player != null)
+            {
+                // Xoay quái hướng về Player
+                Vector2 direction = (player.position - transform.position).normalized;
+                if (direction.x != 0)
+                    transform.localScale = new Vector3(Mathf.Sign(direction.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+
+                rb.linearVelocity = direction * chaseSpeed;
+            }
+            else
+            {
+                Patrol();
+            }
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    void Patrol()
+    {
+        if (transform.position.x > initialPosition.x + patrolRange)
+        {
+            patrolDirection = -1;
+            Flip();
+        }
+        else if (transform.position.x < initialPosition.x - patrolRange)
+        {
+            patrolDirection = 1;
+            Flip();
+        }
+
+        rb.linearVelocity = new Vector2(patrolDirection * patrolSpeed, rb.linearVelocity.y);
+    }
+
+    void Flip()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
     IEnumerator CountdownToExplode()
     {
+        if (isCountingDown) yield break;
         isCountingDown = true;
 
         Debug.Log("Bắt đầu đếm ngược phát nổ!");
 
-        // Ví dụ nhấp nháy màu
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
         for (int i = 0; i < 6; i++)
         {
-            sr.color = (i % 2 == 0) ? Color.red : Color.white;
+            if (sr != null)
+                sr.color = (i % 2 == 0) ? Color.red : Color.white;
             yield return new WaitForSeconds(countdownTime / 6f);
         }
 
-        // Phát nổ bất chấp khoảng cách
+        Explode();
+    }
+
+    void Explode()
+    {
         if (explosionEffect != null)
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-        // Gây sát thương nếu người chơi đang trong bán kính nổ
-        if (player != null)
-        {
-            float finalDistance = Vector2.Distance(transform.position, player.position);
-            if (finalDistance <= explodeDistance)
-            {
-                
-            }
-        }
-
+        // TODO: Thêm gây sát thương cho player ở đây nếu có hệ thống máu
         Destroy(gameObject);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // Không xử lý trigger để tránh nổ sớm
     }
 }
