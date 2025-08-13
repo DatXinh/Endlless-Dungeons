@@ -10,14 +10,34 @@ public class BossPlayDeadAnimation : MonoBehaviour
     public string parameterName;
     [Header("BossAI")]
     public List<MonoBehaviour> scriptsToDisable = new List<MonoBehaviour>();
-    public void DisableScripts()
+    private EnemySelfDestroy enemySelfDestroy;
+    private void Start()
     {
-        animator.SetTrigger(parameterName);
-        foreach (var script in scriptsToDisable)
+        if (animator == null)
         {
-            if (script != null)
-                script.enabled = false;
+            animator = GetComponent<Animator>();
+        }
+        if (enemySelfDestroy == null)
+        {
+            enemySelfDestroy = GetComponent<EnemySelfDestroy>();
         }
     }
-    
+    public void DisableScripts()
+    {
+        if (string.IsNullOrEmpty(parameterName))
+        {
+            enemySelfDestroy.SelfDestroy();
+        }
+        else
+        {
+            animator.SetTrigger(parameterName);
+            foreach (var script in scriptsToDisable)
+            {
+                if (script != null)
+                    script.enabled = false;
+            }
+        }
+
+    }
+
 }

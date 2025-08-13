@@ -11,9 +11,9 @@ public class WeaponTooltipDisplay : MonoBehaviour
     public TextMeshProUGUI weaponCrit;
     public TextMeshProUGUI weaponMana;
     public TextMeshProUGUI weaponPrice;
-    private WeaponData weaponData;
+    public WeaponData weaponData;
     public int weaponLevel;
-    private int FinalWeaponDamage;
+    public int FinalWeaponDamage;
 
     private void Awake()
     {
@@ -23,12 +23,16 @@ public class WeaponTooltipDisplay : MonoBehaviour
         {
             if (LoopManager.Instance.currentLoop > 0)
             {
-                FinalWeaponDamage = (int)(weaponData.weaponDamage * (LoopManager.Instance.currentLoop * 0.2f));
+                FinalWeaponDamage = (int)(weaponData.weaponDamage * (1 + LoopManager.Instance.currentLoop * 0.2f));
             }
             else
             {
                 FinalWeaponDamage = weaponData.weaponDamage; // Use base damage if no LoopManager
             }
+        }
+        else
+        {
+            FinalWeaponDamage = weaponData.weaponDamage; // Use base damage if no LoopManager
         }
         HideTooltip();
     }

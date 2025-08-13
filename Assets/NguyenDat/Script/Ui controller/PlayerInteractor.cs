@@ -110,12 +110,12 @@ public class PlayerInteractor : MonoBehaviour
 
                 // Thả vũ khí cũ ra vị trí của vũ khí mới
                 droppedWeapon.transform.SetParent(null);
-                // Đảm bảo vũ khí cũ thuộc scene hiện tại
-                SceneManager.MoveGameObjectToScene(droppedWeapon, SceneManager.GetActiveScene());
-
                 droppedWeapon.transform.position = droppedPos;
                 droppedWeapon.transform.rotation = droppedRot;
+                droppedWeapon.transform.localScale = Vector3.one; // Reset scale về (1,1,1)
                 droppedWeapon.SetActive(true);
+                // Đảm bảo vũ khí cũ thuộc scene hiện tại
+                SceneManager.MoveGameObjectToScene(droppedWeapon, SceneManager.GetActiveScene());
                 WeaponInteractable droppedWeaponInteractable = droppedWeapon.GetComponent<WeaponInteractable>();
                 if (droppedWeaponInteractable != null)
                 {

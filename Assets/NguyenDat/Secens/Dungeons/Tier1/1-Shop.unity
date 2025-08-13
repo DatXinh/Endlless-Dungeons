@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopGrid1
       objectReference: {fileID: 0}
+    - target: {fileID: 2924930781874635681, guid: 835cfca3420396443925a1b99e2188a5, type: 3}
+      propertyPath: sceneName
+      value: 1-Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 3848704692294583701, guid: 835cfca3420396443925a1b99e2188a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -25,12 +25,15 @@ public class EnemyHP : MonoBehaviour
         {
             if (LoopManager.Instance.currentLoop > 0)
             {
-                maxHP = BaseHP * (LoopManager.Instance.currentLoop * 0.2f); // Increase max HP based on current loop
+                maxHP = BaseHP * ( 1 + (LoopManager.Instance.currentLoop * 0.2f)); // Increase max HP based on current loop
             }
             else
             {
                 maxHP = BaseHP; // Use base HP if no LoopManager or current loop is 0
             }
+        }else
+        {
+            maxHP = BaseHP; // Use base HP if no LoopManager
         }
         currentHP = maxHP; // Initialize current health to maximum health
         UpdateHPUI(); // Update health UI at the start

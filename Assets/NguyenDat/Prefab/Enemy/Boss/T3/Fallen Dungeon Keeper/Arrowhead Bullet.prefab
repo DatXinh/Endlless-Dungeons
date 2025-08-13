@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 8380698932142769207}
   - component: {fileID: 9070593311858320017}
   - component: {fileID: 1123870573333417390}
-  - component: {fileID: 8492445009031168695}
+  - component: {fileID: 8934520652681040510}
   m_Layer: 0
   m_Name: Arrowhead Bullet
   m_TagString: Untagged
@@ -328,8 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
---- !u!68 &8492445009031168695
+  damage: 35
+  FinalDamage: 0
+--- !u!68 &8934520652681040510
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,13 +367,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.7385311, y: -0.046798468}
-  - {x: -2.313673, y: 2.925553}
-  - {x: -1.8109665, y: 2.8106163}
-  - {x: 0.07413387, y: 0.06693411}
-  - {x: -1.887764, y: -2.830882}
-  - {x: -2.8005714, y: -2.9183626}
-  - {x: -1.7542992, y: -0.025226116}
+  - {x: -2.8003511, y: -2.824267}
+  - {x: -2.5224085, y: 2.870051}
+  - {x: -1.7901068, y: 2.8214052}
+  - {x: 0.057759285, y: -0.040802956}
+  - {x: -1.9169836, y: -2.7643461}
+  - {x: -2.8004732, y: -2.824286}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
