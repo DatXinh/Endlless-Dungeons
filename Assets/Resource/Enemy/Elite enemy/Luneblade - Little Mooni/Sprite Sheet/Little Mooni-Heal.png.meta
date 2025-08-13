@@ -203,10 +203,10 @@ TextureImporter:
       name: Little Mooni-Heal_0
       rect:
         serializedVersion: 2
-        x: 1497
-        y: 78
-        width: 10
-        height: 10
+        x: 0
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Little Mooni-Heal_1
       rect:
         serializedVersion: 2
-        x: 1498
-        y: 62
-        width: 28
-        height: 24
+        x: 144
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Little Mooni-Heal_2
       rect:
         serializedVersion: 2
-        x: 1641
-        y: 79
-        width: 10
-        height: 10
+        x: 288
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: Little Mooni-Heal_3
       rect:
         serializedVersion: 2
-        x: 1642
-        y: 62
-        width: 32
-        height: 25
+        x: 432
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: Little Mooni-Heal_4
       rect:
         serializedVersion: 2
-        x: 1785
-        y: 80
-        width: 10
-        height: 10
+        x: 576
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,10 +313,10 @@ TextureImporter:
       name: Little Mooni-Heal_5
       rect:
         serializedVersion: 2
-        x: 1786
-        y: 62
-        width: 32
-        height: 26
+        x: 720
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,10 +335,10 @@ TextureImporter:
       name: Little Mooni-Heal_6
       rect:
         serializedVersion: 2
-        x: 1929
-        y: 81
-        width: 10
-        height: 10
+        x: 864
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: Little Mooni-Heal_7
       rect:
         serializedVersion: 2
-        x: 1930
-        y: 62
-        width: 32
-        height: 27
+        x: 1008
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,10 +379,10 @@ TextureImporter:
       name: Little Mooni-Heal_8
       rect:
         serializedVersion: 2
-        x: 2073
-        y: 82
-        width: 10
-        height: 10
+        x: 1152
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,10 +401,10 @@ TextureImporter:
       name: Little Mooni-Heal_9
       rect:
         serializedVersion: 2
-        x: 2093
-        y: 83
-        width: 7
-        height: 7
+        x: 1296
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,10 +423,10 @@ TextureImporter:
       name: Little Mooni-Heal_10
       rect:
         serializedVersion: 2
-        x: 2217
-        y: 83
-        width: 10
-        height: 10
+        x: 1440
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,10 +445,10 @@ TextureImporter:
       name: Little Mooni-Heal_11
       rect:
         serializedVersion: 2
-        x: 2237
-        y: 83
-        width: 8
-        height: 8
+        x: 1584
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,10 +467,10 @@ TextureImporter:
       name: Little Mooni-Heal_12
       rect:
         serializedVersion: 2
-        x: 2361
-        y: 62
-        width: 33
-        height: 32
+        x: 1728
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,10 +489,10 @@ TextureImporter:
       name: Little Mooni-Heal_13
       rect:
         serializedVersion: 2
-        x: 2505
-        y: 85
-        width: 10
-        height: 10
+        x: 1872
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,10 +511,10 @@ TextureImporter:
       name: Little Mooni-Heal_14
       rect:
         serializedVersion: 2
-        x: 2508
-        y: 79
-        width: 7
-        height: 7
+        x: 2016
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -533,10 +533,10 @@ TextureImporter:
       name: Little Mooni-Heal_15
       rect:
         serializedVersion: 2
-        x: 2525
-        y: 86
-        width: 7
-        height: 7
+        x: 2160
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -555,10 +555,10 @@ TextureImporter:
       name: Little Mooni-Heal_16
       rect:
         serializedVersion: 2
-        x: 58
-        y: 62
-        width: 28
-        height: 22
+        x: 2304
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,10 +577,10 @@ TextureImporter:
       name: Little Mooni-Heal_17
       rect:
         serializedVersion: 2
-        x: 202
-        y: 62
-        width: 28
-        height: 23
+        x: 2448
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,275 +595,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_18
-      rect:
-        serializedVersion: 2
-        x: 346
-        y: 62
-        width: 28
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 329e35fccb26e2f20800000000000000
-      internalID: 3399763331783059747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_19
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 61
-        width: 28
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a48b2fb8a1b9dba0800000000000000
-      internalID: -6063620084957739868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_20
-      rect:
-        serializedVersion: 2
-        x: 634
-        y: 61
-        width: 28
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 001dbc3def64315f0800000000000000
-      internalID: -787207449570717440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_21
-      rect:
-        serializedVersion: 2
-        x: 778
-        y: 62
-        width: 28
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9434c5babf60521f0800000000000000
-      internalID: -1070441658449116343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_22
-      rect:
-        serializedVersion: 2
-        x: 922
-        y: 61
-        width: 28
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 266d1f748b256a670800000000000000
-      internalID: 8549611894043956834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_23
-      rect:
-        serializedVersion: 2
-        x: 1066
-        y: 61
-        width: 28
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d8e35c6700a6bb20800000000000000
-      internalID: 3149880943134894296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_24
-      rect:
-        serializedVersion: 2
-        x: 1210
-        y: 62
-        width: 28
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 978f6469402e438d0800000000000000
-      internalID: -2867418553399183239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_25
-      rect:
-        serializedVersion: 2
-        x: 1354
-        y: 62
-        width: 28
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b37c7ea3e3f9c7d90800000000000000
-      internalID: -7098623823017687237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_26
-      rect:
-        serializedVersion: 2
-        x: 2074
-        y: 62
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2e68db4da07da300800000000000000
-      internalID: 264991842688855597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_27
-      rect:
-        serializedVersion: 2
-        x: 2218
-        y: 62
-        width: 32
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bff2b8c6915270d50800000000000000
-      internalID: 6703367361489743867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_28
-      rect:
-        serializedVersion: 2
-        x: 2220
-        y: 77
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a996922daed5b560800000000000000
-      internalID: 7329008803806353832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Heal_29
-      rect:
-        serializedVersion: 2
-        x: 2506
-        y: 62
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6282c4ea0737e9170800000000000000
-      internalID: 8187108100403898406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 45e421c46616b48cab6634cedace2adb
     internalID: 0
     vertices: []
     indices: 
@@ -883,19 +619,7 @@ TextureImporter:
       Little Mooni-Heal_15: -6618759716630421712
       Little Mooni-Heal_16: -5747452873638236490
       Little Mooni-Heal_17: -3588674785708077888
-      Little Mooni-Heal_18: 3399763331783059747
-      Little Mooni-Heal_19: -6063620084957739868
       Little Mooni-Heal_2: 4009551409947923512
-      Little Mooni-Heal_20: -787207449570717440
-      Little Mooni-Heal_21: -1070441658449116343
-      Little Mooni-Heal_22: 8549611894043956834
-      Little Mooni-Heal_23: 3149880943134894296
-      Little Mooni-Heal_24: -2867418553399183239
-      Little Mooni-Heal_25: -7098623823017687237
-      Little Mooni-Heal_26: 264991842688855597
-      Little Mooni-Heal_27: 6703367361489743867
-      Little Mooni-Heal_28: 7329008803806353832
-      Little Mooni-Heal_29: 8187108100403898406
       Little Mooni-Heal_3: -1629301682745063653
       Little Mooni-Heal_4: -4298246185415088410
       Little Mooni-Heal_5: -5466719687216080827
