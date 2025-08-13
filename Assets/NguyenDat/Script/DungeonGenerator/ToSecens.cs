@@ -6,13 +6,18 @@ public class ToSecens : MonoBehaviour
     public string sceneName;
     public void toScene()
     {
-        if (!string.IsNullOrEmpty(sceneName))
+        if (LoopManager.Instance != null)
         {
-            SceneManager.LoadScene(sceneName);
+            if (LoopManager.Instance.IsEndlessMode() && SceneManager.GetActiveScene().name == "3-Boss")
+            {
+                sceneName = "1-1";
+                LoopManager.Instance.IncreaseLoop();
+            }
         }
-        else
-        {
-            Debug.LogWarning("Tên scene không được đặt.");
-        }
+        // Gán tên scene muốn chuyển đến
+        SceneLoadManager.nextSceneName = sceneName;
+        // Chuyển sang scene loading
+        SceneManager.LoadScene("LoadScene");
+        
     }
 }

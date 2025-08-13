@@ -89,7 +89,7 @@ MonoBehaviour:
     kh\xF4ng k\xE9m nguy hi\u1EC3m. N\xF3 g\u1ECDi l\u1EEDa t\u1EEB l\xF2ng \u0111\u1EA5t
     s\xE2u \u2013 n\u01A1i \u0111\u01B0\u1EE3c tin l\xE0 ph\u1EA7n th\xE2n d\u01B0\u1EDBi
     c\u1EE7a m\u1ED9t v\u1ECB th\u1EA7n b\u1ECB c\u1EAFt r\u1EDDi.\u201D"
-  weaponDamage: 56
+  weaponDamage: 230
   weaponCriticalChange: 63
   weaponManaCost: 7
   weaponProjectile: {fileID: 8529608062807768191, guid: e127afc7a8b2a3644ab7c347862d399b, type: 3}

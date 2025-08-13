@@ -222,8 +222,8 @@ MonoBehaviour:
     gian n\u01A1i c\xE1t bi\u1EBFt n\xF3i. Khi ni\u1EC7m ph\xE9p n\xE0y, b\u1EA1n
     kh\xF4ng g\u1ECDi b\xE3o \u2013 b\u1EA1n g\u1ECDi s\u1EF1 ch\xFA \xFD c\u1EE7a
     n\xF3.\u201D"
-  weaponDamage: 49
-  weaponCriticalChange: 17
+  weaponDamage: 89
+  weaponCriticalChange: 39
   weaponManaCost: 7
   weaponProjectile: {fileID: 3537355288724318913, guid: e9d8c7ea9bf5e4d4ab32609abac23858, type: 3}
   weaponType: 5

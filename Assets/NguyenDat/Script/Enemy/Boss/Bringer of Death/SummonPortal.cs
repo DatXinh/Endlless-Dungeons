@@ -18,7 +18,7 @@ public class SummonPortal : MonoBehaviour
             EnemyDame enemyDame = portal.GetComponent<EnemyDame>();
             if (enemyDame != null)
             {
-                enemyDame.damage = 10; // Ví dụ: đặt sát thương là 10
+                enemyDame.damage = 25;
             }
 
         }

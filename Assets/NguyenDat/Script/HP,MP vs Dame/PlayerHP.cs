@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +18,15 @@ public class PlayerHP : MonoBehaviour
 
     private bool isInvincible = false; // Trạng thái bất tử
 
+    public Joystick joystick;
+    public JoystickAttackAndAim joystickAttackAndAim; // Reference to the joystick for attack and aim
+
     public GameObject rightPanel;
     public GameObject leftPanel;
     public GameObject deadMesseng;
+    public GameObject pauseButton;
     public AudioSource[] allAudioSources;
-    private AudioSource[] pausedAudioSources;
+    public List<AudioSource> playAudioSources = new List<AudioSource>();
 
     void Start()
     {
@@ -35,7 +41,6 @@ public class PlayerHP : MonoBehaviour
         }
         UpdateHealthUI(); // Update the health UI at the start
         deadMesseng.SetActive(false);
-        allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
     }
     // Method to take damage
     public void TakeDamage(int damage)
@@ -45,11 +50,8 @@ public class PlayerHP : MonoBehaviour
             if (!isInvincible)
             {
                 currentHP -= damage; // Reduce current health by damage amount
+                // Gây knockback nếu có direction từ attacker
                 UpdateHealthUI(); // Update the health UI
-                if (currentHP < 0) // Ensure current health does not go below zero
-                {
-                    currentHP = 0;
-                }
                 // Display damage popup
                 if (damagePopupPrefab != null)
                 {
@@ -65,10 +67,13 @@ public class PlayerHP : MonoBehaviour
         }
         if (currentHP <= 0)
         {
-            Time.timeScale = 0;
-            deadMesseng.SetActive(true);
-            rightPanel.SetActive(false);
+
+            joystick.OnPointerUp(null);
+            joystickAttackAndAim.OnPointerUp(null);
             leftPanel.SetActive(false);
+            rightPanel.SetActive(false);
+            deadMesseng.SetActive(true);
+            pauseButton.SetActive(false);
             PauseGame();
         }
     }
@@ -111,31 +116,6 @@ public class PlayerHP : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.fillAmount = healthPercent;
-
-            Color healthColor;
-
-            if (healthPercent > 0.8f)
-            {
-                healthColor = new Color(0f, 1f, 0f); // Xanh lá
-            }
-            else if (healthPercent > 0.6f)
-            {
-                healthColor = new Color(0.5f, 1f, 0f); // Vàng xanh
-            }
-            else if (healthPercent > 0.4f)
-            {
-                healthColor = new Color(1f, 1f, 0f); // Vàng
-            }
-            else if (healthPercent > 0.2f)
-            {
-                healthColor = new Color(1f, 0.5f, 0f); // Cam
-            }
-            else
-            {
-                healthColor = new Color(1f, 0f, 0f); // Đỏ
-            }
-
-            healthBar.color = healthColor;
         }
 
         if (currentHeal != null)
@@ -145,29 +125,30 @@ public class PlayerHP : MonoBehaviour
     }
     public void PauseGame()
     {
-        Time.timeScale = 0;
-
-        // Pause các audio đang chạy
-        AudioSource[] allAudio = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-        pausedAudioSources = System.Array.FindAll(allAudio, a => a.isPlaying);
-        foreach (AudioSource audio in pausedAudioSources)
+        allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource audio in allAudioSources)
         {
-            audio.Pause();
+            if (audio.isPlaying)
+            {
+                playAudioSources.Add(audio);
+                audio.Pause();
+            }
         }
+        Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
-
-        // Resume các audio đã bị pause
-        if (pausedAudioSources != null)
+        foreach (AudioSource audio in playAudioSources)
         {
-            foreach (AudioSource audio in pausedAudioSources)
-            {
-                if (audio != null) audio.UnPause();
-            }
-            pausedAudioSources = null;
+            audio.Play();
         }
+        playAudioSources.Clear();
+    }
+    public void resetHP()
+    {
+        currentHP = maxHP;
+        UpdateHealthUI();
     }
 }

@@ -59,9 +59,9 @@ MonoBehaviour:
     c\xE1c ph\xE1p s\u01B0 x\u01B0a phong \u1EA5n l\u1EA1i. Kh\xF4ng v\xEC l\xFD
     do r\xF5 r\xE0ng\u2026 ch\u1EC9 v\xEC nh\u1EEFng ai \u0111\u1ECDc n\xF3 kh\xF4ng
     c\xF2n t\u1EC9nh t\xE1o.\u201D"
-  weaponDamage: 117
+  weaponDamage: 200
   weaponCriticalChange: 66
-  weaponManaCost: 9
+  weaponManaCost: 10
   weaponProjectile: {fileID: 6759631485304373339, guid: 6791d57b37b922347ab5b094f5204a25, type: 3}
   weaponType: 5
   weaponLevel: 2

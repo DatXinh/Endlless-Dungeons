@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerInteractor : MonoBehaviour
@@ -20,13 +21,13 @@ public class PlayerInteractor : MonoBehaviour
     private int activeWeaponIndex = 0; // slot hiện tại đang dùng
 
     public TextMeshProUGUI CointsText; // Hiển thị số tiền hiện tại
+    private AudioSource audioSource;
 
     private void Awake()
     {
         testWeaponAtk = weaponParent.GetComponent<TestWeaponAtk>();
         scaleWeapon = weaponParent.GetComponent<ScaleWeapon>();
-        playerHP = GetComponentInParent<PlayerHP>();
-        playerMP = GetComponentInParent<PLayerMP>();
+        audioSource = GetComponent<AudioSource>();
         if (CointsText != null)
         {
             CointsText.text = Coins.ToString();
@@ -109,9 +110,17 @@ public class PlayerInteractor : MonoBehaviour
 
                 // Thả vũ khí cũ ra vị trí của vũ khí mới
                 droppedWeapon.transform.SetParent(null);
+                // Đảm bảo vũ khí cũ thuộc scene hiện tại
+                SceneManager.MoveGameObjectToScene(droppedWeapon, SceneManager.GetActiveScene());
+
                 droppedWeapon.transform.position = droppedPos;
                 droppedWeapon.transform.rotation = droppedRot;
                 droppedWeapon.SetActive(true);
+                WeaponInteractable droppedWeaponInteractable = droppedWeapon.GetComponent<WeaponInteractable>();
+                if (droppedWeaponInteractable != null)
+                {
+                    droppedWeaponInteractable.isEquip = false; // Đánh dấu vũ khí cũ là không được trang bị
+                }
 
                 Collider2D col = droppedWeapon.GetComponent<Collider2D>();
                 if (col != null) col.enabled = true;
@@ -128,7 +137,10 @@ public class PlayerInteractor : MonoBehaviour
             {
                 playerHP.Heal(hPInteracable.healAmount);
                 hPInteracable.Interact();
-                Coins -= 30;
+                if (hPInteracable.isSale)
+                {
+                    Coins -= hPInteracable.CoinCost;
+                }
                 if (CointsText != null)
                 {
                     CointsText.text = Coins.ToString();
@@ -142,7 +154,10 @@ public class PlayerInteractor : MonoBehaviour
             {
                 playerMP.RecoverMP(mPInteracable.ManaAmount);
                 mPInteracable.Interact();
-                Coins -= 30;
+                if (mPInteracable.isSale)
+                {
+                    Coins -= mPInteracable.CoinCost;
+                }
                 if (CointsText != null)
                 {
                     CointsText.text = Coins.ToString();
@@ -203,6 +218,7 @@ public class PlayerInteractor : MonoBehaviour
                 WeaponInteractable weaponInteractable = weapon.GetComponent<WeaponInteractable>();
                 if (weaponInteractable != null && weaponInteractable.weaponIcon != null && WeaponIcon != null)
                 {
+                    weaponInteractable.isEquip = true;
                     WeaponIcon.sprite = weaponInteractable.weaponIcon;
                     WeaponIcon.enabled = true;
                 }
@@ -218,9 +234,76 @@ public class PlayerInteractor : MonoBehaviour
     {
         Debug.Log("Earned Coins: " + amount);
         Coins += amount;
+        setCoinNumber();
+        audioSource.Play();
+    }
+    public void setCoinNumber()
+    {
         if (CointsText != null)
         {
             CointsText.text = Coins.ToString();
         }
+    }
+    // Xóa vũ khí đang dùng, nếu còn vũ khí phụ thì chuyển nó thành vũ khí chính
+    public void RemoveCurrentWeapon()
+    {
+        
+        // Nếu không có vũ khí nào thì không làm gì
+        if (weaponSlots[0] == null && weaponSlots[1] == null)
+            return;
+
+        // Nếu có 2 vũ khí
+        if (weaponSlots[0] != null && weaponSlots[1] != null)
+        {
+            // Xóa vũ khí đang dùng
+            GameObject weaponToRemove = weaponSlots[activeWeaponIndex];
+            Destroy(weaponToRemove);
+            // Thay thế vũ khí còn lại thành vũ khí chính
+            int otherIndex = 1 - activeWeaponIndex;
+            weaponSlots[activeWeaponIndex] = null;
+            weaponSlots[0] = weaponSlots[otherIndex];
+            weaponSlots[1] = null;
+            activeWeaponIndex = 0;
+            EquipWeapon(0);
+        }
+        // Nếu chỉ có 1 vũ khí
+        else
+        {
+            if (weaponSlots[0] != null)
+            {
+                Destroy(weaponSlots[0]);
+                weaponSlots[0] = null;
+            }
+            else if (weaponSlots[1] != null)
+            {
+                Destroy(weaponSlots[1]);
+                weaponSlots[1] = null;
+            }
+            activeWeaponIndex = 0;
+            // Ẩn icon vũ khí nếu có
+            if (WeaponIcon != null)
+                WeaponIcon.enabled = false;
+        }
+    }
+
+    // Xóa tất cả vũ khí hiện có
+    public void RemoveAllWeapons()
+    {
+        playerHP.resetHP(); // Reset HP khi xóa vũ khí
+        playerMP.resetMp(); // Reset MP khi xóa vũ khí
+        Coins = 100;
+        setCoinNumber();
+        for (int i = 0; i < weaponSlots.Length; i++)
+        {
+            if (weaponSlots[i] != null)
+            {
+                Destroy(weaponSlots[i]);
+                weaponSlots[i] = null;
+            }
+        }
+        activeWeaponIndex = 0;
+        // Ẩn icon vũ khí nếu có
+        if (WeaponIcon != null)
+            WeaponIcon.enabled = false;
     }
 }

@@ -88,10 +88,10 @@ MonoBehaviour:
   weaponDescription: "\u201C\u0110\u01B0\u1EE3c r\xE8n b\u1EB1ng \xE1nh tr\u0103ng
     \u0111\u1EB7c, pha m\xE1u k\u1EBB ph\u1EA3n b\u1ED9i. N\xF3 kh\xF4ng ph\xE1t
     s\xE1ng \u2014 n\xF3 nu\u1ED1t s\xE1ng.\u201D"
-  weaponDamage: 157
+  weaponDamage: 510
   weaponCriticalChange: 79
-  weaponManaCost: 7
-  weaponProjectile: {fileID: 3926250647381810394, guid: 06c79960cbf5bf544ba94fe783a900b2, type: 3}
+  weaponManaCost: 6
+  weaponProjectile: {fileID: 3926250647381810394, guid: 1d31322ff2943f1428443ee08d914820, type: 3}
   weaponType: 3
   weaponLevel: 3
   WeaponPrice: 135

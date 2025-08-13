@@ -59,9 +59,9 @@ MonoBehaviour:
     nguy hi\u1EC3m \u2013 ng\u01B0\u1EDDi \u0111\u1ECDc s\u1EBD ph\u1EA3i ho\xE0n
     thi\u1EC7n b\u1EB1ng... ch\xEDnh tr\xED \xF3c m\xECnh. V\xE0 kh\xF4ng ai bi\u1EBFt
     m\xECnh c\xF2n l\xE0 ch\xEDnh m\xECnh sau \u0111\xF3.\u201D"
-  weaponDamage: 176
+  weaponDamage: 355
   weaponCriticalChange: 78
-  weaponManaCost: 8
+  weaponManaCost: 10
   weaponProjectile: {fileID: 7653115163571952343, guid: d5f6d61942695b34fa6d5fda60fe3195, type: 3}
   weaponType: 5
   weaponLevel: 3

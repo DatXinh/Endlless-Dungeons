@@ -246,7 +246,7 @@ MonoBehaviour:
     c\xE0ng nh\u1EB9. M\u1ED9t ng\xE0y kia, h\u1ECD s\u1EBD kh\xF4ng c\xF2n ch\u1EA1m
     \u0111\u1EA5t \u2013 v\xE0 s\u1EBD kh\xF4ng tr\u1EDF l\u1EA1i n\u1EEFa.\u201D"
   weaponDamage: 254
-  weaponCriticalChange: 60
+  weaponCriticalChange: 77
   weaponManaCost: 0
   weaponProjectile: {fileID: 0}
   weaponType: 1

@@ -189,9 +189,9 @@ MonoBehaviour:
     r\u1ECDi v\xE0o linh h\u1ED3n nh\u01B0 kim ch\xE2m \u2013 t\u1EEBng ch\xFAt,
     t\u1EEBng ch\xFAt m\u1ED9t \u2013 cho \u0111\u1EBFn khi ch\u1EC9 c\xF2n s\u1EF1
     tr\u1ED1ng r\u1ED7ng.\u201D"
-  weaponDamage: 56
-  weaponCriticalChange: 44
-  weaponManaCost: 3
+  weaponDamage: 110
+  weaponCriticalChange: 40
+  weaponManaCost: 5
   weaponProjectile: {fileID: 6703000485161523705, guid: 8d1f776af69671c48a00c828554e6746, type: 3}
   weaponType: 4
   weaponLevel: 1

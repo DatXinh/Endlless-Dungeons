@@ -237,7 +237,7 @@ MonoBehaviour:
     ch\u1ECDn l\xFAc r\u1EDDi tay b\u1EA1n.\u201D"
   weaponDamage: 279
   weaponCriticalChange: 60
-  weaponManaCost: 5
+  weaponManaCost: 10
   weaponProjectile: {fileID: 7093288200147166899, guid: 411a24ae630e56c4885cce7df41f0331, type: 3}
   weaponType: 6
   weaponLevel: 3

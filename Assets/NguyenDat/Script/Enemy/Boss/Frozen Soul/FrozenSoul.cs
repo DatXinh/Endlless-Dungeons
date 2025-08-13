@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FrozenSoul : MonoBehaviour
 {
+    [Header("References")]
     public Transform player;
     public EnemyHP health;
 
@@ -25,283 +26,228 @@ public class FrozenSoul : MonoBehaviour
     public GameObject iceBulletPrefab;
     public GameObject crystalShardPrefab;
     public GameObject iceBombPrefab;
-
     public float bulletSpeed = 5f;
+    public GameObject tinyMana;
+
+    [Header("Crystal Settings")]
+    public float crystalRespawnInterval = 4f;
 
     private int currentPhase = 1;
     private Coroutine attackRoutine;
-
-    private float currentHPPercent;
-
+    private Coroutine crystalRespawnRoutine;
     private Transform[] shardOrbits;
 
-    private Coroutine crystalRespawnRoutine;
-    public float crystalRespawnInterval;
+    public AudioSource bossMusic;
+
+    private readonly WaitForSeconds wait2s = new WaitForSeconds(2f);
+    private readonly WaitForSeconds wait1_5s = new WaitForSeconds(1.5f);
+    private readonly WaitForSeconds wait1_25s = new WaitForSeconds(1.25f);
+    private readonly WaitForSeconds wait1_2s = new WaitForSeconds(1.2f);
+    private readonly WaitForSeconds wait1s = new WaitForSeconds(1f);
+    private readonly WaitForSeconds wait0_75s = new WaitForSeconds(0.75f);
 
     void Start()
     {
-        if (player == null)
-        {
-            GameObject p = GameObject.FindGameObjectWithTag("Player");
-            if (p != null) player = p.transform;
-        }
-
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            this.player = player.transform;
         attackRoutine = StartCoroutine(Phase1Routine());
+        bossMusic.Play();
     }
 
     void Update()
     {
-        currentHPPercent = health.GetHealthPercent();
-
-        if (currentPhase == 1 && currentHPPercent <= phase2Threshold)
+        float hpPercent = health.GetHealthPercent();
+        switch (currentPhase)
         {
-            currentPhase = 2;
-            RestartPhase(Phase2Routine());
-        }
-        else if (currentPhase == 2 && currentHPPercent <= phase3Threshold)
-        {
-            currentPhase = 3;
-            RestartPhase(Phase3Routine());
-        }
-        else if (currentPhase == 3 && currentHPPercent <= phase4Threshold)
-        {
-            currentPhase = 4;
-            RestartPhase(Phase4Routine());
-        }
-        else if (currentPhase == 4 && currentHPPercent <= phase5Threshold)
-        {
-            currentPhase = 5;
-            RestartPhase(Phase5Routine());
-        }
-        else if (currentPhase == 5 && currentHPPercent <= phase6Threshold)
-        {
-            currentPhase = 6;
-            RestartPhase(Phase6Routine());
+            case 1 when hpPercent <= phase2Threshold:
+                ChangePhase(2, Phase2Routine());
+                break;
+            case 2 when hpPercent <= phase3Threshold:
+                ChangePhase(3, Phase3Routine());
+                break;
+            case 3 when hpPercent <= phase4Threshold:
+                ChangePhase(4, Phase4Routine());
+                break;
+            case 4 when hpPercent <= phase5Threshold:
+                ChangePhase(5, Phase5Routine());
+                break;
+            case 5 when hpPercent <= phase6Threshold:
+                ChangePhase(6, Phase6Routine());
+                break;
         }
 
-        if (currentPhase == 1)
-            MoveTowardsPlayer(moveSpeedPhase1,10f);
-        else if (currentPhase == 2)
-            MoveTowardsPlayer(moveSpeedPhase2,7f);
-        else if (currentPhase == 3)
-            MoveTowardsPlayer(moveSpeedPhase3,6f);
-        else if (currentPhase == 5)
-            MoveTowardsPlayer(moveSpeedPhase5,6f);
+        MoveController();
 
-        if (currentPhase >= 2)
-            RotateCrystalShards();
+        if (currentPhase >= 2) RotateCrystalShards();
     }
 
-    void RestartPhase(IEnumerator newRoutine)
+    void ChangePhase(int newPhase, IEnumerator newRoutine)
     {
+        currentPhase = newPhase;
         if (attackRoutine != null) StopCoroutine(attackRoutine);
         attackRoutine = StartCoroutine(newRoutine);
+        if (crystalRespawnRoutine == null)
+            crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
+        if (tinyMana != null)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                GameObject mana = Instantiate(tinyMana, transform.position, Quaternion.identity);
+                MPRecover  mPRecover = mana.GetComponent<MPRecover>();
+                if (mPRecover != null)
+                {
+                    mPRecover.manaRecoverAmount = 25;
+                }
+            }
+        }
     }
 
-    void MoveTowardsPlayer(float speed , float distance)
+    void MoveController()
     {
         if (player == null) return;
 
-        // Tính vector từ player đến boss
-        Vector2 toBoss = transform.position - player.position;
-
-        // Nếu boss đang quá gần hoặc quá xa, điều chỉnh độ dài để giữ khoảng cách cố định
-        float desiredDistance = distance;
-        float currentDistance = toBoss.magnitude;
-        if (Mathf.Abs(currentDistance - desiredDistance) > 0.1f)
+        float speed = currentPhase switch
         {
-            // Kéo boss về/ra xa để duy trì khoảng cách
-            Vector2 desiredPos = (Vector2)player.position + toBoss.normalized * desiredDistance;
-            Vector2 moveDir = (desiredPos - (Vector2)transform.position).normalized;
-            transform.position += (Vector3)(moveDir * speed * Time.deltaTime);
-            return;
-        }
+            1 => moveSpeedPhase1,
+            2 => moveSpeedPhase2,
+            3 => moveSpeedPhase3,
+            5 => moveSpeedPhase5,
+            _ => 0f
+        };
 
-        // Tính hướng xoay quanh player theo ngược chiều kim đồng hồ
-        Vector2 tangent = new Vector2(toBoss.y, -toBoss.x).normalized;
+        float desiredDistance = currentPhase switch
+        {
+            1 => 10f,
+            2 => 7f,
+            3 => 6f,
+            5 => 6f,
+            _ => 0f
+        };
 
-        transform.position += (Vector3)(tangent * speed * Time.deltaTime);
+        if (speed > 0f)
+            MoveTowardsPlayer(speed, desiredDistance);
     }
 
+    void MoveTowardsPlayer(float speed, float distance)
+    {
+        Vector2 toBoss = transform.position - player.position;
+        float currentDistance = toBoss.magnitude;
+
+        if (Mathf.Abs(currentDistance - distance) > 0.1f)
+        {
+            Vector2 desiredPos = (Vector2)player.position + toBoss.normalized * distance;
+            Vector2 moveDir = (desiredPos - (Vector2)transform.position).normalized;
+            transform.position += (Vector3)(moveDir * speed * Time.deltaTime);
+        }
+        else
+        {
+            Vector2 tangent = new Vector2(toBoss.y, -toBoss.x).normalized;
+            transform.position += (Vector3)(tangent * speed * Time.deltaTime);
+        }
+    }
 
     IEnumerator Phase1Routine()
     {
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 18);
-            yield return new WaitForSeconds(2f);
+            ShootCircle(iceBulletPrefab, 8);
+            yield return wait2s;
         }
     }
 
     IEnumerator Phase2Routine()
     {
-        if (crystalRespawnRoutine == null)
-            crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 20);
-            yield return new WaitForSeconds(1.5f);
+            ShootCircle(iceBulletPrefab, 10);
+            yield return wait1_5s;
         }
     }
 
     IEnumerator Phase3Routine()
     {
-        if (crystalRespawnRoutine == null)
-            crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
         while (true)
         {
-            ShootCircle(iceBulletPrefab, 22);
-            yield return new WaitForSeconds(1.2f);
+            ShootCircle(iceBulletPrefab, 12);
+            yield return wait1_2s;
 
             Vector3 spawnPos = player.position + Vector3.up * 8f;
             GameObject bomb = Instantiate(iceBombPrefab, spawnPos, Quaternion.identity);
             bomb.GetComponent<Rigidbody2D>().linearVelocity = Vector2.down * 5f;
 
-            yield return new WaitForSeconds(1.25f);
+            yield return wait1_25s;
         }
     }
 
     IEnumerator Phase4Routine()
     {
-        if (crystalRespawnRoutine == null)
-            crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
-
         while (true)
         {
             Vector3 direction = (player.position - transform.position).normalized;
 
-            float dashTime = 1f;
             float elapsed = 0f;
-
-            while (elapsed < dashTime)
+            while (elapsed < 1f)
             {
                 transform.position += direction * dashSpeed * Time.deltaTime;
-
                 if (elapsed == 0f)
-                    ShootCircle(iceBulletPrefab, 24);
+                    ShootCircle(iceBulletPrefab, 14);
 
                 elapsed += Time.deltaTime;
                 yield return null;
             }
-
-            yield return new WaitForSeconds(0.75f);
+            yield return wait0_75s;
         }
     }
 
-
     IEnumerator Phase5Routine()
     {
-        if (crystalRespawnRoutine == null)
-            crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
-
         while (true)
         {
-            ShootCircle(iceBulletPrefab,24);
+            ShootCircle(iceBulletPrefab, 15);
 
-            // Rơi ice bomb tăng độ loạn
-            Vector3 spawnPos = player.position + Vector3.up * 7f + (Vector3)Random.insideUnitCircle * 2f;
+            Vector3 offset = Random.insideUnitCircle * 2f;
+            Vector3 spawnPos = player.position + Vector3.up * 7f + offset;
             GameObject bomb = Instantiate(iceBombPrefab, spawnPos, Quaternion.identity);
             bomb.GetComponent<Rigidbody2D>().linearVelocity = Vector2.down * 6f;
 
-            yield return new WaitForSeconds(1f);
+            yield return wait1s;
         }
     }
 
     IEnumerator Phase6Routine()
     {
-        if (crystalRespawnRoutine == null)
-            crystalRespawnRoutine = StartCoroutine(CrystalRespawnLoop());
         while (true)
         {
             Vector3 direction = (player.position - transform.position).normalized;
 
-            float dashTime = 1f;
             float elapsed = 0f;
-
-            while (elapsed < dashTime)
+            while (elapsed < 1f)
             {
                 transform.position += direction * dashSpeedPhase6 * Time.deltaTime;
-
                 if (elapsed == 0f)
-                    ShootCircle(iceBulletPrefab, 24);
+                    ShootCircle(iceBulletPrefab, 16);
 
                 elapsed += Time.deltaTime;
                 yield return null;
             }
-
-            yield return new WaitForSeconds(0.75f);
+            yield return wait0_75s;
         }
     }
-
 
     void ShootCircle(GameObject prefab, int count)
     {
         float angleStep = 360f / count;
-        float angle = 0f;
-
         for (int i = 0; i < count; i++)
         {
-            float dirX = Mathf.Cos(angle * Mathf.Deg2Rad);
-            float dirY = Mathf.Sin(angle * Mathf.Deg2Rad);
-            Vector2 dir = new Vector2(dirX, dirY);
+            float angle = angleStep * i * Mathf.Deg2Rad;
+            Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 
             GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.linearVelocity = dir * bulletSpeed;
+            if (rb != null) rb.linearVelocity = dir * bulletSpeed;
 
-            float rotZ = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            bullet.transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-
-            angle += angleStep;
-        }
-    }
-
-    void SpawnCrystalShards()
-    {
-        // Xoá crystal cũ nếu còn
-        if (shardOrbits != null)
-        {
-            foreach (Transform shard in shardOrbits)
-            {
-                if (shard != null)
-                    Destroy(shard.gameObject);
-            }
-        }
-
-        int shardCount = 12;
-        shardOrbits = new Transform[shardCount];
-        float radius = 4f;
-
-        for (int i = 0; i < shardCount; i++)
-        {
-            float angleDeg = (360f / shardCount) * i;
-            float angleRad = angleDeg * Mathf.Deg2Rad;
-
-            Vector3 offset = new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad), 0f) * radius;
-            Vector3 spawnPos = transform.position + offset;
-
-            GameObject shard = Instantiate(crystalShardPrefab, spawnPos, Quaternion.identity);
-            shard.transform.rotation = Quaternion.Euler(0f, 0f, angleDeg);
-            shard.transform.SetParent(this.transform);
-
-            shardOrbits[i] = shard.transform;
-        }
-    }
-
-
-
-    void RotateCrystalShards()
-    {
-        if (shardOrbits == null) return;
-
-        float rotateSpeed = 90f;
-
-        for (int i = 0; i < shardOrbits.Length; i++)
-        {
-            if (shardOrbits[i] != null)
-            {
-                shardOrbits[i].RotateAround(transform.position, Vector3.forward, rotateSpeed * Time.deltaTime);
-            }
+            bullet.transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
         }
     }
 
@@ -314,4 +260,40 @@ public class FrozenSoul : MonoBehaviour
         }
     }
 
+    void SpawnCrystalShards()
+    {
+        if (shardOrbits != null)
+        {
+            foreach (Transform shard in shardOrbits)
+            {
+                if (shard != null) Destroy(shard.gameObject);
+            }
+        }
+
+        int shardCount = 12;
+        float radius = 4f;
+        shardOrbits = new Transform[shardCount];
+
+        for (int i = 0; i < shardCount; i++)
+        {
+            float angleRad = (360f / shardCount) * i * Mathf.Deg2Rad;
+            Vector3 offset = new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad), 0f) * radius;
+
+            GameObject shard = Instantiate(crystalShardPrefab, transform.position + offset, Quaternion.identity, transform);
+            shard.transform.rotation = Quaternion.Euler(0f, 0f, angleRad * Mathf.Rad2Deg);
+            shardOrbits[i] = shard.transform;
+        }
+    }
+
+    void RotateCrystalShards()
+    {
+        if (shardOrbits == null) return;
+
+        float rotateSpeed = 90f;
+        foreach (Transform shard in shardOrbits)
+        {
+            if (shard != null)
+                shard.RotateAround(transform.position, Vector3.forward, rotateSpeed * Time.deltaTime);
+        }
+    }
 }

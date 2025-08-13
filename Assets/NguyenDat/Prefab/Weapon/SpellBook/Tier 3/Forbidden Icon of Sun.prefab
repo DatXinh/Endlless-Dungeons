@@ -90,7 +90,7 @@ MonoBehaviour:
     trong n\xF3 \u0111\u01B0\u1EE3c m\xF4 t\u1EA3 nh\u01B0 m\u1ED9t sinh v\u1EADt
     s\u1ED1ng, t\u1EEBng \u0111\u01B0\u1EE3c th\u1EDD ph\u1EE5ng trong th\u1EDDi
     k\u1EF3 kh\xF4ng c\xF3 ban \u0111\xEAm.\u201D"
-  weaponDamage: 164
+  weaponDamage: 375
   weaponCriticalChange: 71
   weaponManaCost: 10
   weaponProjectile: {fileID: 8132626562079457863, guid: 951d67877d1a1d54991c5fc0e1b03d03, type: 3}

@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: -8422854031820342490}
   - component: {fileID: 4479912432181090473}
   - component: {fileID: 2368992684004479251}
-  - component: {fileID: 440555320432868465}
-  - component: {fileID: 8536277079012525558}
+  - component: {fileID: 2769957952398158653}
+  - component: {fileID: 3978272008920357803}
   m_Layer: 7
   m_Name: Ranbow SLime
   m_TagString: Enemy
@@ -178,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 8558169933533535754}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: daf50beac8bc2a644879adc32848bacf, type: 2}
+  m_Controller: {fileID: 9100000, guid: e29bf1b6b5cb7f74db443da2797f86d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   detectionRadius: 15
   moveSpeed: 10
   keepDistance: 3
+  rb: {fileID: 0}
 --- !u!114 &2368992684004479251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  BaseHP: 100
+  maxHP: 0
   currentHP: 0
   InvincibilityTime: 0.17
   damageReductionRate: 0
@@ -240,27 +242,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHeal: {fileID: 0}
   currentHeal: {fileID: 0}
---- !u!114 &440555320432868465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558169933533535754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d2b3805f3ba0142a494153193bc467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loot:
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
-  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
-  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
-  SpawnBoss: {fileID: 0}
-  dropRadius: 2
---- !u!114 &8536277079012525558
+  bossPlayDeadAnimation: {fileID: 2769957952398158653}
+--- !u!114 &2769957952398158653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,8 +255,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 2368992684004479251}
   animator: {fileID: 2983383017131691898}
   parameterName: IsDead
   scriptsToDisable:
   - {fileID: 4479912432181090473}
+--- !u!114 &3978272008920357803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558169933533535754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  weaponLoot: []
+  potionLoot: []
+  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
+  dropRadius: 2

@@ -220,9 +220,9 @@ MonoBehaviour:
   weaponDescription: "\u201C\xC1nh s\xE1ng kh\xF4ng thu\u1ED9c v\u1EC1 th\u1EBF gi\u1EDBi
     n\xE0y. M\u1ED9t v\u1EC7t l\xF3e ra t\u1EEB khe n\u1EE9t gi\u1EEFa hai c\xF5i
     \u2014 v\xE0 linh h\u1ED3n \u0111\xE3 ch\xE1y.\u201D"
-  weaponDamage: 135
-  weaponCriticalChange: 94
-  weaponManaCost: 7
+  weaponDamage: 500
+  weaponCriticalChange: 75
+  weaponManaCost: 6
   weaponProjectile: {fileID: 3151462054325104733, guid: 102f0572377598141a9176402258f610, type: 3}
   weaponType: 3
   weaponLevel: 3

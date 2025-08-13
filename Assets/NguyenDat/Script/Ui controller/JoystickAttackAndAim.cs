@@ -71,6 +71,6 @@ public class JoystickAttackAndAim : MonoBehaviour, IDragHandler, IPointerDownHan
         }
 
         if (weaponAtk != null)
-            weaponAtk.Attack();
+            weaponAtk.AttackEnd();
     }
 }

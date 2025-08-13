@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/PhamCuong/MinimapTexture.meta
+guid: 4402b68f43e6eae4aaf1b0a91de4d2c1
+========
 guid: 1fd5dc666b4db3e4db408bccb2d70d93
+>>>>>>>> origin/DatV1:Assets/NguyenDat/Prefab/Chest.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

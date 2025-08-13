@@ -58,9 +58,9 @@ MonoBehaviour:
     xu\u1ED1ng t\u1EEB b\u1EA7u tr\u1EDDi \u2013 kh\xF4ng ph\u1EA3i thi\xEAn th\u1EA1ch,
     m\xE0 l\xE0 v\u0169 kh\xED c\u1EE7a m\u1ED9t ai \u0111\xF3 \u1EDF b\xEAn kia
     h\u01B0 kh\xF4ng.\u201D"
-  weaponDamage: 166
-  weaponCriticalChange: 67
-  weaponManaCost: 4
+  weaponDamage: 50
+  weaponCriticalChange: 45
+  weaponManaCost: 6
   weaponProjectile: {fileID: 1660150046167661545, guid: a95aa508bcea4114f9792900469577b6, type: 3}
   weaponType: 6
   weaponLevel: 2

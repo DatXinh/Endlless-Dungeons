@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9215430386962609309}
   - component: {fileID: 1135987926866747166}
   - component: {fileID: 1750544194759602692}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Portal
   m_TagString: Portal
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a146361f4fd47dd40831d767268c82a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 1-1
+  sceneName: 1-2
 --- !u!114 &1750544194759602692
 MonoBehaviour:
   m_ObjectHideFlags: 0

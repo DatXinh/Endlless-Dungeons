@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayer: 1
   IsEnemy: 0
-  canPierce: 1
+  canPierce: 0
   lifeTime: 3
 --- !u!114 &4586306031437345223
 MonoBehaviour:

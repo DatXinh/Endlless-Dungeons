@@ -9,7 +9,7 @@ public class monsterAI : MonoBehaviour
 
     public bool isMovable = true; // Biến kiểm tra có thể di chuyển hay không, mặc định true
 
-    private static Transform playerTransform;
+    public Transform playerTransform;
     private float checkTimer;
     private float rotateTimer;
 
