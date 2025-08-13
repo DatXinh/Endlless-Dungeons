@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/NguyenDat.meta
+guid: d0fedae8c4716c74781a169d3d702454
+========
 guid: 0500dd8a93ff9ae43b37a3c7466cb6f8
+>>>>>>>> main:Assets/Resource/Character.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

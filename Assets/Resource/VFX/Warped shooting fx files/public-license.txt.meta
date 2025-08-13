@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/NguyenDat/Prefab/GameObject (1).prefab.meta
+guid: 76fa90034abf9d4428806b32262a233b
+PrefabImporter:
+========
 guid: 742cb075a47ba2546881eab245b6c69a
 TextScriptImporter:
+>>>>>>>> main:Assets/Resource/VFX/Warped shooting fx files/public-license.txt.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -6,6 +6,13 @@ TagManager:
   tags:
   - EndlessDungeon
   - Dungeon
+  - Boss
+  - Enemy
+  - Room
+  - Wall
+  - EnemyProjectile
+  - Portal
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -13,13 +20,13 @@ TagManager:
   - 
   - Water
   - UI
-  - player
-  - wall2
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Wall
+  - Minimap
+  - Icon
+  - Ground
+  - Portal
   - 
   - 
   - 
@@ -42,6 +49,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 145675495
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 2135816289
     locked: 0
   m_RenderingLayers:
   - Default
