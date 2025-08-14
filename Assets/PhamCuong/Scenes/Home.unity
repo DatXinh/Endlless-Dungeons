@@ -37821,6 +37821,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2545573448332680497, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6776555899939453949, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_Name
       value: TestPlayer
@@ -54625,6 +54629,10 @@ PrefabInstance:
     - target: {fileID: 3919795339961336833, guid: cabd8efa49dec2f4e9fdb8ce117f6b3d, type: 3}
       propertyPath: m_Name
       value: LoadAni
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919795339961336833, guid: cabd8efa49dec2f4e9fdb8ce117f6b3d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4451216591482656921, guid: cabd8efa49dec2f4e9fdb8ce117f6b3d, type: 3}
       propertyPath: m_LocalPosition.x
