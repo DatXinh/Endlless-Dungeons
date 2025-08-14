@@ -327,8 +327,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  weaponLoot: []
-  potionLoot: []
+  weaponLoot:
+  - {fileID: 5519456457138781898, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+  - {fileID: 3045790389127171731, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
+  - {fileID: 6502661645446167304, guid: eaf462f94100a67418070b48d7aaca31, type: 3}
+  - {fileID: 7083945584695108612, guid: 5aea1dc35aae7c44397e785d9729ec58, type: 3}
+  - {fileID: 5519456457138781898, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+  - {fileID: 3045790389127171731, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
+  - {fileID: 6502661645446167304, guid: eaf462f94100a67418070b48d7aaca31, type: 3}
+  - {fileID: 7083945584695108612, guid: 5aea1dc35aae7c44397e785d9729ec58, type: 3}
+  - {fileID: 3997363000707474565, guid: c5e06d9b43a4cee4cb5cb2386785141b, type: 3}
+  - {fileID: 3362582173471295174, guid: 3b5bf3372258e6445bd546495b9f6c73, type: 3}
+  - {fileID: 6678569435755268935, guid: d5909ad9956e7aa4b9e130db4050ee73, type: 3}
+  - {fileID: 7579230444333726614, guid: c835eb7b33c0d8449b5ada5d271823b7, type: 3}
+  - {fileID: 740544398467360445, guid: 5040106ef7532bd44bd487a13383dd2b, type: 3}
+  - {fileID: 2224703434937752579, guid: 24367df9896ab9b4abae3c3060acaeb7, type: 3}
+  - {fileID: 7752384395813104827, guid: d56e2106a24259b4c8a94580793b8989, type: 3}
+  potionLoot:
+  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
+  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
   coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
   dropRadius: 2
 --- !u!114 &6607412695542583759
