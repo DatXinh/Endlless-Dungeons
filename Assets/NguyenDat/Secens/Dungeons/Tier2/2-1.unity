@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1413169465051425519, guid: 7af9144aa39893540b204c356b3c91e0, type: 3}
       propertyPath: SceneName
-      value: 2-Shop
+      value: 2-2
       objectReference: {fileID: 0}
     - target: {fileID: 7247066262560369173, guid: 7af9144aa39893540b204c356b3c91e0, type: 3}
       propertyPath: m_LocalPosition.x

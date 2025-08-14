@@ -75,7 +75,7 @@ public class Brain : MonoBehaviour
         }
 
         // Test nhận sát thương
-        if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
+        //if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
     }
 
     void Patrol()
@@ -98,22 +98,22 @@ public class Brain : MonoBehaviour
         spriteRenderer.flipX = direction.x < 0;
     }
 
-    void TakeDamage()
-    {
-        currentHealth--;
-        if (currentHealth <= 0)
-        {
-            isDead = true;
-            animator.SetTrigger("Die");
-            animator.SetBool("Attack", false);
-            Invoke(nameof(DestroySelf), 1f);
-        }
-    }
+    //void TakeDamage()
+    //{
+    //    currentHealth--;
+    //    if (currentHealth <= 0)
+    //    {
+    //        isDead = true;
+    //        animator.SetTrigger("Die");
+    //        animator.SetBool("Attack", false);
+    //        Invoke(nameof(DestroySelf), 1f);
+    //    }
+    //}
 
-    void DestroySelf()
-    {
-        Destroy(gameObject);
-    }
+    //void DestroySelf()
+    //{
+    //    Destroy(gameObject);
+    //}
 
     public void SetChasing(bool chasing)
     {

@@ -74,7 +74,7 @@ public class Xeno : MonoBehaviour
             Patrol();
         }
 
-        if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
+        //if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
     }
 
     void Patrol()
@@ -99,23 +99,23 @@ public class Xeno : MonoBehaviour
         spriteRenderer.flipX = direction.x < 0;
     }
 
-    void TakeDamage()
-    {
-        currentHealth--;
-        if (currentHealth <= 0)
-        {
-            isDead = true;
-            animator.SetTrigger("Die");
-            animator.SetBool("Attack", false);
-            animator.SetFloat("Move", 0f);
-            Invoke(nameof(DestroySelf), 1.2f);
-        }
-    }
+    //void TakeDamage()
+    //{
+    //    currentHealth--;
+    //    if (currentHealth <= 0)
+    //    {
+    //        isDead = true;
+    //        animator.SetTrigger("Die");
+    //        animator.SetBool("Attack", false);
+    //        animator.SetFloat("Move", 0f);
+    //        Invoke(nameof(DestroySelf), 1.2f);
+    //    }
+    //}
 
-    void DestroySelf()
-    {
-        Destroy(gameObject);
-    }
+    //void DestroySelf()
+    //{
+    //    Destroy(gameObject);
+    //}
 
     public void SetChasing(bool chasing)
     {
