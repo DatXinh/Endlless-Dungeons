@@ -836,10 +836,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 1290579308904871111}
+  hp: 200
+  mp: 200
+  coin: 100
+  weapon: 
+  playTime: 0
   sceneNameText: {fileID: 5477968805807427031}
   playTimeText: {fileID: 7422909645454741384}
   mainCamera: {fileID: 8356368311153882744}
-  isCountingTime: 0
 --- !u!114 &1315330943311327292
 MonoBehaviour:
   m_ObjectHideFlags: 0
