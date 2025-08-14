@@ -22,28 +22,39 @@ public class SlimeBossAI : MonoBehaviour
     public float slimeBallSpeed = 5f;
     public float sequentialDelay = 0.1f;
 
+    [Header("tiny mana")]
+    public GameObject TinyMana;
+    private bool hasSpawnedManaBurst = false;
+
     private Transform playerTransform;
     private List<GameObject> spawnedSlimeBalls = new List<GameObject>();
     private readonly WaitForSeconds wait2s = new WaitForSeconds(2f);
     private WaitForSeconds waitSequential;
+
+    private EnemyHP EnemyHP;
 
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
         waitSequential = new WaitForSeconds(sequentialDelay);
         StartCoroutine(BossActionLoop());
+        EnemyHP = GetComponent<EnemyHP>();
     }
 
     void Update()
     {
         if (playerTransform == null) return;
-
         Vector3 dir = (playerTransform.position - transform.position).normalized;
         transform.position += dir * moveSpeed * Time.deltaTime;
 
         if (spriteRenderer != null && Mathf.Abs(dir.x) > 0.01f)
         {
             spriteRenderer.flipX = dir.x < 0;
+        }
+        if (!hasSpawnedManaBurst && EnemyHP.GetHealthPercent() <50f)
+        {
+            hasSpawnedManaBurst = true;
+            SpawnTinyManaBurst();
         }
     }
 
@@ -133,6 +144,25 @@ public class SlimeBossAI : MonoBehaviour
         if (slimeBall != null)
         {
             slimeBall.Launch(playerTransform.position, slimeBallSpeed);
+        }
+    }
+    void SpawnTinyManaBurst()
+    {
+        if (TinyMana == null) return;
+        int count = Random.Range(5, 11); // 5 đến 10
+        float minForce = 4f;
+        float maxForce = 7f;
+        for (int i = 0; i < count; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            GameObject mana = Instantiate(TinyMana, transform.position, Quaternion.identity);
+            Rigidbody2D manaRb = mana.GetComponent<Rigidbody2D>();
+            if (manaRb != null)
+            {
+                float force = Random.Range(minForce, maxForce);
+                manaRb.linearVelocity = dir * force;
+            }
         }
     }
 }

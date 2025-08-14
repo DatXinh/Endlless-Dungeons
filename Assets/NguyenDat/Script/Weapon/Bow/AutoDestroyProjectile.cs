@@ -12,8 +12,6 @@ public class AutoDestroyProjectile : MonoBehaviour
     [Header("LifeTime")]
     public float lifeTime = 1f;
 
-    private SpawnAtDestroy spawnAtDestroy;
-
     private void Start()
     {
         Destroy(gameObject,lifeTime);
@@ -40,21 +38,6 @@ public class AutoDestroyProjectile : MonoBehaviour
         else if (IsEnemy && collision.CompareTag("Player"))
         {
             Destroy(gameObject);
-        }
-    }
-    private void OnDestroy()
-    {
-        if (spawnAtDestroy == null)
-        {
-            spawnAtDestroy = GetComponent<SpawnAtDestroy>();
-            if (spawnAtDestroy == null)
-            {
-                return;
-            }
-            if (spawnAtDestroy != null)
-            {
-                spawnAtDestroy.TriggerDestroy();
-            }
         }
     }
 }

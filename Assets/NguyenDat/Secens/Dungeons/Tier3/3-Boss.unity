@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 5118933175596216487, guid: 0a7e21c210fb9414ca13bcd09ac3f3b5, type: 3}
+      propertyPath: sceneName
+      value: 1-1
+      objectReference: {fileID: 0}
     - target: {fileID: 5932301334377907776, guid: 0a7e21c210fb9414ca13bcd09ac3f3b5, type: 3}
       propertyPath: monsterPrefabs.Array.size
       value: 2
@@ -188,6 +192,10 @@ PrefabInstance:
       propertyPath: 'monsterPrefabs.Array.data[1]'
       value: 
       objectReference: {fileID: 2066232126717840010, guid: 66f5fa9fc9ae68d49b93fe9900c82b2c, type: 3}
+    - target: {fileID: 7405786692807099351, guid: 0a7e21c210fb9414ca13bcd09ac3f3b5, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8451479648598925902, guid: 0a7e21c210fb9414ca13bcd09ac3f3b5, type: 3}
       propertyPath: BossParent
       value: 

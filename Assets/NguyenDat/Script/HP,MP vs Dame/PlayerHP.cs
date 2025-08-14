@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -14,43 +17,50 @@ public class PlayerHP : MonoBehaviour
     public TMP_Text maxHeal; // Reference to the health text UI element
     public TMP_Text currentHeal; // Reference to the current health text UI element
 
-    private bool isInvincible = false; // Trạng thái bất tử
+    public bool isInvincible = false; // Trạng thái bất tử
+
+    public Joystick joystick;
+    public JoystickAttackAndAim joystickAttackAndAim; // Reference to the joystick for attack and aim
 
     public GameObject rightPanel;
     public GameObject leftPanel;
     public GameObject deadMesseng;
+    public GameObject pauseButton;
     public AudioSource[] allAudioSources;
-    private AudioSource[] pausedAudioSources;
+    public List<AudioSource> playAudioSources = new List<AudioSource>();
 
     void Start()
     {
         currentHP = maxHP; // Initialize current health to maximum health
         if (healthBar != null)
         {
-            healthBar.fillAmount = 1f; // Set health bar to full at the start
+            healthBar.fillAmount = 1f;
         }
         if (maxHeal != null)
         {
-            maxHeal.text = maxHP.ToString(); // Set the maximum health text
+            maxHeal.text = maxHP.ToString();
         }
-        UpdateHealthUI(); // Update the health UI at the start
+        UpdateHealthUI();
         deadMesseng.SetActive(false);
-        allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+
+        // Lắng nghe sự kiện load scene
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    // Method to take damage
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        isInvincible = false; // Reset bất tử khi vào scene mới
+    }
+
     public void TakeDamage(int damage)
     {
-        if (currentHP > 0) // Check if the player is alive
+        if (currentHP > 0)
         {
             if (!isInvincible)
             {
-                currentHP -= damage; // Reduce current health by damage amount
-                UpdateHealthUI(); // Update the health UI
-                if (currentHP < 0) // Ensure current health does not go below zero
-                {
-                    currentHP = 0;
-                }
-                // Display damage popup
+                currentHP -= damage;
+                UpdateHealthUI();
+
                 if (damagePopupPrefab != null)
                 {
                     GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
@@ -63,17 +73,19 @@ public class PlayerHP : MonoBehaviour
                 StartCoroutine(InvincibilityCoroutine());
             }
         }
+
         if (currentHP <= 0)
         {
-            Time.timeScale = 0;
-            deadMesseng.SetActive(true);
-            rightPanel.SetActive(false);
+            joystick.OnPointerUp(null);
+            joystickAttackAndAim.OnPointerUp(null);
             leftPanel.SetActive(false);
+            rightPanel.SetActive(false);
+            deadMesseng.SetActive(true);
+            pauseButton.SetActive(false);
             PauseGame();
         }
     }
 
-    // Coroutine để xử lý bất tử
     private IEnumerator InvincibilityCoroutine()
     {
         isInvincible = true;
@@ -81,7 +93,6 @@ public class PlayerHP : MonoBehaviour
         isInvincible = false;
     }
 
-    // Hàm hồi máu
     public void Heal(int amount)
     {
         if (currentHP > 0)
@@ -92,7 +103,6 @@ public class PlayerHP : MonoBehaviour
                 currentHP = maxHP;
             }
             UpdateHealthUI();
-            // Display damage popup
             if (damagePopupPrefab != null)
             {
                 GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
@@ -104,6 +114,7 @@ public class PlayerHP : MonoBehaviour
             }
         }
     }
+
     public void UpdateHealthUI()
     {
         float healthPercent = (float)currentHP / maxHP;
@@ -111,31 +122,6 @@ public class PlayerHP : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.fillAmount = healthPercent;
-
-            Color healthColor;
-
-            if (healthPercent > 0.8f)
-            {
-                healthColor = new Color(0f, 1f, 0f); // Xanh lá
-            }
-            else if (healthPercent > 0.6f)
-            {
-                healthColor = new Color(0.5f, 1f, 0f); // Vàng xanh
-            }
-            else if (healthPercent > 0.4f)
-            {
-                healthColor = new Color(1f, 1f, 0f); // Vàng
-            }
-            else if (healthPercent > 0.2f)
-            {
-                healthColor = new Color(1f, 0.5f, 0f); // Cam
-            }
-            else
-            {
-                healthColor = new Color(1f, 0f, 0f); // Đỏ
-            }
-
-            healthBar.color = healthColor;
         }
 
         if (currentHeal != null)
@@ -143,36 +129,39 @@ public class PlayerHP : MonoBehaviour
             currentHeal.text = currentHP.ToString();
         }
     }
+
     public void PauseGame()
     {
-        Time.timeScale = 0;
-
-        // Pause các audio đang chạy
-        AudioSource[] allAudio = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-        pausedAudioSources = System.Array.FindAll(allAudio, a => a.isPlaying);
-        foreach (AudioSource audio in pausedAudioSources)
+        allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource audio in allAudioSources)
         {
-            audio.Pause();
+            if (audio.isPlaying)
+            {
+                playAudioSources.Add(audio);
+                audio.Pause();
+            }
         }
+        Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
-
-        // Resume các audio đã bị pause
-        if (pausedAudioSources != null)
+        foreach (AudioSource audio in playAudioSources)
         {
-            foreach (AudioSource audio in pausedAudioSources)
-            {
-                if (audio != null) audio.UnPause();
-            }
-            pausedAudioSources = null;
+            audio.Play();
         }
+        playAudioSources.Clear();
     }
+
     public void resetHP()
     {
         currentHP = maxHP;
         UpdateHealthUI();
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

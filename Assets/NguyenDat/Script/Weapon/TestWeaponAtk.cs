@@ -17,7 +17,17 @@ public class TestWeaponAtk : MonoBehaviour
         {
             return;
         }
-        animator.SetTrigger("Atk");
+        //animator.SetTrigger("Atk");
+        animator.SetBool("IsAtk",true);
+    }
+    public void AttackEnd()
+    {
+        if (animator == null)
+        {
+            return;
+        }
+        //animator.SetTrigger("AtkEnd");
+        animator.SetBool("IsAtk", false);
     }
     public void resetWeapon()
     {

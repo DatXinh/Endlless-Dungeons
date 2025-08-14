@@ -221,8 +221,8 @@ MonoBehaviour:
     ng\u01B0\u1EDDi. Nh\u01B0ng trong tay ng\u01B0\u1EDDi gi\u1EEF c\u1ED5ng ph\u01B0\u01A1ng
     B\u1EAFc, n\xF3 \u0111\xE3 tr\u1EDF th\xE0nh l\u1EDDi t\u1EEB ch\u1ED1i s\u1EF1
     s\u1ED1ng.\u201D"
-  weaponDamage: 28
-  weaponCriticalChange: 45
+  weaponDamage: 90
+  weaponCriticalChange: 25
   weaponManaCost: 3
   weaponProjectile: {fileID: 5044560233508563520, guid: e4e2d06b29a3bbd40bd5494d653ea4ab, type: 3}
   weaponType: 3

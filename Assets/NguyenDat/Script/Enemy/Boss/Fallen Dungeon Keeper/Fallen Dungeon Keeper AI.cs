@@ -59,7 +59,6 @@ public class FallenDungeonKeeperAI : MonoBehaviour
             FlipTowardsPlayer();
     }
 
-    // --- UTILITY & HELPER METHODS ---
     void FlipTowardsPlayer()
     {
         if (spriteRenderer == null || player == null) return;

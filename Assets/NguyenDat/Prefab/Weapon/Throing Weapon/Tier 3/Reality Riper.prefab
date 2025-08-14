@@ -187,8 +187,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2247153121888654889}
-  - component: {fileID: 7548924283027059912}
   - component: {fileID: 4876253441353242735}
+  - component: {fileID: 7548924283027059912}
   - component: {fileID: 6832873245328451200}
   - component: {fileID: -806773730206008374}
   m_Layer: 0
@@ -217,32 +217,6 @@ Transform:
   - {fileID: 3077008416149647092}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7548924283027059912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6502661645446167304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3fa63ed227014e41bfa2706dcd49cc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponID: 
-  weaponName: Reality Riper
-  weaponIcon: {fileID: 5950371553505948799, guid: 2cb1a51f5f4f0884eb30bb4e625d4c78, type: 3}
-  weaponDescription: "\u201CL\u01B0\u1EE1i c\u1EE7a n\xF3 kh\xF4ng c\u1EAFt th\u1ECBt.
-    N\xF3 r\u1EA1ch s\u1EF1 th\u1EADt ra kh\u1ECFi b\u1EC1 m\u1EB7t. V\xE0 th\u01B0\u1EDDng
-    th\xEC, b\xEAn d\u01B0\u1EDBi s\u1EF1 th\u1EADt kh\xF4ng ph\u1EA3i l\xE0 \u0111i\u1EC1u
-    ta mu\u1ED1n th\u1EA5y.\u201D"
-  weaponDamage: 299
-  weaponCriticalChange: 77
-  weaponManaCost: 5
-  weaponProjectile: {fileID: 4152099353252337049, guid: f280f74faf022b74fbda6a5d72a05f12, type: 3}
-  weaponType: 6
-  weaponLevel: 3
-  WeaponPrice: 85
 --- !u!58 &4876253441353242735
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -279,6 +253,32 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1
+--- !u!114 &7548924283027059912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502661645446167304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fa63ed227014e41bfa2706dcd49cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: 
+  weaponName: Reality Riper
+  weaponIcon: {fileID: 5950371553505948799, guid: 2cb1a51f5f4f0884eb30bb4e625d4c78, type: 3}
+  weaponDescription: "\u201CL\u01B0\u1EE1i c\u1EE7a n\xF3 kh\xF4ng c\u1EAFt th\u1ECBt.
+    N\xF3 r\u1EA1ch s\u1EF1 th\u1EADt ra kh\u1ECFi b\u1EC1 m\u1EB7t. V\xE0 th\u01B0\u1EDDng
+    th\xEC, b\xEAn d\u01B0\u1EDBi s\u1EF1 th\u1EADt kh\xF4ng ph\u1EA3i l\xE0 \u0111i\u1EC1u
+    ta mu\u1ED1n th\u1EA5y.\u201D"
+  weaponDamage: 350
+  weaponCriticalChange: 77
+  weaponManaCost: 5
+  weaponProjectile: {fileID: 4152099353252337049, guid: f280f74faf022b74fbda6a5d72a05f12, type: 3}
+  weaponType: 6
+  weaponLevel: 3
+  WeaponPrice: 85
 --- !u!114 &6832873245328451200
 MonoBehaviour:
   m_ObjectHideFlags: 0

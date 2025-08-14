@@ -220,10 +220,10 @@ MonoBehaviour:
   weaponDescription: "\u201CTro than ch\u01B0a bao gi\u1EDD ng\u1EE7 y\xEAn. Nh\u1EA5t
     l\xE0 khi n\xF3 t\u1EEBng l\xE0 tr\xE1i tim c\u1EE7a m\u1ED9t v\u1ECB th\u1EA7n
     b\u1ECB thi\xEAu.\u201D"
-  weaponDamage: 132
+  weaponDamage: 425
   weaponCriticalChange: 79
   weaponManaCost: 9
-  weaponProjectile: {fileID: 1211124146570987532, guid: e0eea416eb6514744bbffb0c1bc77c84, type: 3}
+  weaponProjectile: {fileID: 1211124146570987532, guid: bc0a7d6959f37a241b97f0b5ee108b20, type: 3}
   weaponType: 3
   weaponLevel: 3
   WeaponPrice: 125

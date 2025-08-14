@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc053bca10f2990439862cf2953c1eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPlayer: 0
+  IsPlayer: 1
   IsEnemy: 0
-  canPierce: 0
+  canPierce: 1
   lifeTime: 1
 --- !u!114 &2401828831391199370
 MonoBehaviour:

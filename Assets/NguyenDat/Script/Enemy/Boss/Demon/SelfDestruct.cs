@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
     public GameObject[] loot;
+    public GameObject LoreItem;
     public SpawnBoss SpawnBoss;
     public float dropRadius = 2f; // Bán kính xung quanh để rơi loot
 
@@ -40,7 +42,7 @@ public class SelfDestruct : MonoBehaviour
         int lootCount = Random.Range(1, Mathf.Min(3, loot.Length + 1));
 
         // Tạo danh sách chỉ số ngẫu nhiên không trùng
-        System.Collections.Generic.List<int> indices = new System.Collections.Generic.List<int>();
+        List<int> indices = new System.Collections.Generic.List<int>();
         while (indices.Count < lootCount)
         {
             int rand = Random.Range(0, loot.Length);
@@ -54,6 +56,12 @@ public class SelfDestruct : MonoBehaviour
             Vector2 offset = Random.insideUnitCircle * dropRadius;
             Vector3 spawnPos = transform.position + new Vector3(offset.x, offset.y, 0f);
             Instantiate(loot[index], spawnPos, Quaternion.identity);
+        }
+        if (LoreItem != null)
+        {
+            Vector2 offset = Random.insideUnitCircle * dropRadius;
+            Vector3 spawnPos = transform.position + new Vector3(offset.x, offset.y, 0f);
+            Instantiate(LoreItem, spawnPos, Quaternion.identity);
         }
     }
 }

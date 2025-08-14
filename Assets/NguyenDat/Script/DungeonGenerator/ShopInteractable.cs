@@ -50,10 +50,15 @@ public class ShopInteractable : MonoBehaviour , IInteractable
                 Destroy(child.gameObject);
             }
 
-            // Chọn ngẫu nhiên: 80% weapon, 20% potion
-            float rand = Random.value;
-            GameObject prefabToSpawn;
+            GameObject prefabToSpawn = null;
             bool isWeapon = false;
+
+            // Nếu cả 2 mảng đều rỗng → bỏ qua slot (bắt buộc)
+            if (weaponPrefabs.Length == 0 && Potion.Length == 0)
+                continue;
+
+            // Ưu tiên 80% là weapon (nếu có)
+            float rand = Random.value;
             if (rand < 0.8f && weaponPrefabs.Length > 0)
             {
                 int weaponIndex = Random.Range(0, weaponPrefabs.Length);
@@ -64,16 +69,23 @@ public class ShopInteractable : MonoBehaviour , IInteractable
             {
                 int potionIndex = Random.Range(0, Potion.Length);
                 prefabToSpawn = Potion[potionIndex];
+                isWeapon = false;
             }
-            else
+            else if (weaponPrefabs.Length > 0)
             {
-                continue; // Không có prefab để sinh
+                // Nếu Potion rỗng nhưng Weapon vẫn còn → fallback
+                int weaponIndex = Random.Range(0, weaponPrefabs.Length);
+                prefabToSpawn = weaponPrefabs[weaponIndex];
+                isWeapon = true;
             }
 
-            // Sinh ra vật phẩm tại vị trí saleSlot
+            // Kiểm tra lần cuối
+            if (prefabToSpawn == null)
+                continue;
+
+            // Sinh ra vật phẩm
             GameObject spawned = Instantiate(prefabToSpawn, saleSlot[i].transform.position, Quaternion.identity, saleSlot[i].transform);
 
-            // Nếu là weapon thì set biến isSale = true và tăng giá nếu cần
             if (isWeapon)
             {
                 WeaponInteractable weaponInteractable = spawned.GetComponent<WeaponInteractable>();
@@ -81,14 +93,14 @@ public class ShopInteractable : MonoBehaviour , IInteractable
                 if (weaponInteractable != null)
                 {
                     weaponInteractable.isSale = true;
+
                     if (weaponData != null)
                     {
                         int basePrice = weaponData.WeaponPrice;
-                        int newPrice = basePrice;
-                        if (interactionCount > 1)
-                        {
-                            newPrice = Mathf.CeilToInt(basePrice * Mathf.Pow(1.1f, interactionCount));
-                        }
+                        int newPrice = interactionCount > 1
+                            ? Mathf.CeilToInt(basePrice * Mathf.Pow(1.1f, interactionCount))
+                            : basePrice;
+
                         weaponData.WeaponPrice = newPrice;
                     }
                 }
@@ -97,12 +109,13 @@ public class ShopInteractable : MonoBehaviour , IInteractable
             {
                 MPInteractable mpInteractable = spawned.GetComponent<MPInteractable>();
                 HPInteracable hpInteractable = spawned.GetComponent<HPInteracable>();
+
                 if (mpInteractable != null)
                 {
                     mpInteractable.isSale = true;
                     mpInteractable.setCoinText();
                 }
-                else
+                else if (hpInteractable != null)
                 {
                     hpInteractable.isSale = true;
                     hpInteractable.setCoinText();
@@ -110,4 +123,5 @@ public class ShopInteractable : MonoBehaviour , IInteractable
             }
         }
     }
+
 }

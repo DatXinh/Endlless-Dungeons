@@ -11,12 +11,19 @@ public class RainbowSlime : MonoBehaviour
     public float moveSpeed = 5f;
     public float keepDistance = 3f; // Khoảng cách muốn giữ với mục tiêu
 
+    public Rigidbody2D rb; // Rigidbody để di chuyển
+
     private GameObject currentTarget;
     private float healTimer = 0f;
     private static GameObject[] cachedEnemies;
     private static float cacheTimer = 0f;
     private static float cacheInterval = 0.5f; // Làm mới danh sách enemy mỗi 0.5s
 
+    void Start()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+    }
     // Lấy danh sách enemy đã cache (giảm tần suất gọi FindGameObjectsWithTag)
     private static GameObject[] GetCachedEnemies()
     {
@@ -43,7 +50,8 @@ public class RainbowSlime : MonoBehaviour
             {
                 Vector3 dir = (currentTarget.transform.position - transform.position).normalized;
                 Vector3 targetPos = currentTarget.transform.position - dir * keepDistance;
-                transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+                //transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+                rb.MovePosition(Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime));
             }
 
             // Debug: vẽ đường tới mục tiêu

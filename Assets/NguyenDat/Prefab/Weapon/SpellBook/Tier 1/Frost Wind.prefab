@@ -58,9 +58,9 @@ MonoBehaviour:
     phong \u1EA5n khe n\u1EE9t t\u1EA1i c\u1EF1c b\u1EAFc, n\u01A1i b\u0103ng kh\xF4ng
     tan v\xE0 th\u1EDDi gian kh\xF4ng tr\xF4i. Ph\xE9p thu\u1EADt trong s\xE1ch kh\xF4ng
     d\u1EEBng l\u1EA1i \u2013 n\xF3 \u0111\xF3ng b\u0103ng k\xFD \u1EE9c.\u201D"
-  weaponDamage: 42
-  weaponCriticalChange: 20
-  weaponManaCost: 6
+  weaponDamage: 85
+  weaponCriticalChange: 39
+  weaponManaCost: 9
   weaponProjectile: {fileID: 968465884585047571, guid: f1dcd5e740d48404fa90189d0f9aae79, type: 3}
   weaponType: 5
   weaponLevel: 1

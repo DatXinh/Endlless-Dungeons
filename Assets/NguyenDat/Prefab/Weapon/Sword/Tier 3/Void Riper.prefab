@@ -178,8 +178,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.5, y: 2.5}
-  m_Radius: 1.5
+  m_Offset: {x: -1.8061296, y: 1.7754021}
+  m_Radius: 1.4115316
 --- !u!114 &8030534160544282419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
     kh\u1EAFc th\u1EF1c t\u1EA1i b\u1ECB x\xE9 to\u1EA1c. Kh\xF4ng ai \u0111\xFAc
     ra n\xF3 \u2013 n\xF3 ch\u1EC9 hi\u1EC7n ra, v\xE0 ng\u01B0\u1EDDi \u0111\u1EA7u
     ti\xEAn ch\u1EA1m v\xE0o \u0111\xE3 bi\u1EBFn m\u1EA5t.\u201D"
-  weaponDamage: 275
+  weaponDamage: 245
   weaponCriticalChange: 75
   weaponManaCost: 5
   weaponProjectile: {fileID: 4791221879380248428, guid: 8a0609de9affdeb4089339771c84f3fc, type: 3}

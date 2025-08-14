@@ -140,10 +140,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 868
-        width: 52
-        height: 62
+        x: 0
+        y: 840
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 748
-        width: 62
-        height: 62
+        x: 0
+        y: 720
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_2
       rect:
         serializedVersion: 2
-        x: 14
-        y: 628
-        width: 75
-        height: 62
+        x: 0
+        y: 600
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_3
       rect:
         serializedVersion: 2
-        x: 17
-        y: 508
-        width: 72
-        height: 62
+        x: 0
+        y: 480
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 388
-        width: 70
-        height: 77
+        x: 0
+        y: 360
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,10 +250,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_5
       rect:
         serializedVersion: 2
-        x: 27
-        y: 268
-        width: 88
-        height: 62
+        x: 0
+        y: 240
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,10 +272,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_6
       rect:
         serializedVersion: 2
-        x: 42
-        y: 148
-        width: 68
-        height: 62
+        x: 0
+        y: 120
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: Old_Guardian_attack_2_7
       rect:
         serializedVersion: 2
-        x: 42
-        y: 28
-        width: 64
-        height: 62
+        x: 0
+        y: 0
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,33 +312,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Old_Guardian_attack_2_8
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 39
-        width: 18
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f96444ffc4d214900800000000000000
-      internalID: 666864028550973087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 269826c80ca1640d6bc1c26ee066f6c8
     internalID: 0
     vertices: []
     indices: 
@@ -356,7 +334,6 @@ TextureImporter:
       Old_Guardian_attack_2_5: 6472837148150107144
       Old_Guardian_attack_2_6: 5940152804387578702
       Old_Guardian_attack_2_7: 8017816835741139348
-      Old_Guardian_attack_2_8: 666864028550973087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

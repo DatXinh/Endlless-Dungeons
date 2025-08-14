@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerInteractor : MonoBehaviour
@@ -20,11 +21,13 @@ public class PlayerInteractor : MonoBehaviour
     private int activeWeaponIndex = 0; // slot hiện tại đang dùng
 
     public TextMeshProUGUI CointsText; // Hiển thị số tiền hiện tại
+    private AudioSource audioSource;
 
     private void Awake()
     {
         testWeaponAtk = weaponParent.GetComponent<TestWeaponAtk>();
         scaleWeapon = weaponParent.GetComponent<ScaleWeapon>();
+        audioSource = GetComponent<AudioSource>();
         if (CointsText != null)
         {
             CointsText.text = Coins.ToString();
@@ -109,7 +112,15 @@ public class PlayerInteractor : MonoBehaviour
                 droppedWeapon.transform.SetParent(null);
                 droppedWeapon.transform.position = droppedPos;
                 droppedWeapon.transform.rotation = droppedRot;
+                droppedWeapon.transform.localScale = Vector3.one; // Reset scale về (1,1,1)
                 droppedWeapon.SetActive(true);
+                // Đảm bảo vũ khí cũ thuộc scene hiện tại
+                SceneManager.MoveGameObjectToScene(droppedWeapon, SceneManager.GetActiveScene());
+                WeaponInteractable droppedWeaponInteractable = droppedWeapon.GetComponent<WeaponInteractable>();
+                if (droppedWeaponInteractable != null)
+                {
+                    droppedWeaponInteractable.isEquip = false; // Đánh dấu vũ khí cũ là không được trang bị
+                }
 
                 Collider2D col = droppedWeapon.GetComponent<Collider2D>();
                 if (col != null) col.enabled = true;
@@ -207,6 +218,7 @@ public class PlayerInteractor : MonoBehaviour
                 WeaponInteractable weaponInteractable = weapon.GetComponent<WeaponInteractable>();
                 if (weaponInteractable != null && weaponInteractable.weaponIcon != null && WeaponIcon != null)
                 {
+                    weaponInteractable.isEquip = true;
                     WeaponIcon.sprite = weaponInteractable.weaponIcon;
                     WeaponIcon.enabled = true;
                 }
@@ -223,6 +235,7 @@ public class PlayerInteractor : MonoBehaviour
         Debug.Log("Earned Coins: " + amount);
         Coins += amount;
         setCoinNumber();
+        audioSource.Play();
     }
     public void setCoinNumber()
     {

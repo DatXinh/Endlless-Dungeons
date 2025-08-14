@@ -20,10 +20,11 @@ public class LaserWeapon : MonoBehaviour
     private bool isFiring = false;
     private Coroutine manaDrainCoroutine;
 
+    public AudioSource audioSource;
+
     private void Awake()
     {
         weaponData = GetComponentInParent<WeaponData>();
-        playerMP = GetComponentInParent<PLayerMP>();
         damage = weaponData.weaponDamage;
         manaCost = weaponData.weaponManaCost;
         CriticalChange = weaponData.weaponCriticalChange;
@@ -43,7 +44,9 @@ public class LaserWeapon : MonoBehaviour
         isFiring = true;
         lineRenderer.enabled = true;
         UpdateLaser();
+        audioSource.Play();
         manaDrainCoroutine = StartCoroutine(DrainManaRoutine());
+
     }
     public void StopFiring()
     {
@@ -60,6 +63,10 @@ public class LaserWeapon : MonoBehaviour
 
     private void UpdateLaser()
     {
+        if (playerMP == null)
+        {
+            playerMP = GetComponentInParent<PLayerMP>();
+        }
         if(manaCost > playerMP.currentMP)
         {
             StopFiring();

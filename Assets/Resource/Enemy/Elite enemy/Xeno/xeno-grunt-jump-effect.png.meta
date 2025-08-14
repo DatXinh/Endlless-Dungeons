@@ -158,10 +158,10 @@ TextureImporter:
       name: xeno-grunt-jump-effect_0
       rect:
         serializedVersion: 2
-        x: 859
-        y: 54
-        width: 7
-        height: 7
+        x: 0
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +180,10 @@ TextureImporter:
       name: xeno-grunt-jump-effect_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 9
-        width: 27
-        height: 27
+        x: 320
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: xeno-grunt-jump-effect_2
       rect:
         serializedVersion: 2
-        x: 449
-        y: 34
-        width: 7
-        height: 7
+        x: 640
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,275 +220,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_3
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 34
-        width: 22
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 16977675cc8d81e40800000000000000
-      internalID: 5627486106550761825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_4
-      rect:
-        serializedVersion: 2
-        x: 729
-        y: 29
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c06789d3bfad82f0800000000000000
-      internalID: -968925157831253818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_5
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 4
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b80fc66dd0c987760800000000000000
-      internalID: 7455880766357827723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_6
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 14
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b76da21d502a84300800000000000000
-      internalID: 236617126304732795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_7
-      rect:
-        serializedVersion: 2
-        x: 419
-        y: 9
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 992bffb79c9c95a70800000000000000
-      internalID: 8816299612760421017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_8
-      rect:
-        serializedVersion: 2
-        x: 424
-        y: 14
-        width: 22
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32d91a53da3b20330800000000000000
-      internalID: 3675697802398244131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_9
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 14
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a23ddbc34f91051c0800000000000000
-      internalID: -4517081889470819542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_10
-      rect:
-        serializedVersion: 2
-        x: 534
-        y: 9
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4ac35a828f193440800000000000000
-      internalID: 4915995113778563661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_11
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 0
-        width: 17
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a604da86f11c5b60800000000000000
-      internalID: 7736078010504447648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_12
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 0
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 607b17bf5f1dd1550800000000000000
-      internalID: 6133289121964209926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_13
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 0
-        width: 12
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7643693c0363d600800000000000000
-      internalID: 491845688467080828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: xeno-grunt-jump-effect_14
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 4
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59d5acc47badd35e0800000000000000
-      internalID: -1928144584642503275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9f7de162687ac4c9e811ad7611222c80
     internalID: 0
     vertices: []
     indices: 
@@ -500,19 +236,7 @@ TextureImporter:
     nameFileIdTable:
       xeno-grunt-jump-effect_0: 5099003339035387222
       xeno-grunt-jump-effect_1: 4572247760939427026
-      xeno-grunt-jump-effect_10: 4915995113778563661
-      xeno-grunt-jump-effect_11: 7736078010504447648
-      xeno-grunt-jump-effect_12: 6133289121964209926
-      xeno-grunt-jump-effect_13: 491845688467080828
-      xeno-grunt-jump-effect_14: -1928144584642503275
       xeno-grunt-jump-effect_2: 4585296624718330930
-      xeno-grunt-jump-effect_3: 5627486106550761825
-      xeno-grunt-jump-effect_4: -968925157831253818
-      xeno-grunt-jump-effect_5: 7455880766357827723
-      xeno-grunt-jump-effect_6: 236617126304732795
-      xeno-grunt-jump-effect_7: 8816299612760421017
-      xeno-grunt-jump-effect_8: 3675697802398244131
-      xeno-grunt-jump-effect_9: -4517081889470819542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

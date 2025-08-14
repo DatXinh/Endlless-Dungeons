@@ -11,7 +11,9 @@ public class FirewormAI : MonoBehaviour
     private Transform player;
     private SpriteRenderer spriteRenderer;
 
-    private Vector2 moveDirection;
+    private Vector2 targetPosition; // Điểm bot sẽ di chuyển đến
+    private bool hasTargetPoint = false;
+
     private float atkTimer = 0f;
     private bool isAttacking = false;
 
@@ -21,14 +23,19 @@ public class FirewormAI : MonoBehaviour
     public float minAttackInterval = 0.25f;
     public float maxAttackInterval = 2.5f;
 
-    [Header("Độ lệch hướng")]
-    public float randomAngleRange = 30f; // độ lệch ± khi di chuyển để khó đoán
+    [Header("Tiny Mana")]
+    public GameObject TinyMana;
+    private bool hasSpawnedManaBurst = false;
+
+    [Header("EnemyHP")]
+    public EnemyHP enemyHP;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        enemyHP = GetComponent<EnemyHP>();
         atkTimer = 1f;
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -44,19 +51,24 @@ public class FirewormAI : MonoBehaviour
     {
         if (player == null) return;
 
-        Vector2 toPlayer = (player.position - transform.position);
-        float distance = toPlayer.magnitude;
+        // Nếu chưa có điểm mục tiêu hoặc đã đến gần thì chọn điểm mới
+        if (!hasTargetPoint || Vector2.Distance(transform.position, targetPosition) < 0.5f)
+        {
+            targetPosition = GetRandomPointNearPlayer();
+            hasTargetPoint = true;
+        }
 
-        // Lật hình nếu cần
-        if (toPlayer.x != 0)
+        // Lật hướng sprite
+        if (targetPosition.x != transform.position.x)
         {
             Vector3 currentScale = transform.localScale;
-            currentScale.x = Mathf.Abs(currentScale.x) * (toPlayer.x < 0 ? -1 : 1);
+            currentScale.x = Mathf.Abs(currentScale.x) * (targetPosition.x < transform.position.x ? -1 : 1);
             transform.localScale = currentScale;
         }
 
-        // Cập nhật khoảng thời gian giữa các lần tấn công (theo khoảng cách)
-        float t = Mathf.InverseLerp(minDistance, maxDistance, distance);
+        // Kiểm tra tấn công
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        float t = Mathf.InverseLerp(minDistance, maxDistance, distanceToPlayer);
         float dynamicInterval = Mathf.Lerp(minAttackInterval, maxAttackInterval, t);
 
         atkTimer -= Time.deltaTime;
@@ -74,31 +86,51 @@ public class FirewormAI : MonoBehaviour
             atkTimer = dynamicInterval;
         }
 
-        // Xác định hướng di chuyển với yếu tố ngẫu nhiên
-        if (!isAttacking)
+        // Spawn mana khi máu dưới 50%
+        if (!hasSpawnedManaBurst && enemyHP.GetHealthPercent() < 50f)
         {
-            if (distance > maxDistance)
-                moveDirection = AddRandomAngle(toPlayer.normalized);
-            else if (distance < minDistance)
-                moveDirection = AddRandomAngle(-toPlayer.normalized);
-            else
-                moveDirection = Vector2.zero;
-        }
-        else
-        {
-            moveDirection = Vector2.zero;
+            hasSpawnedManaBurst = true;
+            SpawnTinyManaBurst();
         }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
+        if (!isAttacking && hasTargetPoint)
+        {
+            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+            rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+        }
     }
 
-    // Thêm độ lệch ngẫu nhiên vào hướng
-    Vector2 AddRandomAngle(Vector2 dir)
+    // Lấy điểm ngẫu nhiên gần player
+    Vector2 GetRandomPointNearPlayer()
     {
-        float angleOffset = Random.Range(-randomAngleRange, randomAngleRange);
-        return Quaternion.Euler(0, 0, angleOffset) * dir;
+        Vector2 playerPos = player.position;
+        float randomDistance = Random.Range(minDistance, maxDistance);
+        float randomAngle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+
+        Vector2 offset = new Vector2(Mathf.Cos(randomAngle), Mathf.Sin(randomAngle)) * randomDistance;
+        return playerPos + offset;
+    }
+
+    void SpawnTinyManaBurst()
+    {
+        if (TinyMana == null) return;
+        int count = Random.Range(5, 11);
+        float minForce = 4f;
+        float maxForce = 7f;
+        for (int i = 0; i < count; i++)
+        {
+            float angle = Random.Range(0f, 360f);
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            GameObject mana = Instantiate(TinyMana, transform.position, Quaternion.identity);
+            Rigidbody2D manaRb = mana.GetComponent<Rigidbody2D>();
+            if (manaRb != null)
+            {
+                float force = Random.Range(minForce, maxForce);
+                manaRb.linearVelocity = dir * force;
+            }
+        }
     }
 }

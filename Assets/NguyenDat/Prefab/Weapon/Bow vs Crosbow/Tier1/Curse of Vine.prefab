@@ -59,8 +59,8 @@ MonoBehaviour:
     b\u1EAFn v\xE0o r\u1EC5 c\xE2y \u0111\xE3 ch\u1EBFt. M\u1ED7i m\u0169i t\xEAn
     m\u1ECDc th\xEAm gai, v\xE0 m\u1ED7i ph\xE1t b\u1EAFn l\xE0 m\u1ED9t l\u1EDDi
     r\u1EE7a nguy\u1EC1n.\u201D"
-  weaponDamage: 43
-  weaponCriticalChange: 28
+  weaponDamage: 78
+  weaponCriticalChange: 22
   weaponManaCost: 3
   weaponProjectile: {fileID: 1847409342686161705, guid: 7be962534e419284b8b280e08f8833db, type: 3}
   weaponType: 3

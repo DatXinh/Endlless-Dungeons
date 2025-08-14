@@ -11,13 +11,29 @@ public class WeaponTooltipDisplay : MonoBehaviour
     public TextMeshProUGUI weaponCrit;
     public TextMeshProUGUI weaponMana;
     public TextMeshProUGUI weaponPrice;
-    private WeaponData weaponData;
+    public WeaponData weaponData;
     public int weaponLevel;
+    public int FinalWeaponDamage;
 
     private void Awake()
     {
         weaponData = GetComponent<WeaponData>();
         weaponLevel = weaponData.weaponLevel;
+        if (LoopManager.Instance != null)
+        {
+            if (LoopManager.Instance.currentLoop > 0)
+            {
+                FinalWeaponDamage = (int)(weaponData.weaponDamage * (1 + LoopManager.Instance.currentLoop * 0.2f));
+            }
+            else
+            {
+                FinalWeaponDamage = weaponData.weaponDamage; // Use base damage if no LoopManager
+            }
+        }
+        else
+        {
+            FinalWeaponDamage = weaponData.weaponDamage; // Use base damage if no LoopManager
+        }
         HideTooltip();
     }
 
@@ -37,8 +53,8 @@ public class WeaponTooltipDisplay : MonoBehaviour
         {
             weaponName.color = Color.red;
         }
-        weaponDama.text = weaponData.weaponDamage.ToString();
-        weaponCrit.text = weaponData.weaponCriticalChange.ToString();
+        weaponDama.text = FinalWeaponDamage.ToString();
+        weaponCrit.text = weaponData.weaponCriticalChange.ToString() + "%";
         weaponMana.text = weaponData.weaponManaCost.ToString();
         weaponPrice.text = weaponData.WeaponPrice.ToString();
         tooltipPanel.SetActive(true);
