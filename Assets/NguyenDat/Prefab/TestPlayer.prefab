@@ -361,14 +361,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bb9afa85b8b6c44960d72ca21f2b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10000000
+  maxHP: 200
   currentHP: 0
   InvincibilityTime: 1
   damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
   healthBar: {fileID: 2027232366832638876}
   maxHeal: {fileID: 5223172938878608512}
   currentHeal: {fileID: 8838656969530587355}
-  damageReductionPercent: 0
+  isInvincible: 0
   joystick: {fileID: 3381391178491776238}
   joystickAttackAndAim: {fileID: 8426108463692154582}
   rightPanel: {fileID: 4121204888396628550}
@@ -1295,10 +1295,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 1290579308904871111}
+  hp: 200
+  mp: 200
+  coin: 100
+  weapon: 
+  playTime: 0
   sceneNameText: {fileID: 5477968805807427031}
   playTimeText: {fileID: 7422909645454741384}
   mainCamera: {fileID: 8356368311153882744}
-  isCountingTime: 0
 --- !u!114 &1315330943311327292
 MonoBehaviour:
   m_ObjectHideFlags: 0

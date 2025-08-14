@@ -61,7 +61,6 @@ public class FirebaseAuthManager : MonoBehaviour
         Login(email, password);
     }
 
-    // ===== HÀM ĐĂNG KÝ =====
     private void Register(string email, string password)
     {
         auth.CreateUserWithEmailAndPasswordAsync(email, password)
@@ -81,7 +80,6 @@ public class FirebaseAuthManager : MonoBehaviour
             });
     }
 
-    // ===== HÀM ĐĂNG NHẬP =====
     private void Login(string email, string password)
     {
         auth.SignInWithEmailAndPasswordAsync(email, password)
@@ -96,10 +94,11 @@ public class FirebaseAuthManager : MonoBehaviour
                 currentUser = task.Result.User;
                 Debug.Log($"✅ Đăng nhập thành công! UID: {currentUser.UserId}, Email: {currentUser.Email}");
 
-                // Chuyển sang màn Home (hoặc scene bạn muốn)
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Home");
+                // Gọi GameManager để load dữ liệu và scene
+                FirebaseGameManager.Instance.InitAfterLogin();
             });
     }
+
 
     // ===== ĐĂNG XUẤT =====
     public void Logout()
