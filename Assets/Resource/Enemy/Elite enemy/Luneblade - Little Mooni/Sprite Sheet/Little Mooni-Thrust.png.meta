@@ -161,10 +161,10 @@ TextureImporter:
       name: Little Mooni-Thrust_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 62
-        width: 28
-        height: 21
+        x: 0
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Little Mooni-Thrust_1
       rect:
         serializedVersion: 2
-        x: 200
-        y: 62
-        width: 28
-        height: 20
+        x: 144
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: Little Mooni-Thrust_2
       rect:
         serializedVersion: 2
-        x: 343
-        y: 62
-        width: 28
-        height: 20
+        x: 288
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: Little Mooni-Thrust_3
       rect:
         serializedVersion: 2
-        x: 486
-        y: 62
-        width: 28
-        height: 20
+        x: 432
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: Little Mooni-Thrust_4
       rect:
         serializedVersion: 2
-        x: 629
-        y: 62
-        width: 28
-        height: 20
+        x: 576
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: Little Mooni-Thrust_5
       rect:
         serializedVersion: 2
-        x: 773
-        y: 62
-        width: 28
-        height: 20
+        x: 720
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: Little Mooni-Thrust_6
       rect:
         serializedVersion: 2
-        x: 924
-        y: 62
-        width: 61
-        height: 19
+        x: 864
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: Little Mooni-Thrust_7
       rect:
         serializedVersion: 2
-        x: 1069
-        y: 62
-        width: 61
-        height: 18
+        x: 1008
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: Little Mooni-Thrust_8
       rect:
         serializedVersion: 2
-        x: 1213
-        y: 62
-        width: 20
-        height: 18
+        x: 1152
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +359,10 @@ TextureImporter:
       name: Little Mooni-Thrust_9
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 62
-        width: 45
-        height: 15
+        x: 1296
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +381,10 @@ TextureImporter:
       name: Little Mooni-Thrust_10
       rect:
         serializedVersion: 2
-        x: 1357
-        y: 62
-        width: 20
-        height: 18
+        x: 1440
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: Little Mooni-Thrust_11
       rect:
         serializedVersion: 2
-        x: 1376
-        y: 62
-        width: 40
-        height: 12
+        x: 1584
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,10 +425,10 @@ TextureImporter:
       name: Little Mooni-Thrust_12
       rect:
         serializedVersion: 2
-        x: 1405
-        y: 71
-        width: 16
-        height: 6
+        x: 1728
+        y: 0
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,77 +443,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Thrust_13
-      rect:
-        serializedVersion: 2
-        x: 1502
-        y: 62
-        width: 64
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 529116e09d9e40a50800000000000000
-      internalID: 6486566481778776357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Thrust_14
-      rect:
-        serializedVersion: 2
-        x: 1647
-        y: 62
-        width: 64
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49385516d373a4a90800000000000000
-      internalID: -7328984706826533996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Little Mooni-Thrust_15
-      rect:
-        serializedVersion: 2
-        x: 1787
-        y: 62
-        width: 68
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a88b36010b71e8a0800000000000000
-      internalID: -6277601161248012126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3f4f1e73167b1420f8773a30203a3166
     internalID: 0
     vertices: []
     indices: 
@@ -528,9 +462,6 @@ TextureImporter:
       Little Mooni-Thrust_10: -7169519184877476088
       Little Mooni-Thrust_11: -6372927916850379748
       Little Mooni-Thrust_12: 7561143337044287028
-      Little Mooni-Thrust_13: 6486566481778776357
-      Little Mooni-Thrust_14: -7328984706826533996
-      Little Mooni-Thrust_15: -6277601161248012126
       Little Mooni-Thrust_2: -1106856190446035909
       Little Mooni-Thrust_3: -7094131787288433038
       Little Mooni-Thrust_4: 4739645946539434479
