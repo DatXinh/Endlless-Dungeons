@@ -87,6 +87,9 @@ EditorBuildSettings:
     path: Assets/PhamCuong/Scenes/EndScene.unity
     guid: 08864fc9985cbe240969a7f789f99e30
   - enabled: 1
+    path: Assets/PhamCuong/Scenes/NullScene.unity
+    guid: 821ba36a1bdd90341b5d11407c874c16
+  - enabled: 1
     path: Assets/PhamCuong/Scenes/IntroScene.unity
     guid: 03e4fd64307bb0a489da31aa879a6bc9
   m_configObjects:
