@@ -74,7 +74,8 @@ public class Xeno : MonoBehaviour
             Patrol();
         }
 
-        if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
+        // Test damage (đã comment lại)
+        // if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
     }
 
     void Patrol()
@@ -99,6 +100,7 @@ public class Xeno : MonoBehaviour
         spriteRenderer.flipX = direction.x < 0;
     }
 
+    /*
     void TakeDamage()
     {
         currentHealth--;
@@ -116,6 +118,7 @@ public class Xeno : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    */
 
     public void SetChasing(bool chasing)
     {

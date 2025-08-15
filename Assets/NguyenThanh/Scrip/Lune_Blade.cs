@@ -74,8 +74,10 @@ public class Lune_Blade : MonoBehaviour
             Patrol();
         }
 
+        /*
         // Test nhận sát thương
         if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
+        */
     }
 
     void Patrol()
@@ -95,11 +97,10 @@ public class Lune_Blade : MonoBehaviour
     {
         Vector2 direction = (target - (Vector2)transform.position).normalized;
         rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
-
-        animator.SetFloat("Move", speed);
         spriteRenderer.flipX = direction.x < 0;
     }
 
+    /*
     void TakeDamage()
     {
         currentHealth--;
@@ -117,6 +118,7 @@ public class Lune_Blade : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    */
 
     public void SetChasing(bool chasing)
     {
@@ -137,8 +139,6 @@ public class Lune_Blade : MonoBehaviour
     {
         isAttacking = attacking;
         animator.SetBool("Attack", attacking);
-        if (!attacking) animator.SetFloat("Move", speed);
-        else animator.SetFloat("Move", 0f);
     }
 }
 
