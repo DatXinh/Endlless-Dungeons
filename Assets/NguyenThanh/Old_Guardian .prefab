@@ -76,7 +76,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.570482, y: 7.386622}
+  m_Size: {x: 14, y: 10}
   m_EdgeRadius: 0
 --- !u!1 &3263660279218720636
 GameObject:
@@ -92,9 +92,12 @@ GameObject:
   - component: {fileID: 654905018560560767}
   - component: {fileID: 1366695252693155742}
   - component: {fileID: 6977200883065764511}
-  m_Layer: 0
+  - component: {fileID: 4110471110369639518}
+  - component: {fileID: 8660559356609366996}
+  - component: {fileID: 402599898211957273}
+  m_Layer: 7
   m_Name: 'Old_Guardian '
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -418814019482310443, guid: 7a5f9034fb287044bb8e97a616975b3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -274,6 +277,72 @@ MonoBehaviour:
   chaseZone: {fileID: 7840171814886851710}
   attackZone: {fileID: 2440549200733472001}
   patrolRadius: 2
+--- !u!114 &4110471110369639518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263660279218720636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseHP: 2500
+  maxHP: 0
+  currentHP: 0
+  InvincibilityTime: 0.17
+  damageReductionRate: 0
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
+  healthBar: {fileID: 0}
+  maxHeal: {fileID: 0}
+  currentHeal: {fileID: 0}
+  bossPlayDeadAnimation: {fileID: 0}
+--- !u!114 &8660559356609366996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263660279218720636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c27c5c3e9197634f9e8cd98f0b0e965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  weaponLoot:
+  - {fileID: 5519456457138781898, guid: aae0af6a5848d7c42bc18ba30ab2e703, type: 3}
+  - {fileID: 3045790389127171731, guid: a2de965b55bc45243948debc9b8bc5bf, type: 3}
+  - {fileID: 6502661645446167304, guid: eaf462f94100a67418070b48d7aaca31, type: 3}
+  - {fileID: 7083945584695108612, guid: 5aea1dc35aae7c44397e785d9729ec58, type: 3}
+  - {fileID: 3997363000707474565, guid: c5e06d9b43a4cee4cb5cb2386785141b, type: 3}
+  - {fileID: 3362582173471295174, guid: 3b5bf3372258e6445bd546495b9f6c73, type: 3}
+  - {fileID: 6678569435755268935, guid: d5909ad9956e7aa4b9e130db4050ee73, type: 3}
+  - {fileID: 7579230444333726614, guid: c835eb7b33c0d8449b5ada5d271823b7, type: 3}
+  - {fileID: 740544398467360445, guid: 5040106ef7532bd44bd487a13383dd2b, type: 3}
+  - {fileID: 2224703434937752579, guid: 24367df9896ab9b4abae3c3060acaeb7, type: 3}
+  potionLoot:
+  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
+  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
+  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
+  dropRadius: 2
+--- !u!114 &402599898211957273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263660279218720636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e1631d05006394ba531f070bfcd41e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  parameterName: 
+  scriptsToDisable: []
 --- !u!1 &7245141668361551533
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2440549200733472001}
   - component: {fileID: 9073223263397494330}
+  - component: {fileID: 1451660486409339262}
   m_Layer: 0
   m_Name: attackZone
   m_TagString: Untagged
@@ -352,3 +422,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.118489, y: 2.464251}
   m_EdgeRadius: 0
+--- !u!114 &1451660486409339262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245141668361551533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  FinalDamage: 0
