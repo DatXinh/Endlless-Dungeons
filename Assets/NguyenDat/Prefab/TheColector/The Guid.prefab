@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8638782201902477309}
   - component: {fileID: 6338528941305465808}
   - component: {fileID: 6229222017494502303}
-  - component: {fileID: 3136868783016652323}
   - component: {fileID: 948740424394783210}
+  - component: {fileID: 772841333562647774}
   m_Layer: 0
   m_Name: The Guid
   m_TagString: Untagged
@@ -114,8 +114,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &3136868783016652323
-BoxCollider2D:
+--- !u!114 &948740424394783210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411337353792987179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512ec1edc0044f949b81ef7758a31c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 4849933818680966931}
+  Text: {fileID: 2166695927180359077}
+--- !u!58 &772841333562647774
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,32 +162,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.047281265, y: 0.047281504}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1875, y: 3.625}
-    newSize: {x: 2.1875, y: 3.625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 2.4184456, y: 3.5532002}
-  m_EdgeRadius: 0
---- !u!114 &948740424394783210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411337353792987179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512ec1edc0044f949b81ef7758a31c6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 4849933818680966931}
-  Text: {fileID: 2166695927180359077}
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1.8125
 --- !u!1 &4842367493422828623
 GameObject:
   m_ObjectHideFlags: 0
