@@ -1,99 +1,79 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlaneCOntroller : MonoBehaviour
+public class PlaneController : MonoBehaviour
 {
-    [Header("Planes")]
-    public GameObject Plane1;
-    public GameObject Plane2;
-    public GameObject Plane3;
+    [Header("Planes (index = tier - 1)")]
+    public List<GameObject> planes; // 0 = Tier1, 1 = Tier2, 2 = Tier3
 
-    [Header("Scene tier")]
-    public List<string> Tier1Scenes;
-    public List<string> Tier2Scenes;
-    public List<string> Tier3Scenes;
+    [Header("Scene tiers")]
+    public List<string> tier1Scenes;
+    public List<string> tier2Scenes;
+    public List<string> tier3Scenes;
 
-    [Tooltip("Object mà đối tượng này sẽ theo dõi")]
+    [Tooltip("Target để theo dõi")]
     public Transform target;
 
-    [Tooltip("Khoảng cách offset giữa đối tượng và target")]
+    [Tooltip("Offset giữa object và target")]
     public Vector3 offset = Vector3.zero;
 
-    [Tooltip("Có nên cập nhật vị trí mỗi khung hình không?")]
+    [Tooltip("Theo dõi trong LateUpdate thay vì Update")]
     public bool followInLateUpdate = false;
 
-    [Header("Follow Delay Settings")]
-    [Tooltip("Thời gian để di chuyển mượt tới vị trí mới")]
-    public float smoothTime = 0.2f; // giá trị nhỏ → theo nhanh hơn
-    private Vector3 velocity = Vector3.zero; // dùng cho SmoothDamp
+    [Header("Smooth Follow Settings")]
+    public float smoothTime = 0.2f;
+    private Vector3 velocity = Vector3.zero;
 
     private void Start()
     {
-        // Ensure the planes are set to inactive at the start
-        Plane1.SetActive(false);
-        Plane2.SetActive(false);
-        Plane3.SetActive(false);
-
-        // Subscribe to scene loaded event
-        SceneManager.sceneLoaded += UpdatePlaneVisibility;
+        // Tắt tất cả planes ban đầu
+        SetActivePlane(-1);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void Update()
+    private void OnDestroy()
     {
-        if (!followInLateUpdate)
-            Follow();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    void LateUpdate()
+    private void Update()
     {
-        if (followInLateUpdate)
-            Follow();
+        if (!followInLateUpdate && target != null)
+            FollowTarget();
     }
 
-    void Follow()
+    private void LateUpdate()
     {
-        if (target != null)
-        {
-            Vector3 desiredPosition = target.position + offset;
-            // Di chuyển mượt với độ trễ
-            transform.position = Vector3.SmoothDamp(
-                transform.position,
-                desiredPosition,
-                ref velocity,
-                smoothTime
-            );
-        }
+        if (followInLateUpdate && target != null)
+            FollowTarget();
     }
 
-    private void UpdatePlaneVisibility(Scene arg0, LoadSceneMode arg1)
+    private void FollowTarget()
     {
-        string currentScene = SceneManager.GetActiveScene().name;
+        Vector3 desiredPosition = target.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
+    }
 
-        if (Tier1Scenes.Contains(currentScene))
-        {
-            Plane1.SetActive(true);
-            Plane2.SetActive(false);
-            Plane3.SetActive(false);
-        }
-        else if (Tier2Scenes.Contains(currentScene))
-        {
-            Plane1.SetActive(false);
-            Plane2.SetActive(true);
-            Plane3.SetActive(false);
-        }
-        else if (Tier3Scenes.Contains(currentScene))
-        {
-            Plane1.SetActive(false);
-            Plane2.SetActive(false);
-            Plane3.SetActive(true);
-        }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        string sceneName = scene.name;
+
+        if (tier1Scenes.Contains(sceneName))
+            SetActivePlane(0);
+        else if (tier2Scenes.Contains(sceneName))
+            SetActivePlane(1);
+        else if (tier3Scenes.Contains(sceneName))
+            SetActivePlane(2);
         else
+            SetActivePlane(-1);
+    }
+
+    private void SetActivePlane(int index)
+    {
+        for (int i = 0; i < planes.Count; i++)
         {
-            Plane1.SetActive(false);
-            Plane2.SetActive(false);
-            Plane3.SetActive(false);
+            planes[i].SetActive(i == index);
         }
     }
 }

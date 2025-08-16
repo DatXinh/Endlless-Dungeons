@@ -245,8 +245,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  weaponLoot: []
-  potionLoot: []
+  weaponLoot:
+  - {fileID: 2289391151377592596, guid: ea55fb0c03f58e34f80a2f88c16d5767, type: 3}
+  - {fileID: 3594781134254194807, guid: cd35c1195a67c7f47b489da48bcb3eb0, type: 3}
+  potionLoot:
+  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
+  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
+  - {fileID: 6085964754415221086, guid: f0c70f3dc705c444bada8825b8f4c46e, type: 3}
+  - {fileID: 2203846391878563995, guid: d25f9caa374fa20468f0ccf2bf66992b, type: 3}
+  - {fileID: 488743204118899581, guid: 36ba41b2a3a733b4393922444309f782, type: 3}
   coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
   dropRadius: 2
 --- !u!114 &4428029854168791906

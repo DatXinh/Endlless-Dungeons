@@ -146,7 +146,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -235,8 +235,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  weaponLoot: []
-  potionLoot: []
+  weaponLoot:
+  - {fileID: 7100128621914845798, guid: c294fdb0a827160409c328942043e1c0, type: 3}
+  - {fileID: 4799141085204607449, guid: b37e197e7201c0243bbe80efdd8a67e3, type: 3}
+  - {fileID: 2847857755825015607, guid: fc2c8b0b764d5244e99f3218b51def73, type: 3}
+  - {fileID: 2186571115228559731, guid: 582231311d0b0454bbdba1462530ea1a, type: 3}
+  - {fileID: 7772923023340383220, guid: db43c2cd4729f2049b7fed94ebd347ef, type: 3}
+  - {fileID: 5426968650807114192, guid: 7a30ef32aba60014e945fa3f772ad854, type: 3}
+  - {fileID: 7320204787159767826, guid: 5fba666ba575f72418d93bd04437aa3c, type: 3}
+  potionLoot:
+  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
+  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
   coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
   dropRadius: 2
 --- !u!114 &8183588122399427307
