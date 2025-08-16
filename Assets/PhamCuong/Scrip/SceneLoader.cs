@@ -15,11 +15,18 @@ public class SceneLoader : MonoBehaviour
 
         if (currentScene == homeSceneName)
         {
+            // Khi đang ở Home thì load sang Start Game
             SceneManager.LoadScene(startGameSceneName);
         }
         else
         {
+            // Reset để LoadSceneManager không tự load lại
+            SceneLoadManager.nextSceneName = null;
+            CancelInvoke(); // Ngăn các Invoke đang chờ (nếu script này cùng GameObject)
+
+            // Load về Home
             SceneManager.LoadScene(homeSceneName);
         }
     }
+
 }
