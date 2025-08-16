@@ -1,23 +1,23 @@
 # ninja log v5
-56	337	7767569959557298	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c397185805247a72
-13	1890	7767569975007318	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f448573ff7c7c270
-338	476	7767569960926286	D:/Unity Project/Endlless-Dungeons/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2x3y5735/obj/arm64-v8a/libswappywrapper.so	c095b240aa339d7
-27	1542	7767569971539326	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1ce140ca40d5f49
-34	1549	7767569971608229	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	9edd0da571d38eae
-0	1637	7767569972483064	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	249d3e8980388d41
-47	1560	7767569971766845	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d02d031a9417e5c1
-5	1576	7767569971873194	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1d0d13bd3c53e75
-20	1795	7767569974074007	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d8be2649c3ffc296
-41	1891	7767569975042548	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	be54c525d4c56c81
-1891	1971	7767569975900337	D:/Unity Project/Endlless-Dungeons/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2x3y5735/obj/arm64-v8a/libgame.so	d1c5e44a8ae83399
 65	378	7768082274084607	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c397185805247a72
+29	1998	7768082290210171	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f448573ff7c7c270
 378	531	7768082275586570	D:/Unity Project/Endlless-Dungeons/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2x3y5735/obj/arm64-v8a/libswappywrapper.so	c095b240aa339d7
 23	1656	7768082286830510	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1ce140ca40d5f49
 50	1672	7768082286950557	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	9edd0da571d38eae
-11	1677	7768082287001011	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1d0d13bd3c53e75
 42	1705	7768082287286714	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d02d031a9417e5c1
 18	1742	7768082287675659	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	249d3e8980388d41
+11	1677	7768082287001011	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1d0d13bd3c53e75
 36	1918	7768082289468397	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d8be2649c3ffc296
-29	1998	7768082290210171	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f448573ff7c7c270
 58	2092	7768082291173600	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	be54c525d4c56c81
 2092	2183	7768082292127948	D:/Unity Project/Endlless-Dungeons/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2x3y5735/obj/arm64-v8a/libgame.so	d1c5e44a8ae83399
+84	520	7769866644171583	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c397185805247a72
+520	704	7769866646011000	D:/Unity Project/Endlless-Dungeons/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2x3y5735/obj/arm64-v8a/libswappywrapper.so	c095b240aa339d7
+60	1770	7769866656616671	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	9edd0da571d38eae
+20	1781	7769866656755979	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1ce140ca40d5f49
+78	1808	7769866656982089	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d02d031a9417e5c1
+37	1815	7769866657095515	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1d0d13bd3c53e75
+25	1890	7769866657833603	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	249d3e8980388d41
+51	2051	7769866659457619	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d8be2649c3ffc296
+44	2127	7769866660205528	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f448573ff7c7c270
+70	2242	7769866661357920	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	be54c525d4c56c81
+2242	2326	7769866662229736	D:/Unity Project/Endlless-Dungeons/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2x3y5735/obj/arm64-v8a/libgame.so	d1c5e44a8ae83399

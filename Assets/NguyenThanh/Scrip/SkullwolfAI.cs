@@ -7,11 +7,11 @@ public class SkullwolfAI : MonoBehaviour
     public int maxHealth = 3;
 
     [Header("Zones")]
-    public Transform chaseZone;
-    public Transform attackZone;
+    public Transform chaseZone;   // Kéo object con vào đây để làm vùng truy đuổi
+    public Transform attackZone;  // Kéo object con vào đây để làm vùng tấn công
 
     [Header("Patrol Settings")]
-    public float patrolRadius = 2f;
+    public float patrolRadius = 2f; // Bán kính tuần tra
 
     private int currentHealth;
     private Transform player;
@@ -38,6 +38,7 @@ public class SkullwolfAI : MonoBehaviour
         patrolCenter = transform.position;
         ChooseNewPatrolPoint();
 
+        // Gắn ZoneRelay04 tự động nếu chưa có
         if (chaseZone != null && chaseZone.GetComponent<ZoneRelay05>() == null)
         {
             var relay = chaseZone.gameObject.AddComponent<ZoneRelay05>();
@@ -73,7 +74,8 @@ public class SkullwolfAI : MonoBehaviour
             Patrol();
         }
 
-        //if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
+        // Test nhận sát thương (đã comment)
+        // if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
     }
 
     void Patrol()
@@ -98,23 +100,23 @@ public class SkullwolfAI : MonoBehaviour
         spriteRenderer.flipX = direction.x < 0;
     }
 
-    //void TakeDamage()
-    //{
-    //    currentHealth--;
-    //    if (currentHealth <= 0)
-    //    {
-    //        isDead = true;
-    //        animator.SetTrigger("Die");
-    //        animator.SetBool("Attack", false);
-    //        animator.SetFloat("Move", 0f);
-    //        Invoke(nameof(DestroySelf), 1.2f);
-    //    }
-    //}
+    // void TakeDamage()
+    // {
+    //     currentHealth--;
+    //     if (currentHealth <= 0)
+    //     {
+    //         isDead = true;
+    //         animator.SetTrigger("Die");
+    //         animator.SetBool("Attack", false);
+    //         animator.SetFloat("Move", 0f);
+    //         Invoke(nameof(DestroySelf), 1.2f);
+    //     }
+    // }
 
-    //void DestroySelf()
-    //{
-    //    Destroy(gameObject);
-    //}
+    // void DestroySelf()
+    // {
+    //     Destroy(gameObject);
+    // }
 
     public void SetChasing(bool chasing)
     {

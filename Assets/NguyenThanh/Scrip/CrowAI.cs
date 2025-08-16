@@ -1,14 +1,15 @@
 using UnityEngine;
 
-public class CrowAI01 : MonoBehaviour
+public class CrowAI : MonoBehaviour
 {
-    [Header("Stats")]
-    public float speed = 4f;
-    public int maxHealth = 3;
+    [Header("Attributes")]
+    public float moveSpeed = 2f;
+    public int healthMax = 3;
 
-    [Header("Zones")]
-    public Transform chaseZone;  // Kéo object child vào đây
-    public Transform attackZone; // Kéo object child vào đây
+    [Header("Detection Zones")]
+    public Transform pursueZone;
+    public Transform strikeZone; 
+    public Vector2 strikeOffset = new Vector2(0.5f, 0f); // Vị trí lệch khi tấn công
 
     [Header("Patrol Settings")]
     public float patrolRadius = 2f;
@@ -19,13 +20,13 @@ public class CrowAI01 : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    private bool isAttacking = false;
-    private bool isDead = false;
-    private bool isChasing = false;
-    private bool isReturningHome = false;
+    private bool attacking = false;
+    private bool dead = false;
+    private bool pursuing = false;
+    private bool returning = false;
 
-    private Vector2 patrolCenter;
-    private Vector2 patrolTarget;
+    private Vector2 homePosition;
+    private Vector2 patrolPoint;
 
     void Start()
     {
@@ -33,124 +34,112 @@ public class CrowAI01 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        currentHealth = maxHealth;
+        currentHealth = healthMax;
 
-        patrolCenter = transform.position;
-        ChooseNewPatrolPoint();
+        homePosition = transform.position;
+        GeneratePatrolPoint();
 
-        // Tự gắn ZoneRelay01 cho chase zone
-        if (chaseZone != null && chaseZone.GetComponent<ZoneRelay01>() == null)
+        // Gắn zone relay
+        if (pursueZone != null && pursueZone.GetComponent<CrowZoneRelay>() == null)
         {
-            var relay = chaseZone.gameObject.AddComponent<ZoneRelay01>();
-            relay.Setup(this, ZoneType01.Chase);
+            var relay = pursueZone.gameObject.AddComponent<CrowZoneRelay>();
+            relay.Initialize(this, CrowZoneType.Pursue);
         }
 
-        // Tự gắn ZoneRelay01 cho attack zone
-        if (attackZone != null && attackZone.GetComponent<ZoneRelay01>() == null)
+        if (strikeZone != null && strikeZone.GetComponent<CrowZoneRelay>() == null)
         {
-            var relay = attackZone.gameObject.AddComponent<ZoneRelay01>();
-            relay.Setup(this, ZoneType01.Attack);
+            var relay = strikeZone.gameObject.AddComponent<CrowZoneRelay>();
+            relay.Initialize(this, CrowZoneType.Strike);
         }
     }
 
     void Update()
     {
-        if (isDead) return;
+        if (dead) return;
 
-        if (isChasing && !isAttacking)
+        if (pursuing && !attacking)
         {
-            MoveTowards(player.position);
+            MoveTo(player.position);
         }
-        else if (isReturningHome)
+        else if (returning)
         {
-            MoveTowards(patrolCenter);
-            if (Vector2.Distance(transform.position, patrolCenter) < 0.1f)
+            MoveTo(homePosition);
+            if (Vector2.Distance(transform.position, homePosition) < 0.1f)
             {
-                isReturningHome = false;
-                ChooseNewPatrolPoint();
+                returning = false;
+                GeneratePatrolPoint();
             }
         }
-        else if (!isAttacking)
+        else if (!attacking)
         {
             Patrol();
         }
 
-        // Test nhận sát thương
-        //if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
+        UpdateStrikeZoneDirection();
     }
 
     void Patrol()
     {
-        if (Vector2.Distance(transform.position, patrolTarget) < 0.2f)
-            ChooseNewPatrolPoint();
+        if (Vector2.Distance(transform.position, patrolPoint) < 0.2f)
+            GeneratePatrolPoint();
 
-        MoveTowards(patrolTarget);
+        MoveTo(patrolPoint);
     }
 
-    void ChooseNewPatrolPoint()
+    void GeneratePatrolPoint()
     {
-        patrolTarget = patrolCenter + Random.insideUnitCircle * patrolRadius;
+        patrolPoint = homePosition + Random.insideUnitCircle * patrolRadius;
     }
 
-    void MoveTowards(Vector2 target)
+    void MoveTo(Vector2 target)
     {
         Vector2 direction = (target - (Vector2)transform.position).normalized;
-        rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
-
-        animator.SetFloat("Move", speed);
+        rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
         spriteRenderer.flipX = direction.x < 0;
     }
 
-    //void TakeDamage()
-    //{
-    //    currentHealth--;
-    //    if (currentHealth <= 0)
-    //    {
-    //        isDead = true;
-    //        animator.SetTrigger("Die");
-    //        animator.SetBool("Attack", false);
-    //        animator.SetFloat("Move", 0f);
-    //        Invoke(nameof(DestroySelf), 1.2f);
-    //    }
-    //}
-
-    //void DestroySelf()
-    //{
-    //    Destroy(gameObject);
-    //}
-
-    public void SetChasing(bool chasing)
+    void UpdateStrikeZoneDirection()
     {
-        isChasing = chasing;
-        if (!chasing)
+        if (strikeZone == null) return;
+
+        // Nếu flipX = true (quay trái) thì offset âm, ngược lại dương
+        float offsetX = spriteRenderer.flipX ? -Mathf.Abs(strikeOffset.x) : Mathf.Abs(strikeOffset.x);
+        strikeZone.localPosition = new Vector3(offsetX, strikeOffset.y, 0f);
+
+        // Xoay vùng tấn công theo hướng
+        strikeZone.localRotation = spriteRenderer.flipX ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+    }
+
+    public void SetPursuing(bool state)
+    {
+        pursuing = state;
+        if (!state)
         {
-            isAttacking = false;
+            attacking = false;
             animator.SetBool("Attack", false);
-            isReturningHome = true;
+            returning = true;
         }
         else
         {
-            isReturningHome = false;
+            returning = false;
         }
     }
 
-    public void SetAttacking(bool attacking)
+    public void SetAttacking(bool state)
     {
-        isAttacking = attacking;
-        animator.SetBool("Attack", attacking);
-        if (!attacking) animator.SetFloat("Move", speed);
-        else animator.SetFloat("Move", 0f);
+        attacking = state;
+        animator.SetBool("Attack", state);
     }
 }
 
-public enum ZoneType01 { Chase, Attack }
+public enum CrowZoneType { Pursue, Strike }
 
-public class ZoneRelay01 : MonoBehaviour
+public class CrowZoneRelay : MonoBehaviour
 {
-    private CrowAI01 parentAI;
-    private ZoneType01 zoneType;
+    private CrowAI parentAI;
+    private CrowZoneType zoneType;
 
-    public void Setup(CrowAI01 ai, ZoneType01 type)
+    public void Initialize(CrowAI ai, CrowZoneType type)
     {
         parentAI = ai;
         zoneType = type;
@@ -160,15 +149,15 @@ public class ZoneRelay01 : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        if (zoneType == ZoneType01.Chase) parentAI.SetChasing(true);
-        else if (zoneType == ZoneType01.Attack) parentAI.SetAttacking(true);
+        if (zoneType == CrowZoneType.Pursue) parentAI.SetPursuing(true);
+        else if (zoneType == CrowZoneType.Strike) parentAI.SetAttacking(true);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
-        if (zoneType == ZoneType01.Chase) parentAI.SetChasing(false);
-        else if (zoneType == ZoneType01.Attack) parentAI.SetAttacking(false);
+        if (zoneType == CrowZoneType.Pursue) parentAI.SetPursuing(false);
+        else if (zoneType == CrowZoneType.Strike) parentAI.SetAttacking(false);
     }
 }
