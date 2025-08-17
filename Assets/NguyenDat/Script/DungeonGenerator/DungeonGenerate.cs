@@ -1,0 +1,357 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+
+public class DungeonGenerate : MonoBehaviour
+{
+    public Tilemap groundTilemap;
+    public Tilemap wallTilemap;
+    public RuleTile groundTile;
+    public RuleTile wallTile;
+
+    public int minRoomCount = 5;
+    public int maxRoomCount = 10;
+    public Vector2Int roomSizeMinMax = new Vector2Int(5, 10);
+
+    // These will be auto-calculated
+    [HideInInspector] public int mapRange;
+    [HideInInspector] [SerializeField] private int roomSpacing;
+
+    private Dictionary<Vector2Int, int> map = new();
+    private List<RectInt> rooms = new();
+    public MonsterSpawner monsterSpawner;
+
+    [Header("Room Decoration")]
+    public List<GameObject> decoPrefabs;
+    [SerializeField] private int minDecoPerRoom = 1;
+    [SerializeField] private int maxDecoPerRoom = 3;
+
+    [Header("Room Trap")]
+    public List<GameObject> trapPrefabs;
+    [SerializeField] private int minTrapPerRoom = 0;
+    [SerializeField] private int maxTrapPerRoom = 2;
+
+    [Header("Portal")]
+    public GameObject portalPrefab;
+    [Header("Chest")]
+    public GameObject chestPrefab;
+
+    public Transform decoParent;
+    public Transform trapParent;
+
+    void Awake()
+    {
+        AutoCalculateMapRangeAndRoomSpacing();
+    }
+
+    void Start()
+    {
+        GenerateRooms();
+        DrawMap();
+    }
+
+
+    private void AutoCalculateMapRangeAndRoomSpacing()
+    {
+        roomSpacing = Mathf.Max(1, roomSizeMinMax.y / 6);
+        int maxRoomSize = Mathf.Max(roomSizeMinMax.x, roomSizeMinMax.y);
+        mapRange = Mathf.CeilToInt((maxRoomCount * (maxRoomSize + roomSpacing)) / 6f);
+    }
+
+    void GenerateRooms()
+    {
+        map.Clear();
+        rooms.Clear();
+
+        if (decoParent != null)
+            Destroy(decoParent.gameObject);
+        decoParent = new GameObject("DecoParent").transform;
+
+        if (trapParent != null)
+            Destroy(trapParent.gameObject);
+        trapParent = new GameObject("TrapParent").transform;
+
+        RectInt startRoom = new RectInt(-10, -10, 20, 20);
+        rooms.Add(startRoom);
+        CarveRoom(startRoom);
+
+        int roomCount = Random.Range(minRoomCount, maxRoomCount + 1);
+
+        for (int i = 1; i < roomCount; i++)
+        {
+            RectInt newRoom;
+            int tries = 0;
+
+            do
+            {
+                tries++;
+                int width = Random.Range(roomSizeMinMax.x, roomSizeMinMax.y + 1);
+                int height = Random.Range(roomSizeMinMax.x, roomSizeMinMax.y + 1);
+                Vector2Int pos = new Vector2Int(
+                    Random.Range(-mapRange, mapRange),
+                    Random.Range(-mapRange, mapRange)
+                );
+                newRoom = new RectInt(pos, new Vector2Int(width, height));
+            }
+            while (RoomOverlaps(newRoom) && tries < 10);
+
+            if (tries >= 10) continue;
+
+            rooms.Add(newRoom);
+            CarveRoom(newRoom);
+            SpawnRoomDeco(newRoom);
+            SpawnRoomTrap(newRoom);
+        }
+
+        List<(float dist, int a, int b)> connections = new();
+
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            for (int j = i + 1; j < rooms.Count; j++)
+            {
+                float distance = Vector2Int.Distance(Vector2Int.RoundToInt(rooms[i].center), Vector2Int.RoundToInt(rooms[j].center));
+                connections.Add((distance, i, j));
+            }
+        }
+
+        connections.Sort((x, y) => x.dist.CompareTo(y.dist));
+
+        int[] parent = new int[rooms.Count];
+        for (int i = 0; i < parent.Length; i++) parent[i] = i;
+
+        int Find(int x)
+        {
+            if (parent[x] != x) parent[x] = Find(parent[x]);
+            return parent[x];
+        }
+
+        void Union(int x, int y)
+        {
+            int px = Find(x);
+            int py = Find(y);
+            if (px != py) parent[px] = py;
+        }
+
+        foreach (var (dist, a, b) in connections)
+        {
+            if (Find(a) != Find(b))
+            {
+                Union(a, b);
+                ConnectRooms(Vector2Int.RoundToInt(rooms[a].center), Vector2Int.RoundToInt(rooms[b].center));
+            }
+        }
+
+        FillWalls();
+        monsterSpawner.SpawnAllMonsters(rooms, groundTilemap);
+
+        // === Spawn portal in the farthest room from center ===
+        int portalRoomIndex = SpawnPortalInFarthestRoom();
+
+        // === Spawn chest in every room except start and portal room ===
+        SpawnChestsInRooms(portalRoomIndex);
+    }
+
+    void CarveRoom(RectInt room)
+    {
+        foreach (Vector2Int pos in room.allPositionsWithin)
+        {
+            map[pos] = 0;
+        }
+    }
+
+    // Thêm khoảng đệm roomSpacing tile xung quanh để tránh phòng quá sát nhau
+    bool RoomOverlaps(RectInt newRoom)
+    {
+        RectInt paddedNewRoom = new RectInt(
+            newRoom.xMin - roomSpacing, newRoom.yMin - roomSpacing,
+            newRoom.width + 2 * roomSpacing, newRoom.height + 2 * roomSpacing
+        );
+
+        foreach (var room in rooms)
+        {
+            if (room.Overlaps(paddedNewRoom))
+                return true;
+        }
+        return false;
+    }
+
+    void ConnectRooms(Vector2Int a, Vector2Int b)
+    {
+        Vector2Int current = a;
+
+        while (current.x != b.x)
+        {
+            current.x += (b.x > current.x) ? 1 : -1;
+            CarveCorridorTile(current, Vector2Int.right); // đi ngang => mở rộng theo dọc
+        }
+
+        while (current.y != b.y)
+        {
+            current.y += (b.y > current.y) ? 1 : -1;
+            CarveCorridorTile(current, Vector2Int.up); // đi dọc => mở rộng theo ngang
+        }
+    }
+
+    // Hành lang rộng 5x5
+    void CarveCorridorTile(Vector2Int pos, Vector2Int direction)
+    {
+        map[pos] = 0;
+
+        // Carve a 5x5 area centered at pos
+        for (int dx = -2; dx <= 2; dx++)
+        {
+            for (int dy = -2; dy <= 2; dy++)
+            {
+                map[pos + new Vector2Int(dx, dy)] = 0;
+            }
+        }
+    }
+
+
+    void FillWalls()
+    {
+        HashSet<Vector2Int> toCheck = new(map.Keys);
+
+        foreach (var pos in map.Keys)
+        {
+            for (int x = -1; x <= 1; x++)
+                for (int y = -1; y <= 1; y++)
+                    toCheck.Add(pos + new Vector2Int(x, y));
+        }
+
+        foreach (var pos in toCheck)
+        {
+            if (!map.ContainsKey(pos))
+            {
+                map[pos] = 1;
+            }
+        }
+    }
+
+    void DrawMap()
+    {
+        groundTilemap.ClearAllTiles();
+        wallTilemap.ClearAllTiles();
+
+        foreach (var pair in map)
+        {
+            if (pair.Value == 0)
+                groundTilemap.SetTile((Vector3Int)pair.Key, groundTile);
+            else if (pair.Value == 1)
+                wallTilemap.SetTile((Vector3Int)pair.Key, wallTile);
+        }
+    }
+
+    // Spawn random deco prefabs inside the given room
+    void SpawnRoomDeco(RectInt room)
+    {
+        if (decoPrefabs == null || decoPrefabs.Count == 0) return;
+
+        int decoCount = Random.Range(minDecoPerRoom, maxDecoPerRoom + 1);
+        HashSet<Vector2Int> usedPositions = new HashSet<Vector2Int>();
+
+        for (int i = 0; i < decoCount; i++)
+        {
+            // Chọn prefab ngẫu nhiên
+            GameObject prefab = decoPrefabs[Random.Range(0, decoPrefabs.Count)];
+
+            // Tìm vị trí hợp lệ trong phòng (không trùng lặp, không sát tường)
+            int tries = 0;
+            Vector2Int decoPos = Vector2Int.zero;
+            bool found = false;
+            while (tries < 20 && !found)
+            {
+                int x = Random.Range(room.xMin + 1, room.xMax - 1);
+                int y = Random.Range(room.yMin + 1, room.yMax - 1);
+                decoPos = new Vector2Int(x, y);
+                if (!usedPositions.Contains(decoPos))
+                {
+                    usedPositions.Add(decoPos);
+                    found = true;
+                }
+                tries++;
+            }
+            if (!found) continue;
+
+            // Đặt deco ở vị trí trung tâm tile
+            Vector3 worldPos = new Vector3(decoPos.x + 0.5f, decoPos.y + 0.5f, 0f);
+            GameObject decoObj = Instantiate(prefab, worldPos, Quaternion.identity, decoParent);
+            decoObj.name = prefab.name;
+        }
+    }
+
+    // Spawn random trap prefabs inside the given room
+    void SpawnRoomTrap(RectInt room)
+    {
+        if (trapPrefabs == null || trapPrefabs.Count == 0) return;
+
+        int trapCount = Random.Range(minTrapPerRoom, maxTrapPerRoom + 1);
+        HashSet<Vector2Int> usedPositions = new HashSet<Vector2Int>();
+
+        for (int i = 0; i < trapCount; i++)
+        {
+            // Chọn prefab ngẫu nhiên
+            GameObject prefab = trapPrefabs[Random.Range(0, trapPrefabs.Count)];
+
+            // Tìm vị trí hợp lệ trong phòng (không trùng lặp, không sát tường)
+            int tries = 0;
+            Vector2Int trapPos = Vector2Int.zero;
+            bool found = false;
+            while (tries < 20 && !found)
+            {
+                int x = Random.Range(room.xMin + 1, room.xMax - 1);
+                int y = Random.Range(room.yMin + 1, room.yMax - 1);
+                trapPos = new Vector2Int(x, y);
+                if (!usedPositions.Contains(trapPos))
+                {
+                    usedPositions.Add(trapPos);
+                    found = true;
+                }
+                tries++;
+            }
+            if (!found) continue;
+
+            // Đặt trap ở vị trí trung tâm tile
+            Vector3 worldPos = new Vector3(trapPos.x + 0.5f, trapPos.y + 0.5f, 0f);
+            GameObject trapObj = Instantiate(prefab, worldPos, Quaternion.identity, trapParent);
+            trapObj.name = prefab.name;
+        }
+    }
+    private int SpawnPortalInFarthestRoom()
+    {
+        if (portalPrefab == null || rooms.Count == 0)
+            return -1;
+
+        Vector2 center = Vector2.zero;
+        float maxDist = float.MinValue;
+        int farthestRoomIndex = 0;
+
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            float dist = Vector2.Distance(rooms[i].center, center);
+            if (dist > maxDist)
+            {
+                maxDist = dist;
+                farthestRoomIndex = i;
+            }
+        }
+
+        RectInt farthestRoom = rooms[farthestRoomIndex];
+        Vector3 portalPos = new Vector3(farthestRoom.center.x + 0.5f, farthestRoom.center.y + 0.5f, 0f);
+        Instantiate(portalPrefab, portalPos, Quaternion.identity);
+        return farthestRoomIndex;
+    }
+    private void SpawnChestsInRooms(int portalRoomIndex)
+    {
+        if (chestPrefab == null) return;
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            if (i == 0 || i == portalRoomIndex) continue; // bỏ phòng đầu và phòng portal
+            RectInt room = rooms[i];
+            Vector3 chestPos = new Vector3(room.center.x + 0.5f, room.center.y + 0.5f, 0f);
+            Instantiate(chestPrefab, chestPos, Quaternion.identity);
+        }
+    }
+}
