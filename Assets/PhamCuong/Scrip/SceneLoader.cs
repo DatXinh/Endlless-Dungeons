@@ -3,11 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Hàm này sẽ được gọi từ nút
-    public void LoadSceneByName(string sceneName)
+    public string homeSceneName = "Home";
+    public string startGameSceneName = "Start Game";
+
+    public void LoadSceneSmart()
     {
-        // Đảm bảo timeScale trở lại bình thường nếu đang pause
+        // Đảm bảo game không bị pause
         Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneName);
+
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == homeSceneName)
+        {
+            // Khi đang ở Home thì load sang Start Game
+            SceneManager.LoadScene(startGameSceneName);
+        }
+        else
+        {
+            // Reset để LoadSceneManager không tự load lại
+            SceneLoadManager.nextSceneName = null;
+            CancelInvoke(); // Ngăn các Invoke đang chờ (nếu script này cùng GameObject)
+
+            // Load về Home
+            SceneManager.LoadScene(homeSceneName);
+        }
     }
+
 }

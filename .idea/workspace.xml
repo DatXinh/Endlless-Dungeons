@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4808fd0e-e415-4670-8248-0755b493a754" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Old_Guardian .prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Skullwolf .prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Xeno.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Axe_skull  1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Axe_skull  1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Brain  .prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Axe_skull .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Axe_skull .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Brain   1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Brain   1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Lune_Blade .prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Brain  .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Brain  .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/ChaseRange.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/ChaseRange.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Axe_skull .prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Crow  1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Crow  1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Crow .prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Crow .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Crow .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Lune_Blade  1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Lune_Blade  1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Lune_Blade .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Lune_Blade .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Old_Guardian  1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Old_Guardian  1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Old_Guardian .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Old_Guardian .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/ChaseZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/ChaseZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/CrowAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/CrowAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/EnemyBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/EnemyBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/Lune_Blade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/Lune_Blade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/Old_Guardian.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/Old_Guardian.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/SkullwolfAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/SkullwolfAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/Xeno.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Scrip/Xeno.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Skullwolf  1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Skullwolf  1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Skullwolf .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Skullwolf .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Xeno 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Xeno 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NguyenThanh/Xeno.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NguyenThanh/Xeno.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhamCuong/Scenes/Home.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhamCuong/Scenes/Home.unity" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="31HZXSQHi4RsXrmzDnqylvwnul6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Merging DatV1.5",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4808fd0e-e415-4670-8248-0755b493a754" name="Changes" comment="" />
+      <created>1755182997955</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755182997955</updated>
+    </task>
+    <servers />
+  </component>
+</project>

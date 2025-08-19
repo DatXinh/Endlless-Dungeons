@@ -136,7 +136,7 @@ MonoBehaviour:
   firePoint: {fileID: 103480854536424066}
   shootInterval: 2
   bulletSpeed: 10
-  bulletSpread: 0.2
+  doubleShotDelay: 0.2
 --- !u!61 &48161527327242877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -245,8 +245,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  weaponLoot: []
-  potionLoot: []
+  weaponLoot:
+  - {fileID: 833254227831214497, guid: b271c039925c38d45a84c647d289a5c6, type: 3}
+  - {fileID: 4020252831269796321, guid: f1530b0100c18424abd861a202172342, type: 3}
+  - {fileID: 3475066714284374284, guid: a4cc2b80d709b8a499f59b149ea4f358, type: 3}
+  - {fileID: 833254227831214497, guid: b271c039925c38d45a84c647d289a5c6, type: 3}
+  - {fileID: 4020252831269796321, guid: f1530b0100c18424abd861a202172342, type: 3}
+  - {fileID: 3475066714284374284, guid: a4cc2b80d709b8a499f59b149ea4f358, type: 3}
+  - {fileID: 1275917350370115266, guid: 6759df082b46a6e4cb7d39b12d707568, type: 3}
+  - {fileID: 6644298227931399507, guid: 1aac561526245274890871ca51da93a9, type: 3}
+  - {fileID: 5175097152444018442, guid: 7579724c5923f6247b55ad58128d3efa, type: 3}
+  potionLoot:
+  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
+  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
   coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
   dropRadius: 2
 --- !u!114 &8573289596476653529

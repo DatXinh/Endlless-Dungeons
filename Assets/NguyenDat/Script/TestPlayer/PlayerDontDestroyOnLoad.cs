@@ -53,7 +53,6 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         {
             child.transform.position = Vector3.zero;
         }
-
         // Cập nhật tên màn chơi
         if (sceneNameText != null)
         {

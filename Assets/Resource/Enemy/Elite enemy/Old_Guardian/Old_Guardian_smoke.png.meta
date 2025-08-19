@@ -122,10 +122,10 @@ TextureImporter:
       name: Old_Guardian_smoke_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 550
-        width: 7
-        height: 7
+        x: 0
+        y: 480
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +144,10 @@ TextureImporter:
       name: Old_Guardian_smoke_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 430
-        width: 9
-        height: 9
+        x: 0
+        y: 360
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: Old_Guardian_smoke_2
       rect:
         serializedVersion: 2
-        x: 56
-        y: 75
-        width: 9
-        height: 244
+        x: 0
+        y: 240
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,11 +184,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Old_Guardian_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc83faf6f51a6457fab12f55b09a5fdf
+      internalID: 1992946860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Old_Guardian_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13a69a2e7791433fbde397b79956932
+      internalID: -1161621072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 88c77085e22f844fcbd86b742b5509fa
     internalID: 0
     vertices: []
     indices: 
@@ -201,6 +245,8 @@ TextureImporter:
       Old_Guardian_smoke_0: -65516033287178687
       Old_Guardian_smoke_1: 7304164300693465161
       Old_Guardian_smoke_2: 6367266041019680753
+      Old_Guardian_smoke_3: 1992946860
+      Old_Guardian_smoke_4: -1161621072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
