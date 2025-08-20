@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Firebase.Auth;
 using Firebase.Extensions;
-using TMPro; // Nếu dùng TextMeshPro
+using TMPro;
 
 public class FirebaseAuthManager : MonoBehaviour
 {
@@ -22,9 +22,27 @@ public class FirebaseAuthManager : MonoBehaviour
     void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
+
+        // Nếu đã có user đăng nhập trước đó -> vào game luôn
+        if (auth.CurrentUser != null)
+        {
+            currentUser = auth.CurrentUser;
+            Debug.Log($"🔑 Tự động đăng nhập: {currentUser.Email}");
+
+            // Load dữ liệu user
+            FirebaseUserDataManager.Instance.LoadUserData(currentUser.UserId);
+
+            // 👉 Chuyển qua LoadScene để tới Home
+            SceneLoadManager.nextSceneName = "Home";
+            UnityEngine.SceneManagement.SceneManager.LoadScene("LoadScene");
+        }
+        else
+        {
+            ShowLoginUI();
+        }
     }
 
-    // ===== NÚT ĐĂNG KÝ =====
+    // Nút Đăng ký
     public void OnRegisterButton()
     {
         string email = regEmailInput.text.Trim();
@@ -46,7 +64,7 @@ public class FirebaseAuthManager : MonoBehaviour
         Register(email, password);
     }
 
-    // ===== NÚT ĐĂNG NHẬP =====
+    // Nút Đăng nhập
     public void OnLoginButton()
     {
         string email = loginEmailInput.text.Trim();
@@ -61,7 +79,7 @@ public class FirebaseAuthManager : MonoBehaviour
         Login(email, password);
     }
 
-    // ===== HÀM ĐĂNG KÝ =====
+    // Đăng ký
     private void Register(string email, string password)
     {
         auth.CreateUserWithEmailAndPasswordAsync(email, password)
@@ -76,12 +94,15 @@ public class FirebaseAuthManager : MonoBehaviour
                 currentUser = task.Result.User;
                 Debug.Log($"✅ Đăng ký thành công! UID: {currentUser.UserId}, Email: {currentUser.Email}");
 
-                // Đăng nhập ngay sau khi đăng ký
+                // Lưu user mới
+                FirebaseUserDataManager.Instance.SaveNewUser(currentUser);
+
+                // Đăng nhập luôn
                 Login(email, password);
             });
     }
 
-    // ===== HÀM ĐĂNG NHẬP =====
+    // Đăng nhập
     private void Login(string email, string password)
     {
         auth.SignInWithEmailAndPasswordAsync(email, password)
@@ -96,20 +117,25 @@ public class FirebaseAuthManager : MonoBehaviour
                 currentUser = task.Result.User;
                 Debug.Log($"✅ Đăng nhập thành công! UID: {currentUser.UserId}, Email: {currentUser.Email}");
 
-                // Chuyển sang màn Home (hoặc scene bạn muốn)
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Home");
+                // Load dữ liệu user
+                FirebaseUserDataManager.Instance.LoadUserData(currentUser.UserId);
+
+                // 👉 Chuyển qua LoadScene để tới Home
+                SceneLoadManager.nextSceneName = "Home";
+                UnityEngine.SceneManagement.SceneManager.LoadScene("LoadScene");
             });
     }
 
-    // ===== ĐĂNG XUẤT =====
+    // Đăng xuất
     public void Logout()
     {
         auth.SignOut();
         currentUser = null;
         Debug.Log("🚪 Đã đăng xuất.");
+        ShowLoginUI();
     }
 
-    // ===== CHUYỂN UI =====
+    // Chuyển UI
     public void ShowRegisterUI()
     {
         loginCanvas.SetActive(false);

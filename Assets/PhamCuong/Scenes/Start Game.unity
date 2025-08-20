@@ -2337,7 +2337,6 @@ GameObject:
   m_Component:
   - component: {fileID: 781790166}
   - component: {fileID: 781790165}
-  - component: {fileID: 781790167}
   m_Layer: 0
   m_Name: AuthManager
   m_TagString: Untagged
@@ -2379,18 +2378,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &781790167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781790164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d700f895d48acb46aff1e700d0b4f40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &807968442
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,7 +3583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b254830aa5b4bf34f90e59f445564e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: IntroGame
+  targetSceneName: Home
 --- !u!1 &1129469030
 GameObject:
   m_ObjectHideFlags: 0
