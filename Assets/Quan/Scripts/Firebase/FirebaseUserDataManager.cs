@@ -50,6 +50,25 @@ public class FirebaseUserDataManager : MonoBehaviour
             });
     }
 
+    public void SaveHardData(FirebaseUser user)
+    {
+        string email = string.IsNullOrEmpty(user.Email) ? "unknown" : user.Email;
+
+        UserProfileData hardData = new UserProfileData(
+            email, 100, 50, 0, 0, new string[] { "Sword" }
+        );
+
+        string json = JsonUtility.ToJson(hardData);
+
+        dbRef.Child("users").Child(user.UserId).Child("hardData")
+            .SetRawJsonValueAsync(json)
+            .ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompleted)
+                    Debug.Log("💾 HardData đã được reset!");
+            });
+    }
+
     // ================== LOAD DATA ==================
     public void LoadUserData(string userId, string dataType = "hardData")
     {
@@ -67,9 +86,9 @@ public class FirebaseUserDataManager : MonoBehaviour
                     if (dataType == "currentRun")
                     {
                         CurrentRunData runData = JsonUtility.FromJson<CurrentRunData>(json);
-                        Debug.Log($"📥 Loaded currentRun: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}, Time={runData.time}, Weapons={string.Join(", ", runData.weapons)}, Scene={runData.scene}");
+                        Debug.Log($"📥 Loaded currentRun: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}, " +
+                                  $"Time={runData.time}, Weapons={string.Join(", ", runData.weapons)}, Scene={runData.scene}");
 
-                        // 👉 áp dữ liệu vào player
                         var player = PlayerDontDestroyOnLoad.instance;
                         ApplyCurrentRunToPlayer(runData, player);
 
@@ -84,33 +103,17 @@ public class FirebaseUserDataManager : MonoBehaviour
                     else
                     {
                         UserProfileData userData = JsonUtility.FromJson<UserProfileData>(json);
-                        Debug.Log($"📥 Loaded hardData: HP={userData.hp}, MP={userData.mp}, Coin={userData.coin}, Time={userData.time}, Weapons={string.Join(", ", userData.weapons)}");
+                        Debug.Log($"📥 Loaded hardData: HP={userData.hp}, MP={userData.mp}, Coin={userData.coin}, " +
+                                  $"Time={userData.time}, Weapons={string.Join(", ", userData.weapons)}");
+
+                        var player = PlayerDontDestroyOnLoad.instance;
+                        ApplyHardDataToPlayer(userData, player);
                     }
                 }
                 else
                 {
                     Debug.Log($"⚠ Không tìm thấy {dataType} cho user {userId}");
                 }
-            });
-    }
-
-    // ================== HARD DATA ==================
-    public void SaveHardData(FirebaseUser user)
-    {
-        string email = string.IsNullOrEmpty(user.Email) ? "unknown" : user.Email;
-
-        UserProfileData hardData = new UserProfileData(
-            email, 100, 50, 0, 0, new string[] { "Sword" }
-        );
-
-        string json = JsonUtility.ToJson(hardData);
-
-        dbRef.Child("users").Child(user.UserId).Child("hardData")
-            .SetRawJsonValueAsync(json)
-            .ContinueWithOnMainThread(task =>
-            {
-                if (task.IsCompleted)
-                    Debug.Log("💾 HardData đã được reset!");
             });
     }
 
@@ -152,7 +155,8 @@ public class FirebaseUserDataManager : MonoBehaviour
             {
                 if (task.IsCompleted)
                 {
-                    Debug.Log($"💾 CurrentRun saved! Scene={sceneName}, HP={hp.currentHP}, MP={mp.currentMP}, Coin={interactor.Coins}, Time={timePlayed}, Weapons={string.Join(", ", weaponNames)}");
+                    Debug.Log($"💾 CurrentRun saved! Scene={sceneName}, HP={hp.currentHP}, MP={mp.currentMP}, " +
+                              $"Coin={interactor.Coins}, Time={timePlayed}, Weapons={string.Join(", ", weaponNames)}");
                 }
                 else
                 {
@@ -198,15 +202,47 @@ public class FirebaseUserDataManager : MonoBehaviour
         player.playerInteractor.setCoinNumber();
 
         // Weapons
-        UserProfileData tempData = new UserProfileData(
-            "temp", runData.hp, runData.mp, runData.coin, runData.time, runData.weapons
-        );
-        player.playerInteractor.SetPlayerData(tempData);
+        for (int i = 0; i < runData.weapons.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(runData.weapons[i]))
+            {
+                player.playerInteractor.EquipWeaponByName(runData.weapons[i], i);
+            }
+        }
 
         // Time
         player.SetPlayTime(runData.time);
 
-        Debug.Log($"✅ Player đã hồi phục dữ liệu run: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}, Time={runData.time}, Weapons={string.Join(", ", runData.weapons)}");
+        Debug.Log($"✅ Player đã hồi phục dữ liệu run: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}, " +
+                  $"Time={runData.time}, Weapons={string.Join(", ", runData.weapons)}");
+    }
+
+    public void ApplyHardDataToPlayer(UserProfileData data, PlayerDontDestroyOnLoad player)
+    {
+        if (player == null || data == null)
+        {
+            Debug.LogWarning("⚠ Không thể apply hard data vì null");
+            return;
+        }
+
+        player.playerHP.SetHP(data.hp);
+        player.playerMP.SetMP(data.mp);
+
+        player.playerInteractor.Coins = data.coin;
+        player.playerInteractor.setCoinNumber();
+
+        for (int i = 0; i < data.weapons.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(data.weapons[i]))
+            {
+                player.playerInteractor.EquipWeaponByName(data.weapons[i], i);
+            }
+        }
+
+        player.SetPlayTime(data.time);
+
+        Debug.Log($"✅ Player đã hồi phục dữ liệu hardData: HP={data.hp}, MP={data.mp}, Coin={data.coin}, " +
+                  $"Time={data.time}, Weapons={string.Join(", ", data.weapons)}");
     }
 }
 
