@@ -17,7 +17,7 @@ public class PlayerInteractor : MonoBehaviour
     public PlayerHP playerHP; // Thêm biến để tham chiếu đến PlayerHP
     public PLayerMP playerMP; // Thêm biến để tham chiếu đến PlayerMP   
 
-    private GameObject[] weaponSlots = new GameObject[2]; // 0: chính, 1: phụ
+    public GameObject[] weaponSlots = new GameObject[2]; // 0: chính, 1: phụ
     private int activeWeaponIndex = 0; // slot hiện tại đang dùng
 
     public TextMeshProUGUI CointsText; // Hiển thị số tiền hiện tại
