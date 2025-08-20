@@ -29,11 +29,14 @@ public class IntroManager : MonoBehaviour
 
     bool AllLettersStopped()
     {
-        var letters = FindObjectsOfType<DropText>();
+        // Tìm tất cả DropText trong scene, không cần sort nên dùng None cho nhanh
+        var letters = FindObjectsByType<DropText>(FindObjectsSortMode.None);
+
         foreach (var letter in letters)
         {
             if (letter.enabled) return false;
         }
         return true;
     }
+
 }

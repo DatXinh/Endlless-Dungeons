@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 73219217}
   - component: {fileID: 73219216}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: RegEmailInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 209665112}
   - component: {fileID: 209665111}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Enter Password
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1515,7 +1515,7 @@ GameObject:
   - component: {fileID: 568956768}
   - component: {fileID: 568956767}
   m_Layer: 5
-  m_Name: InputField (TMP)2
+  m_Name: RegPasswordInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2276,7 +2276,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 743108885}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 781790165}
+        m_TargetAssemblyTypeName: FirebaseAuthManager, Assembly-CSharp
+        m_MethodName: OnLoginButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &743108885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,6 +2327,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743108882}
   m_CullTransparentMesh: 1
+--- !u!1 &781790164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 781790166}
+  - component: {fileID: 781790165}
+  m_Layer: 0
+  m_Name: AuthManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &781790165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781790164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc8966de71814d4dad811e4a94c0b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regEmailInput: {fileID: 73219216}
+  regPasswordInput: {fileID: 568956767}
+  regConfirmPasswordInput: {fileID: 2139728583}
+  registerCanvas: {fileID: 1047416149}
+  loginCanvas: {fileID: 743108882}
+  loginEmailInput: {fileID: 807968444}
+  loginPasswordInput: {fileID: 1543931011}
+--- !u!4 &781790166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781790164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 730.2512, y: 681.59406, z: -16.756527}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807968442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,7 +2391,7 @@ GameObject:
   - component: {fileID: 807968445}
   - component: {fileID: 807968444}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: LoginEmailInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3187,7 +3250,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1047416152}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 781790165}
+        m_TargetAssemblyTypeName: FirebaseAuthManager, Assembly-CSharp
+        m_MethodName: OnRegisterButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1047416152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3238,7 +3313,7 @@ GameObject:
   - component: {fileID: 1084646512}
   - component: {fileID: 1084646511}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Confirm Password
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3508,7 +3583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b254830aa5b4bf34f90e59f445564e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: IntroGame
+  targetSceneName: Home
 --- !u!1 &1129469030
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,7 +4207,7 @@ GameObject:
   - component: {fileID: 1409387172}
   - component: {fileID: 1409387171}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Enter Email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4268,7 +4343,7 @@ GameObject:
   - component: {fileID: 1485160697}
   - component: {fileID: 1485160696}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Enter Email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4404,7 +4479,7 @@ GameObject:
   - component: {fileID: 1507198421}
   - component: {fileID: 1507198420}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Enter Password
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4541,7 +4616,7 @@ GameObject:
   - component: {fileID: 1543931012}
   - component: {fileID: 1543931011}
   m_Layer: 5
-  m_Name: InputField (TMP)2
+  m_Name: LoginPasswordInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5862,7 +5937,7 @@ GameObject:
   - component: {fileID: 2139728584}
   - component: {fileID: 2139728583}
   m_Layer: 5
-  m_Name: InputField (TMP)2 (1)
+  m_Name: RegConfirmPasswordInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6039,3 +6114,4 @@ SceneRoots:
   - {fileID: 246634307}
   - {fileID: 1613699949}
   - {fileID: 1129469034}
+  - {fileID: 781790166}

@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase.Auth;   // 🔥 thêm Firebase
 
 public class PlayerHP : MonoBehaviour
 {
@@ -83,6 +84,16 @@ public class PlayerHP : MonoBehaviour
             deadMesseng.SetActive(true);
             pauseButton.SetActive(false);
             PauseGame();
+
+            // 🔥 Clear run khi chết
+            FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+            if (user != null)
+            {
+                FirebaseUserDataManager.Instance.ClearCurrentRun(user);
+            }
+
+            // 👉 Về Home
+            SceneManager.LoadScene("Home");
         }
     }
 
