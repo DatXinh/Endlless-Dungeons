@@ -95,6 +95,18 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         return Mathf.FloorToInt(playTime);
     }
 
+    // ✅ Hàm set lại thời gian chơi (dùng khi Continue)
+    public void SetPlayTime(int time)
+    {
+        playTime = time;
+        if (playTimeText != null)
+        {
+            int minutes = Mathf.FloorToInt(playTime / 60f);
+            int seconds = Mathf.FloorToInt(playTime % 60f);
+            playTimeText.text = $"Thời gian chơi: {minutes:D2}:{seconds:D2}";
+        }
+    }
+
     public void SetPhysicalCameraByScene(Scene scene)
     {
         if (mainCamera != null)

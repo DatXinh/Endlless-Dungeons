@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerInteractor : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerInteractor : MonoBehaviour
 
     public TextMeshProUGUI CointsText;
     private AudioSource audioSource;
+
+    // 👉 thêm list prefab để spawn theo tên
+    [Header("Weapon Prefabs")]
+    public List<GameObject> weaponPrefabs;
 
     private void Awake()
     {
@@ -314,7 +319,23 @@ public class PlayerInteractor : MonoBehaviour
             playerMP.UpdateManaUI();
         }
 
-        // Weapons: ở đây chỉ log tên, vì bạn cần cơ chế spawn prefab từ tên vũ khí
-        Debug.Log("⚔ Firebase weapons: " + string.Join(", ", data.weapons));
+        // ✅ Spawn vũ khí theo tên
+        for (int i = 0; i < data.weapons.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(data.weapons[i]))
+            {
+                GameObject prefab = weaponPrefabs.Find(w => w.name == data.weapons[i]);
+                if (prefab != null)
+                {
+                    GameObject weapon = Instantiate(prefab, weaponParent);
+                    weaponSlots[i] = weapon;
+                    EquipWeapon(i);
+                }
+                else
+                {
+                    Debug.LogWarning($"⚠ Không tìm thấy prefab cho weapon: {data.weapons[i]}");
+                }
+            }
+        }
     }
 }

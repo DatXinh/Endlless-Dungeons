@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -10,18 +8,18 @@ using Firebase.Auth;   // 🔥 thêm Firebase
 
 public class PlayerHP : MonoBehaviour
 {
-    public int maxHP = 100; // Maximum health points
-    public int currentHP; // Current health points
-    public int InvincibilityTime = 1; // Time in seconds for invincibility after taking damage
-    public GameObject damagePopupPrefab; // Prefab for the damage popup
-    public Image healthBar; // Reference to the health bar UI element
-    public TMP_Text maxHeal; // Reference to the health text UI element
-    public TMP_Text currentHeal; // Reference to the current health text UI element
+    public int maxHP = 100;
+    public int currentHP;
+    public int InvincibilityTime = 1;
+    public GameObject damagePopupPrefab;
+    public Image healthBar;
+    public TMP_Text maxHeal;
+    public TMP_Text currentHeal;
 
-    public bool isInvincible = false; // Trạng thái bất tử
+    public bool isInvincible = false;
 
     public Joystick joystick;
-    public JoystickAttackAndAim joystickAttackAndAim; // Reference to the joystick for attack and aim
+    public JoystickAttackAndAim joystickAttackAndAim;
 
     public GameObject rightPanel;
     public GameObject leftPanel;
@@ -32,7 +30,7 @@ public class PlayerHP : MonoBehaviour
 
     void Start()
     {
-        currentHP = maxHP; // Initialize current health to maximum health
+        currentHP = maxHP;
         if (healthBar != null)
         {
             healthBar.fillAmount = 1f;
@@ -44,13 +42,12 @@ public class PlayerHP : MonoBehaviour
         UpdateHealthUI();
         deadMesseng.SetActive(false);
 
-        // Lắng nghe sự kiện load scene
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        isInvincible = false; // Reset bất tử khi vào scene mới
+        isInvincible = false;
     }
 
     public void TakeDamage(int damage)
@@ -92,7 +89,6 @@ public class PlayerHP : MonoBehaviour
                 FirebaseUserDataManager.Instance.ClearCurrentRun(user);
             }
 
-            // 👉 Về Home
             SceneManager.LoadScene("Home");
         }
     }
@@ -168,6 +164,13 @@ public class PlayerHP : MonoBehaviour
     public void resetHP()
     {
         currentHP = maxHP;
+        UpdateHealthUI();
+    }
+
+    // ✅ thêm hàm này để ApplyCurrentRunToPlayer gọi
+    public void SetHP(int value)
+    {
+        currentHP = Mathf.Clamp(value, 0, maxHP);
         UpdateHealthUI();
     }
 

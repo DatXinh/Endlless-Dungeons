@@ -15,7 +15,7 @@ public class FirebaseUserDataManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // ✅ Fix: chỉ định DatabaseURL thủ công
+            // ✅ chỉ định DatabaseURL
             var app = Firebase.FirebaseApp.DefaultInstance;
             dbRef = FirebaseDatabase.GetInstance(app,
                 "https://endless-dungeons-default-rtdb.firebaseio.com/").RootReference;
@@ -29,18 +29,12 @@ public class FirebaseUserDataManager : MonoBehaviour
     }
 
     // ================== HARD DATA ==================
-    // ✅ Tạo user mới với dữ liệu mặc định
     public void SaveNewUser(FirebaseUser user)
     {
         string email = string.IsNullOrEmpty(user.Email) ? "unknown" : user.Email;
 
         UserProfileData hardData = new UserProfileData(
-            email,
-            100, // hp mặc định
-            50,  // mp mặc định
-            0,   // coin
-            0,   // time
-            new string[] { "Sword" } // vũ khí mặc định
+            email, 100, 50, 0, 0, new string[] { "Sword" }
         );
 
         string json = JsonUtility.ToJson(hardData);
@@ -56,7 +50,7 @@ public class FirebaseUserDataManager : MonoBehaviour
             });
     }
 
-    // ✅ Load dữ liệu user (hardData hoặc currentRun)
+    // ================== LOAD DATA ==================
     public void LoadUserData(string userId, string dataType = "hardData")
     {
         dbRef.Child("users").Child(userId).Child(dataType).GetValueAsync()
@@ -74,6 +68,18 @@ public class FirebaseUserDataManager : MonoBehaviour
                     {
                         CurrentRunData runData = JsonUtility.FromJson<CurrentRunData>(json);
                         Debug.Log($"📥 Loaded currentRun: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}, Time={runData.time}, Weapons={string.Join(", ", runData.weapons)}, Scene={runData.scene}");
+
+                        // 👉 áp dữ liệu vào player
+                        var player = PlayerDontDestroyOnLoad.instance;
+                        ApplyCurrentRunToPlayer(runData, player);
+
+                        // 👉 teleport về scene đã lưu qua màn LoadScene trung gian
+                        if (!string.IsNullOrEmpty(runData.scene))
+                        {
+                            SceneLoadManager.nextSceneName = runData.scene;
+                            UnityEngine.SceneManagement.SceneManager.LoadScene("LoadScene");
+                            Time.timeScale = 1f; // tránh bị pause
+                        }
                     }
                     else
                     {
@@ -88,7 +94,7 @@ public class FirebaseUserDataManager : MonoBehaviour
             });
     }
 
-    // ✅ Save dữ liệu mặc định (hardData) khi về Home
+    // ================== HARD DATA ==================
     public void SaveHardData(FirebaseUser user)
     {
         string email = string.IsNullOrEmpty(user.Email) ? "unknown" : user.Email;
@@ -109,7 +115,6 @@ public class FirebaseUserDataManager : MonoBehaviour
     }
 
     // ================== SOFT DATA ==================
-    // ✅ Save dữ liệu run hiện tại (softData)
     public void SaveCurrentRun(FirebaseUser user, PlayerHP hp, PLayerMP mp, PlayerInteractor interactor, int timePlayed, string sceneName)
     {
         if (user == null)
@@ -127,7 +132,7 @@ public class FirebaseUserDataManager : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             var weapon = interactor.GetWeapon(i);
-            weaponNames[i] = weapon != null ? weapon.name : "";
+            weaponNames[i] = weapon != null ? weapon.name.Replace("(Clone)", "").Trim() : "";
         }
 
         CurrentRunData runData = new CurrentRunData(
@@ -147,7 +152,7 @@ public class FirebaseUserDataManager : MonoBehaviour
             {
                 if (task.IsCompleted)
                 {
-                    Debug.Log($"💾 CurrentRun saved! Scene={sceneName}, HP={hp.currentHP}, MP={mp.currentMP}, Coin={interactor.Coins}, Time={timePlayed}");
+                    Debug.Log($"💾 CurrentRun saved! Scene={sceneName}, HP={hp.currentHP}, MP={mp.currentMP}, Coin={interactor.Coins}, Time={timePlayed}, Weapons={string.Join(", ", weaponNames)}");
                 }
                 else
                 {
@@ -156,7 +161,6 @@ public class FirebaseUserDataManager : MonoBehaviour
             });
     }
 
-    // ✅ Xóa currentRun khi về Home hoặc chết
     public void ClearCurrentRun(FirebaseUser user)
     {
         if (user == null)
@@ -174,6 +178,35 @@ public class FirebaseUserDataManager : MonoBehaviour
                 else
                     Debug.LogError("❌ Lỗi khi xóa CurrentRun: " + task.Exception);
             });
+    }
+
+    // ================== APPLY DATA ==================
+    public void ApplyCurrentRunToPlayer(CurrentRunData runData, PlayerDontDestroyOnLoad player)
+    {
+        if (player == null || runData == null)
+        {
+            Debug.LogWarning("⚠ Không thể apply run data vì null");
+            return;
+        }
+
+        // HP & MP
+        player.playerHP.SetHP(runData.hp);
+        player.playerMP.SetMP(runData.mp);
+
+        // Coins
+        player.playerInteractor.Coins = runData.coin;
+        player.playerInteractor.setCoinNumber();
+
+        // Weapons
+        UserProfileData tempData = new UserProfileData(
+            "temp", runData.hp, runData.mp, runData.coin, runData.time, runData.weapons
+        );
+        player.playerInteractor.SetPlayerData(tempData);
+
+        // Time
+        player.SetPlayTime(runData.time);
+
+        Debug.Log($"✅ Player đã hồi phục dữ liệu run: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}, Time={runData.time}, Weapons={string.Join(", ", runData.weapons)}");
     }
 }
 
