@@ -211,9 +211,9 @@ MonoBehaviour:
     gi\u01A1 cao g\u1EADy, v\u1EC7t s\xE1ng \u1EA5y nh\u1EAFc b\u1EA1n r\u1EB1ng
     \xE1nh s\xE1ng \u0111\u1EB9p nh\u1EA5t th\u01B0\u1EDDng l\xE0 \xE1nh s\xE1ng
     \u0111\u1EBFn qu\xE1 mu\u1ED9n.\u201D"
-  weaponDamage: 333
+  weaponDamage: 666
   weaponCriticalChange: 80
-  weaponManaCost: 9
+  weaponManaCost: 5
   weaponProjectile: {fileID: 0}
   weaponType: 4
   weaponLevel: 3
@@ -258,7 +258,9 @@ MonoBehaviour:
   weaponCrit: {fileID: 6887331916166793256}
   weaponMana: {fileID: 4604431831614224059}
   weaponPrice: {fileID: 8231965217184761126}
+  weaponData: {fileID: 0}
   weaponLevel: 0
+  FinalWeaponDamage: 0
 --- !u!1 &3374267763476993120
 GameObject:
   m_ObjectHideFlags: 0

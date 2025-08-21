@@ -265,7 +265,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHeal: {fileID: 0}
   currentHeal: {fileID: 0}
-  bossPlayDeadAnimation: {fileID: 4392872756753727388}
+  bossPlayDeadAnimation: {fileID: 0}
 --- !u!114 &4392872756753727388
 MonoBehaviour:
   m_ObjectHideFlags: 0

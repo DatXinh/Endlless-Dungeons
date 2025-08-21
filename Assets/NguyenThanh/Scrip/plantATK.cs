@@ -4,6 +4,14 @@ public class plantATK : MonoBehaviour
 {
     public Animator animator;
 
+    void Start()
+    {
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

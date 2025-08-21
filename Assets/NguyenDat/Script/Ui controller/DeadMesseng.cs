@@ -36,7 +36,7 @@ public class DeadMesseng : MonoBehaviour
         deadMesseng.SetActive(false);
         LoopManager.Instance.ResetLoop();
         LoopManager.Instance.SetGameMode(LoopManager.GameMode.Normal);
-        SceneLoadManager.nextSceneName = "Home";
+        SceneLoadManager.nextSceneName = "EndScene";
         SceneManager.LoadScene("LoadScene");
     }
 }

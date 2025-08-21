@@ -187,12 +187,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428266f13e2a3324c9d62c15ba8e6cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHP: 0
+  BaseHP: 500
   maxHP: 0
   currentHP: 0
   InvincibilityTime: 0.17
   damageReductionRate: 0
-  damagePopupPrefab: {fileID: 0}
+  damagePopupPrefab: {fileID: 5159241964647590360, guid: 11d633ca7f31f4746b12e91339aebe33, type: 3}
   healthBar: {fileID: 0}
   maxHeal: {fileID: 0}
   currentHeal: {fileID: 0}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7495e17c55a15ec44870124207377fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   FinalDamage: 0
 --- !u!114 &8638491872060064946
 MonoBehaviour:
@@ -239,7 +239,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  weaponLoot: []
-  potionLoot: []
-  coin: {fileID: 0}
+  weaponLoot:
+  - {fileID: 8861256400155268441, guid: a52176ed43b8442488719da9a0e942d7, type: 3}
+  - {fileID: 4764669637312665593, guid: 63cb000892db9b9418eab7f756b4b82f, type: 3}
+  - {fileID: 7388479602297865714, guid: ab8d3f1e6156938429a10f5309e0cd44, type: 3}
+  - {fileID: 8922163172804483453, guid: 4cad8cb5d56d4e54ab152521543e270d, type: 3}
+  - {fileID: 6050794734628214953, guid: b801b41df8b30034cb2fa376a3076c24, type: 3}
+  - {fileID: 2198528725285002237, guid: 602ec27d374bcce4aa80652ad23522f5, type: 3}
+  - {fileID: 1212099245396722084, guid: af195686b82a72d459921947a8898516, type: 3}
+  - {fileID: 4848108581353277089, guid: 680d3f790764b3b44aabce8952dc2945, type: 3}
+  - {fileID: 4530292883726630243, guid: ca8e6ef2f32e13046ba049e112f11cfc, type: 3}
+  - {fileID: 2401218956856132272, guid: cfc4d8c5df1a77f45a0afa183fe48284, type: 3}
+  potionLoot:
+  - {fileID: 1517301844204699937, guid: 03c5afd0dd02622429b20221fb8117f2, type: 3}
+  - {fileID: 88293198070282998, guid: 1f5d43fc81827aa4b97eb1aaf55604d3, type: 3}
+  coin: {fileID: 661397338663799820, guid: 5870e5516438db94da1af838620093dd, type: 3}
   dropRadius: 2

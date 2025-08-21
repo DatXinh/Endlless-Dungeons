@@ -1189,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 3602204612393544331, guid: 26377a4521b954545b285fb7edc763ff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 7313152671651617039}
+      objectReference: {fileID: 4861355798208407439}
     - target: {fileID: 3602204612393544331, guid: 26377a4521b954545b285fb7edc763ff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
@@ -1325,6 +1325,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5917578897950256246, guid: 26377a4521b954545b285fb7edc763ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7313152671651617039}
+    - targetCorrespondingSourceObject: {fileID: 5917578897950256246, guid: 26377a4521b954545b285fb7edc763ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4861355798208407439}
   m_SourcePrefab: {fileID: 100100000, guid: 26377a4521b954545b285fb7edc763ff, type: 3}
 --- !u!224 &1922021820986901759 stripped
 RectTransform:
@@ -1342,6 +1345,19 @@ GameObject:
   m_PrefabInstance: {fileID: 2490129859235583939}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7313152671651617039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8111476945813289909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b254830aa5b4bf34f90e59f445564e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: 
+--- !u!114 &4861355798208407439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1490,6 +1506,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6574803858253268531}
+    - target: {fileID: 7205181621606051187, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9125615942655648515, guid: 9dbba94cd815e3b42af5ea53ff408307, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

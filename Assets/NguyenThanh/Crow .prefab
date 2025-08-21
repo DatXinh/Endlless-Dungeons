@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5b79b61e8e344aba669124a365f77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   healthMax: 3
   pursueZone: {fileID: 5356850339523357867}
   strikeZone: {fileID: 1712152439015978420}

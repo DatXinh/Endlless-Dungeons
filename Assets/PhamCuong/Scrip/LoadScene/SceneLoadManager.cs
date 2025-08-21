@@ -11,7 +11,7 @@ public class SceneLoadManager : MonoBehaviour
         if (!string.IsNullOrEmpty(nextSceneName))
         {
             // ⏳ chờ 2 giây ở màn Loading
-            Invoke(nameof(LoadNextScene), 2f);
+            Invoke(nameof(LoadNextScene), 5f);
         }
         Time.timeScale = 1f;
     }

@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.Rendering.Universal;
+using Unity.VisualScripting;
 
 public class PlayerDontDestroyOnLoad : MonoBehaviour
 {
@@ -75,6 +76,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         if (scene.name == "Home")
         {
             ResetPlayTime();
+            playerInteractor.RemoveAllWeapons();
         }
         else
         {
