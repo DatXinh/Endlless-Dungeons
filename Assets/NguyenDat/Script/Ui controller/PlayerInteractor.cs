@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerInteractor : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerInteractor : MonoBehaviour
 
     public TextMeshProUGUI CointsText;
     private AudioSource audioSource;
+
+    // 👉 prefab list để spawn theo tên (trùng tên với Firebase lưu)
+    [Header("Weapon Prefabs (đặt tên prefab trùng với tên trong Firebase)")]
+    public List<GameObject> weaponPrefabs;
 
     private void Awake()
     {
@@ -58,14 +63,14 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
-    // Gọi từ nút UI
+    // ================== INTERACT ==================
     public void Interact()
     {
         if (currentInteractable is WeaponInteractable weaponInteractable)
         {
             GameObject newWeapon = ((MonoBehaviour)weaponInteractable).gameObject;
 
-            // Lưu lại vị trí vũ khí mới trên mặt đất
+            // Lưu vị trí vũ khí mới trên mặt đất
             Vector3 droppedPos = newWeapon.transform.position;
             Quaternion droppedRot = newWeapon.transform.rotation;
 
@@ -109,6 +114,7 @@ public class PlayerInteractor : MonoBehaviour
                 droppedWeapon.transform.localScale = Vector3.one;
                 droppedWeapon.SetActive(true);
                 SceneManager.MoveGameObjectToScene(droppedWeapon, SceneManager.GetActiveScene());
+
                 WeaponInteractable droppedWeaponInteractable = droppedWeapon.GetComponent<WeaponInteractable>();
                 if (droppedWeaponInteractable != null)
                 {
@@ -155,6 +161,7 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
+    // ================== SWAP ==================
     public void SwapWeapon()
     {
         if (weaponSlots[0] != null && weaponSlots[1] != null)
@@ -174,6 +181,7 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
+    // ================== EQUIP ==================
     private void EquipWeapon(int index)
     {
         if (weaponSlots[index] == null) return;
@@ -215,6 +223,7 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
+    // ================== COIN ==================
     public void earnCoins(int amount)
     {
         Debug.Log("Earned Coins: " + amount);
@@ -231,6 +240,7 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
+    // ================== REMOVE ==================
     public void RemoveCurrentWeapon()
     {
         if (weaponSlots[0] == null && weaponSlots[1] == null)
@@ -285,7 +295,7 @@ public class PlayerInteractor : MonoBehaviour
             WeaponIcon.enabled = false;
     }
 
-    // ✅ thêm hàm cho Firebase
+    // ================== FIREBASE SUPPORT ==================
     public GameObject GetWeapon(int index)
     {
         if (index >= 0 && index < 2)
@@ -295,7 +305,57 @@ public class PlayerInteractor : MonoBehaviour
         return null;
     }
 
-    // ✅ load dữ liệu từ Firebase
+    // 👉 Tìm prefab theo tên
+    private GameObject FindWeaponPrefab(string weaponName)
+    {
+        foreach (var prefab in weaponPrefabs)
+        {
+            if (prefab != null && prefab.name == weaponName)
+                return prefab;
+        }
+        return null;
+    }
+
+    // 👉 Spawn & Equip theo tên (dùng khi load Firebase)
+    public void EquipWeaponByName(string weaponName, int slotIndex)
+    {
+        GameObject prefab = FindWeaponPrefab(weaponName);
+        if (prefab == null)
+        {
+            Debug.LogWarning($"⚠ Không tìm thấy prefab cho weapon {weaponName}");
+            return;
+        }
+
+        // Nếu slot đã có vũ khí -> xóa
+        if (weaponSlots[slotIndex] != null)
+        {
+            Destroy(weaponSlots[slotIndex]);
+        }
+
+        // Tạo vũ khí mới
+        GameObject newWeapon = Instantiate(prefab, weaponParent);
+        newWeapon.transform.localPosition = Vector3.zero;
+        newWeapon.transform.localRotation = Quaternion.identity;
+
+        weaponSlots[slotIndex] = newWeapon;
+
+        // Gán icon
+        WeaponInteractable wi = newWeapon.GetComponent<WeaponInteractable>();
+        if (wi != null)
+        {
+            wi.isEquip = true;
+            if (WeaponIcon != null && wi.weaponIcon != null)
+            {
+                WeaponIcon.sprite = wi.weaponIcon;
+                WeaponIcon.enabled = true;
+            }
+        }
+
+        activeWeaponIndex = slotIndex;
+        Debug.Log($"✅ Equipped {weaponName} vào slot {slotIndex}");
+    }
+
+    // 👉 Load từ UserProfileData (hardData)
     public void SetPlayerData(UserProfileData data)
     {
         if (data == null) return;
@@ -314,7 +374,12 @@ public class PlayerInteractor : MonoBehaviour
             playerMP.UpdateManaUI();
         }
 
-        // Weapons: ở đây chỉ log tên, vì bạn cần cơ chế spawn prefab từ tên vũ khí
-        Debug.Log("⚔ Firebase weapons: " + string.Join(", ", data.weapons));
+        for (int i = 0; i < data.weapons.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(data.weapons[i]))
+            {
+                EquipWeaponByName(data.weapons[i], i);
+            }
+        }
     }
 }

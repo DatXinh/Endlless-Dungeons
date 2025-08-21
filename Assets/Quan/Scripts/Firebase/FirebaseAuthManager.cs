@@ -2,6 +2,8 @@
 using Firebase.Auth;
 using Firebase.Extensions;
 using TMPro;
+using UnityEngine.UI;
+using System.Collections;
 
 public class FirebaseAuthManager : MonoBehaviour
 {
@@ -19,26 +21,31 @@ public class FirebaseAuthManager : MonoBehaviour
     public TMP_InputField loginEmailInput;
     public TMP_InputField loginPasswordInput;
 
+    [Header("Message UI")]
+    public GameObject messagePanel;
+    public TMP_Text messageText;
+
     void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
+
+        messagePanel.SetActive(false);
 
         // Nếu đã có user đăng nhập trước đó -> vào game luôn
         if (auth.CurrentUser != null)
         {
             currentUser = auth.CurrentUser;
-            Debug.Log($"🔑 Tự động đăng nhập: {currentUser.Email}");
+            ShowMessage($"Tự động đăng nhập: {currentUser.Email}", Color.green, 3f);
 
-            // Load dữ liệu user
             FirebaseUserDataManager.Instance.LoadUserData(currentUser.UserId);
 
-            // 👉 Chuyển qua LoadScene để tới Home
             SceneLoadManager.nextSceneName = "Home";
             UnityEngine.SceneManagement.SceneManager.LoadScene("LoadScene");
         }
         else
         {
             ShowLoginUI();
+            ShowMessage("❌ Chưa có tài khoản!", Color.red, 3f);
         }
     }
 
@@ -51,13 +58,13 @@ public class FirebaseAuthManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
         {
-            Debug.LogError("❌ Email hoặc mật khẩu trống!");
+            ShowMessage("❌ Email hoặc mật khẩu trống!", Color.red, 3f);
             return;
         }
 
         if (password != confirmPassword)
         {
-            Debug.LogError("❌ Mật khẩu nhập lại không khớp!");
+            ShowMessage("❌ Mật khẩu nhập lại không khớp!", Color.red, 3f);
             return;
         }
 
@@ -72,7 +79,7 @@ public class FirebaseAuthManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
         {
-            Debug.LogError("❌ Email hoặc mật khẩu trống!");
+            ShowMessage("❌ Email hoặc mật khẩu trống!", Color.red, 3f);
             return;
         }
 
@@ -87,18 +94,14 @@ public class FirebaseAuthManager : MonoBehaviour
             {
                 if (task.IsFaulted || task.IsCanceled)
                 {
-                    Debug.LogError("❌ Đăng ký thất bại: " + task.Exception);
+                    ShowMessage("❌ Đăng ký thất bại!", Color.red, 3f);
                     return;
                 }
 
                 currentUser = task.Result.User;
-                Debug.Log($"✅ Đăng ký thành công! UID: {currentUser.UserId}, Email: {currentUser.Email}");
+                ShowMessage("✅ Đăng ký thành công! Quay lại đăng nhập.", Color.green, 3f);
 
-                // Lưu user mới
                 FirebaseUserDataManager.Instance.SaveNewUser(currentUser);
-
-                // Đăng nhập luôn
-                Login(email, password);
             });
     }
 
@@ -110,17 +113,15 @@ public class FirebaseAuthManager : MonoBehaviour
             {
                 if (task.IsFaulted || task.IsCanceled)
                 {
-                    Debug.LogError("❌ Đăng nhập thất bại: " + task.Exception);
+                    ShowMessage("❌ Đăng nhập thất bại!", Color.red, 3f);
                     return;
                 }
 
                 currentUser = task.Result.User;
-                Debug.Log($"✅ Đăng nhập thành công! UID: {currentUser.UserId}, Email: {currentUser.Email}");
+                ShowMessage("✅ Đăng nhập thành công!", Color.green, 2f);
 
-                // Load dữ liệu user
                 FirebaseUserDataManager.Instance.LoadUserData(currentUser.UserId);
 
-                // 👉 Chuyển qua LoadScene để tới Home
                 SceneLoadManager.nextSceneName = "Home";
                 UnityEngine.SceneManagement.SceneManager.LoadScene("LoadScene");
             });
@@ -131,7 +132,7 @@ public class FirebaseAuthManager : MonoBehaviour
     {
         auth.SignOut();
         currentUser = null;
-        Debug.Log("🚪 Đã đăng xuất.");
+        ShowMessage("🚪 Đã đăng xuất.", Color.red, 3f);
         ShowLoginUI();
     }
 
@@ -146,5 +147,21 @@ public class FirebaseAuthManager : MonoBehaviour
     {
         registerCanvas.SetActive(false);
         loginCanvas.SetActive(true);
+    }
+
+    // Hiển thị thông báo
+    private void ShowMessage(string msg, Color color, float duration = 2f)
+    {
+        StopAllCoroutines();
+        messagePanel.SetActive(true);
+        messageText.text = msg;
+        messageText.color = color;
+        StartCoroutine(HideMessageAfter(duration));
+    }
+
+    private IEnumerator HideMessageAfter(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        messagePanel.SetActive(false);
     }
 }
