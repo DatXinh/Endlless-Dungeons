@@ -38228,7 +38228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936570929868196082, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: weaponPrefabs.Array.size
-      value: 60
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4936570929868196082, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: 'weaponPrefabs.Array.data[0]'
@@ -38473,7 +38473,19 @@ PrefabInstance:
     - target: {fileID: 4936570929868196082, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: 'weaponPrefabs.Array.data[60]'
       value: 
-      objectReference: {fileID: 7752384395813104827, guid: d56e2106a24259b4c8a94580793b8989, type: 3}
+      objectReference: {fileID: 8861256400155268441, guid: a52176ed43b8442488719da9a0e942d7, type: 3}
+    - target: {fileID: 4936570929868196082, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: 'weaponPrefabs.Array.data[61]'
+      value: 
+      objectReference: {fileID: 4764669637312665593, guid: 63cb000892db9b9418eab7f756b4b82f, type: 3}
+    - target: {fileID: 4936570929868196082, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: 'weaponPrefabs.Array.data[62]'
+      value: 
+      objectReference: {fileID: 7388479602297865714, guid: ab8d3f1e6156938429a10f5309e0cd44, type: 3}
+    - target: {fileID: 4936570929868196082, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: 'weaponPrefabs.Array.data[63]'
+      value: 
+      objectReference: {fileID: 180705723681212795, guid: b52292364419cbe49b5828d2192f5a60, type: 3}
     - target: {fileID: 4991446657845716828, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_IsActive
       value: 0
