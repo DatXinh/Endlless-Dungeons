@@ -19,7 +19,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
     public PlayerInteractor playerInteractor;
 
     private float playTime = 0f;
-    public bool isCountingTime = false;
+    private bool isCountingTime = false;
 
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // ✅ Auto tìm component nếu chưa gán trong Inspector
+            // ✅ Auto tìm component nếu quên gán trong Inspector
             if (playerHP == null) playerHP = GetComponentInChildren<PlayerHP>();
             if (playerMP == null) playerMP = GetComponentInChildren<PLayerMP>();
             if (playerInteractor == null) playerInteractor = GetComponentInChildren<PlayerInteractor>();
@@ -46,6 +46,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         if (isCountingTime)
         {
             playTime += Time.deltaTime;
+
             if (playTimeText != null)
             {
                 int minutes = Mathf.FloorToInt(playTime / 60f);
@@ -57,14 +58,17 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Reset vị trí player
         transform.position = Vector3.zero;
         if (child != null) child.transform.position = Vector3.zero;
 
+        // Hiển thị tên màn
         if (sceneNameText != null)
         {
-            sceneNameText.text = $"Màn chơi: {scene.name}" + LoopManager.Instance.currentGameMode;
+            sceneNameText.text = $"Màn chơi: {scene.name} {LoopManager.Instance.currentGameMode}";
         }
 
+        // Camera setting
         SetPhysicalCameraByScene(scene);
 
         // 👉 Nếu về Home thì reset playTime
@@ -72,8 +76,14 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         {
             ResetPlayTime();
         }
+        else
+        {
+            // Ở các màn gameplay thì bắt đầu đếm giờ
+            StartCountingTime();
+        }
     }
 
+    // ================= TIME CONTROL =================
     public void StartCountingTime() => isCountingTime = true;
     public void StopCountingTime() => isCountingTime = false;
 
@@ -85,17 +95,19 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
             playTimeText.text = "Thời gian chơi: 00:00";
         }
         isCountingTime = false;
+
+        // Reset vòng lặp game (nếu có)
         LoopManager.Instance.ResetLoop();
         LoopManager.Instance.SetGameMode(LoopManager.GameMode.Normal);
     }
 
-    // ✅ Hàm lấy thời gian chơi (dùng để save)
+    // ✅ Lấy thời gian chơi (cho Firebase save)
     public int GetTimePlayed()
     {
         return Mathf.FloorToInt(playTime);
     }
 
-    // ✅ Hàm set lại thời gian chơi (dùng khi Continue)
+    // ✅ Set lại thời gian chơi (dùng khi Continue)
     public void SetPlayTime(int time)
     {
         playTime = time;
@@ -107,6 +119,7 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         }
     }
 
+    // ================= CAMERA =================
     public void SetPhysicalCameraByScene(Scene scene)
     {
         if (mainCamera != null)

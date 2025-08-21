@@ -15,7 +15,6 @@ public class FirebaseUserDataManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // ✅ chỉ định DatabaseURL
             var app = Firebase.FirebaseApp.DefaultInstance;
             dbRef = FirebaseDatabase.GetInstance(app,
                 "https://endless-dungeons-default-rtdb.firebaseio.com/").RootReference;
@@ -92,12 +91,11 @@ public class FirebaseUserDataManager : MonoBehaviour
                         var player = PlayerDontDestroyOnLoad.instance;
                         ApplyCurrentRunToPlayer(runData, player);
 
-                        // 👉 teleport về scene đã lưu qua màn LoadScene trung gian
                         if (!string.IsNullOrEmpty(runData.scene))
                         {
                             SceneLoadManager.nextSceneName = runData.scene;
                             UnityEngine.SceneManagement.SceneManager.LoadScene("LoadScene");
-                            Time.timeScale = 1f; // tránh bị pause
+                            Time.timeScale = 1f;
                         }
                     }
                     else
@@ -120,16 +118,8 @@ public class FirebaseUserDataManager : MonoBehaviour
     // ================== SOFT DATA ==================
     public void SaveCurrentRun(FirebaseUser user, PlayerHP hp, PLayerMP mp, PlayerInteractor interactor, int timePlayed, string sceneName)
     {
-        if (user == null)
-        {
-            Debug.LogWarning("⚠ SaveCurrentRun thất bại: user null");
-            return;
-        }
-        if (hp == null || mp == null || interactor == null)
-        {
-            Debug.LogWarning("⚠ SaveCurrentRun thất bại: thiếu component player");
-            return;
-        }
+        if (user == null) return;
+        if (hp == null || mp == null || interactor == null) return;
 
         string[] weaponNames = new string[2];
         for (int i = 0; i < 2; i++)
@@ -155,8 +145,7 @@ public class FirebaseUserDataManager : MonoBehaviour
             {
                 if (task.IsCompleted)
                 {
-                    Debug.Log($"💾 CurrentRun saved! Scene={sceneName}, HP={hp.currentHP}, MP={mp.currentMP}, " +
-                              $"Coin={interactor.Coins}, Time={timePlayed}, Weapons={string.Join(", ", weaponNames)}");
+                    Debug.Log($"💾 CurrentRun saved! Scene={sceneName}, HP={hp.currentHP}, MP={mp.currentMP}, Coin={interactor.Coins}");
                 }
                 else
                 {
@@ -167,11 +156,7 @@ public class FirebaseUserDataManager : MonoBehaviour
 
     public void ClearCurrentRun(FirebaseUser user)
     {
-        if (user == null)
-        {
-            Debug.LogWarning("⚠ ClearCurrentRun thất bại: user null");
-            return;
-        }
+        if (user == null) return;
 
         dbRef.Child("users").Child(user.UserId).Child("currentRun")
             .RemoveValueAsync()
@@ -184,46 +169,128 @@ public class FirebaseUserDataManager : MonoBehaviour
             });
     }
 
+    // 👉 HÀM MỚI: Tạo run mới từ scene đầu tiên
+    public void CreateNewRun(FirebaseUser user, string startScene)
+    {
+        if (user == null) return;
+
+        CurrentRunData runData = new CurrentRunData(
+            100,  // HP mặc định
+            50,   // MP mặc định
+            0,    // Coin mặc định
+            0,    // Thời gian
+            new string[] { "", "" }, // Vũ khí rỗng
+            startScene
+        );
+
+        string json = JsonUtility.ToJson(runData);
+
+        dbRef.Child("users").Child(user.UserId).Child("currentRun")
+            .SetRawJsonValueAsync(json)
+            .ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompleted)
+                    Debug.Log("✨ Tạo run mới ở scene: " + startScene);
+                else
+                    Debug.LogError("❌ Lỗi khi tạo run mới: " + task.Exception);
+            });
+    }
+
+    // ================== END GAME LOG ==================
+    public void SaveEndGameLog(FirebaseUser user, CurrentRunData runData, string status)
+    {
+        if (user == null || runData == null) return;
+
+        string logId = System.DateTime.UtcNow.ToString("yyyyMMdd_HHmmss");
+
+        EndGameLog log = new EndGameLog(
+            runData.hp,
+            runData.mp,
+            runData.coin,
+            runData.time,
+            runData.weapons,
+            runData.scene,
+            status
+        );
+
+        string json = JsonUtility.ToJson(log);
+
+        dbRef.Child("users").Child(user.UserId).Child("endGameLogs").Child(logId)
+            .SetRawJsonValueAsync(json)
+            .ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompleted)
+                    Debug.Log($"💾 EndGameLog saved! Status={status}, Scene={runData.scene}");
+                else
+                    Debug.LogError("❌ Lỗi khi lưu EndGameLog: " + task.Exception);
+            });
+    }
+
+    public void SaveLastEndLog(FirebaseUser user, CurrentRunData runData, string status)
+    {
+        if (user == null || runData == null) return;
+
+        var log = new EndRunLog
+        {
+            status = status,
+            scene = runData.scene,
+            hp = runData.hp,
+            mp = runData.mp,
+            coin = runData.coin,
+            time = runData.time,
+            weapons = runData.weapons,
+            timestampMs = System.DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()
+        };
+
+        string json = JsonUtility.ToJson(log);
+
+        dbRef.Child("users").Child(user.UserId).Child("lastEndLog")
+            .SetRawJsonValueAsync(json)
+            .ContinueWithOnMainThread(t =>
+            {
+                if (t.IsCompleted) Debug.Log("💾 lastEndLog saved (" + status + ")");
+                else Debug.LogError("❌ SaveLastEndLog error: " + t.Exception);
+            });
+    }
+
+    public void ClearLastEndLog(FirebaseUser user)
+    {
+        if (user == null) return;
+
+        dbRef.Child("users").Child(user.UserId).Child("lastEndLog")
+            .RemoveValueAsync()
+            .ContinueWithOnMainThread(t =>
+            {
+                if (t.IsCompleted) Debug.Log("🗑 lastEndLog removed");
+                else Debug.LogError("❌ ClearLastEndLog error: " + t.Exception);
+            });
+    }
+
     // ================== APPLY DATA ==================
     public void ApplyCurrentRunToPlayer(CurrentRunData runData, PlayerDontDestroyOnLoad player)
     {
-        if (player == null || runData == null)
-        {
-            Debug.LogWarning("⚠ Không thể apply run data vì null");
-            return;
-        }
+        if (player == null || runData == null) return;
 
-        // HP & MP
         player.playerHP.SetHP(runData.hp);
         player.playerMP.SetMP(runData.mp);
 
-        // Coins
         player.playerInteractor.Coins = runData.coin;
         player.playerInteractor.setCoinNumber();
 
-        // Weapons
         for (int i = 0; i < runData.weapons.Length; i++)
         {
             if (!string.IsNullOrEmpty(runData.weapons[i]))
-            {
                 player.playerInteractor.EquipWeaponByName(runData.weapons[i], i);
-            }
         }
 
-        // Time
         player.SetPlayTime(runData.time);
 
-        Debug.Log($"✅ Player đã hồi phục dữ liệu run: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}, " +
-                  $"Time={runData.time}, Weapons={string.Join(", ", runData.weapons)}");
+        Debug.Log($"✅ Player đã hồi phục dữ liệu run: HP={runData.hp}, MP={runData.mp}, Coin={runData.coin}");
     }
 
     public void ApplyHardDataToPlayer(UserProfileData data, PlayerDontDestroyOnLoad player)
     {
-        if (player == null || data == null)
-        {
-            Debug.LogWarning("⚠ Không thể apply hard data vì null");
-            return;
-        }
+        if (player == null || data == null) return;
 
         player.playerHP.SetHP(data.hp);
         player.playerMP.SetMP(data.mp);
@@ -234,15 +301,12 @@ public class FirebaseUserDataManager : MonoBehaviour
         for (int i = 0; i < data.weapons.Length; i++)
         {
             if (!string.IsNullOrEmpty(data.weapons[i]))
-            {
                 player.playerInteractor.EquipWeaponByName(data.weapons[i], i);
-            }
         }
 
         player.SetPlayTime(data.time);
 
-        Debug.Log($"✅ Player đã hồi phục dữ liệu hardData: HP={data.hp}, MP={data.mp}, Coin={data.coin}, " +
-                  $"Time={data.time}, Weapons={string.Join(", ", data.weapons)}");
+        Debug.Log($"✅ Player đã hồi phục dữ liệu hardData: HP={data.hp}, MP={data.mp}, Coin={data.coin}");
     }
 }
 
@@ -287,4 +351,40 @@ public class CurrentRunData
         this.weapons = weapons;
         this.scene = scene;
     }
+}
+
+[System.Serializable]
+public class EndGameLog
+{
+    public int hp;
+    public int mp;
+    public int coin;
+    public int time;
+    public string[] weapons;
+    public string scene;
+    public string status;
+
+    public EndGameLog(int hp, int mp, int coin, int time, string[] weapons, string scene, string status)
+    {
+        this.hp = hp;
+        this.mp = mp;
+        this.coin = coin;
+        this.time = time;
+        this.weapons = weapons;
+        this.scene = scene;
+        this.status = status;
+    }
+}
+
+[System.Serializable]
+public class EndRunLog
+{
+    public string status;
+    public string scene;
+    public int hp;
+    public int mp;
+    public int coin;
+    public int time;
+    public string[] weapons;
+    public long timestampMs;
 }

@@ -59,10 +59,16 @@ public class SceneButtonHandler : MonoBehaviour
             return;
         }
 
+        // 🗑 Xoá data run cũ & tạo run mới
+        if (FirebaseUserDataManager.Instance != null)
+        {
+            FirebaseUserDataManager.Instance.ClearCurrentRun(user);  // xoá dữ liệu cũ
+            FirebaseUserDataManager.Instance.CreateNewRun(user, targetSceneName); // tạo dữ liệu mới
+        }
+
         SceneLoadManager.nextSceneName = targetSceneName;
         SceneManager.LoadScene("LoadScene");
 
-        // ✅ Sửa lại phần check scene
         if (targetSceneName != "Home")
         {
             if (PlayerDontDestroyOnLoad.instance != null)
@@ -72,7 +78,6 @@ public class SceneButtonHandler : MonoBehaviour
         {
             if (FirebaseUserDataManager.Instance != null)
             {
-                FirebaseUserDataManager.Instance.ClearCurrentRun(user);
                 FirebaseUserDataManager.Instance.SaveHardData(user);
             }
         }
@@ -89,6 +94,13 @@ public class SceneButtonHandler : MonoBehaviour
             var authManager = FindFirstObjectByType<FirebaseAuthManager>();
             if (authManager != null) authManager.ShowLoginUI();
             return;
+        }
+
+        // 🗑 Xoá data run cũ & tạo run mới cho Endless
+        if (FirebaseUserDataManager.Instance != null)
+        {
+            FirebaseUserDataManager.Instance.ClearCurrentRun(user);
+            FirebaseUserDataManager.Instance.CreateNewRun(user, targetSceneName);
         }
 
         SceneLoadManager.nextSceneName = targetSceneName;

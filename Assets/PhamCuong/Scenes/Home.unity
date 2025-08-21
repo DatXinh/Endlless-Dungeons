@@ -38474,6 +38474,18 @@ PrefabInstance:
       propertyPath: 'weaponPrefabs.Array.data[60]'
       value: 
       objectReference: {fileID: 7752384395813104827, guid: d56e2106a24259b4c8a94580793b8989, type: 3}
+    - target: {fileID: 4991446657845716828, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142638410095635944, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: playerMP
+      value: 
+      objectReference: {fileID: 1480882103}
+    - target: {fileID: 6142638410095635944, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
+      propertyPath: playerInteractor
+      value: 
+      objectReference: {fileID: 1480882102}
     - target: {fileID: 6776555899939453949, guid: b13c4ffc248d44e4ba7c9136cca0b336, type: 3}
       propertyPath: m_Name
       value: TestPlayer
