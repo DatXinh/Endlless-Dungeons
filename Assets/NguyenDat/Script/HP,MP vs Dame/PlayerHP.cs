@@ -1,89 +1,121 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase.Auth;
 
 public class PlayerHP : MonoBehaviour
 {
-    public int maxHP = 100; // Maximum health points
-    public int currentHP; // Current health points
-    public int InvincibilityTime = 1; // Time in seconds for invincibility after taking damage
-    public GameObject damagePopupPrefab; // Prefab for the damage popup
-    public Image healthBar; // Reference to the health bar UI element
-    public TMP_Text maxHeal; // Reference to the health text UI element
-    public TMP_Text currentHeal; // Reference to the current health text UI element
+    public int maxHP = 100;
+    public int currentHP;
+    public int InvincibilityTime = 1;
+    public GameObject damagePopupPrefab;
+    public Image healthBar;
+    public TMP_Text maxHeal;
+    public TMP_Text currentHeal;
 
-    public bool isInvincible = false; // Trạng thái bất tử
+    public bool isInvincible = false;
 
     public Joystick joystick;
-    public JoystickAttackAndAim joystickAttackAndAim; // Reference to the joystick for attack and aim
+    public JoystickAttackAndAim joystickAttackAndAim;
 
     public GameObject rightPanel;
     public GameObject leftPanel;
-    public GameObject deadMesseng;
     public GameObject pauseButton;
+
     public AudioSource[] allAudioSources;
     public List<AudioSource> playAudioSources = new List<AudioSource>();
 
+    [Header("Player References")]
+    public PLayerMP playerMP;
+    public PlayerInteractor playerInteractor;
+
     void Start()
     {
-        currentHP = maxHP; // Initialize current health to maximum health
-        if (healthBar != null)
-        {
-            healthBar.fillAmount = 1f;
-        }
-        if (maxHeal != null)
-        {
-            maxHeal.text = maxHP.ToString();
-        }
+        currentHP = maxHP;
+        if (healthBar != null) healthBar.fillAmount = 1f;
+        if (maxHeal != null) maxHeal.text = maxHP.ToString();
         UpdateHealthUI();
-        deadMesseng.SetActive(false);
 
-        // Lắng nghe sự kiện load scene
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        isInvincible = false; // Reset bất tử khi vào scene mới
+        isInvincible = false;
+
+        // 👉 Nếu quay về Home thì reset HP và UI
+        if (scene.name == "Home")
+        {
+            resetHP();
+            RestoreUI();
+            Time.timeScale = 1f;
+        }
     }
 
     public void TakeDamage(int damage)
     {
-        if (currentHP > 0)
+        if (currentHP > 0 && !isInvincible)
         {
-            if (!isInvincible)
-            {
-                currentHP -= damage;
-                UpdateHealthUI();
+            currentHP -= damage;
+            UpdateHealthUI();
 
-                if (damagePopupPrefab != null)
-                {
-                    GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
-                    FloatingDamage floatingDamage = damagePopup.GetComponent<FloatingDamage>();
-                    if (floatingDamage != null)
-                    {
-                        floatingDamage.SetDamageValue(damage, Color.red);
-                    }
-                }
-                StartCoroutine(InvincibilityCoroutine());
+            if (damagePopupPrefab != null)
+            {
+                GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
+                FloatingDamage floatingDamage = damagePopup.GetComponent<FloatingDamage>();
+                if (floatingDamage != null) floatingDamage.SetDamageValue(damage, Color.red);
             }
+
+            StartCoroutine(InvincibilityCoroutine());
         }
 
         if (currentHP <= 0)
         {
-            joystick.OnPointerUp(null);
-            joystickAttackAndAim.OnPointerUp(null);
-            leftPanel.SetActive(false);
-            rightPanel.SetActive(false);
-            deadMesseng.SetActive(true);
-            pauseButton.SetActive(false);
-            PauseGame();
+            OnPlayerDie();
         }
+    }
+
+    private void OnPlayerDie()
+    {
+        // 🔹 Tắt UI điều khiển
+        HideUI();
+        PauseGame();
+
+        // 🔹 Lưu dữ liệu vào Firebase + PlayerPrefs
+        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+        if (user != null && playerInteractor != null && playerMP != null)
+        {
+            string sceneName = SceneManager.GetActiveScene().name;
+            int playTime = PlayerDontDestroyOnLoad.instance.GetTimePlayed();
+
+            string[] weaponNames = new string[2];
+            for (int i = 0; i < 2; i++)
+            {
+                var weapon = playerInteractor.GetWeapon(i);
+                weaponNames[i] = weapon != null ? weapon.name.Replace("(Clone)", "").Trim() : "";
+            }
+
+            CurrentRunData runData = new CurrentRunData(
+                0, // HP chết = 0
+                playerMP.currentMP,
+                playerInteractor.Coins,
+                playTime,
+                weaponNames,
+                sceneName
+            );
+
+            FirebaseUserDataManager.Instance.SaveEndGameLog(user, runData, "Dead");
+
+            string json = JsonUtility.ToJson(runData);
+            PlayerPrefs.SetString("LastEndRun", json);
+            PlayerPrefs.Save();
+            Debug.Log("💾 Saved LastEndRun = " + json);
+        }
+
+        SceneManager.LoadScene("EndScene");
     }
 
     private IEnumerator InvincibilityCoroutine()
@@ -98,19 +130,15 @@ public class PlayerHP : MonoBehaviour
         if (currentHP > 0)
         {
             currentHP += amount;
-            if (currentHP > maxHP)
-            {
-                currentHP = maxHP;
-            }
+            if (currentHP > maxHP) currentHP = maxHP;
+
             UpdateHealthUI();
+
             if (damagePopupPrefab != null)
             {
                 GameObject damagePopup = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
                 FloatingDamage floatingDamage = damagePopup.GetComponent<FloatingDamage>();
-                if (floatingDamage != null)
-                {
-                    floatingDamage.SetDamageValue(amount, Color.green);
-                }
+                if (floatingDamage != null) floatingDamage.SetDamageValue(amount, Color.green);
             }
         }
     }
@@ -118,16 +146,8 @@ public class PlayerHP : MonoBehaviour
     public void UpdateHealthUI()
     {
         float healthPercent = (float)currentHP / maxHP;
-
-        if (healthBar != null)
-        {
-            healthBar.fillAmount = healthPercent;
-        }
-
-        if (currentHeal != null)
-        {
-            currentHeal.text = currentHP.ToString();
-        }
+        if (healthBar != null) healthBar.fillAmount = healthPercent;
+        if (currentHeal != null) currentHeal.text = currentHP.ToString();
     }
 
     public void PauseGame()
@@ -147,10 +167,7 @@ public class PlayerHP : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        foreach (AudioSource audio in playAudioSources)
-        {
-            audio.Play();
-        }
+        foreach (AudioSource audio in playAudioSources) audio.Play();
         playAudioSources.Clear();
     }
 
@@ -158,6 +175,26 @@ public class PlayerHP : MonoBehaviour
     {
         currentHP = maxHP;
         UpdateHealthUI();
+    }
+
+    public void SetHP(int value)
+    {
+        currentHP = Mathf.Clamp(value, 0, maxHP);
+        UpdateHealthUI();
+    }
+
+    private void HideUI()
+    {
+        if (leftPanel != null) leftPanel.SetActive(false);
+        if (rightPanel != null) rightPanel.SetActive(false);
+        if (pauseButton != null) pauseButton.SetActive(false);
+    }
+
+    private void RestoreUI()
+    {
+        if (leftPanel != null) leftPanel.SetActive(true);
+        if (rightPanel != null) rightPanel.SetActive(true);
+        if (pauseButton != null) pauseButton.SetActive(true);
     }
 
     private void OnDestroy()

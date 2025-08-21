@@ -11,11 +11,15 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI sceneNameText;
     public TextMeshProUGUI playTimeText;
-
     public Camera mainCamera;
 
+    [Header("Player Components (auto gán nếu quên)")]
+    public PlayerHP playerHP;
+    public PLayerMP playerMP;
+    public PlayerInteractor playerInteractor;
+
     private float playTime = 0f;
-    public bool isCountingTime = false; // biến mới để kiểm soát đếm thời gian
+    private bool isCountingTime = false;
 
     private void Awake()
     {
@@ -23,6 +27,12 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // ✅ Auto tìm component nếu quên gán trong Inspector
+            if (playerHP == null) playerHP = GetComponentInChildren<PlayerHP>();
+            if (playerMP == null) playerMP = GetComponentInChildren<PLayerMP>();
+            if (playerInteractor == null) playerInteractor = GetComponentInChildren<PlayerInteractor>();
+
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
@@ -33,9 +43,10 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
 
     private void Update()
     {
-        if (isCountingTime) // chỉ đếm khi biến này = true
+        if (isCountingTime)
         {
             playTime += Time.deltaTime;
+
             if (playTimeText != null)
             {
                 int minutes = Mathf.FloorToInt(playTime / 60f);
@@ -47,29 +58,34 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Đặt lại vị trí
+        // Reset vị trí player
         transform.position = Vector3.zero;
-        if (child != null)
-        {
-            child.transform.position = Vector3.zero;
-        }
-        // Cập nhật tên màn chơi
+        if (child != null) child.transform.position = Vector3.zero;
+
+        // Hiển thị tên màn
         if (sceneNameText != null)
         {
-            sceneNameText.text = $"Màn chơi: {scene.name}" + LoopManager.Instance.currentGameMode;
+            sceneNameText.text = $"Màn chơi: {scene.name} {LoopManager.Instance.currentGameMode}";
         }
+
+        // Camera setting
         SetPhysicalCameraByScene(scene);
+
+        // 👉 Nếu về Home thì reset playTime
+        if (scene.name == "Home")
+        {
+            ResetPlayTime();
+        }
+        else
+        {
+            // Ở các màn gameplay thì bắt đầu đếm giờ
+            StartCountingTime();
+        }
     }
 
-    public void StartCountingTime() // hàm để bắt đầu đếm
-    {
-        isCountingTime = true;
-    }
-
-    public void StopCountingTime() // hàm để dừng đếm nếu cần
-    {
-        isCountingTime = false;
-    }
+    // ================= TIME CONTROL =================
+    public void StartCountingTime() => isCountingTime = true;
+    public void StopCountingTime() => isCountingTime = false;
 
     public void ResetPlayTime()
     {
@@ -78,24 +94,40 @@ public class PlayerDontDestroyOnLoad : MonoBehaviour
         {
             playTimeText.text = "Thời gian chơi: 00:00";
         }
-        isCountingTime = false; // reset luôn trạng thái
+        isCountingTime = false;
+
+        // Reset vòng lặp game (nếu có)
         LoopManager.Instance.ResetLoop();
         LoopManager.Instance.SetGameMode(LoopManager.GameMode.Normal);
     }
 
+    // ✅ Lấy thời gian chơi (cho Firebase save)
+    public int GetTimePlayed()
+    {
+        return Mathf.FloorToInt(playTime);
+    }
+
+    // ✅ Set lại thời gian chơi (dùng khi Continue)
+    public void SetPlayTime(int time)
+    {
+        playTime = time;
+        if (playTimeText != null)
+        {
+            int minutes = Mathf.FloorToInt(playTime / 60f);
+            int seconds = Mathf.FloorToInt(playTime % 60f);
+            playTimeText.text = $"Thời gian chơi: {minutes:D2}:{seconds:D2}";
+        }
+    }
+
+    // ================= CAMERA =================
     public void SetPhysicalCameraByScene(Scene scene)
     {
         if (mainCamera != null)
         {
-            // Ví dụ: chỉ bật Physical Camera ở cảnh "Level_1" và "Level_2"
             if (scene.name == "1-Boss" || scene.name == "2-Boss" || scene.name == "3-Boss")
-            {
                 mainCamera.usePhysicalProperties = false;
-            }
             else
-            {
                 mainCamera.usePhysicalProperties = true;
-            }
         }
     }
 
