@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 646488075683712737}
   - component: {fileID: 1168651019193018645}
   - component: {fileID: 5735408182297418766}
+  - component: {fileID: -1491430310761793615}
   m_Layer: 0
   m_Name: Fireworm Itemlore
   m_TagString: Untagged
@@ -382,6 +383,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 3175663136596708946}
+--- !u!114 &-1491430310761793615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292379482442014467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7136b5b51bb344eb4d5e1309ec3af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteTitle: Fire Worm
+  noteIcon: {fileID: -4249263411204657896, guid: 993dc94827368ad489184872893192c6, type: 3}
+  noteDescription: "\"\u0110\u1EEBng nh\u1EA7m s\u1EF1 nh\xFAt nh\xE1t v\u1EDBi v\xF4
+    h\u1EA1i. Th\u1EE9 l\u1EEDa trong ru\u1ED9t n\xF3 kh\xF4ng s\u01B0\u1EDFi \u1EA5m
+    \u2013 n\xF3 thi\xEAu \u0111\u1ED1t nh\u1EEFng gi\u1EA5c m\u01A1. N\xF3 kh\xF4ng
+    chi\u1EBFn \u0111\u1EA5u \u0111\u1EC3 th\u1EAFng. N\xF3 ch\u1EC9 kh\xF4ng mu\u1ED1n
+    ng\u01B0\u01A1i \u0111\u1EBFn qu\xE1 g\u1EA7n\u2026 th\u1EE9 m\xE0 n\xF3 \u0111ang
+    che gi\u1EA5u.\""
 --- !u!1 &7758516273796931010
 GameObject:
   m_ObjectHideFlags: 0

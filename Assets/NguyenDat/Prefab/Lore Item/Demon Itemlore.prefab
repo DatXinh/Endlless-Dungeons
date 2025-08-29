@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 646488075683712737}
   - component: {fileID: 1168651019193018645}
   - component: {fileID: 5735408182297418766}
+  - component: {fileID: 8451726070085589859}
   m_Layer: 0
   m_Name: Demon Itemlore
   m_TagString: Untagged
@@ -382,6 +383,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 3175663136596708946}
+--- !u!114 &8451726070085589859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292379482442014467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7136b5b51bb344eb4d5e1309ec3af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteTitle: Demon
+  noteIcon: {fileID: 6897479667268090689, guid: b0389fb336271cd40a31f496b4701de8, type: 3}
+  noteDescription: "\"L\u0169 qu\u1EF7 ch\u1EC9 hi\u1EC7n th\xE2n khi c\xF3 ai \u0111\xF3
+    s\u1EB5n l\xF2ng tri\u1EC7u h\u1ED3i ch\xFAng. Nh\u01B0ng th\u1EE9 n\xE0y th\xEC
+    kh\xE1c. N\xF3 v\u01B0\u1EE3t qua khe n\u1EE9t m\xE0 kh\xF4ng \u0111\u01B0\u1EE3c
+    m\u1EDDi. H\u1EAFn kh\xF4ng c\u1EA7n giao \u01B0\u1EDBc \u2013 h\u1EAFn ch\xEDnh
+    l\xE0 tr\u1EEBng ph\u1EA1t.\""
 --- !u!1 &7758516273796931010
 GameObject:
   m_ObjectHideFlags: 0

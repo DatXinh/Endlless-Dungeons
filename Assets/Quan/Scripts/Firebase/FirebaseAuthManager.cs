@@ -99,7 +99,7 @@ public class FirebaseAuthManager : MonoBehaviour
                 }
 
                 currentUser = task.Result.User;
-                ShowMessage("✅ Đăng ký thành công! Quay lại đăng nhập.", Color.green, 3f);
+                ShowMessage("✅ Đăng ký thành công!.", Color.green, 3f);
 
                 FirebaseUserDataManager.Instance.SaveNewUser(currentUser);
             });
@@ -139,13 +139,13 @@ public class FirebaseAuthManager : MonoBehaviour
     // Chuyển UI
     public void ShowRegisterUI()
     {
-        loginCanvas.SetActive(false);
+        
         registerCanvas.SetActive(true);
     }
 
     public void ShowLoginUI()
     {
-        registerCanvas.SetActive(false);
+      
         loginCanvas.SetActive(true);
     }
 

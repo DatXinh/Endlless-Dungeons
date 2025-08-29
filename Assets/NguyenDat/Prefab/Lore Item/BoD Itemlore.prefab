@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 646488075683712737}
   - component: {fileID: 1168651019193018645}
   - component: {fileID: 5735408182297418766}
+  - component: {fileID: 7699799459209688815}
   m_Layer: 0
   m_Name: BoD Itemlore
   m_TagString: Untagged
@@ -383,6 +384,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 3175663136596708946}
+--- !u!114 &7699799459209688815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292379482442014467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7136b5b51bb344eb4d5e1309ec3af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteTitle: Bringer of Death
+  noteIcon: {fileID: 6281668981695255120, guid: 6ac830e525829e64a860d5244d15c314, type: 3}
+  noteDescription: "\"H\u1EAFn kh\xF4ng t\u1EEBng s\u1ED1ng, c\u0169ng ch\u1EB3ng
+    t\u1EEBng ch\u1EBFt. L\u01B0\u1EE1i li\u1EC1m h\u1EAFn mang kh\xF4ng \u0111\u1EC3
+    thu ho\u1EA1ch linh h\u1ED3n \u2013 m\xE0 \u0111\u1EC3 c\u1EAFt s\u1EE3i ch\u1EC9
+    mong manh gi\u1EEFa c\xE1c th\u1EBF gi\u1EDBi. Khi c\xE1i b\xF3ng c\u1EE7a c\xE1nh
+    c\u1ED5ng xu\u1EA5t hi\u1EC7n tr\xEAn \u0111\u1EA7u ng\u01B0\u01A1i, \u0111\xE3
+    qu\xE1 mu\u1ED9n \u0111\u1EC3 quay l\u1EA1i.\""
 --- !u!1 &7758516273796931010
 GameObject:
   m_ObjectHideFlags: 0

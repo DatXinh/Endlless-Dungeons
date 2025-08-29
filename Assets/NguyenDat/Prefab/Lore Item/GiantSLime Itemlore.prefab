@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 646488075683712737}
   - component: {fileID: 1168651019193018645}
   - component: {fileID: 5735408182297418766}
+  - component: {fileID: 181521067523849283}
   m_Layer: 0
   m_Name: GiantSLime Itemlore
   m_TagString: Untagged
@@ -382,6 +383,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 3175663136596708946}
+--- !u!114 &181521067523849283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292379482442014467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7136b5b51bb344eb4d5e1309ec3af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteTitle: Giant Slime
+  noteIcon: {fileID: 6779317482783306199, guid: 10c2a2a68b630c5489db8223f2ad1616, type: 3}
+  noteDescription: "\"N\xF3 \u0111\xE3 \u0103n t\u1EA5t c\u1EA3 \u0111\u1ED3ng lo\u1EA1i.
+    Kh\xF4ng v\xEC \u0111\xF3i \u2013 m\xE0 v\xEC ch\xFAng c\u1EA3n \u0111\u01B0\u1EDDng
+    n\xF3 l\u1EDBn l\xEAn. C\xF3 th\u1EE9 g\xEC \u0111\xF3 trong l\xF5i n\xF3\u2026
+    th\u1EE9 g\xEC \u0111\xF3 m\xE0 ta kh\xF4ng n\xEAn th\u1EA5y. D\xF9 ch\u1EC9
+    l\xE0 ph\u1EA3n chi\u1EBFu qua ch\u1EA5t nh\u1EDBt rung \u0111\u1ED9ng.\""
 --- !u!1 &7758516273796931010
 GameObject:
   m_ObjectHideFlags: 0

@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 646488075683712737}
   - component: {fileID: 1168651019193018645}
   - component: {fileID: 5735408182297418766}
+  - component: {fileID: 5796633018504915211}
   m_Layer: 0
   m_Name: FDK Itemlore
   m_TagString: Untagged
@@ -383,6 +384,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 3175663136596708946}
+--- !u!114 &5796633018504915211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292379482442014467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7136b5b51bb344eb4d5e1309ec3af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteTitle: Fallen Dungeon Kepper
+  noteIcon: {fileID: 586827489882379243, guid: b77b6496e0a30b2458ff10ad9b379919, type: 3}
+  noteDescription: "\"T\xEAn th\u1EADt c\u1EE7a \u1EA3 \u0111\xE3 b\u1ECB x\xF3a
+    kh\u1ECFi m\u1ECDi b\u1EA3n ghi. C\xF3 ng\u01B0\u1EDDi n\xF3i \u1EA3 t\u1EEBng
+    l\xE0 ng\u01B0\u1EDDi b\u1EA3o v\u1EC7 c\xE1c t\u1EA7ng h\u1EA7m ng\u1EE5c \u2013
+    cho \u0111\u1EBFn khi ph\xE1t hi\u1EC7n ra m\xE1u c\xF3 th\u1EC3 \u2018m\u1EDF
+    c\xE1nh c\u1EEDa th\u1EE9 m\u01B0\u1EDDi ba\u2019. S\u1EF1 b\u1EA5t t\u1EED c\u1EE7a
+    \u1EA3 l\xE0 l\u1EDDi nguy\u1EC1n tr\u1EEBng ph\u1EA1t, kh\xF4ng ph\u1EA3i ph\u1EA7n
+    th\u01B0\u1EDFng.\""
 --- !u!1 &7758516273796931010
 GameObject:
   m_ObjectHideFlags: 0
